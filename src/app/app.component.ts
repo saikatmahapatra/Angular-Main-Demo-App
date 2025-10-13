@@ -47,7 +47,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     if (CustomAppConfig.production) {
       this.meta.addTags([
-        { name: 'description', content: 'Employee Portal of United Exploration India Private Limited. United Exploration India Private Limited delivers GIS, Remote Sensing and Minining Services across India and overseas.' }
+        { name: 'description', content: 'Employee Portal of ABC Corp. ABC Corp delivers GIS, Remote Sensing and Minining Services across India and overseas.' }
       ]);
     }
   }

@@ -28,13 +28,13 @@ export class FormValidationService {
       min: `Min value must be at least ${validatorValue?.min}.`,
       max: `Value should not exceed more than ${validatorValue?.max}.`,
       email: 'Please enter a valid email address.',
-      validEmail: 'Please enter a valid email address i.e name@example.com.',
+      validEmail: 'Please enter a valid email address i.e name@abc.com.',
       phoneNumber: 'Please enter a 10 digit phone number.',
       ruleOne: 'error message 1',
       ruleTwo: 'error message 2',
       ruleThreec: 'error message 3',
       invalidPassword: 'Password must be 8 chars long including at least one lower case letter, one uppercase letter, one number.',
-      invalidDomain: 'Please enter email with @unitedexploration.co.in only.',
+      invalidDomain: 'Please enter email with @abc.com only.',
       notMatching: 'Confirm field value should match with Actual value.',
       passwordNotMatching: 'Confirm Password should match with Password.',
       accountNoNotMatching: 'Confirm account no should match with Account no.',
@@ -96,7 +96,7 @@ export class FormValidationService {
     let error = null;
     if (control?.value && control?.value.indexOf("@") != -1) {
       let [_, domain] = control?.value.split("@");
-      if (domain == "unitedexploration.co.in") {
+      if (domain == "abc.com") {
         error = null;
       } else {
         error = { 'invalidDomain': true };
