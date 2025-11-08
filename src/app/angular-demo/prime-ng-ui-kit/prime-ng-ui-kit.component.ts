@@ -208,10 +208,20 @@ export class PrimeNgUiKitComponent implements OnInit {
   // Paginator config ends here
 
   // chart.js 
-  basicData: any;
-  basicOptions: any;
+  chartType: 'bar' | 'line' | 'pie' | 'doughnut' | 'polarArea' | 'radar' = 'bar';
+  chartTypes: ('bar' | 'line' | 'pie' | 'doughnut' | 'polarArea' | 'radar')[] = [
+    'bar', 'line', 'pie', 'doughnut', 'polarArea', 'radar'
+  ];
+  chartData: any;
+  chartOptions: any;
+  showLegend: boolean = true;
+  isDarkTheme: boolean = false;
 
-  constructor(private messageService: MessageService) { }
+
+  constructor(private messageService: MessageService) { 
+    this.updateChartData();
+    this.updateChartOptions();
+  }
 
   ngOnInit() {
     // Steps
@@ -234,8 +244,6 @@ export class PrimeNgUiKitComponent implements OnInit {
       { severity: 'warn', summary: 'Warning', detail: 'Message content' },
       { severity: 'error', summary: 'Error', detail: 'Message content' }
     ];
-
-    this.renderChart()
   }
 
   showSuccess() {
@@ -332,53 +340,86 @@ export class PrimeNgUiKitComponent implements OnInit {
     }
   }
 
-  renderChart() {
-    const documentStyle = getComputedStyle(document.documentElement);
-    const textColor = documentStyle.getPropertyValue('--text-color');
-    const textColorSecondary = documentStyle.getPropertyValue('--text-color-secondary');
-    const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
-    this.basicData = {
-      labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+  // Chart Related
+  changeChartType(type: 'bar' | 'line' | 'pie' | 'doughnut' | 'polarArea' | 'radar') {
+    this.chartType = type;
+    this.updateChartData();
+  }
+
+  updateChartData() {
+    this.chartData = {
+      labels: ['A', 'B', 'C', 'D', 'E'],
       datasets: [
         {
-          label: 'Sales',
-          data: [540, 325, 702, 620],
-          backgroundColor: ['rgba(255, 159, 64, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(153, 102, 255, 0.2)'],
-          borderColor: ['rgb(255, 159, 64)', 'rgb(75, 192, 192)', 'rgb(54, 162, 235)', 'rgb(153, 102, 255)'],
-          borderWidth: 1
-        }
-      ]
+          label: 'Dataset 1',
+          backgroundColor: this.getRandomColors(5),
+          borderColor: this.getRandomColors(5),
+          data: this.getRandomData(5),
+        },
+      ],
     };
-    this.basicOptions = {
+  }
+
+  updateChartOptions() {
+    this.chartOptions = {
+      responsive: true,
       plugins: {
         legend: {
+          display: this.showLegend,
+          position: 'top',
           labels: {
-            color: textColor
-          }
-        }
+            color: this.isDarkTheme ? '#fff' : '#000',
+          },
+        },
+        tooltip: {
+          enabled: true,
+        },
       },
       scales: {
+        x: {
+          ticks: {
+            color: this.isDarkTheme ? '#fff' : '#000',
+          },
+        },
         y: {
           beginAtZero: true,
           ticks: {
-            color: textColorSecondary
+            color: this.isDarkTheme ? '#fff' : '#000',
           },
-          grid: {
-            color: surfaceBorder,
-            drawBorder: false
-          }
         },
-        x: {
-          ticks: {
-            color: textColorSecondary
-          },
-          grid: {
-            color: surfaceBorder,
-            drawBorder: false
-          }
-        }
-      }
+      },
+      backgroundColor: this.isDarkTheme ? '#444' : '#fff',
     };
   }
+
+  toggleLegend() {
+    this.showLegend = !this.showLegend;
+    this.updateChartOptions();
+  }
+
+  downloadChart() {
+    const chartElement = document.querySelector('canvas') as HTMLCanvasElement;
+    const link = document.createElement('a');
+    link.href = chartElement.toDataURL('image/png');
+    link.download = 'chart.png';
+    link.click();
+  }
+
+  getRandomData(num: number): number[] {
+    return Array.from({ length: num }, () =>
+      Math.floor(Math.random() * 100 + 1)
+    );
+  }
+
+  getRandomColors(num: number): string[] {
+    const colors = [];
+    for (let i = 0; i < num; i++) {
+      colors.push(
+        `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0')}`
+      );
+    }
+    return colors;
+  }
+  
 
 }

@@ -396,5 +396,28 @@
     </div>
 </p-dialog>
 
-<h5 class="exmple-heading">Chart.js</h5>
-<p-chart type="bar" [data]="basicData" [options]="basicOptions"></p-chart>
+<h5 class="exmple-heading">PrimeNG Chart Demo (based on Chart.js)</h5>
+<div class="controls">
+    <div class="button-group">
+      <button pButton class="me-3" *ngFor="let type of chartTypes" (click)="changeChartType(type)">
+        {{ type | titlecase }}
+      </button>
+      <button pButton class="me-3" (click)="toggleLegend()">
+        Toggle Legend
+      </button>
+      <button pButton class="me-3" (click)="downloadChart()">
+        Download Chart
+      </button>
+      <button pButton (click)="updateChartData()">
+        Refresh Data
+      </button>
+    </div>
+  </div>
+
+  <div class="chart-container">
+    <p-chart
+      [type]="chartType"
+      [data]="chartData"
+      [options]="chartOptions"
+    ></p-chart>
+  </div>
