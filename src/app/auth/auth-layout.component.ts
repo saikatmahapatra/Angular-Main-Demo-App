@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CustomAppConfig } from '../@utils/const/custom-app.config';
+import { MyAppConfig } from 'src/app/app.config';
 import { CommonService } from '../@core/services/common.service';
 
 @Component({

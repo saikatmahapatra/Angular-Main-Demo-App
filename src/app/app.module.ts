@@ -38,7 +38,7 @@ export function init_app(configSvc: ConfigService) {
 export function initializeApp(configService: ConfigService) {
   return async () => {
     await configService.initializeApp();
-    // config.baseUrl = CustomAppConfig.BASE_URL;
+    // config.baseUrl = MyAppConfig.BASE_URL;
     // config.applicationGearId = CommonConfig.gearId;
     // await authService.initializePermissions();
     // userService.setUserPermissions(authService.permissions);

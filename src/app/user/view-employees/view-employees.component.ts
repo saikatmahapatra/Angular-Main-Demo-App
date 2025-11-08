@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AlertService } from 'src/app/@core/services/alert.service';
 import { ApiService } from 'src/app/@core/services/api.service';
 import { CommonService } from 'src/app/@core/services/common.service';
-import { CustomAppConfig } from 'src/app/@utils/const/custom-app.config';
+import { MyAppConfig } from 'src/app/app.config';
 
 @Component({
     selector: 'app-view-employees',
@@ -65,7 +65,7 @@ export class ViewEmployeesComponent implements OnInit {
       queryParams = queryParams.append('keywords', this.searchKeyword.trim());
     }
     options = { params: queryParams, headers: headers };
-    this.apiSvc.get(CustomAppConfig.apiUrl.getEmployees, options).subscribe({
+    this.apiSvc.get(MyAppConfig.apiUrl.getEmployees, options).subscribe({
       next: (val: any) => {
         this.totalRecords = val?.data?.num_rows;
         this.empList = val?.data?.data_rows || [];

@@ -7,7 +7,7 @@ import { AlertService } from 'src/app/@core/services/alert.service';
 import { ApiService } from 'src/app/@core/services/api.service';
 import { CommonService } from 'src/app/@core/services/common.service';
 import { FormValidationService } from 'src/app/@core/services/form-validation.service';
-import { CustomAppConfig } from 'src/app/@utils/const/custom-app.config';
+import { MyAppConfig } from 'src/app/app.config';
 @Component({
     selector: 'app-reset-password-form',
     templateUrl: './reset-password-form.component.html',
@@ -48,7 +48,7 @@ export class ResetPasswordFormComponent implements OnInit {
     this.loading = true;
     if (this.resetPasswordForm.valid) {
       const postData = this.resetPasswordForm.value;
-      this.apiSvc.post(CustomAppConfig.apiUrl.resetPassword, postData).subscribe({
+      this.apiSvc.post(MyAppConfig.apiUrl.resetPassword, postData).subscribe({
         next: (response: any) => {
           if (response.status == 'success') {
             this.alertSvc.setAlert('success', response.message, true);

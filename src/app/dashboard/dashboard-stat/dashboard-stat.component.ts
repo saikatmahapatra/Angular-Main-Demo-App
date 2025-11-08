@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AlertService } from 'src/app/@core/services/alert.service';
 import { ApiService } from 'src/app/@core/services/api.service';
 import { AuthService } from 'src/app/@core/services/auth.service';
-import { CustomAppConfig } from 'src/app/@utils/const/custom-app.config';
+import { MyAppConfig } from 'src/app/app.config';
 
 @Component({
     selector: 'app-dashboard-stat',
@@ -18,7 +18,7 @@ export class DashboardStatComponent implements OnInit {
 
   ngOnInit(): void {
     this.userRoleId = this.authSvc.getRoleId();
-    this.apiSvc.get(CustomAppConfig.apiUrl.dashboardStat).subscribe((response: any) => {
+    this.apiSvc.get(MyAppConfig.apiUrl.dashboardStat).subscribe((response: any) => {
       this.stats = response.data;
     });
   }

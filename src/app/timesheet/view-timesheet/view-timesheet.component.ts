@@ -2,7 +2,7 @@ import { HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Component, OnInit, ViewChild, Input, Output, EventEmitter } from '@angular/core';
 import { ApiService } from 'src/app/@core/services/api.service';
 import { AuthService } from 'src/app/@core/services/auth.service';
-import { CustomAppConfig } from 'src/app/@utils/const/custom-app.config';
+import { MyAppConfig } from 'src/app/app.config';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertService } from 'src/app/@core/services/alert.service';
@@ -57,7 +57,7 @@ export class ViewTimesheetComponent implements OnInit {
     let options = {};
     options = { params: queryParams };
     this.showTableDataLoading = true;
-    this.apiSvc.delete(CustomAppConfig.apiUrl.deleteTimesheet, options).subscribe({
+    this.apiSvc.delete(MyAppConfig.apiUrl.deleteTimesheet, options).subscribe({
       next: (response: any) => {
         if (response.status == 'success') {
           this.alertSvc.setAlert('success', response.message);

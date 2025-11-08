@@ -2,7 +2,7 @@ import { Component, VERSION, OnInit } from '@angular/core';
 import { Router, Event, NavigationStart, NavigationCancel, NavigationEnd, NavigationError } from '@angular/router';
 import { LoaderService } from './@core/services/loader.service';
 import { Meta, Title } from "@angular/platform-browser";
-import { CustomAppConfig } from './@utils/const/custom-app.config';
+import { MyAppConfig } from 'src/app/app.config';
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (CustomAppConfig.production) {
+    if (MyAppConfig.production) {
       this.meta.addTags([
         { name: 'description', content: 'Employee Portal of ABC Corp. ABC Corp delivers GIS, Remote Sensing and Minining Services across India and overseas.' }
       ]);

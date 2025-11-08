@@ -6,7 +6,7 @@ import { AlertService } from 'src/app/@core/services/alert.service';
 import { ApiService } from 'src/app/@core/services/api.service';
 import { CommonService } from 'src/app/@core/services/common.service';
 import { FormValidationService } from 'src/app/@core/services/form-validation.service';
-import { CustomAppConfig } from 'src/app/@utils/const/custom-app.config';
+import { MyAppConfig } from 'src/app/app.config';
 @Component({
     selector: 'app-add-content',
     templateUrl: './add-content.component.html',
@@ -82,7 +82,7 @@ export class AddContentComponent implements OnInit {
     this.submitted = true;
     this.loading = true;
     if (this.myForm.valid && this.myForm.get('action')?.value === 'add') {
-      this.apiSvc.post(CustomAppConfig.apiUrl.addPost, this.myForm.value).subscribe({
+      this.apiSvc.post(MyAppConfig.apiUrl.addPost, this.myForm.value).subscribe({
         next: (response: any) => {
           this.router.navigate(['cms/manage-cms']);
           this.alertSvc.setAlert('success', response.message, true);
@@ -92,7 +92,7 @@ export class AddContentComponent implements OnInit {
       });
     }
     else if (this.myForm.valid && this.myForm.get('action')?.value === 'edit' && this.myForm.get('id')?.value) {
-      this.apiSvc.put(CustomAppConfig.apiUrl.updatePost, this.myForm.value).subscribe({
+      this.apiSvc.put(MyAppConfig.apiUrl.updatePost, this.myForm.value).subscribe({
         next: (response: any) => {
           this.router.navigate(['cms/manage-cms']);
           this.alertSvc.setAlert('success', response.message, true);
@@ -116,7 +116,7 @@ export class AddContentComponent implements OnInit {
     let options = {};
     queryParams = queryParams.append('pageName', 'managePosts');
     options = { params: queryParams };
-    this.apiSvc.get(CustomAppConfig.apiUrl.getPosts, options).subscribe({
+    this.apiSvc.get(MyAppConfig.apiUrl.getPosts, options).subscribe({
       next: (response: any) => {
         this.patchFormValue(response?.data['data_rows'][0]);
       },
@@ -141,7 +141,7 @@ export class AddContentComponent implements OnInit {
   }
 
   getSettings() {
-    this.apiSvc.get(CustomAppConfig.apiUrl.getSettings).subscribe({
+    this.apiSvc.get(MyAppConfig.apiUrl.getSettings).subscribe({
       next: (response: any) => {
         if(response?.data) {
           if(response?.data?.emailNotifyDistro) {

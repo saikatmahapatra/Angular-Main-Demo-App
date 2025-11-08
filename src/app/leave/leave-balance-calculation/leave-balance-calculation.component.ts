@@ -5,7 +5,7 @@ import { AlertService } from 'src/app/@core/services/alert.service';
 import { ApiService } from 'src/app/@core/services/api.service';
 import { CommonService } from 'src/app/@core/services/common.service';
 import { ExcelService } from 'src/app/@core/services/excel.service';
-import { CustomAppConfig } from 'src/app/@utils/const/custom-app.config';
+import { MyAppConfig } from 'src/app/app.config';
 import * as XLSX from 'xlsx';
 @Component({
     selector: 'app-leave-balance-calculation',
@@ -52,7 +52,7 @@ export class LeaveBalanceCalculationComponent implements OnInit {
     let params = new HttpParams();
     headers = headers.set('perPage', String(this.itemPerPage));
     headers = headers.set('page', String(this.currentPageIndex));
-    this.apiSvc.get(CustomAppConfig.apiUrl.getEmpLeaveBalance, { headers: headers }).subscribe({
+    this.apiSvc.get(MyAppConfig.apiUrl.getEmpLeaveBalance, { headers: headers }).subscribe({
       next: (response: any) => {
         //console.log(response);
         this.dataForExcel = [];
@@ -104,7 +104,7 @@ export class LeaveBalanceCalculationComponent implements OnInit {
       // call API
       if(this.postData.length > 0) {
         const postData = {'action': 'updateBatch', 'leaveBalance': this.postData};
-        this.apiSvc.post(CustomAppConfig.apiUrl.uploadLeaveData, postData).subscribe({
+        this.apiSvc.post(MyAppConfig.apiUrl.uploadLeaveData, postData).subscribe({
           next: (response: any) => {
             this.alertSvc.setAlert('success', response.message);
             this.postData = [];
