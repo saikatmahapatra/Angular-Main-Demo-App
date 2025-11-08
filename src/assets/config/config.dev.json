@@ -1,5 +1,5 @@
 {
-    "apiBaseUrl": "http://localhost/php-ci-rest-backend-emp-portal/api/",
+    "apiBaseUrl": "http://localhost/PHP-CI-REST-Backend-Emp-Portal/api/",
     "maintenanceMode": false,
     "mfaEnabled": true
 }
