@@ -186,7 +186,7 @@
         <p-inputmask mask="99-999999" placeholder="99-999999" />
 
         <h5 class="exmple-heading">Input OTP</h5>
-        <p-inputotp/>
+        <p-inputotp />
 
         <h5 class="exmple-heading">Calendar is now DatePicker (PrimeNg v19)</h5>
         <label class="d-block" for="icon">Icon</label>
@@ -399,25 +399,23 @@
 <h5 class="exmple-heading">PrimeNG Chart Demo (based on Chart.js)</h5>
 <div class="controls">
     <div class="button-group">
-      <button pButton class="me-3" *ngFor="let type of chartTypes" (click)="changeChartType(type)">
-        {{ type | titlecase }}
-      </button>
-      <button pButton class="me-3" (click)="toggleLegend()">
-        Toggle Legend
-      </button>
-      <button pButton class="me-3" (click)="downloadChart()">
-        Download Chart
-      </button>
-      <button pButton (click)="updateChartData()">
-        Refresh Data
-      </button>
+        <button pButton class="me-3" *ngFor="let type of chartTypes" (click)="changeChartType(type)">
+            {{ type | titlecase }}
+        </button>
+        <button pButton class="me-3" (click)="toggleLegend()">
+            Toggle Legend
+        </button>
+        <button pButton class="me-3" (click)="downloadChart()">
+            Download Chart
+        </button>
+        <button pButton (click)="updateChartData()">
+            Refresh Data
+        </button>
     </div>
-  </div>
+</div>
 
-  <div class="chart-container">
-    <p-chart
-      [type]="chartType"
-      [data]="chartData"
-      [options]="chartOptions"
-    ></p-chart>
-  </div>
+<div class="row">
+    <div class="col-md-12">
+        <p-chart [type]="chartType" [data]="chartData" [options]="chartOptions"></p-chart>
+    </div>
+</div>
