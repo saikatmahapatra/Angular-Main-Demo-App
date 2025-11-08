@@ -24,7 +24,7 @@ export interface MyAppConfig {
 export const APP_CONFIG = new InjectionToken<MyAppConfig>('app.config');
 
 // Define your configuration
-export const Config: MyAppConfig = {
+export const MyAppConfig: MyAppConfig = {
   name: environment.name,
   production: environment.production,
   productName: environment.productName,
@@ -170,6 +170,6 @@ export const AppConfig: ApplicationConfig = {
     providePrimeNG({
       theme: { preset: Aura }
     }),
-    { provide: APP_CONFIG, useValue: Config }  // Add your custom config provider
+    { provide: APP_CONFIG, useValue: MyAppConfig }  // Add your custom config provider
   ]
 };
