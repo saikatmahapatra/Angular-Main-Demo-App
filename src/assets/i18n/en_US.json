@@ -13,16 +13,29 @@
     "delete": "Deleted successfully."
   },
   "formLabel": {},
-  "actions": {
+  "button": {
     "submit": "Submit",
     "apply": "Apply",
     "cancel": "Cancel",
     "delete": "Delete",
     "edit": "Edit",
-    "add": "Add"
+    "add": "Add",
+    "update": "Update",
+    "close": "Close",
+    "search": "Search",
+    "reset": "Reset",
+    "select": "Select",
+    "next": "Next",
+    "previous": "Previous"
   },
-  "login": {
-    "username": "Enter your username",
-    "password": "Enter your Password"
+  "module": {
+    "auth": {
+      "login": "Login to your account",
+      "register": "Register a new account",
+      "forgotPassword": "Forgot your password?",
+      "resetPassword": "Reset your password",
+      "username": "Enter your username",
+      "password": "Enter your Password"
+    }
   }
 }
