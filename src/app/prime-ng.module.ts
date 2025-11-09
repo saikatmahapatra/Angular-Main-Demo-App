@@ -47,6 +47,8 @@ import { FloatLabelModule } from 'primeng/floatlabel';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputMaskModule } from 'primeng/inputmask';
 import { InputOtpModule } from 'primeng/inputotp';
+import { InputGroupModule } from 'primeng/inputgroup';
+import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 
 // Add primeNG classess/interfaces here so that it can be used in both import, export
 const data = [
@@ -95,7 +97,9 @@ const data = [
   FloatLabelModule,
   InputNumberModule,
   InputMaskModule,
-  InputOtpModule
+  InputOtpModule,
+  InputGroupModule,
+  InputGroupAddonModule
 ];
 
 @NgModule({

@@ -9,6 +9,7 @@ import { ResetPasswordFormComponent } from './reset-password-form/reset-password
 import { SharedModule } from '../@shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TwoFactorAuthComponent } from './login-form/two-factor-auth/two-factor-auth.component';
+import { PrimeNgModule } from '../prime-ng.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { TwoFactorAuthComponent } from './login-form/two-factor-auth/two-factor-
   imports: [
     CommonModule,
     AuthRoutingModule,
+    PrimeNgModule,
     CommonModule,
     SharedModule,
     FormsModule,
