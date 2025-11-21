@@ -33,6 +33,15 @@
         <span pButtonLabel *ngIf="!loading">Login</span>
         <span pButtonLabel *ngIf="loading" class="spinner-border spinner-border-sm me-1"></span>
       </button>
+
+      <app-button
+        [label]="'Login'"
+        [type]="'submit'"
+        [color]="'info'"
+        [fullWidth]="true"
+        [disabled]="loading"
+        [loading]="loading"
+      ></app-button>
     </div>
     <div class="col-md-12 text-center">
       <a class="btn btn-link px-0" routerLink="../forgot-password">Forgot Password?</a>
