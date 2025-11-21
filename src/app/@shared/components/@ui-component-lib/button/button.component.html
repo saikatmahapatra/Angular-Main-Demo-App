@@ -1,1 +1,16 @@
-<p>button works!</p>
+<button pButton pRipple [type]="type" [disabled]="disabled" [ngClass]="[
+  'btn',
+  'btn-' + color,
+  size !== 'normal' ? 'btn-' + size : '',
+  fullWidth ? 'w-100' : '',
+  loading ? 'loading' : ''
+]" [rounded]="rounded" [outlined]="outlined" [attr.aria-busy]="loading">
+    <ng-container *ngIf="iconClass && iconPosition === 'left'">
+        <i [class]="iconClass"></i>
+    </ng-container>
+    <span *ngIf="!loading">{{ label }}</span>
+    <span *ngIf="loading" class="spinner-border spinner-border-sm me-1"></span>
+    <ng-container *ngIf="iconClass && iconPosition === 'right'">
+        <i [class]="iconClass"></i>
+    </ng-container>
+</button>
