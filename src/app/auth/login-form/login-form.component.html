@@ -3,33 +3,35 @@
 <form [formGroup]="loginForm" class="app-form unauth-form-max-w" (ngSubmit)="onSubmit()">
   <div class="row mb-3">
     <div class="col">
-      <div class="input-group">
-        <span class="input-group-text" id="basic-addon1"><app-icon [name]="'username'" [styleClass]="'f-20'"></app-icon></span>
-        <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-          aria-describedby="basic-addon1" formControlName="userName"
-          [ngClass]="{ 'is-invalid': submitted && f['userName'].errors }">
-      </div>
+      <p-inputgroup>
+        <p-inputgroup-addon>
+          <app-icon [name]="'username'" [styleClass]="'f-20'"></app-icon>
+        </p-inputgroup-addon>
+        <input pInputText type="text" placeholder="Username" formControlName="userName" aria-label="Username"
+          aria-describedby="basic-addon1" />
+      </p-inputgroup>
       <app-validation-error [control]="f['userName']"></app-validation-error>
     </div>
   </div>
 
   <div class="row mb-3">
     <div class="col">
-      <div class="input-group">
-        <span class="input-group-text" id="basic-addon2"><app-icon [name]="'password'" [styleClass]="'f-20'"></app-icon></span>
-        <input type="password" class="form-control" placeholder="Password" aria-label="Password"
-          aria-describedby="basic-addon2" formControlName="password"
-          [ngClass]="{ 'is-invalid': submitted && f['password'].errors }">
-      </div>
+      <p-inputgroup>
+        <p-inputgroup-addon>
+          <app-icon [name]="'password'" [styleClass]="'f-20'"></app-icon>
+        </p-inputgroup-addon>
+        <input pInputText type="password" placeholder="Password" formControlName="password" aria-label="Password"
+          aria-describedby="basic-addon2" />
+      </p-inputgroup>
       <app-validation-error [control]="f['password']"></app-validation-error>
     </div>
   </div>
 
   <div class="row">
     <div class="d-grid col-md-12 mb-3">
-      <button type="submit" class="btn btn-primary px-4" [disabled]="loading">
-        <span *ngIf="loading" class="spinner-border spinner-border-sm me-1"></span>
-        Login
+      <button pButton pRipple [disabled]="loading">
+        <span pButtonLabel *ngIf="!loading">Login</span>
+        <span pButtonLabel *ngIf="loading" class="spinner-border spinner-border-sm me-1"></span>
       </button>
     </div>
     <div class="col-md-12 text-center">

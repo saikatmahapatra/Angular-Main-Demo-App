@@ -13,20 +13,23 @@ import { DefaultLayoutComponent } from './components/layouts/default-layout/defa
 import { UnauthenticatedLayoutComponent } from './components/layouts/unauthenticated-layout/unauthenticated-layout.component';
 import { AuthenticatedLayoutComponent } from './components/layouts/authenticated-layout/authenticated-layout.component';
 import { ValidationErrorComponent } from './components/validation-error/validation-error.component';
-import { AlertMessageComponent } from './components/alert-message/alert-message.component';
+import { AlertMessageComponent } from './components/@ui-component-lib/alert-message/alert-message.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { LoaderComponent } from './components/loader/loader.component';
-import { UiButtonComponent } from './components/ui-button/ui-button.component';
 import { SearchInputComponent } from './components/search-input/search-input.component';
 import { FileUploadComponent } from './components/file-upload/file-upload.component';
 import { StatusIndicatorDirective } from './directives/status-indicator.directive';
 import { ThemeSwitchComponent } from './components/theme-switch/theme-switch.component';
-import { IconComponent } from './components/icon/icon.component';
+import { IconComponent } from './components/@ui-component-lib/icon/icon.component';
 //import { CookieConsentComponent } from './components/cookie-consent/cookie-consent.component';
 import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.component';
 import { PrimeNgModule } from '../prime-ng.module';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { LanguageSwitchComponent } from './components/language-switch/language-switch.component';
+import { ButtonComponent } from './components/@ui-component-lib/button/button.component';
+import { FormControlComponent } from './components/@ui-component-lib/form-control/form-control.component';
+import { DataTableComponent } from './components/@ui-component-lib/data-table/data-table.component';
+import { ChartsComponent } from './components/@ui-component-lib/charts/charts.component';
 
 
 const data = [
@@ -44,16 +47,18 @@ const data = [
   AlertMessageComponent,
   SidebarComponent,
   LoaderComponent,
-  UiButtonComponent,
   SearchInputComponent,
   FileUploadComponent,
   StatusIndicatorDirective,
   ThemeSwitchComponent,
   IconComponent,
-  //CookieConsentComponent,
   ScrollToTopComponent,
   BreadcrumbComponent,
-  LanguageSwitchComponent
+  LanguageSwitchComponent,
+  ButtonComponent,
+  FormControlComponent,
+  DataTableComponent,
+  ChartsComponent
 ];
 
 @NgModule({
@@ -65,7 +70,11 @@ const data = [
     PrimeNgModule
   ],
   declarations: [
-    ...data
+    ...data,
+    ButtonComponent,
+    FormControlComponent,
+    DataTableComponent,
+    ChartsComponent
   ],
   providers: [],
   exports: [

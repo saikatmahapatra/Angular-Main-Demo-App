@@ -23,6 +23,6 @@ import { PrimeNgModule } from '../prime-ng.module';
     SharedModule,
     FormsModule,
     ReactiveFormsModule
-  ]
+]
 })
 export class AuthModule { }

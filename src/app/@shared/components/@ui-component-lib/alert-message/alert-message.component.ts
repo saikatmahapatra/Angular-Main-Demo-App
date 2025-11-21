@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { AlertService } from '../../../@core/services/alert.service';
+import { AlertService } from '../../../../@core/services/alert.service';
 import { ToastMessageOptions, MessageService } from 'primeng/api';
 @Component({
     selector: 'app-alert-message',
