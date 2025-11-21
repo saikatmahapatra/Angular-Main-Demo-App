@@ -20,8 +20,8 @@ import { InputTextModule } from "primeng/inputtext";
 import { TextareaModule } from 'primeng/textarea';
 import { KeyFilterModule } from "primeng/keyfilter";
 import { ListboxModule } from "primeng/listbox";
-import { MessageModule } from "primeng/message";
-import { MessagesModule } from "primeng/messages";
+import { Message, MessageModule } from "primeng/message";
+import { Messages, MessagesModule } from "primeng/messages";
 import { MultiSelectModule } from "primeng/multiselect";
 import { OverlayPanelModule } from "primeng/overlaypanel";
 import { PaginatorModule } from "primeng/paginator";
@@ -49,10 +49,14 @@ import { InputMaskModule } from 'primeng/inputmask';
 import { InputOtpModule } from 'primeng/inputotp';
 import { InputGroupModule } from 'primeng/inputgroup';
 import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
+import { Ripple } from "primeng/ripple";
 
 // Add primeNG classess/interfaces here so that it can be used in both import, export
 const data = [
   ButtonModule,
+  Ripple,
+  MessageModule,
+  Message,
   ChipModule,
   CardModule,
   CheckboxModule,
