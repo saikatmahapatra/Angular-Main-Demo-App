@@ -1,7 +1,17 @@
 <div class="ui-input-wrapper">
     <div class="form-label" [ngClass]="required ? 'required': ''" *ngIf="label" [innerHTML]="label"></div>
     <div class="form-input">
-        <input pInputText [type]="type" [name]="name" [id]="id ? id : name" [placeholder]="placeholder"
-            [disabled]="disabled" [value]="value" (input)="onInput($event)" class="ui-input" [ngClass]="cssClass" />
+        <input 
+        pInputText 
+        [type]="type" 
+        [name]="name" 
+        [id]="id ? id : name" 
+        [placeholder]="placeholder" 
+        [disabled]="disabled" 
+        [value]="value" 
+        (input)="handleInput($event)" 
+        (blur)="handleBlur()" 
+        class="ui-input"
+        [ngClass]="cssClass" />
     </div>
 </div>
