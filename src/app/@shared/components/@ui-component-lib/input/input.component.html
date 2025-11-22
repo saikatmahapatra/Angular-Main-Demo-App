@@ -1,1 +1,7 @@
-<p>input works!</p>
+<div class="ui-input-wrapper">
+    <div class="form-label" *ngIf="label" [innerHTML]="label"></div>
+    <div class="form-input">
+        <input pInputText [type]="type" [placeholder]="placeholder" [disabled]="disabled" [value]="value" (input)="onInput($event)"
+            class="ui-input" />
+    </div>
+</div>
