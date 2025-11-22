@@ -11,7 +11,7 @@ export class ButtonComponent implements OnInit {
   @Input() btnType: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' = 'primary';
   @Input() label: string = 'Button';
   @Input() size: 'small' | 'medium' | 'large' | 'normal' = 'normal';
-  @Input() iconClass: string = '';
+  @Input() icon: string = '';
   @Input() iconPosition: 'left' | 'right' = 'left';
   @Input() fullWidth: boolean = false;
   @Input() loading: boolean = false;

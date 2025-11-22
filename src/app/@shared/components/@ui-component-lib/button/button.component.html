@@ -5,12 +5,12 @@
   fullWidth ? 'w-100' : '',
   loading ? 'loading' : ''
 ]" [rounded]="rounded" [outlined]="outlined" [attr.aria-busy]="loading">
-    <ng-container *ngIf="iconClass && iconPosition === 'left'">
-        <i [class]="iconClass"></i>
+    <ng-container *ngIf="icon && iconPosition === 'left'">
+        <i [class]="icon"></i>
     </ng-container>
     <span *ngIf="!loading">{{ label }}</span>
     <span *ngIf="loading" class="spinner-border spinner-border-sm me-1"></span>
-    <ng-container *ngIf="iconClass && iconPosition === 'right'">
-        <i [class]="iconClass"></i>
+    <ng-container *ngIf="icon && iconPosition === 'right'">
+        <i [class]="icon"></i>
     </ng-container>
 </button>
