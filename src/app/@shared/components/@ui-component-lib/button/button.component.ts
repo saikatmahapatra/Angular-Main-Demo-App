@@ -8,9 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ButtonComponent implements OnInit {
   @Input() type: 'button' | 'submit' | 'reset' = 'button';
+  @Input() btnType: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' = 'primary';
   @Input() label: string = 'Button';
-  @Input() lib: 'material' | 'primeng' | 'bootstrap' = 'bootstrap';
-  @Input() color: 'success' | 'info' | 'warning' | 'danger' | 'help' | 'primary' | 'secondary' | 'contrast' | null | undefined = 'primary';
   @Input() size: 'small' | 'medium' | 'large' | 'normal' = 'normal';
   @Input() iconClass: string = '';
   @Input() iconPosition: 'left' | 'right' = 'left';
@@ -19,9 +18,9 @@ export class ButtonComponent implements OnInit {
   @Input() disabled: boolean = false;
   @Input() rounded: boolean = false;
   @Input() outlined: boolean = false;
-  severity: string = '';
+  @Input() raised: boolean = false;
 
-  ngOnInit() {
-    this.severity = this.color ? this.color : 'primary';
-  }
+  constructor() {}
+
+  ngOnInit(): void {}
 }
