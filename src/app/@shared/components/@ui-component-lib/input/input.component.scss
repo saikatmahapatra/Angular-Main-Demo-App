@@ -1,5 +1,5 @@
 .form-label {
-    &required::after {
+    &.required::after {
         content: '*';
         color: red;
         margin-left: 2px;
