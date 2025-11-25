@@ -29,11 +29,6 @@
 
   <div class="row">
     <div class="d-grid col-md-12 mb-3">
-      <button pButton pRipple [disabled]="loading">
-        <span pButtonLabel *ngIf="!loading">Login</span>
-        <span pButtonLabel *ngIf="loading" class="spinner-border spinner-border-sm me-1"></span>
-      </button>
-
       <app-button
         [label]="'Login'"
         [type]="'submit'"
