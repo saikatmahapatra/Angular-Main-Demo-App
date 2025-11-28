@@ -134,11 +134,11 @@
                     </div>
                     <div class="col-12" *ngIf="myForm.controls['duration'].value == 'customDateRange' ">
                         <label class="visually-hidden" for="dateRange">Date Range</label>
-                        <p-calendar placeholder="Select date range" dateFormat="dd/mm/yy" formControlName="dateRange"
+                        <p-datepicker placeholder="Select date range" dateFormat="dd/mm/yy" formControlName="dateRange"
                             selectionMode="range" [readonlyInput]="true" inputId="range" styleClass="w-100"
                             [showButtonBar]="false" [showIcon]="true" appendTo="body"
                             [panelStyleClass]="'datetimepicker'" [minDate]="minDate" [maxDate]="maxDate"
-                            [(ngModel)]="rangeDates"></p-calendar>
+                            [(ngModel)]="rangeDates"></p-datepicker>
 
                     </div>
                     <div class="col-12">

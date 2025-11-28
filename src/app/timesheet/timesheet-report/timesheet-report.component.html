@@ -18,10 +18,10 @@
                     <div class="row">
                         <div class="col-md-3 mb-3">
                             <label for="range">Date Range</label>
-                            <p-calendar dateFormat="dd/mm/yy" formControlName="dateRange" [(ngModel)]="rangeDates"
+                            <p-datepicker dateFormat="dd/mm/yy" formControlName="dateRange" [(ngModel)]="rangeDates"
                                 selectionMode="range" [readonlyInput]="true" inputId="range" styleClass="w-100"
                                 [maxDate]="maxDate" [showButtonBar]="false" [showIcon]="true" appendTo="body"
-                                [panelStyleClass]="'datetimepicker'"></p-calendar>
+                                [panelStyleClass]="'datetimepicker'"></p-datepicker>
                             <app-validation-error [control]="myForm.controls['dateRange']"></app-validation-error>
                         </div>
                         <div class="col-md-3 mb-3">

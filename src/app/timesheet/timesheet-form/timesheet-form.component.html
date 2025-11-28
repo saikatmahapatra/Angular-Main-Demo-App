@@ -12,14 +12,14 @@
             <div class="col-md-6">
               <div class="mb-3">
                 <label class="required d-block" for="cal">Select Dates</label>
-                <p-calendar styleClass='w-100' dateFormat="dd/mm/yy" [inline]="true" selectionMode="multiple"
+                <p-datepicker styleClass='w-100' dateFormat="dd/mm/yy" [inline]="true" selectionMode="multiple"
                   [showWeek]="false" [minDate]="minDate" [maxDate]="maxDate" formControlName="timeSheetDates"
                   [maxDateCount]="maxDateCount" (onMonthChange)="monthYearChange($event)"
                   (onYearChange)="monthYearChange($event)">
                   <ng-template pTemplate="date" let-date>
                     <span [ngClass]="getCSSClass(date)">{{date.day}}</span>
                   </ng-template>
-                </p-calendar>
+                </p-datepicker>
                 <div class="invalid-feedback d-block validation-error-message f-15"
                   *ngIf="(myForm.controls['timeSheetDates'].touched || submitted ) && myForm.controls['timeSheetDates'].errors">
                   <span>Please choose at least one day from the calendar.</span>

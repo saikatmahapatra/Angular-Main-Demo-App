@@ -26,9 +26,9 @@
 
                         <div class="col-md-4 mb-3" *ngIf="!showEditor">
                             <label class="required d-block" for="contentDescription">Holiday Date</label>
-                            <p-calendar dateFormat="dd/mm/yy" styleClass="w-100" formControlName="contentDescription"
+                            <p-datepicker dateFormat="dd/mm/yy" styleClass="w-100" formControlName="contentDescription"
                                 [readonlyInput]="true" inputId="contentDescription" [showButtonBar]="false"
-                                [showIcon]="true"></p-calendar>
+                                [showIcon]="true"></p-datepicker>
                             <app-validation-error
                                 [control]="myForm.controls['contentDescription']"></app-validation-error>
                         </div>

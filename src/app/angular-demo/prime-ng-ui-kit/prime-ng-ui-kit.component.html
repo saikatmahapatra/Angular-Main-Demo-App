@@ -190,7 +190,7 @@
 
         <h5 class="exmple-heading">Calendar is now DatePicker (PrimeNg v19)</h5>
         <label class="d-block" for="icon">Icon</label>
-        <p-calendar dateFormat="dd/mm/yy" class="mb-2 w-100" [showIcon]="true" inputId="icon"></p-calendar>
+        <p-datepicker dateFormat="dd/mm/yy" class="mb-2 w-100" [showIcon]="true" inputId="icon"></p-datepicker>
         <div class="row">
             <div class="col-md-4">
                 <label for="buttondisplay" class="font-bold block mb-2"> Button </label>
@@ -256,8 +256,8 @@
         </p-listbox>
 
         <h5 class="exmple-heading">Dropdown</h5>
-        <p-dropdown styleClass="w-100" [options]="cities" [(ngModel)]="selectedCity1" placeholder="Select a City"
-            optionLabel="name" [showClear]="true"></p-dropdown>
+        <p-select styleClass="w-100" [options]="cities" [(ngModel)]="selectedCity1" placeholder="Select a City"
+            optionLabel="name" [showClear]="true"></p-select>
 
         <h5 class="exmple-heading">MultiSelect - Chips</h5>
         <p-multiselect styleClass="w-100" [options]="cities" [(ngModel)]="selectedCities2" defaultLabel="Select a City"

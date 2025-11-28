@@ -53,10 +53,10 @@
             
                         <div class="mb-3">
                             <label class="required" for="fromToDate">Leave Date(s)</label>
-                            <p-calendar dateFormat="dd/mm/yy" formControlName="fromToDate" [(ngModel)]="rangeDates"
+                            <p-datepicker dateFormat="dd/mm/yy" formControlName="fromToDate" [(ngModel)]="rangeDates"
                                 selectionMode="range" [readonlyInput]="true" inputId="range" styleClass="w-100" [maxDate]="maxDate"
                                 [showButtonBar]="false" [showIcon]="true" appendTo="body"
-                                [panelStyleClass]="'datetimepicker'"></p-calendar>
+                                [panelStyleClass]="'datetimepicker'"></p-datepicker>
                             <app-validation-error [control]="myForm.controls['fromToDate']"></app-validation-error>
                             <div class="small">Note: You can select a range of dates from the date picker</div>
             

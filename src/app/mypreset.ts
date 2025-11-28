@@ -1,6 +1,6 @@
 //mypreset.ts
-import { definePreset } from '@primeng/themes';
-import Aura from '@primeng/themes/aura';
+import Aura from '@primeuix/themes/aura';
+import { definePreset } from '@primeuix/themes';
 // import Material from '@primeng/themes/material';
 // import Lara from '@primeng/themes/lara';
 // import Nora from '@primeng/themes/nora';

@@ -6,8 +6,8 @@
             <div class="card-body">
                 <div class="row mb-3">
                     <div class="col-auto">
-                        <p-dropdown [options]="yearList" [(ngModel)]="selectedYear" placeholder="Year"
-                            [showClear]="false" (onChange)="yearChange()"></p-dropdown>
+                        <p-select [options]="yearList" [(ngModel)]="selectedYear" placeholder="Year"
+                            [showClear]="false" (onChange)="yearChange()"></p-select>
                     </div>
                 </div>
                 <p-table #dt [value]="dataRow" dataKey="id" [rowHover]="true" styleClass="p-datatable-sm">

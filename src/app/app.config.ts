@@ -163,27 +163,10 @@ export const MyAppConfig: MyAppConfig = {
   // Add other configuration values
 };
 
-export const MyPresetCustomizedPrimeNGTheme = definePreset(Aura, {
-  //Your customizations, see the following sections for examples
-  primitive: {},
-  semantic: {
-    colorScheme: {
-      light: {
-        primary: {
-        }
-      },
-      dark: {
-        primary: {
-        }
-      }
-    }
-  }
-});
-
 export const AppConfig: ApplicationConfig = {
   providers: [
     provideAnimationsAsync(),
-    providePrimeNG({ theme: { preset: MyPresetCustomizedPrimeNGTheme, options: { darkModeSelector: '.app-dark' } } }),
+    providePrimeNG({ theme: { preset: Aura, options: { darkModeSelector: '.app-dark' } } }),
     { provide: APP_CONFIG, useValue: MyAppConfig }  // Add your custom config provider
   ]
 };
