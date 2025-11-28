@@ -1,5 +1,5 @@
-<h1 class="page-title text-center">Login</h1>
-<p class="text-medium-emphasis text-center">Sign In to your account</p>
+<h1 class="page-title text-center">{{ 'auth.titleLogin' | translate }}</h1>
+<p class="text-medium-emphasis text-center">{{ 'auth.infoTextLogin' | translate }}</p>
 <form [formGroup]="loginForm" class="app-form unauth-form-max-w" (ngSubmit)="onSubmit()">
   <div class="row mb-3">
     <div class="col">
@@ -7,7 +7,7 @@
         <p-inputgroup-addon>
           <app-icon [name]="'username'" [styleClass]="'f-20'"></app-icon>
         </p-inputgroup-addon>
-        <input pInputText type="text" placeholder="Username" formControlName="userName" aria-label="Username"
+        <input pInputText type="text" placeholder="{{ 'auth.labelUsername' | translate }}" formControlName="userName" aria-label="Username"
           aria-describedby="basic-addon1" />
       </p-inputgroup>
       <app-validation-error [control]="f['userName']"></app-validation-error>
@@ -20,7 +20,7 @@
         <p-inputgroup-addon>
           <app-icon [name]="'password'" [styleClass]="'f-20'"></app-icon>
         </p-inputgroup-addon>
-        <input pInputText type="password" placeholder="Password" formControlName="password" aria-label="Password"
+        <input pInputText type="password" placeholder="{{ 'auth.labelPassword' | translate }}" formControlName="password" aria-label="Password"
           aria-describedby="basic-addon2" />
       </p-inputgroup>
       <app-validation-error [control]="f['password']"></app-validation-error>
@@ -29,10 +29,10 @@
 
   <div class="row">
     <div class="d-grid col-md-12 mb-3">
-      <button pButton pRipple type="submit" label="Submit" [disabled]="loading" [loading]="loading"></button>
+      <button pButton pRipple type="submit" [disabled]="loading" [loading]="loading">{{ 'button.submit' | translate }}</button>
     </div>
     <div class="col-md-12 text-center">
-      <a class="btn btn-link px-0" routerLink="../forgot-password">Forgot Password?</a>
+      <a class="btn btn-link px-0" routerLink="../forgot-password">{{ 'auth.forgotPassword' | translate }}</a>
     </div>
   </div>
 </form>

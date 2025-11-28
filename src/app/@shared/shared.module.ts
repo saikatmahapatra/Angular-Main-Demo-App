@@ -33,6 +33,7 @@ import { InputComponent } from './components/@ui-component-lib/input/input.compo
 import { SelectComponent } from './components/@ui-component-lib/select/select.component';
 import { RadioComponent } from './components/@ui-component-lib/radio/radio.component';
 import { CheckboxComponent } from './components/@ui-component-lib/checkbox/checkbox.component';
+import { TranslateLangModule } from '../translate-language.module';
 
 
 const data = [
@@ -70,6 +71,7 @@ const data = [
 @NgModule({
   imports: [
     RouterModule,
+    TranslateLangModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule, 

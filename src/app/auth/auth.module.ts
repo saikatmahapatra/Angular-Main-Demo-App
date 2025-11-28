@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AuthRoutingModule } from './auth-routing.module';
@@ -10,6 +10,7 @@ import { SharedModule } from '../@shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TwoFactorAuthComponent } from './login-form/two-factor-auth/two-factor-auth.component';
 import { PrimeNgModule } from '../prime-ng.module';
+import { TranslateLangModule } from '../translate-language.module';
 
 @NgModule({
   declarations: [
@@ -17,12 +18,14 @@ import { PrimeNgModule } from '../prime-ng.module';
   ],
   imports: [
     CommonModule,
+    TranslateLangModule,
     AuthRoutingModule,
     PrimeNgModule,
     CommonModule,
     SharedModule,
     FormsModule,
     ReactiveFormsModule
-]
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AuthModule { }

@@ -12,6 +12,7 @@ import { PrimeNgModule } from '../prime-ng.module';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { AnalyticsComponent } from './analytics/analytics.component';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TranslateLangModule } from '../translate-language.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
+    TranslateLangModule,
     SharedModule,
     RouterModule,
     DashboardRoutingModule,

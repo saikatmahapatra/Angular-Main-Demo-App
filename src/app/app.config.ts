@@ -11,7 +11,6 @@ export interface MyAppConfig {
   name?: string;
   production?: boolean;
   productName?: string;
-  copyrightInfo: string;
   apiBaseUrl: string;
   useMockServer: boolean;
   version: string;
@@ -29,7 +28,6 @@ export const MyAppConfig: MyAppConfig = {
   name: environment.name,
   production: environment.production,
   productName: environment.productName,
-  copyrightInfo: environment.copyrightInfo,
   apiBaseUrl: environment.apiBaseUrl,
   useMockServer: environment.useMockServer,
   version: environment.version,

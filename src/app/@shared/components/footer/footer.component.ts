@@ -8,13 +8,12 @@ import { MyAppConfig } from 'src/app/app.config';
     standalone: false
 })
 export class FooterComponent implements OnInit {
-  copy = '';
+  currentYear = new Date().getFullYear();
   appVersion = '';
   buildTimestamp = '';
   constructor() { }
 
   ngOnInit() {
-    this.copy = MyAppConfig.copyrightInfo;
     this.appVersion = MyAppConfig.version;
     this.buildTimestamp = MyAppConfig.timestamp;
   }

@@ -9,9 +9,7 @@ export const environment = {
   apiBaseUrl: "http://localhost/ci-emp-portal-api/",
   mockAPIUrl: "http://localhost:7878/",
   useMockServer: false,
-  productName: "MyApp CRM",
-  logo: "assets/img/logo-angular.svg",
-  copyrightInfo: "Copyright &copy; 2023 MyApp CRM"
+  productName: "MyApp CRM"
 };
 
 /*

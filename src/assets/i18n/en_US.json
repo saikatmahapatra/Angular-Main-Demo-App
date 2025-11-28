@@ -1,7 +1,7 @@
 {
   "appName": "MyApp",
-  "version": "",
-  "copyRight": "",
+  "version": "App version {{ version }}",
+  "copyRight": "Copyright © {{ year }} MyApp. All rights reserved.",
   "welcomeMessage": "Welcome, {{ firstName }}!",
   "errorMessage": {
     "required": "The field is required",
@@ -26,16 +26,28 @@
     "reset": "Reset",
     "select": "Select",
     "next": "Next",
-    "previous": "Previous"
+    "previous": "Previous",
+    "sendOtp": "Send OTP",
+    "verifyOtp": "Verify OTP"
   },
-  "module": {
-    "auth": {
-      "login": "Login to your account",
-      "register": "Register a new account",
-      "forgotPassword": "Forgot your password?",
-      "resetPassword": "Reset your password",
-      "username": "Enter your username",
-      "password": "Enter your Password"
-    }
+  "auth": {
+    "titleLogin": "Sign In",
+    "infoTextLogin": "Log in to your account",
+    "labelUsername": "Username",
+    "labelPassword": "Password",
+    "register": "Register a new account",
+    "forgotPassword": "Forgot your password?",
+    "resetPassword": "Reset your password",
+    "titleForgotPassword": "Forgot Password",
+    "infoTextForgotPassword": "Please enter your registered email",
+    "labelEmailAddress": "Email",
+    "goBackToLogin": "Go back to login",
+    "titleResetPassword": "Create New Password",
+    "labelOtp": "OTP",
+    "labelEmail": "Email",
+    "labelNewPassword": "New Password",
+    "passwordHint": "Password must be 8-16 characters long including at least 1 lowercase, 1 uppercase letter & 1 number.",
+    "labelConfirmPassword": "Confirm Password"
+
   }
 }
