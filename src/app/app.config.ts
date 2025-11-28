@@ -1,10 +1,6 @@
 import { ApplicationConfig } from '@angular/core';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { InjectionToken } from '@angular/core';
 import { environment } from '@env/environment';
-import { providePrimeNG } from 'primeng/config';
-import Aura from '@primeuix/themes/aura';
-import { definePreset } from '@primeuix/themes';
 
 export interface MyAppConfig {
   // Add other custom config properties here
@@ -165,8 +161,6 @@ export const MyAppConfig: MyAppConfig = {
 
 export const AppConfig: ApplicationConfig = {
   providers: [
-    provideAnimationsAsync(),
-    providePrimeNG({ theme: { preset: Aura, options: { darkModeSelector: '.app-dark' } } }),
-    { provide: APP_CONFIG, useValue: MyAppConfig }  // Add your custom config provider
+    { provide: APP_CONFIG, useValue: MyAppConfig }
   ]
 };

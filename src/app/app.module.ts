@@ -14,7 +14,6 @@ import {
   withInterceptorsFromDi,
 } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './@core/core.module';
 import { SharedModule } from './@shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -26,7 +25,6 @@ import { ErrorUnauthorizedComponent } from './error-unauthorized/error-unauthori
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { FaqComponent } from './faq/faq.component';
 import { TranslateLangModule } from './translate-language.module';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { providePrimeNG } from 'primeng/config';
 import MyPreset from './mypreset';
 
@@ -53,7 +51,6 @@ export function initializeApp(configService: ConfigService) {
     FaqComponent,
   ],
   exports: [
-    BrowserAnimationsModule,
     ErrorPageComponent,
     ErrorPageNotFoundComponent,
     ErrorUnauthorizedComponent,
@@ -62,7 +59,6 @@ export function initializeApp(configService: ConfigService) {
   bootstrap: [AppComponent],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
@@ -80,7 +76,6 @@ export function initializeApp(configService: ConfigService) {
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
     provideHttpClient(withInterceptorsFromDi()),
-    provideAnimationsAsync(),
     providePrimeNG({
       theme: { preset: MyPreset },
     }),
