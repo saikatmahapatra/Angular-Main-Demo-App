@@ -29,13 +29,7 @@
 
   <div class="row">
     <div class="d-grid col-md-12 mb-3">
-      <app-button
-        [label]="'Login'"
-        [type]="'submit'"
-        [fullWidth]="true"
-        [disabled]="loading"
-        [loading]="loading"
-      ></app-button>
+      <button pButton pRipple type="submit" label="Submit" [disabled]="loading" [loading]="loading"></button>
     </div>
     <div class="col-md-12 text-center">
       <a class="btn btn-link px-0" routerLink="../forgot-password">Forgot Password?</a>
