@@ -1,22 +1,12 @@
 <h1 class="page-title">{{ 'home.title' | translate }}</h1>
-<div class="row my-3">
-    <div class="col">
-        <div class="card">
-            <div class="card-header"><app-icon [name]="'linechart'"></app-icon> {{ 'home.statsHeader' | translate }}</div>
-            <div class="card-body">
-                <app-dashboard-stat></app-dashboard-stat>
-            </div>
-        </div>
+<p-card header="{{ 'home.statsHeader' | translate }}">
+    <div class="m-0">
+        <app-dashboard-stat></app-dashboard-stat>
     </div>
-</div>
+</p-card>
 
-<div class="row">
-    <div class="col">
-        <div class="card">
-            <div class="card-header"><app-icon [name]="'notification'"></app-icon> {{ 'home.updateHeader' | translate }}</div>
-            <div class="card-body">
-                <app-post></app-post>
-            </div>
-        </div>
+<p-card header="{{ 'home.updateHeader' | translate }}">
+    <div class="m-0">
+        <app-post></app-post>
     </div>
-</div>
+</p-card>
