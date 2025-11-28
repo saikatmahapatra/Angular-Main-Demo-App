@@ -6,24 +6,23 @@ import { AutoCompleteModule } from "primeng/autocomplete";
 import { BadgeModule } from "primeng/badge";
 import { BreadcrumbModule } from "primeng/breadcrumb";
 import { ButtonModule } from "primeng/button";
-import { CalendarModule } from "primeng/calendar";
+import { DatePicker } from "primeng/datepicker";
 import { CardModule } from "primeng/card";
 import { CheckboxModule } from "primeng/checkbox";
 import { ChipModule } from "primeng/chip";
 import { ConfirmPopupModule } from "primeng/confirmpopup";
 import { ContextMenuModule } from "primeng/contextmenu";
 import { DialogModule } from "primeng/dialog";
-import { DropdownModule } from "primeng/dropdown";
+import { Select } from "primeng/select";
 import { FileUploadModule } from "primeng/fileupload";
-import { InputSwitchModule } from "primeng/inputswitch";
+import { ToggleSwitch } from "primeng/toggleswitch";
 import { InputTextModule } from "primeng/inputtext";
 import { TextareaModule } from 'primeng/textarea';
 import { KeyFilterModule } from "primeng/keyfilter";
 import { ListboxModule } from "primeng/listbox";
 import { Message, MessageModule } from "primeng/message";
-import { Messages, MessagesModule } from "primeng/messages";
 import { MultiSelectModule } from "primeng/multiselect";
-import { OverlayPanelModule } from "primeng/overlaypanel";
+import { Popover } from "primeng/popover";
 import { PaginatorModule } from "primeng/paginator";
 import { PasswordModule } from "primeng/password";
 import { ProgressBarModule } from "primeng/progressbar";
@@ -33,8 +32,6 @@ import { SelectButtonModule } from "primeng/selectbutton";
 import { SliderModule } from "primeng/slider";
 import { SplitterModule } from "primeng/splitter";
 import { TableModule } from "primeng/table";
-import { TabMenuModule } from "primeng/tabmenu";
-import { TabViewModule } from "primeng/tabview";
 import { ToastModule } from "primeng/toast";
 import { TooltipModule } from "primeng/tooltip";
 import { TreeSelectModule } from "primeng/treeselect";
@@ -63,24 +60,21 @@ const data = [
   CheckboxModule,
   InputTextModule,
   KeyFilterModule,
-  OverlayPanelModule,
+  Popover,
   PaginatorModule,
   TableModule,
   MessageModule,
-  MessagesModule,
   PasswordModule,
-  DropdownModule,
+  Select,
   RadioButtonModule,
   ProgressBarModule,
   BadgeModule,
   TextareaModule,
-  CalendarModule,
+  DatePicker,
   SliderModule,
   RatingModule,
-  InputSwitchModule,
+  ToggleSwitch,
   ListboxModule,
-  TabMenuModule,
-  TabViewModule,
   AccordionModule,
   ToastModule,
   MultiSelectModule,
