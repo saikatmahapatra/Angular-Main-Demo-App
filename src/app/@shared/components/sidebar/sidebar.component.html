@@ -11,14 +11,17 @@
       <ng-container *ngIf="menuLevel1.isAdminMenu ? userRole === '1' : true">
         <button class="btn expandable" data-bs-toggle="collapse" attr.data-bs-target="#target-{{idx}}"
           aria-expanded="true">
-          <app-icon [name]="menuLevel1?.icon || ''" [styleClass]="'me-3'"></app-icon> {{menuLevel1?.label}}
+          <app-icon *ngIf="menuLevel1?.showIcon" [name]="menuLevel1?.icon || ''"></app-icon> 
+          {{menuLevel1?.label}}
         </button>
         <div class="collapse ms-3 show" id="target-{{idx}}" (click)="closeSideBar()">
           <!--2nd level-->
           <ul class="list-unstyled" *ngIf="menuLevel1?.items && menuLevel1.items.length > 0">
             <li *ngFor="let menuLevel2 of menuLevel1?.items">
-              <a [routerLink]="menuLevel2?.url" [routerLinkActive]="['active-nav-link']" class="nav-link"
-                [innerHTML]="menuLevel2?.label"></a>
+              <a [routerLink]="menuLevel2?.url" [routerLinkActive]="['active-nav-link']" class="nav-link">
+                <app-icon *ngIf="menuLevel2?.showIcon" [name]="menuLevel2?.icon || ''"></app-icon>
+                {{menuLevel2?.label}}
+              </a>
             </li>
           </ul>
         </div>

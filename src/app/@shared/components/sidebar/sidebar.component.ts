@@ -31,72 +31,76 @@ export class SidebarComponent implements OnInit {
         id: 1,
         label: "Getting Started",
         icon: "home",
+        showIcon: false,
         isAdminMenu: false,
         items: [
-          { id: 1, label: "Dashboard", icon: "", url: ["/dashboard"] },
-          { id: 2, label: "Analytics", icon: "", url: ["/dashboard/my-analytics/emp/", this.loggedInUserId] }
+          { id: 1, label: "Dashboard", icon: "home", showIcon: true, url: ["/dashboard"] },
+          { id: 2, label: "Analytics", icon: "dashboard", showIcon: true, url: ["/dashboard/my-analytics/emp/", this.loggedInUserId] }
         ]
       },
       {
         id: 2,
         label: "Admin Menu",
         icon: "admin",
+        showIcon: false,
         isAdminMenu: true,
         items: [
-          { id: 1, label: "Manage Employees", icon: "", url: ["/emp/manage"] },
-          // { id: 119, label: "Add New Employee", icon: "", url: ["/emp/add"] },
-          { id: 2, label: "Manage Contents", icon: "", url: ["/cms/manage-cms"] },
-          { id: 3, label: "Manage Holidays", icon: "", url: ["/cms/holiday-management"] },
-          { id: 4, label: "Manage Leave Applications", icon: "", url: ["/leave/manage"] },
-          { id: 5, label: "View & Upload Leave Balance", icon: "", url: ["/leave/balance"] },
-          { id: 6, label: "Timesheet Report", icon: "", url: ["/timesheet/report"] },
-          { id: 7, label: "Manage Projects", icon: "", url: ["/project/manage-project"] },
-          { id: 8, label: "Manage Tasks", icon: "", url: ["/project/manage-tasks"] },
-          // { id: 9, label: "Asset Management", icon: "", url: ["/asset-management"] },
-          { id: 10, label: "Settings", icon: "", url: ["/settings"] }
+          { id: 1, label: "Manage Employees", icon: "users", showIcon: true,  url: ["/emp/manage"] },
+          { id: 2, label: "Manage Contents", icon: "note", showIcon: true,  url: ["/cms/manage-cms"] },
+          { id: 3, label: "Manage Holidays", icon: "calendar", showIcon: true,  url: ["/cms/holiday-management"] },
+          { id: 4, label: "Manage Leave Applications", icon: "leave", showIcon: true,  url: ["/leave/manage"] },
+          { id: 5, label: "View & Upload Leave Balance", icon: "currency", showIcon: true,  url: ["/leave/balance"] },
+          { id: 6, label: "Timesheet Report", icon: "report", showIcon: true,  url: ["/timesheet/report"] },
+          { id: 7, label: "Manage Projects", icon: "projects", showIcon: true,  url: ["/project/manage-project"] },
+          { id: 8, label: "Manage Tasks", icon: "tasks", showIcon: true,  url: ["/project/manage-tasks"] },
+          { id: 10, label: "Settings", icon: "settings", showIcon: true,  url: ["/settings"] }
         ]
       },
       {
         id: 3,
         label: "My Tasks",
         icon: "tasks",
+        showIcon: false,
         isAdminMenu: false,
         items: [
-          { id: 1, label: "Manage Leave Applications", icon: "", url: ["/leave/requests-to-approve"] }
+          { id: 1, label: "Manage Leave Applications", icon: "leave", showIcon: true,  url: ["/leave/requests-to-approve"] }
         ]
       },
       {
         id: 4,
         label: "Self Services",
         icon: "selfService",
+        showIcon: false,
         isAdminMenu: false,
         items: [
-          { id: 1, label: "Log Timesheet", icon: "", url: ["/timesheet/log-work"] },
-          { id: 2, label: "Change Workflow Approvers", icon: "", url: ["/emp/change-approvers"] },
-          { id: 3, label: "Apply Leave", icon: "", url: ["/leave/apply"] },
-          { id: 4, label: "Leave History", icon: "", url: ["/leave/history"] }
+          { id: 1, label: "Log Timesheet", icon: "timesheet", showIcon: true,  url: ["/timesheet/log-work"] },
+          { id: 2, label: "Change Workflow Approvers", icon: "datacheck", showIcon: true,  url: ["/emp/change-approvers"] },
+          { id: 3, label: "Apply Leave", icon: "send", showIcon: true,  url: ["/leave/apply"] },
+          { id: 4, label: "Leave History", icon: "history2", showIcon: true,  url: ["/leave/history"] }
         ]
       },
       {
         id: 5,
         label: "Organization",
         icon: "globe",
+        showIcon: false,
         isAdminMenu: false,
         items: [
-          { id: 1, label: "Employees", icon: "", url: ["/emp/view-employees"] },
-          { id: 2, label: "My Reportees", icon: "", url: ["/emp/view-reportees"] },
-          { id: 3, label: "Holidays", icon: "", url: ["/cms/holiday-calendar"] }
+          { id: 1, label: "Employees", icon: "users", showIcon: true,  url: ["/emp/view-employees"] },
+          { id: 2, label: "My Reportees", icon: "diversity", showIcon: true,  url: ["/emp/view-reportees"] },
+          { id: 3, label: "Holidays", icon: "calendar", showIcon: true,  url: ["/cms/holiday-calendar"] }
         ]
       },
       {
         id: 6,
         label: "My Account",
         icon: "user",
+        showIcon: false,
         isAdminMenu: false,
         items: [
-          { id: 1, label: "My Profile", icon: "", url: ["/emp/my-profile"] },
-          { id: 2, label: "Change Password", icon: "", url: ["/emp/change-password"] },
-          { id: 3, label: "Logout", icon: "", url: ["/auth/logout"] }
+          { id: 1, label: "My Profile", icon: "user", showIcon: true, url: ["/emp/my-profile"] },
+          { id: 2, label: "Change Password", icon: "password", showIcon: true, url: ["/emp/change-password"] },
+          { id: 3, label: "Logout", icon: "signout", showIcon: true, url: ["/auth/logout"] }
         ]
       },
     ];

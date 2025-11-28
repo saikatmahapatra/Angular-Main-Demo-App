@@ -75,6 +75,14 @@ export class IconComponent implements OnInit {
     'username': { material: 'person', primeng: 'pi pi-info', bootstrap: 'bi bi-info' },
     'password': { material: 'password', primeng: 'pi pi-info', bootstrap: 'bi bi-info' },
     'language': { material: 'language', primeng: 'pi pi-globe', bootstrap: 'bi bi-globe' },
+    'note': { material: 'note_stack', primeng: 'pi pi-note', bootstrap: 'bi bi-note' },
+    'report': { material: 'report', primeng: 'pi pi-report', bootstrap: 'bi bi-report' },
+    'leave': { material: 'beach_access', primeng: 'pi pi-travel', bootstrap: 'bi bi-travel' },
+    'timesheet': { material: 'more_time', primeng: 'pi pi-travel', bootstrap: 'bi bi-travel' },
+    'datacheck': { material: 'data_check', primeng: 'pi pi-travel', bootstrap: 'bi bi-travel' },
+    'history': { material: 'history', primeng: 'pi pi-travel', bootstrap: 'bi bi-travel' },
+    'history2': { material: 'history_2', primeng: 'pi pi-travel', bootstrap: 'bi bi-travel' },
+    'diversity': { material: 'diversity_1', primeng: 'pi pi-travel', bootstrap: 'bi bi-travel' },
   };
 
   constructor() {
