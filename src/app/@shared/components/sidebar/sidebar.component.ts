@@ -7,12 +7,12 @@ import { AuthService } from 'src/app/@core/services/auth.service';
   styleUrls: ['./sidebar.component.scss'],
   standalone: false
 })
-export class SidebarComponent implements OnInit{
+export class SidebarComponent implements OnInit {
   model: MenuItem[] = [];
   loggedInUserId: string = '';
   userRole: string = '';
   constructor(private authService: AuthService) {
-    
+
   }
 
   ngOnInit() {
@@ -22,8 +22,53 @@ export class SidebarComponent implements OnInit{
       {
         label: 'Home',
         items: [
-          { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] }, 
+          { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] },
           { label: 'Analytics', icon: 'pi pi-fw pi-chart-bar', routerLink: ['/dashboard/my-analytics/emp/', this.loggedInUserId] }]
+      },
+      {
+        label: 'Admin Menu',
+        items: [
+          { label: "Manage Employees", icon: "pi pi-users", routerLink: ["/emp/manage"] },
+          { label: "Manage Contents", icon: "note", routerLink: ["/cms/manage-cms"] },
+          { label: "Manage Holidays", icon: "calendar", routerLink: ["/cms/holiday-management"] },
+          { label: "Manage Leave Applications", icon: "leave", routerLink: ["/leave/manage"] },
+          { label: "View & Upload Leave Balance", icon: "currency", routerLink: ["/leave/balance"] },
+          { label: "Timesheet Report", icon: "report", routerLink: ["/timesheet/report"] },
+          { label: "Manage Projects", icon: "projects", routerLink: ["/project/manage-project"] },
+          { label: "Manage Tasks", icon: "tasks", routerLink: ["/project/manage-tasks"] },
+          { label: "Settings", icon: "settings", routerLink: ["/settings"] }
+        ]
+      },
+      {
+        label: 'My Tasks',
+        items: [
+          { label: "Manage Leave Applications", icon: "leave", routerLink: ["/leave/requests-to-approve"] }
+        ]
+      },
+      {
+        label: 'Self Service',
+        items: [
+          { label: "Log Timesheet", icon: "timesheet", routerLink: ["/timesheet/log-work"] },
+          { label: "Change Workflow Approvers", icon: "datacheck", routerLink: ["/emp/change-approvers"] },
+          { label: "Apply Leave", icon: "send", routerLink: ["/leave/apply"] },
+          { label: "Leave History", icon: "history2", routerLink: ["/leave/history"] }
+        ]
+      },
+      {
+        label: 'Organization',
+        items: [
+          { label: "Employees", icon: "users", routerLink: ["/emp/view-employees"] },
+          { label: "My Reportees", icon: "diversity", routerLink: ["/emp/view-reportees"] },
+          { label: "Holidays", icon: "calendar", routerLink: ["/cms/holiday-calendar"] }
+        ]
+      },
+      {
+        label: 'Organization',
+        items: [
+          { label: "My Profile", icon: "user", routerLink: ["/emp/my-profile"] },
+          { label: "Change Password", icon: "password", routerLink: ["/emp/change-password"] },
+          { label: "Logout", icon: "signout", routerLink: ["/auth/logout"] }
+        ]
       },
       {
         label: 'UI Components',
