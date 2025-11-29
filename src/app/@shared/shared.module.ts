@@ -34,6 +34,7 @@ import { SelectComponent } from './components/@ui-component-lib/select/select.co
 import { RadioComponent } from './components/@ui-component-lib/radio/radio.component';
 import { CheckboxComponent } from './components/@ui-component-lib/checkbox/checkbox.component';
 import { TranslateLangModule } from '../translate-language.module';
+import { AppMenuitemComponent } from './components/sidebar/menuitem.component';
 
 
 const data = [
@@ -50,6 +51,7 @@ const data = [
   AuthenticatedLayoutComponent,
   AlertMessageComponent,
   SidebarComponent,
+  AppMenuitemComponent,
   LoaderComponent,
   SearchInputComponent,
   FileUploadComponent,
