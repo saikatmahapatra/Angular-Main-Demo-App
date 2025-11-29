@@ -3,8 +3,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../@shared/shared.module';
-import { AngularDemoRoutingModule } from './angular-demo-routing.module';
-import { AngularDemoComponent } from './angular-demo.component';
+import { AngularDemoRoutingModule } from './app-demo-routing.module';
+import { AppDemoComponent } from './app-demo.component';
 import { TemplateDataBindingComponent } from './template-data-binding/template-data-binding.component';
 import { AngularDirectiveComponent } from './angular-directive/angular-directive.component';
 import { PipesComponent } from './pipes/pipes.component';
@@ -41,7 +41,7 @@ import { TranslateLangModule } from '../translate-language.module';
     PrimeNgModule
   ],
   declarations: [
-    AngularDemoComponent,
+    AppDemoComponent,
     AngularDirectiveComponent,
     PipesComponent,
     FormInputBindingComponent,
@@ -67,4 +67,4 @@ import { TranslateLangModule } from '../translate-language.module';
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AngularDemoModule { }
+export class AppDemoModule { }

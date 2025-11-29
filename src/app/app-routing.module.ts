@@ -37,8 +37,8 @@ const routes: Routes = [
     component: DefaultLayoutComponent,
     children: [
       {
-        path: 'demo',
-        loadChildren: () => import('./angular-demo/angular-demo.module').then(m => m.AngularDemoModule)
+        path: 'uikit',
+        loadChildren: () => import('./app-demo/app-demo.module').then(m => m.AppDemoModule)
       }
     ]
   },
