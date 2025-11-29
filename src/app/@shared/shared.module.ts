@@ -9,7 +9,6 @@ import { MaskPipe } from './pipes/mask.pipe';
 import { OrderByPipe } from './pipes/order-by.pipe';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { DefaultLayoutComponent } from './components/layouts/default-layout/default-layout.component';
 import { UnauthenticatedLayoutComponent } from './components/layouts/unauthenticated-layout/unauthenticated-layout.component';
 import { AuthenticatedLayoutComponent } from './components/layouts/authenticated-layout/authenticated-layout.component';
 import { ValidationErrorComponent } from './components/validation-error/validation-error.component';
@@ -46,7 +45,6 @@ const data = [
   HeaderComponent,
   FooterComponent,
   ValidationErrorComponent,
-  DefaultLayoutComponent,
   UnauthenticatedLayoutComponent,
   AuthenticatedLayoutComponent,
   AlertMessageComponent,

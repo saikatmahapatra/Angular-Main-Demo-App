@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './@core/guards/auth.guard';
-import { DefaultLayoutComponent } from './@shared/components/layouts/default-layout/default-layout.component';
 import { UnauthenticatedLayoutComponent } from './@shared/components/layouts/unauthenticated-layout/unauthenticated-layout.component';
 import { AuthenticatedLayoutComponent } from './@shared/components/layouts/authenticated-layout/authenticated-layout.component';
 import { ErrorPageNotFoundComponent } from './error-page-not-found/error-page-not-found.component';
@@ -34,18 +33,12 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: DefaultLayoutComponent,
+    component: AuthenticatedLayoutComponent,
     children: [
       {
         path: 'uikit',
         loadChildren: () => import('./app-demo/app-demo.module').then(m => m.AppDemoModule)
-      }
-    ]
-  },
-  {
-    path: '',
-    component: AuthenticatedLayoutComponent,
-    children: [
+      },
       {
         path: 'dashboard',
         canActivateChild: [AuthGuard],
