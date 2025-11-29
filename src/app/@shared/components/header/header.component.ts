@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthService } from 'src/app/@core/services/auth.service';
-import { CommonService } from 'src/app/@core/services/common.service';
-import { NavigationService } from 'src/app/@core/services/navigation.service';
-import { MyAppConfig } from 'src/app/app.config';
+import { LayoutService } from '../../services/layout.service';
 
 @Component({
     selector: 'app-header',
@@ -11,28 +7,17 @@ import { MyAppConfig } from 'src/app/app.config';
     styleUrls: ['./header.component.scss'],
     standalone: false
 })
-export class HeaderComponent implements OnInit {
-  isLoggedIn = false;
-  productName = MyAppConfig.productName;
-  user: any;
-  isOpened = true;
-  resolution = 'lg';
-  constructor(private authSvc: AuthService, private navService: NavigationService, private commonSvc: CommonService) { }
+export class HeaderComponent {
 
-  ngOnInit(): void {
-    this.isLoggedIn = this.authSvc.isLoggedIn();
-    this.user = this.authSvc.getUser();
-    this.resolution = this.commonSvc.getScreenResolutionBreakPoint()
+  constructor(public layoutService: LayoutService) {
+
   }
 
-  toggleSideNav() {
-    this.navService.showNav$.subscribe((data)=>{
-      this.isOpened = data;
-    });
-    if(!this.isOpened) {
-      this.navService.showNav();
-    } else {
-      this.navService.hideNav();
-    }
+  toggleMenu() {
+    
+  }
+
+  toggleDarkMode() {
+
   }
 }
