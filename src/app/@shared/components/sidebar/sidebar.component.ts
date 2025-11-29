@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { AuthService } from 'src/app/@core/services/auth.service';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -8,12 +9,21 @@ import { MenuItem } from 'primeng/api';
 })
 export class SidebarComponent implements OnInit{
   model: MenuItem[] = [];
+  loggedInUserId: string = '';
+  userRole: string = '';
+  constructor(private authService: AuthService) {
+    
+  }
 
   ngOnInit() {
+    this.userRole = this.authService.getRoleId();
+    this.loggedInUserId = this.authService.getUserId();
     this.model = [
       {
         label: 'Home',
-        items: [{ label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] }]
+        items: [
+          { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] }, 
+          { label: 'Analytics', icon: 'pi pi-fw pi-chart-bar', routerLink: ['/dashboard/my-analytics/emp/', this.loggedInUserId] }]
       },
       {
         label: 'UI Components',
