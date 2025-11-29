@@ -2,13 +2,23 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { CommonService } from 'src/app/@core/services/common.service';
 import { NavigationService } from 'src/app/@core/services/navigation.service';
+import { LayoutService } from 'src/app/@shared/services/layout.service';
 
 @Component({
-    selector: 'app-authenticated-layout',
-    templateUrl: './authenticated-layout.component.html',
-    styleUrls: ['./authenticated-layout.component.scss'],
-    standalone: false
+  selector: 'app-authenticated-layout',
+  templateUrl: './authenticated-layout.component.html',
+  styleUrls: ['./authenticated-layout.component.scss'],
+  standalone: false
 })
 export class AuthenticatedLayoutComponent {
-  containerClass: string = '';
+  constructor(public layoutService: LayoutService) { }
+  get containerClass() {
+    return {
+      'layout-overlay': this.layoutService.layoutConfig().menuMode === 'overlay',
+      'layout-static': this.layoutService.layoutConfig().menuMode === 'static',
+      'layout-static-inactive': this.layoutService.layoutState().staticMenuDesktopInactive && this.layoutService.layoutConfig().menuMode === 'static',
+      'layout-overlay-active': this.layoutService.layoutState().overlayMenuActive,
+      'layout-mobile-active': this.layoutService.layoutState().staticMenuMobileActive
+    };
+  }
 }
