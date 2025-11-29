@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<!-- <div class="container-fluid">
   <app-header></app-header>
   <nav id="sidebar-wrapper" [ngClass]="{ 'toggled-nav': !(showSideNav | async) }">
     <div class="sidebar-sticky">
@@ -12,4 +12,16 @@
     <app-footer></app-footer>
     <app-scroll-to-top></app-scroll-to-top>
   </main>
+</div> -->
+
+<div class="layout-wrapper layout-static" [ngClass]="containerClass">
+  <app-header></app-header>
+  <app-sidebar></app-sidebar>
+  <div class="layout-main-container">
+    <div class="layout-main">
+      <router-outlet></router-outlet>
+    </div>
+    <app-footer></app-footer>
+  </div>
+  <div class="layout-mask animate-fadein"></div>
 </div>

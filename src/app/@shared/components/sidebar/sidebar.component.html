@@ -1,26 +1,3 @@
-<div class="sbar-links p-2">
-  <ul class="list-unstyled pb-2">
-    <!--1st level-->
-    <li class="my-2" *ngFor="let menuLevel1 of sideBarMenuItems; let idx = index;">
-      <ng-container *ngIf="menuLevel1.isAdminMenu ? userRole === '1' : true">
-        <button class="btn expandable" data-bs-toggle="collapse" attr.data-bs-target="#target-{{idx}}"
-          aria-expanded="true">
-          <app-icon *ngIf="menuLevel1?.showIcon" [name]="menuLevel1?.icon || ''"></app-icon> 
-          {{menuLevel1?.label}}
-        </button>
-        <div class="collapse ms-3 show" id="target-{{idx}}" (click)="closeSideBar()">
-          <!--2nd level-->
-          <ul class="list-unstyled" *ngIf="menuLevel1?.items && menuLevel1.items.length > 0">
-            <li *ngFor="let menuLevel2 of menuLevel1?.items">
-              <a [routerLink]="menuLevel2?.url" [routerLinkActive]="['active-nav-link']" class="nav-link">
-                <app-icon *ngIf="menuLevel2?.showIcon" [name]="menuLevel2?.icon || ''"></app-icon>
-                {{menuLevel2?.label}}
-              </a>
-            </li>
-          </ul>
-        </div>
-      </ng-container>
-    </li>
-  </ul>
-  <!-- <a href="https://angular.dev/overview" target="_blank">website</a> -->
+<div class="layout-sidebar">
+  Sidebar
 </div>

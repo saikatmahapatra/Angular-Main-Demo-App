@@ -9,18 +9,6 @@ import { NavigationService } from 'src/app/@core/services/navigation.service';
     styleUrls: ['./authenticated-layout.component.scss'],
     standalone: false
 })
-export class AuthenticatedLayoutComponent implements OnInit {
-  showSideNav: Observable<any> | undefined;
-
-  constructor(private navService: NavigationService, private commonSvc: CommonService) {}
-
-  ngOnInit() {
-    this.showSideNav = this.navService.getShowNav();
-  }
-
-  // closeSideBar() {
-  //   if (this.commonSvc.getScreenResolutionBreakPoint() === 'xs' || this.commonSvc.getScreenResolutionBreakPoint() === 'sm' || this.commonSvc.getScreenResolutionBreakPoint() === 'md') {
-  //     this.navService.toggleNavState();
-  //   }
-  // }
+export class AuthenticatedLayoutComponent {
+  containerClass: string = '';
 }
