@@ -207,11 +207,12 @@
     "select": "Select",
     "next": "Next",
     "previous": "Previous",
+    "signin": "Sign in",
     "sendOtp": "Send OTP",
     "verifyOtp": "Verify OTP"
   },
   "auth": {
-    "titleLogin": "Sign In",
+    "titleLogin": "Sign in to your account",
     "infoTextLogin": "Log in to your account",
     "labelUsername": "Username",
     "labelPassword": "Password",

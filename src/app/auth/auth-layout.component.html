@@ -1,35 +1,15 @@
-<div class="container">
-  <div class="min-vh-100 row d-flex justify-content-center align-items-center">
-    <div class="col-md-3">
-      <app-alert-message></app-alert-message>
-      <div class="d-flex justify-content-end pt-2 pb-3"><app-theme-switch (themeName)="getThemeName($event)"
-          [showTooltip]="true" [showBtnIcon]="true" [showBtnText]="false" [iconClass]="'f-20'"
-          [textClass]="'small'"></app-theme-switch>
-      </div>
-      <div class="row card-group">
-        <div class="card col-md-12 py-5 mb-0">
-          <div class="card-body">
-            <div class="d-flex justify-content-center"><img class="mb-2" style="width: 64px;" src="assets/img/logo-angular.svg"
-                alt="Brand Logo" /></div>
-            <router-outlet></router-outlet>
-          </div>
-        </div>
-        <!-- <div class="card col-md-5 text-white bg-primary py-5">
-          <div class="card-body text-center">
-            <div>
-              <h2>Sign up</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              <button class="btn btn-lg btn-outline-light mt-3" type="button">Register Now!</button>
+<section class="bg-gray-50 dark:bg-gray-900">
+    <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+        <app-alert-message></app-alert-message>
+        <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+            <img class="w-8 h-8 mr-2" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg" alt="logo">
+            Flowbite
+        </a>
+        <div
+            class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+            <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                <router-outlet></router-outlet>
             </div>
-          </div>
-        </div> -->
-        <!-- <div class="card col-md-6 p-0">
-          <div class="card-body">
-            <img [src]="imgPath" class="img-fluid" alt="Brand Signup card">
-          </div>
-        </div> -->
-      </div>
-      <app-footer></app-footer>
+        </div>
     </div>
-  </div>
-</div>
+</section>
