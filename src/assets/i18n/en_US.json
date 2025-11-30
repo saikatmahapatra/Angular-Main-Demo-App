@@ -217,7 +217,7 @@
     "yourEmail": "Your email",
     "yourPassword": "Your password",
     "rememberMe": "Remember me",
-    "placeholderUsername": "username or email",
+    "placeholderUsername": "name@example.com",
     "placeholderPassword": "password",
     "register": "Register a new account",
     "forgotPassword": "Forgot your password?",
