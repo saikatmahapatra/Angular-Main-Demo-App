@@ -214,6 +214,9 @@
   "auth": {
     "titleLogin": "Sign in to your account",
     "infoTextLogin": "Log in to your account",
+    "yourEmail": "Your email",
+    "yourPassword": "Your password",
+    "rememberMe": "Remember me",
     "labelUsername": "Username",
     "labelPassword": "Password",
     "register": "Register a new account",
