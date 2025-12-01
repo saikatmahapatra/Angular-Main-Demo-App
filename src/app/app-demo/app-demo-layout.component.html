@@ -1,10 +1,2 @@
-<h1 class="page-title">Angular</h1>
-<app-language-switch [showBtnText]="true"></app-language-switch>
-
-<div class="flex p-3">
-  <span *ngFor="let menu of menuLinks">
-    <a [routerLink]="[menu.link]" style="margin-right: 15px;">{{ menu.text }}</a>
-  </span>
-</div>
-
+<a *ngFor="let menu of menuLinks" [routerLink]="[menu.link]" class="mr-4">{{ menu.text }}</a>
 <router-outlet></router-outlet>

@@ -24,7 +24,7 @@ const routes: Routes = [{
   path: '',
   component: AppDemoLayoutComponent,
   children: [
-    { path: '', component: TemplateDataBindingComponent },
+    { path: '', redirectTo: 'prime-ng', pathMatch: 'full' },
     { path: 'test', component: TestComponent },
     { path: 'template-basic', component: TemplateDataBindingComponent },
     { path: 'types-of-angular-directive', component: AngularDirectiveComponent },
