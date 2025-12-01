@@ -27,6 +27,7 @@ import { FaqComponent } from './faq/faq.component';
 import { TranslateLangModule } from './translate-language.module';
 import { providePrimeNG } from 'primeng/config';
 import MyPreset from './mypreset';
+import { MessageService } from 'primeng/api';
 
 export function init_app(configSvc: ConfigService) {
   return () => configSvc.initializeApp();
@@ -79,6 +80,7 @@ export function initializeApp(configService: ConfigService) {
     providePrimeNG({
       theme: { preset: MyPreset },
     }),
+    MessageService
   ],
 })
 export class AppModule {}
