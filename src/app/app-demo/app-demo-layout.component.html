@@ -1,6 +1,6 @@
 <div class="mb-4">
   @for (menu of menuLinks; track menu) {
-    <a [routerLink]="[menu.link]" class="mr-4">{{ menu.text }}</a>
+    <a [routerLink]="[menu.link]" class="text-primary-600 hover:underline dark:text-primary-500 mr-4">{{ menu.text }}</a>
   }
 </div>
 <router-outlet></router-outlet>
