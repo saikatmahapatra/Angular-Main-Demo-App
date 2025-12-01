@@ -40,7 +40,7 @@ declare type SurfacesType = {
   styleUrls: ['./primeng-theme-config.component.scss'],
   standalone: false
 })
-export class PrimengThemeConfigComponent {
+export class ThemeConfigComponent {
   router = inject(Router);
 
   config: PrimeNG = inject(PrimeNG);
