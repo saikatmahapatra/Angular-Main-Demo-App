@@ -35,9 +35,9 @@ declare type SurfacesType = {
 };
 
 @Component({
-  selector: 'app-primeng-theme-config',
-  templateUrl: './primeng-theme-config.component.html',
-  styleUrls: ['./primeng-theme-config.component.scss'],
+  selector: 'app-theme-config',
+  templateUrl: './theme-config.component.html',
+  styleUrls: ['./theme-config.component.scss'],
   standalone: false
 })
 export class ThemeConfigComponent {
