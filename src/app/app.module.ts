@@ -23,10 +23,9 @@ import { ErrorUnauthorizedComponent } from './error-unauthorized/error-unauthori
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { FaqComponent } from './faq/faq.component';
 import { TranslateLangModule } from './translate-language.module';
-import Aura from '@primeuix/themes/aura';
-import { PrimeNG, providePrimeNG } from 'primeng/config';
-//import MyPreset from './mypreset';
+import { providePrimeNG } from 'primeng/config';
 import { MessageService } from 'primeng/api';
+import MyPreset from './mypreset';
 
 export function init_app(configSvc: ConfigService) {
   return () => configSvc.initializeApp();
@@ -75,7 +74,7 @@ export function initializeApp(configService: ConfigService) {
     }),
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     provideHttpClient(withInterceptorsFromDi()),
-    providePrimeNG({ theme: { preset: Aura, options: { darkModeSelector: '.app-dark' } } }),
+    providePrimeNG({ theme: { preset: MyPreset, options: { darkModeSelector: '.app-dark' } } }),
     MessageService
   ],
 })
