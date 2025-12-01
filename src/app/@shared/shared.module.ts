@@ -33,6 +33,7 @@ import { RadioComponent } from './components/@ui-component-lib/radio/radio.compo
 import { CheckboxComponent } from './components/@ui-component-lib/checkbox/checkbox.component';
 import { TranslateLangModule } from '../translate-language.module';
 import { AppMenuitemComponent } from './components/sidebar/menuitem.component';
+import { PrimengThemeConfigComponent } from './components/primeng-theme-config/primeng-theme-config.component';
 
 
 const data = [
@@ -63,7 +64,8 @@ const data = [
   InputComponent,
   SelectComponent,
   RadioComponent,
-  CheckboxComponent
+  CheckboxComponent,
+  PrimengThemeConfigComponent
 ];
 
 @NgModule({
@@ -76,7 +78,7 @@ const data = [
     PrimeNgModule
   ],
   declarations: [
-    ...data
+    ...data    
   ],
   providers: [],
   exports: [
