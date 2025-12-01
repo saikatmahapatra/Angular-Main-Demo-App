@@ -12,7 +12,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { UnauthenticatedLayoutComponent } from './components/layouts/unauthenticated-layout/unauthenticated-layout.component';
 import { AuthenticatedLayoutComponent } from './components/layouts/authenticated-layout/authenticated-layout.component';
 import { ValidationErrorComponent } from './components/validation-error/validation-error.component';
-import { AlertMessageComponent } from './components/@ui-component-lib/alert-message/alert-message.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { SearchInputComponent } from './components/search-input/search-input.component';
@@ -47,7 +46,6 @@ const data = [
   ValidationErrorComponent,
   UnauthenticatedLayoutComponent,
   AuthenticatedLayoutComponent,
-  AlertMessageComponent,
   SidebarComponent,
   AppMenuitemComponent,
   LoaderComponent,
