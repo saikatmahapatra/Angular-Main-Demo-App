@@ -14,7 +14,7 @@ import { MessageService } from 'primeng/api';
 @Component({
   selector: 'app-manage-users',
   templateUrl: './manage-users.component.html',
-  providers: [ApiService, MessageService],
+  providers: [ApiService],
   standalone: false
 })
 export class ManageUsersComponent implements OnInit {

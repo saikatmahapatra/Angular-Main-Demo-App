@@ -370,10 +370,10 @@
     <p-table [value]="products">
       <ng-template pTemplate="header">
         <tr>
-          <th>Code</th>
-          <th>Name</th>
-          <th>Category</th>
-          <th>Quantity</th>
+          <th scope="col">Code</th>
+          <th scope="col">Name</th>
+          <th scope="col">Category</th>
+          <th scope="col">Quantity</th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-product>
