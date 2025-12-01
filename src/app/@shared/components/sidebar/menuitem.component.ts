@@ -40,7 +40,7 @@ import { LayoutService } from '../../services/layout.service';
                 <i class="pi pi-fw pi-angle-down layout-submenu-toggler" *ngIf="item.items"></i>
             </a>
 
-            <ul *ngIf="item.items && item.visible !== false" [@children]="submenuAnimation">
+            <ul *ngIf="item.items && item.visible !== false">
                 <ng-template ngFor let-child let-i="index" [ngForOf]="item.items">
                     <li app-menuitem [item]="child" [index]="i" [parentKey]="key" [class]="child['badgeClass']"></li>
                 </ng-template>
