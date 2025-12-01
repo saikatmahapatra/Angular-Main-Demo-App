@@ -1,6 +1,5 @@
 @if (errorMessage !== null) {
-  <div class="invalid-feedback d-block validation-error-message f-15">
-    <!-- <app-icon [name]="'error'" [styleClass]="'me-1 f-24'"></app-icon> -->
-    <span [innerHTML]="errorMessage"></span>
+  <div class="mt-1 text-sm error-message">
+    {{ errorMessage }}
   </div>
 }

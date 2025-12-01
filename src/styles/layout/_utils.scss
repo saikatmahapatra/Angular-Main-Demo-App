@@ -1,6 +1,6 @@
 /* Utils */
 .clearfix:after {
-    content: ' ';
+    content: " ";
     display: block;
     clear: both;
 }
@@ -22,4 +22,8 @@
     &.p-toast-top-center {
         top: 100px;
     }
+}
+
+.error-message {
+    color: var(--error-message-text);
 }
