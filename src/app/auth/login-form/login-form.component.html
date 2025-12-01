@@ -28,7 +28,7 @@
     <a class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
       routerLink="../forgot-password">{{ 'auth.forgotPassword' | translate }}</a>
   </div>
-  <button pButton pRipple type="submit" class="w-full" [disabled]="loading" [loading]="loading">{{ 'button.submit' | translate
+  <button pButton pRipple type="submit" class="w-full" [disabled]="loading || loginForm.invalid" [loading]="loading">{{ 'button.submit' | translate
     }}</button>
   <p class="text-sm font-light text-gray-500 dark:text-gray-400">
     Don't have an account yet? <a href="#"

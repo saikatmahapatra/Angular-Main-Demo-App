@@ -231,7 +231,13 @@
     "labelEmail": "Email",
     "labelNewPassword": "New Password",
     "passwordHint": "Password must be 8-16 characters long including at least 1 lowercase, 1 uppercase letter & 1 number.",
-    "labelConfirmPassword": "Confirm Password"
+    "labelConfirmPassword": "Confirm Password",
+    "aria": {
+      "labelOTP": "Enter OTP",
+      "labelEmail": "Enter Email Address",
+      "labelNewPassword": "Enter New Password",
+      "labelConfirmPassword": "Enter Confirm Password"
+    }
   },
   "home": {
     "title": "Dashboard",
