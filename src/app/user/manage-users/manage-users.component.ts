@@ -8,12 +8,14 @@ import { switchMap } from 'rxjs/operators';
 import { MyAppConfig } from 'src/app/app.config';
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
+import { TableRowCollapseEvent, TableRowExpandEvent } from 'primeng/table';
+import { MessageService } from 'primeng/api';
 
 @Component({
-    selector: 'app-manage-users',
-    templateUrl: './manage-users.component.html',
-    providers: [ApiService],
-    standalone: false
+  selector: 'app-manage-users',
+  templateUrl: './manage-users.component.html',
+  providers: [ApiService, MessageService],
+  standalone: false
 })
 export class ManageUsersComponent implements OnInit {
 
@@ -39,16 +41,18 @@ export class ManageUsersComponent implements OnInit {
     this.getUsersList();
   }
   // Pagination Config
+  expandedRows = {};
 
   constructor(
-    private apiSvc: ApiService, 
-    public formBuilder: UntypedFormBuilder, 
-    private commonSvc: CommonService, 
+    private apiSvc: ApiService,
+    public formBuilder: UntypedFormBuilder,
+    private commonSvc: CommonService,
     private alertService: AlertService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
-    ) {
-      this.commonSvc.setTitle('Manage Employees');
+    private activatedRoute: ActivatedRoute,
+    private messageService: MessageService
+  ) {
+    this.commonSvc.setTitle('Manage Employees');
   }
 
   ngOnInit() {
@@ -57,7 +61,7 @@ export class ManageUsersComponent implements OnInit {
       this.first = this.currentPageIndex * this.itemPerPage;
       this.getUsersList();
     })
-    
+
   }
 
   getUsersList() {
@@ -65,7 +69,7 @@ export class ManageUsersComponent implements OnInit {
     let queryParams = new HttpParams();
     headers = headers.set('perPage', String(this.itemPerPage));
     headers = headers.set('page', String(this.currentPageIndex));
-    if(this.searchKeyword.trim()) {
+    if (this.searchKeyword.trim()) {
       queryParams = queryParams.append('keywords', this.searchKeyword.trim());
     }
     let options = { headers: headers, params: queryParams };
@@ -80,6 +84,22 @@ export class ManageUsersComponent implements OnInit {
     });
   }
 
+  expandAll() {
+    this.expandedRows = this.userList.reduce((acc: { [x: string]: boolean; }, p: { id: string | number; }) => (acc[p.id] = true) && acc, {});
+  }
+
+  collapseAll() {
+    this.expandedRows = {};
+  }
+
+  onRowExpand(event: TableRowExpandEvent) {
+        this.messageService.add({ severity: 'info', summary: 'Product Expanded', detail: event.data.name, life: 3000 });
+    }
+
+    onRowCollapse(event: TableRowCollapseEvent) {
+        this.messageService.add({ severity: 'success', summary: 'Product Collapsed', detail: event.data.name, life: 3000 });
+    }
+
   // getUserInterval() {
   //   this.subscription = timer(0, 10000).pipe(
   //     switchMap(() => this.apiSvc.get(MyAppConfig.apiUrl.getUsers))
@@ -90,14 +110,14 @@ export class ManageUsersComponent implements OnInit {
 
   redirectToProfile(id: number) {
     const navigationExtras: NavigationExtras = {
-      state: {manageUserPageIndex: this.currentPageIndex},
+      state: { manageUserPageIndex: this.currentPageIndex },
     };
     this.router.navigate(['/emp/view-emp-profile', id], navigationExtras);
   }
 
   editUserProfile(id: number) {
     const navigationExtras: NavigationExtras = {
-      state: {manageUserPageIndex: this.currentPageIndex},
+      state: { manageUserPageIndex: this.currentPageIndex },
     };
     this.router.navigate(['/emp/edit', id], navigationExtras);
   }
