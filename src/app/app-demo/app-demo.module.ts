@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../@shared/shared.module';
 import { AngularDemoRoutingModule } from './app-demo-routing.module';
-import { AppDemoComponent } from './app-demo.component';
 import { TemplateDataBindingComponent } from './template-data-binding/template-data-binding.component';
 import { AngularDirectiveComponent } from './angular-directive/angular-directive.component';
 import { PipesComponent } from './pipes/pipes.component';
@@ -27,6 +26,7 @@ import { PrimeNgUiKitComponent } from './prime-ng-ui-kit/prime-ng-ui-kit.compone
 import { PrimeNgModule } from '../prime-ng.module';
 //import { KoreAiComponent } from './kore-ai/kore-ai.component';
 import { TranslateLangModule } from '../translate-language.module';
+import { AppDemoLayoutComponent } from './app-demo-layout.component';
 
 @NgModule({
   imports: [
@@ -41,7 +41,7 @@ import { TranslateLangModule } from '../translate-language.module';
     PrimeNgModule
   ],
   declarations: [
-    AppDemoComponent,
+    AppDemoLayoutComponent,
     AngularDirectiveComponent,
     PipesComponent,
     FormInputBindingComponent,

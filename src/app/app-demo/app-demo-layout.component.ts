@@ -1,16 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonService } from '../@core/services/common.service';
+
 @Component({
-    selector: 'app-demo',
-    templateUrl: './app-demo.component.html',
-    providers: [],
-    standalone: false
+  selector: 'app-app-demo-layout',
+  standalone: false,
+  templateUrl: './app-demo-layout.component.html',
+  styleUrl: './app-demo-layout.component.scss',
 })
-export class AppDemoComponent implements OnInit {
+export class AppDemoLayoutComponent {
   title = 'Angular4';
   subtitle = 'Fundamental of Angular 2';
 
-  menuLinks = [    
+  menuLinks = [
     { link: '/uikit/test', text: 'Test Component' },
     { link: '/uikit/template-basic', text: 'Template Basic (Data, Event Binding etc)' },
     { link: '/uikit/types-of-angular-directive', text: 'Directive' },
@@ -25,24 +26,11 @@ export class AppDemoComponent implements OnInit {
     { link: '/uikit/content-projection', text: 'Content Projection' },
     { link: '/uikit/ag-grid', text: 'AG Grid Demo' },
     { link: '/uikit/translate', text: 'i18n Translation' },
-    { link: '/uikit/kore-ai', text: 'Kore.ai poc'},
-    { link: '/uikit/prime-ng', text: 'PrimeNG Theme'}
+    { link: '/uikit/kore-ai', text: 'Kore.ai poc' },
+    { link: '/uikit/prime-ng', text: 'PrimeNG Theme' }
   ];
 
-  constructor(private commonSvc: CommonService) { 
+  constructor(private commonSvc: CommonService) {
     this.commonSvc.setTitle('Angular Concepts Example');
-  }
-
-  /**
-   * Life cycle hooks
-   */
-  ngOnInit() {
-    console.log("ngOnInit() called");
-  }
-  ngAfterViewInit() {
-    console.log("ngAfterViewInit() called");
-  }
-  ngOnChanges() {
-    console.log("ngOnChanges() called");
   }
 }

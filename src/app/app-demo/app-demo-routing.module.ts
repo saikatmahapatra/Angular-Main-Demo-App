@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 // import ActivateRoute, ParamMap for query string related things
+import { AppDemoLayoutComponent } from './app-demo-layout.component';
 import { Routes, RouterModule, ActivatedRoute, ParamMap } from '@angular/router';
-
-import { AppDemoComponent } from './app-demo.component';
 import { TemplateDataBindingComponent } from './template-data-binding/template-data-binding.component';
 import { AngularDirectiveComponent } from './angular-directive/angular-directive.component';
 import { PipesComponent } from './pipes/pipes.component';
@@ -23,7 +22,7 @@ import { PrimeNgUiKitComponent } from './prime-ng-ui-kit/prime-ng-ui-kit.compone
 
 const routes: Routes = [{
   path: '',
-  component: AppDemoComponent,
+  component: AppDemoLayoutComponent,
   children: [
     { path: '', component: TemplateDataBindingComponent },
     { path: 'test', component: TestComponent },
