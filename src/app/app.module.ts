@@ -9,7 +9,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import {
   HTTP_INTERCEPTORS,
-  HttpClient,
   provideHttpClient,
   withInterceptorsFromDi,
 } from '@angular/common/http';
@@ -18,15 +17,15 @@ import { CoreModule } from './@core/core.module';
 import { SharedModule } from './@shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthInterceptor } from './@core/interceptors/auth.interceptor';
-import { HttpErrorInterceptor } from './@core/interceptors/http-error.interceptor';
 import { ConfigService } from './@core/services/config.service';
 import { ErrorPageNotFoundComponent } from './error-page-not-found/error-page-not-found.component';
 import { ErrorUnauthorizedComponent } from './error-unauthorized/error-unauthorized.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { FaqComponent } from './faq/faq.component';
 import { TranslateLangModule } from './translate-language.module';
-import { providePrimeNG } from 'primeng/config';
-import MyPreset from './mypreset';
+import Aura from '@primeuix/themes/aura';
+import { PrimeNG, providePrimeNG } from 'primeng/config';
+//import MyPreset from './mypreset';
 import { MessageService } from 'primeng/api';
 
 export function init_app(configSvc: ConfigService) {
@@ -75,12 +74,9 @@ export function initializeApp(configService: ConfigService) {
       return initializerFn();
     }),
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
     provideHttpClient(withInterceptorsFromDi()),
-    providePrimeNG({
-      theme: { preset: MyPreset },
-    }),
+    providePrimeNG({ theme: { preset: Aura, options: { darkModeSelector: '.app-dark' } } }),
     MessageService
   ],
 })
-export class AppModule {}
+export class AppModule { }
