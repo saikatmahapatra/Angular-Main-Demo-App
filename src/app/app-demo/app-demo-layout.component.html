@@ -1,4 +1,6 @@
 <div class="mb-4">
-    <a *ngFor="let menu of menuLinks" [routerLink]="[menu.link]" class="mr-4">{{ menu.text }}</a>
+  @for (menu of menuLinks; track menu) {
+    <a [routerLink]="[menu.link]" class="mr-4">{{ menu.text }}</a>
+  }
 </div>
 <router-outlet></router-outlet>

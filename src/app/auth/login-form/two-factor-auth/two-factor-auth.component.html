@@ -18,17 +18,19 @@
 
       <div class="card-2">
         <div class="content d-flex justify-content-center align-items-center"> <span>Didn't get the code</span> <a
-            href="#" class="text-decoration-none ms-3">Resend(1/3)</a> </div>
-      </div>
-
+      href="#" class="text-decoration-none ms-3">Resend(1/3)</a> </div>
     </div>
-  </div>
 
-  <div class="d-grid gap-2">
-    <button type="submit" class="btn btn-primary" [disabled]="loading">
-      <span *ngIf="loading" class="spinner-border spinner-border-sm me-1"></span>
-      Validate
-    </button>
   </div>
-  <div class="my-3"><a routerLink="../login">Back to Login Page</a></div>
+</div>
+
+<div class="d-grid gap-2">
+  <button type="submit" class="btn btn-primary" [disabled]="loading">
+    @if (loading) {
+      <span class="spinner-border spinner-border-sm me-1"></span>
+    }
+    Validate
+  </button>
+</div>
+<div class="my-3"><a routerLink="../login">Back to Login Page</a></div>
 </form>
