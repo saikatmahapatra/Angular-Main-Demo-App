@@ -211,6 +211,20 @@
     "sendOtp": "Send OTP",
     "verifyOtp": "Verify OTP"
   },
+  "pageNotFound": {
+    "errorCode": "404",
+    "title": "Page not found",
+    "message": "Sorry, we couldn't find the page you're looking for.",
+    "goHome": "Go back home",
+    "contactSupport": "Contact support"
+  },
+  "unauthorized": {
+    "errorCode": "403",
+    "title": "Unauthorized Access",
+    "message": "You do not have permission to view this page.",
+    "goHome": "Go back home",
+    "contactSupport": "Contact support"
+  },
   "auth": {
     "titleLogin": "Sign in to your account",
     "infoTextLogin": "Log in to your account",
