@@ -1,10 +1,10 @@
 import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, Validators } from '@angular/forms';
-import { ApiService } from 'src/app/@core/services/api.service';
-import { CommonService } from 'src/app/@core/services/common.service';
-import { ExcelService } from 'src/app/@core/services/excel.service';
-import { FormValidationService } from 'src/app/@core/services/form-validation.service';
+import { ApiService } from '@core/services/api.service';
+import { CommonService } from '@core/services/common.service';
+import { ExcelService } from '@core/services/excel.service';
+import { FormValidationService } from '@core/services/form-validation.service';
 import { MyAppConfig } from 'src/app/app.config';
 
 

@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
-import { CommonService } from 'src/app/@core/services/common.service';
-import { NavigationService } from 'src/app/@core/services/navigation.service';
-import { LayoutService } from 'src/app/@shared/services/layout.service';
+import { CommonService } from '@core/services/common.service';
+import { NavigationService } from '@core/services/navigation.service';
+import { LayoutService } from '@shared/services/layout.service';
 
 @Component({
   selector: 'app-authenticated-layout',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { delay } from 'rxjs/operators';
-import { LoaderService } from 'src/app/@core/services/loader.service';
+import { LoaderService } from '@core/services/loader.service';
 
 @Component({
     selector: 'app-loader',

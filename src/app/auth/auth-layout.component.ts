@@ -9,7 +9,7 @@ import { CommonService } from '../@core/services/common.service';
     standalone: false
 })
 export class AuthLayoutComponent implements OnInit {
-  imgPath = 'assets/img/7.svg';
+  imgPath = '@assets/img/7.svg';
   constructor(private commonSvc: CommonService) { 
     this.commonSvc.setTitle('Auth');
     
@@ -17,15 +17,15 @@ export class AuthLayoutComponent implements OnInit {
 
   ngOnInit(): void {
     if(localStorage.getItem('theme') === 'dark') {
-      this.imgPath = 'assets/img/7-dark.svg';
+      this.imgPath = '@assets/img/7-dark.svg';
     }
   }
 
   getThemeName(themeName: string) {
     if(themeName === 'dark') {
-      this.imgPath = 'assets/img/7-dark.svg';
+      this.imgPath = '@assets/img/7-dark.svg';
     } else {
-      this.imgPath = 'assets/img/7.svg';
+      this.imgPath = '@assets/img/7.svg';
     }
   }
 

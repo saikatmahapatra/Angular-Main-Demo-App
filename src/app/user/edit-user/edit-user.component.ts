@@ -3,12 +3,12 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, AsyncValidatorFn, UntypedFormBuilder, ValidationErrors, Validators } from '@angular/forms';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { Observable, forkJoin, of } from 'rxjs';
-import { AlertService } from 'src/app/@core/services/alert.service';
-import { ApiService } from 'src/app/@core/services/api.service';
-import { CommonService } from 'src/app/@core/services/common.service';
-import { FormValidationService } from 'src/app/@core/services/form-validation.service';
+import { AlertService } from '@core/services/alert.service';
+import { ApiService } from '@core/services/api.service';
+import { CommonService } from '@core/services/common.service';
+import { FormValidationService } from '@core/services/form-validation.service';
 import { MyAppConfig } from 'src/app/app.config';
-import { addressType, userStatus } from 'src/app/@utils/const/data.array';
+import { addressType, userStatus } from '@utils/const/data.array';
 
 @Component({
     selector: 'app-edit-user',

@@ -20,13 +20,13 @@
     "module": "es2020",
     "paths": {
       "@core/*": [
-        "app/src/@core/*"
+        "src/app/@core/*"
       ],
       "@shared/*": [
-        "app/src/@shared/*"
+        "src/app/@shared/*"
       ],
       "@utils/*": [
-        "app/src/@utils/*"
+        "src/app/@utils/*"
       ],
       "@env/*": [
         "src/environments/*"
@@ -38,7 +38,7 @@
         "src/styles/*"
       ],
       "exceljs": [
-        "node_modules/exceljs/dist/exceljs.min"
+        "node_modules/exceljs/dist/exceljs.min.js"
       ]
     },
     "useDefineForClassFields": false

@@ -1,11 +1,11 @@
 import { HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Component, OnInit, ViewChild, Input, Output, EventEmitter } from '@angular/core';
-import { ApiService } from 'src/app/@core/services/api.service';
-import { AuthService } from 'src/app/@core/services/auth.service';
+import { ApiService } from '@core/services/api.service';
+import { AuthService } from '@core/services/auth.service';
 import { MyAppConfig } from 'src/app/app.config';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AlertService } from 'src/app/@core/services/alert.service';
+import { AlertService } from '@core/services/alert.service';
 @Component({
     selector: 'app-view-timesheet',
     templateUrl: './view-timesheet.component.html',

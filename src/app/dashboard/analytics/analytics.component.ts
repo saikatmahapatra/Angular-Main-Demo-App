@@ -3,10 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { forkJoin } from 'rxjs';
-import { AlertService } from 'src/app/@core/services/alert.service';
-import { ApiService } from 'src/app/@core/services/api.service';
-import { CommonService } from 'src/app/@core/services/common.service';
-import { FormValidationService } from 'src/app/@core/services/form-validation.service';
+import { AlertService } from '@core/services/alert.service';
+import { ApiService } from '@core/services/api.service';
+import { CommonService } from '@core/services/common.service';
+import { FormValidationService } from '@core/services/form-validation.service';
 import { MyAppConfig } from 'src/app/app.config';
 
 @Component({

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LayoutService } from '../../services/layout.service';
+import { LayoutService } from '@shared/services/layout.service';
 import { MenuItem } from 'primeng/api';
 
 @Component({

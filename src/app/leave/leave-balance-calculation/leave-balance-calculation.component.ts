@@ -1,10 +1,10 @@
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AlertService } from 'src/app/@core/services/alert.service';
-import { ApiService } from 'src/app/@core/services/api.service';
-import { CommonService } from 'src/app/@core/services/common.service';
-import { ExcelService } from 'src/app/@core/services/excel.service';
+import { AlertService } from '@core/services/alert.service';
+import { ApiService } from '@core/services/api.service';
+import { CommonService } from '@core/services/common.service';
+import { ExcelService } from '@core/services/excel.service';
 import { MyAppConfig } from 'src/app/app.config';
 import * as XLSX from 'xlsx';
 @Component({

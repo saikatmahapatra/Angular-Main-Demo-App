@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit, ChangeDetectorRef, ViewEncapsulation, Input, ViewChild, ViewChildren, QueryList } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { ContentCardComponent } from '../content-card/content-card.component';
-import { ExcelService } from 'src/app/@core/services/excel.service';
+import { ExcelService } from '@core/services/excel.service';
 @Component({
     selector: 'app-test',
     templateUrl: './test.component.html',

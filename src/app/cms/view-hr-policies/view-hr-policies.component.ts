@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonService } from 'src/app/@core/services/common.service';
+import { CommonService } from '@core/services/common.service';
 
 @Component({
     selector: 'app-view-hr-policies',

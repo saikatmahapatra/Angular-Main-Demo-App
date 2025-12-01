@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertService } from 'src/app/@core/services/alert.service';
-import { ApiService } from 'src/app/@core/services/api.service';
-import { AuthService } from 'src/app/@core/services/auth.service';
+import { AlertService } from '@core/services/alert.service';
+import { ApiService } from '@core/services/api.service';
+import { AuthService } from '@core/services/auth.service';
 import { MyAppConfig } from 'src/app/app.config';
 
 @Component({

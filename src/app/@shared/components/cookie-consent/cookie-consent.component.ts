@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CookieService } from 'src/app/@core/services/cookie.service';
+import { CookieService } from '@core/services/cookie.service';
 
 @Component({
     selector: 'app-cookie-consent',

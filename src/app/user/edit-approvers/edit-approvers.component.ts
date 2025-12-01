@@ -1,8 +1,8 @@
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { AlertService } from 'src/app/@core/services/alert.service';
-import { ApiService } from 'src/app/@core/services/api.service';
-import { CommonService } from 'src/app/@core/services/common.service';
+import { AlertService } from '@core/services/alert.service';
+import { ApiService } from '@core/services/api.service';
+import { CommonService } from '@core/services/common.service';
 import { MyAppConfig } from 'src/app/app.config';
 
 @Component({

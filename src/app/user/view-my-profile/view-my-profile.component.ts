@@ -1,11 +1,11 @@
 import { HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AlertService } from 'src/app/@core/services/alert.service';
-import { ApiService } from 'src/app/@core/services/api.service';
-import { CommonService } from 'src/app/@core/services/common.service';
+import { AlertService } from '@core/services/alert.service';
+import { ApiService } from '@core/services/api.service';
+import { CommonService } from '@core/services/common.service';
 import { MyAppConfig } from 'src/app/app.config';
-import { addressType, userStatus } from 'src/app/@utils/const/data.array';
+import { addressType, userStatus } from '@utils/const/data.array';
 @Component({
     selector: 'app-view-profile',
     templateUrl: './view-my-profile.component.html',

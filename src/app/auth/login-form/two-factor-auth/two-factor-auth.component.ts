@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, UntypedFormBuilder, FormGroup, Validators, FormArray, NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AuthService } from 'src/app/@core/services/auth.service';
-import { AlertService } from 'src/app/@core/services/alert.service';
-import { FormValidationService } from 'src/app/@core/services/form-validation.service';
-import { CommonService } from 'src/app/@core/services/common.service';
+import { AuthService } from '@core/services/auth.service';
+import { AlertService } from '@core/services/alert.service';
+import { FormValidationService } from '@core/services/form-validation.service';
+import { CommonService } from '@core/services/common.service';
 @Component({
     selector: 'app-two-factor-auth',
     templateUrl: './two-factor-auth.component.html',

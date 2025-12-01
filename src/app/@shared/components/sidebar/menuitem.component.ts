@@ -3,7 +3,7 @@ import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { MenuItem } from 'primeng/api';
-import { LayoutService } from '../../services/layout.service';
+import { LayoutService } from '@shared/services/layout.service';
 
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector
