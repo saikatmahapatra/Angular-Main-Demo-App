@@ -50,6 +50,7 @@ import { Ripple } from "primeng/ripple";
 import { EditorModule } from 'primeng/editor';
 import { FluidModule } from "primeng/fluid";
 import { ToolbarModule } from 'primeng/toolbar';
+import { StyleClassModule } from 'primeng/styleclass';
 
 // Add primeNG classess/interfaces here so that it can be used in both import, export
 const data = [
@@ -103,7 +104,8 @@ const data = [
   InputGroupAddonModule,
   EditorModule, 
   FluidModule,
-  ToolbarModule
+  ToolbarModule,
+  StyleClassModule
 ];
 
 @NgModule({
