@@ -48,6 +48,7 @@ import { InputGroupModule } from 'primeng/inputgroup';
 import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 import { Ripple } from "primeng/ripple";
 import { EditorModule } from 'primeng/editor';
+import { FluidModule } from "primeng/fluid";
 
 // Add primeNG classess/interfaces here so that it can be used in both import, export
 const data = [
@@ -99,7 +100,8 @@ const data = [
   InputOtpModule,
   InputGroupModule,
   InputGroupAddonModule,
-  EditorModule
+  EditorModule, 
+  FluidModule
 ];
 
 @NgModule({
