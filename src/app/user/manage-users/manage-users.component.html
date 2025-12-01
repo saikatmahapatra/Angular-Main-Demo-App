@@ -9,7 +9,6 @@
     </ng-template>
   </p-toolbar>
 </div>
-<p-toast position="top-left" key="tl" />
 <div class="mb">
   <p-table [value]="userList" [tableStyle]="{ 'min-width': '50rem' }" dataKey="id" [rowHover]="true"
     [expandedRowKeys]="expandedRows" (onRowExpand)="onRowExpand($event)" (onRowCollapse)="onRowCollapse($event)">
