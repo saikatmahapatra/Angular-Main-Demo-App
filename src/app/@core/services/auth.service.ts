@@ -14,7 +14,7 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router,
     private alertSvc: AlertService) {
-    const loggedInData: any = localStorage.getItem('loginData');
+    const loggedInData: any = localStorage.getItem('userProfile');
     this.loggedInUserSubject = new BehaviorSubject<any>(JSON.parse(loggedInData));
     this.loggedInUser = this.loggedInUserSubject.asObservable();
   }
@@ -31,7 +31,7 @@ export class AuthService {
   authenticate(postData: any) {
     return this.http.post<any>(MyAppConfig.apiBaseUrl + MyAppConfig.apiUrl.authenticate, postData)
       .pipe(map(response => {
-        localStorage.setItem('loginData', JSON.stringify(response.data));
+        localStorage.setItem('userProfile', JSON.stringify(response.data));
         localStorage.setItem('access_token', response.token);
         this.loggedInUserSubject.next(response.data);
         return response.data;
@@ -46,7 +46,7 @@ export class AuthService {
   }
 
   getUser() {
-    return JSON.parse(localStorage.getItem('loginData') || '') || {};
+    return JSON.parse(localStorage.getItem('userProfile') || '') || {};
   }
 
   logoutSessionToken() {
@@ -54,7 +54,7 @@ export class AuthService {
   }
 
   clearStorageData() {
-    localStorage.removeItem('loginData');
+    localStorage.removeItem('userProfile');
     localStorage.removeItem('access_token');
     this.loggedInUserSubject.next(null);
     this.router.navigate(['auth/login']);
@@ -69,12 +69,12 @@ export class AuthService {
   }
 
   getUserId() {
-    const user = JSON.parse(localStorage.getItem('loginData') || '') || {};
+    const user = JSON.parse(localStorage.getItem('userProfile') || '') || {};
     return user.id;
   }
 
   getRoleId() {
-    const user = JSON.parse(localStorage.getItem('loginData') || '') || {};
+    const user = JSON.parse(localStorage.getItem('userProfile') || '') || {};
     return user.user_role;
   }
 
