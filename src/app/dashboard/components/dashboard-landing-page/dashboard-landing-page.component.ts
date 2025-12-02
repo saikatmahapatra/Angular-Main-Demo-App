@@ -1,10 +1,11 @@
-import { HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Component, OnInit, Output, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '@core/services/api.service';
 import { AuthService } from '@core/services/auth.service';
 import { CommonService } from '@core/services/common.service';
 import { MyAppConfig } from 'src/app/app.config';
+import { TranslateService } from '@ngx-translate/core';
 
 // import { CalendarOptions, DateSelectArg, EventClickArg, EventApi } from '@fullcalendar/core';
 // import interactionPlugin from '@fullcalendar/interaction';
@@ -25,6 +26,7 @@ export class DashboardLandingPageComponent {
   post: any = [];
   searchKeyword: string = ''; // from search input
   resetSearchInput = false;
+  pageContent: any;
 
   // Pagination Config
   currentPageIndex: number = 0;
@@ -68,7 +70,7 @@ export class DashboardLandingPageComponent {
   // currentEvents: EventApi[] = [];
   // Event Calendar Config ends
 
-  constructor(private apiSvc: ApiService, private commonSvc: CommonService, private activatedRoute: ActivatedRoute, private authSvc: AuthService) { }
+  constructor(private apiSvc: ApiService, private commonSvc: CommonService, private activatedRoute: ActivatedRoute, private authSvc: AuthService, private translateService: TranslateService) { }
 
   ngOnInit(): void {
     this.userRoleId = this.authSvc.getRoleId();
@@ -78,6 +80,14 @@ export class DashboardLandingPageComponent {
       this.first = this.currentPageIndex * this.itemPerPage;
       this.getContents();
     });
+    this.translateService.get(['home']).subscribe({
+      next: (response) => {
+        this.pageContent = response;
+      },
+      error: (err: HttpErrorResponse) => {
+
+      }
+    })
   }
 
   getDashboardStat() {
