@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../@shared/shared.module';
 import { UserRoutingModule } from './user-routing.module';
-import { UserComponent } from './user.component';
+import { UserLayoutComponent } from './user-layout.component';
 import { ManageUsersComponent } from './manage-users/manage-users.component';
 import { AuthInterceptor } from '../@core/interceptors/auth.interceptor';
 import { AddUserComponent } from './add-user/add-user.component';
@@ -37,7 +37,7 @@ import { EditUserComponent } from './edit-user/edit-user.component';
   ],
   declarations: [
     ManageUsersComponent,
-    UserComponent,
+    UserLayoutComponent,
     AddUserComponent,
     ViewProfileComponent,
     ViewMyProfileComponent,

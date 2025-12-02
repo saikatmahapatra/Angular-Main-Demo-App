@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { UserComponent } from './user.component';
+import { UserLayoutComponent } from './user-layout.component';
 import { ManageUsersComponent } from './manage-users/manage-users.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { AddEditBasicInfoComponent } from './add-edit-basic-info/add-edit-basic-info.component';
@@ -23,7 +23,7 @@ import { EditUserComponent } from './edit-user/edit-user.component';
 
 const routes: Routes = [
   {
-    path: '', component: UserComponent,
+    path: '', component: UserLayoutComponent,
     children: [
       { path: '', component: ViewMyProfileComponent },
       { path: 'my-profile', component: ViewMyProfileComponent },
