@@ -5,6 +5,7 @@ import {
   provideAppInitializer,
 } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import {
@@ -58,6 +59,7 @@ export function initializeApp(configService: ConfigService) {
   bootstrap: [AppComponent],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
