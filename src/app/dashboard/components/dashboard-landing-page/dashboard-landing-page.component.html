@@ -85,7 +85,7 @@
                     aria-label="{{item?.content_title}}" title="{{item?.content_title}}" role="link">
                     {{item?.content_title}}
                 </a>
-                <span class="text-muted text-small ml-4" [innerHTML]="getTimeStampInfo(item)"></span>
+                <span class="text-muted text-sm ml-3" [innerHTML]="getTimeStampInfo(item)"></span>
             </div>
             }
             <p-paginator [rows]="itemPerPage" [first]="first" [totalRecords]="totalRecords"
