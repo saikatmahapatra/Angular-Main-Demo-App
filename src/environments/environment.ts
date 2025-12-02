@@ -4,12 +4,12 @@
 
 export const environment = {
   name: 'dev',
-  version: require('../../package.json').version + '-dev',
+  productName: "MyApp CRM",
+  version: require('../../package.json').version,
   production: false,
   apiBaseUrl: "http://localhost/ci-emp-portal-api/",
   mockAPIUrl: "http://localhost:7878/",
-  useMockServer: false,
-  productName: "MyApp CRM"
+  useMockServer: false
 };
 
 /*

@@ -9,8 +9,8 @@ import { MyAppConfig } from 'src/app/app.config';
 })
 export class FooterComponent {
   currentYear = new Date().getFullYear();
-  appVersion = MyAppConfig.version;
+  productName = MyAppConfig.productName;
+  version = MyAppConfig.version + '-' + MyAppConfig.env;
   buildTimestamp = MyAppConfig.timestamp;
-  
   constructor() { }
 }

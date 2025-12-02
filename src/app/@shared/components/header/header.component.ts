@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LayoutService } from '@shared/services/layout.service';
 import { MenuItem } from 'primeng/api';
+import { MyAppConfig } from 'src/app/app.config';
 
 @Component({
   selector: 'app-header',
@@ -9,8 +10,9 @@ import { MenuItem } from 'primeng/api';
   standalone: false
 })
 export class HeaderComponent {
+  product = MyAppConfig.productName;
   items!: MenuItem[];
-
+  
   constructor(public layoutService: LayoutService) {
   }
 

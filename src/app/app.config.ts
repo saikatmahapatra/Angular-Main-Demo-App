@@ -4,7 +4,7 @@ import { environment } from '@env/environment';
 
 export interface MyAppConfig {
   // Add other custom config properties here
-  name?: string;
+  env?: string;
   production?: boolean;
   productName?: string;
   apiBaseUrl: string;
@@ -21,7 +21,7 @@ export const APP_CONFIG = new InjectionToken<MyAppConfig>('app.config');
 
 // Define your configuration
 export const MyAppConfig: MyAppConfig = {
-  name: environment.name,
+  env: environment.name,
   production: environment.production,
   productName: environment.productName,
   apiBaseUrl: environment.apiBaseUrl,

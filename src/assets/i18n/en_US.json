@@ -1,7 +1,7 @@
 {
-  "appName": "MyApp",
+  "appName": "{{product}}",
   "version": "App version {{ version }}",
-  "copyRight": "Copyright © {{ year }} MyApp. All rights reserved.",
+  "copyRight": "Copyright © {{ year }} {{product}}. All rights reserved.",
   "welcomeMessage": "Welcome, {{ firstName }}!",
   "primeNGConfig": {
     "startsWith": "Starts with",
