@@ -1,7 +1,7 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
-import { DashboardComponent } from './dashboard.component';
+import { DashboardLayoutComponent } from './dashboard-layout.component';
 import { PostComponent } from './post/post.component';
 import { DashboardStatComponent } from './dashboard-stat/dashboard-stat.component';
 import { EventCalendarComponent } from './event-calendar/event-calendar.component';
@@ -16,7 +16,7 @@ import { TranslateLangModule } from '../translate-language.module';
 
 @NgModule({
   declarations: [
-    DashboardComponent,
+    DashboardLayoutComponent,
     PostComponent,
     DashboardStatComponent,
     EventCalendarComponent,
