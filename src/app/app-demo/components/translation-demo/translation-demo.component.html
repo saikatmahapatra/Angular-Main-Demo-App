@@ -1,11 +1,16 @@
 <h1 class="page-title">Internationalization i18n Example (multi-lingual)</h1>
+<app-language-switch></app-language-switch>
 
-<div class="alert alert-success">{{'successMessage.update' | translate }}</div>
-<div class="alert alert-danger">{{'errorMessage.required' | translate }}</div>
+<!-- <div class="alert alert-success">{{'successMessage.update' | translate }}</div>
+<div class="alert alert-danger">{{'errorMessage.required' | translate }}</div> -->
 
 <h4>{{ 'welcomeMessage' | translate: user }}</h4>
-<label>{{'login.username' | translate }}</label>
-<input type="text" class="form-control">
-<br>
-<label>{{'login.password' | translate }}</label>
-<input type="password" class="form-control">
+<div class="my-3">
+    <label for="username">{{'auth.yourEmail' | translate }}</label>
+    <input pInputText type="text" name="username" id="username">
+</div>
+
+<div class="my-3">
+    <label for="password">{{'auth.yourPassword' | translate }}</label>
+    <input pInputText type="password" name="password" id="password">
+</div>
