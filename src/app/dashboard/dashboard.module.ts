@@ -2,7 +2,6 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardLayoutComponent } from './dashboard-layout.component';
-import { EventCalendarComponent } from './components/event-calendar/event-calendar.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../@shared/shared.module';
 import { PostDetailsComponent } from './components/post-details/post-details.component';
@@ -17,7 +16,6 @@ import { DashboardLandingPageComponent } from './components/dashboard-landing-pa
   declarations: [
     DashboardLayoutComponent,
     DashboardLandingPageComponent,
-    EventCalendarComponent,
     PostDetailsComponent,
     AnalyticsComponent
   ],
