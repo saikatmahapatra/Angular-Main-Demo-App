@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { DashboardStatComponent } from './dashboard-stat/dashboard-stat.component';
-import { EventCalendarComponent } from './event-calendar/event-calendar.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../@shared/shared.module';
 import { PostDetailsComponent } from './post-details/post-details.component';
@@ -17,7 +16,6 @@ import { TranslateLangModule } from '../translate-language.module';
   declarations: [
     DashboardComponent,
     DashboardStatComponent,
-    EventCalendarComponent,
     PostDetailsComponent,
     AnalyticsComponent
   ],

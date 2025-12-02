@@ -87,7 +87,7 @@
         <div class="card mb-0">col-span-12 xl:col-span-6</div>
     </div>
 
-    <div class="col-span-12 xl:col-span-12">
+    <div class="col-span-12 xl:col-span-6">
         <div class="card mb-0">
             <h6>{{ 'home.updateHeader' | translate }}</h6>
             @if (post.length > 0) {
@@ -108,6 +108,18 @@
             }
             @if (post.length === 0) {
             <p>{{ 'home.noLatestUpdates' | translate }}</p>
+            }
+        </div>
+    </div>
+    <div class="col-span-12 xl:col-span-6">
+        <div class="card mb-0">
+            @if (calendarVisible) {
+            <full-calendar [options]='calendarOptions' #calendar>
+                <ng-template #eventContent let-arg>
+                    <b>{{ arg.timeText }}</b>
+                    <i>{{ arg.event.title }}</i>
+                </ng-template>
+            </full-calendar>
             }
         </div>
     </div>
