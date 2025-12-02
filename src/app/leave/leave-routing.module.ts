@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ApplyLeaveComponent } from './apply-leave/apply-leave.component';
+import { ApplyLeaveComponent } from './components/apply-leave/apply-leave.component';
 import { LeaveLayoutComponent } from './leave-layout.component';
-import { ManageLeaveComponent } from './manage-leave/manage-leave.component';
+import { ManageLeaveComponent } from './components/manage-leave/manage-leave.component';
 import { AdminGuard } from '../@core/guards/admin.guard';
-import { LeaveDetailsActionsComponent } from './leave-details-actions/leave-details-actions.component';
-import { LeaveBalanceCalculationComponent } from './leave-balance-calculation/leave-balance-calculation.component';
+import { LeaveDetailsActionsComponent } from './components/leave-details-actions/leave-details-actions.component';
+import { LeaveBalanceCalculationComponent } from './components/leave-balance-calculation/leave-balance-calculation.component';
 
 const routes: Routes = [
   {path: '', component: LeaveLayoutComponent, children: [

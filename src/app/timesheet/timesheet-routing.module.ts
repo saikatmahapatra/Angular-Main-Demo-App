@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TimesheetFormComponent } from './timesheet-form/timesheet-form.component';
+import { TimesheetFormComponent } from './components/timesheet-form/timesheet-form.component';
 import { TimesheetLayoutComponent } from './timesheet-layout.component';
-import { EditTimesheetComponent } from './edit-timesheet/edit-timesheet.component';
-import { TimesheetReportComponent } from './timesheet-report/timesheet-report.component';
+import { EditTimesheetComponent } from './components/edit-timesheet/edit-timesheet.component';
+import { TimesheetReportComponent } from './components/timesheet-report/timesheet-report.component';
 import { AdminGuard } from '../@core/guards/admin.guard';
-import { ViewTimesheetComponent } from './view-timesheet/view-timesheet.component';
+import { ViewTimesheetComponent } from './components/view-timesheet/view-timesheet.component';
 const routes: Routes = [
   {
     path: '', component: TimesheetLayoutComponent, children: [

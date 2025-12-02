@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardLayoutComponent } from './dashboard-layout.component';
-import { PostDetailsComponent } from './post-details/post-details.component';
-import { AnalyticsComponent } from './analytics/analytics.component';
+import { PostDetailsComponent } from './components/post-details/post-details.component';
+import { AnalyticsComponent } from './components/analytics/analytics.component';
 const routes: Routes = [
   {
     path: '', component: DashboardLayoutComponent, children: [

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
-import { CommonService } from '../../@core/services/common.service';
-import { ApiService } from '../../@core/services/api.service';
+import { CommonService } from '../../../@core/services/common.service';
+import { ApiService } from '../../../@core/services/api.service';
 import { AlertService } from '@core/services/alert.service';
 import { of, Subscription, timer } from 'rxjs';
 import { switchMap } from 'rxjs/operators';

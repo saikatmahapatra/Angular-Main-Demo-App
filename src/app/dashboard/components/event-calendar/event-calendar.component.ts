@@ -4,7 +4,7 @@ import interactionPlugin from '@fullcalendar/interaction';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
-import { INITIAL_EVENTS, createEventId } from '../event-utils';
+import { INITIAL_EVENTS, createEventId } from '../../event-utils';
 import { ApiService } from '@core/services/api.service';
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { MyAppConfig } from 'src/app/app.config';

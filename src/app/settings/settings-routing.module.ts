@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SettingsLayoutComponent } from './settings-layout.component';
-import { SiteSettingsComponent } from './site-settings/site-settings.component';
-import { SiteMetaComponent } from './site-meta/site-meta.component';
-import { SrbacComponent } from './srbac/srbac.component';
+import { SiteSettingsComponent } from './components/site-settings/site-settings.component';
+import { SiteMetaComponent } from './components/site-meta/site-meta.component';
+import { SrbacComponent } from './components/srbac/srbac.component';
 
 const routes: Routes = [
   {
