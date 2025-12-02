@@ -257,10 +257,30 @@
     "title": "Dashboard",
     "statsHeader": "Statistics",
     "stats": {
-      "users": "Total Users",
-      "activeUsers": "Active Users",
-      "projects": "Total Projects",
-      "tasks": "Total Tasks"
+      "user": {
+        "heading": "Employees",
+        "otherCountText": "active employees"
+      },
+      "project": {
+        "heading": "Projects",
+        "otherCountText": "new projects"
+      },
+      "timesheetLog": {
+        "heading": "Task Logged By",
+        "otherCountText": "task logged by"
+      },
+      "leaveApproved": {
+        "heading": "Leave Applications",
+        "otherCountText": "new leaves"
+      },
+      "leaveToApprove": {
+        "heading": "Action Required",
+        "otherCountText": "to be reviewed"
+      },
+      "taskLog": {
+        "heading": "Days You Logged",
+        "otherCountText": "review"
+      }
     },
     "recentActivities": "Recent Activities",
     "noActivities": "No recent activities to show.",
