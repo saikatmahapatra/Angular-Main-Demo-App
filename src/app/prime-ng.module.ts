@@ -51,6 +51,7 @@ import { EditorModule } from 'primeng/editor';
 import { FluidModule } from "primeng/fluid";
 import { ToolbarModule } from 'primeng/toolbar';
 import { StyleClassModule } from 'primeng/styleclass';
+import { SelectModule } from 'primeng/select';
 
 // Add primeNG classess/interfaces here so that it can be used in both import, export
 const data = [
@@ -105,7 +106,8 @@ const data = [
   EditorModule, 
   FluidModule,
   ToolbarModule,
-  StyleClassModule
+  StyleClassModule,
+  SelectModule
 ];
 
 @NgModule({
