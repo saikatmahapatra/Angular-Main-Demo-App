@@ -1,5 +1,6 @@
 import { Inject, Injectable, EventEmitter, Output, HostListener } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { MyAppConfig } from 'src/app/app.config';
 
 @Injectable({
   // we declare that this service should be created
@@ -8,6 +9,7 @@ import { Title } from '@angular/platform-browser';
 })
 
 export class CommonService {
+  product = MyAppConfig.productName || 'App';
 
   constructor(private titleService: Title) {
 
@@ -129,6 +131,6 @@ export class CommonService {
   }
 
   setTitle(title: string) {
-    this.titleService.setTitle('MyApp - ' + title);
+    this.titleService.setTitle(this.product + ' - ' + title);
   }
 }

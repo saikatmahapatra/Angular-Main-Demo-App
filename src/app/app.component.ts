@@ -10,8 +10,7 @@ import { MyAppConfig } from 'src/app/app.config';
     standalone: false
 })
 export class AppComponent implements OnInit {
-  title = 'app';
-  version = VERSION;
+  product = MyAppConfig.productName || 'App';
   loading = false;
 
   constructor(
@@ -20,7 +19,7 @@ export class AppComponent implements OnInit {
     private titleService: Title,
     private meta: Meta
   ) {
-    //this.titleService.setTitle('MyApp - Angular');
+    //this.titleService.setTitle(this.product);
 
     this.router.events.subscribe((event: Event) => {
       if (!(event instanceof NavigationEnd)) {
@@ -47,7 +46,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     if (MyAppConfig.production) {
       this.meta.addTags([
-        { name: 'description', content: 'Employee Portal of ABC Corp. ABC Corp delivers GIS, Remote Sensing and Minining Services across India and overseas.' }
+        { name: 'description', content: 'some description' }
       ]);
     }
   }
