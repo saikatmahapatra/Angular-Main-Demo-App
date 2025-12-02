@@ -25,7 +25,7 @@ export class AppDemoLayoutComponent {
     { link: '/uikit/tranfer-fund', text: 'Routing Basic' },
     { link: '/uikit/content-projection', text: 'Content Projection' },
     { link: '/uikit/ag-grid', text: 'AG Grid Demo' },
-    { link: '/uikit/translate', text: 'i18n Translation' },
+    { link: '/uikit/translate', text: 'NGX-Translation (i18n)' },
     { link: '/uikit/kore-ai', text: 'Kore.ai poc' },
     { link: '/uikit/prime-ng', text: 'PrimeNG Theme' }
   ];
