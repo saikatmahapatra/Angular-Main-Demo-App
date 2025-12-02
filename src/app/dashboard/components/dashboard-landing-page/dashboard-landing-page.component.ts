@@ -2,6 +2,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Component, OnInit, Output, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '@core/services/api.service';
+import { AuthService } from '@core/services/auth.service';
 import { CommonService } from '@core/services/common.service';
 import { MyAppConfig } from 'src/app/app.config';
 
@@ -12,6 +13,8 @@ import { MyAppConfig } from 'src/app/app.config';
   styleUrl: './dashboard-landing-page.component.scss',
 })
 export class DashboardLandingPageComponent {
+  stats: any;
+  userRoleId = 0;
   post: any = [];
   searchKeyword: string = ''; // from search input
   resetSearchInput = false;
@@ -31,15 +34,22 @@ export class DashboardLandingPageComponent {
   }
   // Pagination Config
 
-  constructor(private apiSvc: ApiService, private commonSvc: CommonService, private activatedRoute: ActivatedRoute) { }
+  constructor(private apiSvc: ApiService, private commonSvc: CommonService, private activatedRoute: ActivatedRoute, private authSvc: AuthService) { }
 
   ngOnInit(): void {
+    this.userRoleId = this.authSvc.getRoleId();
+    this.getDashboardStat();
     this.activatedRoute.paramMap.subscribe((param) => {
       this.currentPageIndex = window.history.state?.newsPageNumber || 0;
       this.first = this.currentPageIndex * this.itemPerPage;
       this.getContents();
-    })
+    });
+  }
 
+  getDashboardStat() {
+    this.apiSvc.get(MyAppConfig.apiUrl.dashboardStat).subscribe((response: any) => {
+      this.stats = response.data;
+    });
   }
 
   getContents() {
