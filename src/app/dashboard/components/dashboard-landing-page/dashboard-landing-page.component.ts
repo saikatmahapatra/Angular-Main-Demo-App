@@ -6,6 +6,13 @@ import { AuthService } from '@core/services/auth.service';
 import { CommonService } from '@core/services/common.service';
 import { MyAppConfig } from 'src/app/app.config';
 
+import { CalendarOptions, DateSelectArg, EventClickArg, EventApi } from '@fullcalendar/core';
+import interactionPlugin from '@fullcalendar/interaction';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import listPlugin from '@fullcalendar/list';
+import { INITIAL_EVENTS, createEventId } from '../../event-utils';
+
 @Component({
   selector: 'app-dashboard-landing-page',
   standalone: false,
@@ -33,6 +40,33 @@ export class DashboardLandingPageComponent {
     this.getContents();
   }
   // Pagination Config
+
+
+  // Event Calendar Config
+  calendarVisible = true;
+  calendarOptions: CalendarOptions = {
+    plugins: [
+      interactionPlugin,
+      dayGridPlugin,
+      timeGridPlugin,
+      listPlugin,
+    ],
+    headerToolbar: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+    },
+    initialView: 'dayGridMonth',
+    //initialEvents: INITIAL_EVENTS, // alternatively, use the `events` setting to fetch from a feed
+    events: this.getEvents.bind(this),
+    weekends: true,
+    editable: true,
+    selectable: true,
+    selectMirror: true,
+    dayMaxEvents: true
+  };
+  currentEvents: EventApi[] = [];
+  // Event Calendar Config ends
 
   constructor(private apiSvc: ApiService, private commonSvc: CommonService, private activatedRoute: ActivatedRoute, private authSvc: AuthService) { }
 
@@ -84,5 +118,14 @@ export class DashboardLandingPageComponent {
     this.totalRecords = 0;
     this.itemPerPage = 10;
     this.first = 0
+  }
+
+  getEvents() {
+    let queryParams = new HttpParams();
+    let headers = new HttpHeaders();
+    let options = { headers: headers, params: queryParams };
+    this.apiSvc.get(MyAppConfig.apiUrl.getEvents, options).subscribe((response: any) => {
+
+    });
   }
 }

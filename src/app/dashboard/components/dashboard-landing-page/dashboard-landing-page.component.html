@@ -59,7 +59,7 @@
                 </div>
                 <div class="flex items-center justify-center bg-purple-100 dark:bg-purple-400/10 rounded-border"
                     style="width: 2.5rem; height: 2.5rem">
-                     <app-icon [name]="stat?.icon" [styleClass]="'text-purple-500 text-xl!'"></app-icon>
+                    <app-icon [name]="stat?.icon" [styleClass]="'text-purple-500 text-xl!'"></app-icon>
                 </div>
             </div>
             <span class="text-primary font-medium">{{stat?.count}} </span>
@@ -67,12 +67,12 @@
         </div>
     </div>
     }
-    
+
     <div class="col-span-12 text-sm">
         {{ 'home.currentMonthsData' | translate }}
     </div>
 
-    <div class="col-span-12 xl:col-span-12">
+    <div class="col-span-12 xl:col-span-6">
         <div class="card mb-0">
             <h6>{{ 'home.updateHeader' | translate }}</h6>
             @if (post.length > 0) {
@@ -95,6 +95,18 @@
             }
             @if (post.length === 0) {
             <p>{{ 'home.noLatestUpdates' | translate }}</p>
+            }
+        </div>
+    </div>
+    <div class="col-span-12 xl:col-span-6">
+        <div class="card mb-0">
+            @if (calendarVisible) {
+            <full-calendar [options]='calendarOptions' #calendar>
+                <ng-template #eventContent let-arg>
+                    <b>{{ arg.timeText }}</b>
+                    <i>{{ arg.event.title }}</i>
+                </ng-template>
+            </full-calendar>
             }
         </div>
     </div>
