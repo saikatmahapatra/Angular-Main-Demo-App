@@ -72,7 +72,7 @@
         {{ 'home.currentMonthsData' | translate }}
     </div>
 
-    <div class="col-span-12 xl:col-span-6">
+    <div class="col-span-12 xl:col-span-12">
         <div class="card mb-0">
             <h6>{{ 'home.updateHeader' | translate }}</h6>
             @if (post.length > 0) {
@@ -98,7 +98,7 @@
             }
         </div>
     </div>
-    <div class="col-span-12 xl:col-span-6">
+    <!-- <div class="col-span-12 xl:col-span-6">
         <div class="card mb-0">
             @if (calendarVisible) {
             <full-calendar [options]='calendarOptions' #calendar>
@@ -109,5 +109,5 @@
             </full-calendar>
             }
         </div>
-    </div>
+    </div> -->
 </div>
