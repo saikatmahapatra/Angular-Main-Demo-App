@@ -13,6 +13,7 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import { AnalyticsComponent } from './analytics/analytics.component';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateLangModule } from '../translate-language.module';
+import { DashboardLandingPageComponent } from './components/dashboard-landing-page/dashboard-landing-page.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TranslateLangModule } from '../translate-language.module';
     DashboardStatComponent,
     EventCalendarComponent,
     PostDetailsComponent,
-    AnalyticsComponent
+    AnalyticsComponent,
+    DashboardLandingPageComponent
   ],
   imports: [
     CommonModule,

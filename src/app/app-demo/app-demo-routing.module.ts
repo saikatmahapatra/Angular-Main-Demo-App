@@ -2,22 +2,22 @@ import { NgModule } from '@angular/core';
 // import ActivateRoute, ParamMap for query string related things
 import { AppDemoLayoutComponent } from './app-demo-layout.component';
 import { Routes, RouterModule, ActivatedRoute, ParamMap } from '@angular/router';
-import { TemplateDataBindingComponent } from './template-data-binding/template-data-binding.component';
-import { AngularDirectiveComponent } from './angular-directive/angular-directive.component';
+import { TemplateDataBindingComponent } from './components/template-data-binding/template-data-binding.component';
+import { AngularDirectiveComponent } from './components/angular-directive/angular-directive.component';
 import { PipesComponent } from './pipes/pipes.component';
-import { FormInputBindingComponent } from './form-input-binding/form-input-binding.component';
-import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
-import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
-import { AngularServicesComponent } from './angular-services/angular-services.component';
-import { TestComponent } from './test/test.component';
-import { ChildComponent } from './child/child.component';
-import { ParentComponent } from './parent/parent.component';
-import { EmployeeComponent } from './observable-in-angular/employee.component';
-import { TransferFundComponent } from './transfer-fund/transfer-fund.component';
-import { ContentCardComponent } from './content-card/content-card.component';
-import { AgGridTableExampleComponent } from './ag-grid-table-example/ag-grid-table-example.component';
-import { TranslationDemoComponent } from './translation-demo/translation-demo.component';
-import { PrimeNgUiKitComponent } from './prime-ng-ui-kit/prime-ng-ui-kit.component';
+import { FormInputBindingComponent } from './components/form-input-binding/form-input-binding.component';
+import { TemplateDrivenFormComponent } from './components/template-driven-form/template-driven-form.component';
+import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
+import { AngularServicesComponent } from './components/angular-services/angular-services.component';
+import { TestComponent } from './components/test/test.component';
+import { ChildComponent } from './components/child/child.component';
+import { ParentComponent } from './components/parent/parent.component';
+import { EmployeeComponent } from './components/observable-in-angular/employee.component';
+import { TransferFundComponent } from './components/transfer-fund/transfer-fund.component';
+import { ContentCardComponent } from './components/content-card/content-card.component';
+import { AgGridTableExampleComponent } from './components/ag-grid-table-example/ag-grid-table-example.component';
+import { TranslationDemoComponent } from './components/translation-demo/translation-demo.component';
+import { PrimeNgUiKitComponent } from './components/prime-ng-ui-kit/prime-ng-ui-kit.component';
 //import { KoreAiComponent } from './kore-ai/kore-ai.component';
 
 const routes: Routes = [{

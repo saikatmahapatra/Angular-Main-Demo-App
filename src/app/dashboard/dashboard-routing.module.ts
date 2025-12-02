@@ -4,10 +4,12 @@ import { DashboardLayoutComponent } from './dashboard-layout.component';
 import { PostDetailsComponent } from './post-details/post-details.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
 const routes: Routes = [
-  { path: '', component: DashboardLayoutComponent },
-  { path: 'post-details/:id', component: PostDetailsComponent },
-  { path: 'analytics/:entity/:entityId', component: AnalyticsComponent },
-  { path: 'my-analytics/:entity/:entityId', component: AnalyticsComponent }
+  {
+    path: '', component: DashboardLayoutComponent, children: [
+      { path: 'post-details/:id', component: PostDetailsComponent },
+      { path: 'analytics/:entity/:entityId', component: AnalyticsComponent },
+      { path: 'my-analytics/:entity/:entityId', component: AnalyticsComponent }]
+  }
 ];
 @NgModule({
   imports: [
