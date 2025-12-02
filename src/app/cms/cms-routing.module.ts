@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { CmsLayoutComponent } from './cms-layout.component';
-import { ManageCmsComponent } from './manage-cms/manage-cms.component';
-import { AddContentComponent } from './add-content/add-content.component';
-import { ViewHolidaysComponent } from './view-holidays/view-holidays.component';
-import { ManageHolidaysComponent } from './manage-holidays/manage-holidays.component';
+import { ManageCmsComponent } from './components/manage-cms/manage-cms.component';
+import { AddContentComponent } from './components/add-content/add-content.component';
+import { ViewHolidaysComponent } from './components/view-holidays/view-holidays.component';
+import { ManageHolidaysComponent } from './components/manage-holidays/manage-holidays.component';
 import { AdminGuard } from '../@core/guards/admin.guard';
 const routes: Routes = [
   {

@@ -5,12 +5,12 @@ import { SharedModule } from '../@shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CmsRoutingModule } from './cms-routing.module';
 import { CmsLayoutComponent } from './cms-layout.component';
-import { ManageCmsComponent } from './manage-cms/manage-cms.component';
-import { AddContentComponent } from './add-content/add-content.component';
-import { ViewHolidaysComponent } from './view-holidays/view-holidays.component';
-import { ViewHrPoliciesComponent } from './view-hr-policies/view-hr-policies.component';
+import { ManageCmsComponent } from './components/manage-cms/manage-cms.component';
+import { AddContentComponent } from './components/add-content/add-content.component';
+import { ViewHolidaysComponent } from './components/view-holidays/view-holidays.component';
+import { ViewHrPoliciesComponent } from './components/view-hr-policies/view-hr-policies.component';
 import { PrimeNgModule } from '../prime-ng.module';
-import { ManageHolidaysComponent } from './manage-holidays/manage-holidays.component';
+import { ManageHolidaysComponent } from './components/manage-holidays/manage-holidays.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
 
 @NgModule({
