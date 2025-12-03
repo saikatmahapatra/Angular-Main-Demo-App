@@ -1,34 +1,34 @@
 <div class="mb-3">
-    <label for="firstName">First Name</label>
-    <input type="text" id="firstName" name="firstName">
+    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="firstName">First Name</label>
+    <input pInputText type="text" id="firstName" name="firstName" class="w-full">
 </div>
 <div class="mb-3">
-    <label for="lastName">Last Name</label>
-    <input type="text" id="lastName" name="lastName">
+    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="lastName">Last Name</label>
+    <input pInputText type="text" id="lastName" name="lastName" class="w-full">
 </div>
 <div class="mb-3">
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email">
+    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="email">Email</label>
+    <input pInputText type="email" id="email" name="email" class="w-full">
 </div>
 <div class="mb-3">
-    <label for="password">Password</label>
-    <input type="password" id="password" name="password">
+    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="password">Password</label>
+    <input pInputText type="password" id="password" name="password" class="w-full">
 </div>
 <div class="mb-3">
-    <label for="confirmPassword">Confirm Password</label>
-    <input type="password" id="confirmPassword" name="confirmPassword">
+    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="confirmPassword">Confirm Password</label>
+    <input pInputText type="password" id="confirmPassword" name="confirmPassword" class="w-full">
 </div>
 <div class="mb-3">
-    <label for="terms">Accept Terms and Conditions</label>
-    <input type="checkbox" id="terms" name="terms">
+    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="terms">Accept Terms and Conditions</label>
+    <p-checkbox [binary]="true" inputId="terms"></p-checkbox>
 </div>
 <div class="mb-3">
-    <button type="submit">Sign Up</button>
+    <button pButton pRipple type="submit" class="w-full">Sign Up</button>
 </div>
 <div class="mb-3">
-    <p>Already have an account? <a [routerLink]="['../login']">Login here</a>.</p>
+    <p>Already have an account? <a [routerLink]="['../login']" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Login here</a>.</p>
 </div>
 <div class="mb-3">
-    <p>By signing up, you agree to our <a [routerLink]="['/terms']">Terms and Conditions</a> and <a
-            [routerLink]="['/privacy']">Privacy Policy</a>.</p>
+    <p>By signing up, you agree to our <a [routerLink]="['/terms']" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Terms and Conditions</a> and <a
+            [routerLink]="['/privacy']" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Privacy Policy</a>.</p>
 </div>
