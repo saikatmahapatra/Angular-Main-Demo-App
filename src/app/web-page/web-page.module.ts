@@ -13,9 +13,9 @@ import { WebPageLayoutComponent } from './web-page-layout.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PrimeNgModule } from '../prime-ng.module';
-import { SharedModule } from 'primeng/api';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { SharedModule } from "@shared/shared.module";
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -39,6 +39,6 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     ReactiveFormsModule,
     RouterModule
-  ]
+]
 })
 export class WebPageModule { }
