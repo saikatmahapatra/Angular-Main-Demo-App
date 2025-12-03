@@ -6,6 +6,7 @@ import { FeaturesComponent } from './components/features/features.component';
 import { PrivacyComponent } from './components/privacy/privacy.component';
 import { PolicyComponent } from './components/policy/policy.component';
 import { PricingComponent } from './components/pricing/pricing.component';
+import { HighlightComponent } from './components/highlight/highlight.component';
 
 const routes: Routes = [
   {
@@ -15,7 +16,9 @@ const routes: Routes = [
       { path: 'features', component: FeaturesComponent },
       { path: 'privacy', component: PrivacyComponent },
       { path: 'policy', component: PolicyComponent },
-      { path: 'pricing', component: PricingComponent }
+      { path: 'pricing', component: PricingComponent },
+      { path: 'highlights', component: HighlightComponent },
+      { path: '**', redirectTo: 'home' }
     ]
   }
 ];
