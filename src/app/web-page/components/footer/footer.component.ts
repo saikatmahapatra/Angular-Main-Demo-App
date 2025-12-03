@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-page-footer',
+  selector: 'app-footer',
   standalone: false,
-  templateUrl: './page-footer.component.html',
-  styleUrls: ['./page-footer.component.scss']
+  templateUrl: './footer.component.html',
+  styleUrls: ['./footer.component.scss']
 })
-export class PageFooterComponent {
+export class FooterComponent {
   constructor(public router: Router) {}
 }
