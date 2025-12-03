@@ -24,10 +24,6 @@ const routes: Routes = [
         path: 'auth',
         loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
       },
-      {
-        path: 'site',
-        loadChildren: () => import('./web-page/web-page.module').then(m => m.WebPageModule)
-      }
     ]
   },
   {
@@ -97,6 +93,10 @@ const routes: Routes = [
   {
     path: 'unauthorized',
     component: ErrorUnauthorizedComponent
+  },
+  {
+    path: 'site',
+    loadChildren: () => import('./web-page/web-page.module').then(m => m.WebPageModule)
   },
   {
     path: '**', // wildcard will be at always last
