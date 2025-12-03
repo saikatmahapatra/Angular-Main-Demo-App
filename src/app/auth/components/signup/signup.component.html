@@ -40,13 +40,13 @@
     <button pButton pRipple type="submit" class="w-full">Sign Up</button>
 </div>
 <div class="mb-3">
-    <p> {{ 'auth.signup.haveAccount' | translate }}
+    <p class="text-sm font-light text-gray-500 dark:text-gray-400"> {{ 'auth.signup.haveAccount' | translate }}
         <a [routerLink]="['../login']" class="font-medium text-primary-600 hover:underline dark:text-primary-500">{{
             'auth.signup.loginHere' | translate }}</a>.
     </p>
 </div>
 <div class="mb-3">
-    <p> {{ 'auth.signup.bySigningUp' | translate }} <a [routerLink]="['/terms']"
+    <p class="text-sm font-light text-gray-500 dark:text-gray-400"> {{ 'auth.signup.bySigningUp' | translate }} <a [routerLink]="['/terms']"
             class="font-medium text-primary-600 hover:underline dark:text-primary-500">{{ 'auth.signup.tnc' | translate
             }}</a> and <a [routerLink]="['/privacy']"
             class="font-medium text-primary-600 hover:underline dark:text-primary-500">{{ 'auth.signup.privacy' |

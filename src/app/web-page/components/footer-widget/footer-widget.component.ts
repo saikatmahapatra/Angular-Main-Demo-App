@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { MyAppConfig } from 'src/app/app.config';
 
 @Component({
   selector: 'app-footer-widget',
@@ -8,5 +9,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./footer-widget.component.scss']
 })
 export class FooterWidgetComponent {
+  productName = MyAppConfig.productName;
   constructor(public router: Router) {}
 }
