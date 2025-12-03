@@ -1,34 +1,54 @@
+<h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+    {{ 'auth.signup.titleSignup' | translate }}
+</h1>
 <div class="mb-3">
-    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="firstName">First Name</label>
+    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="firstName">
+        {{ 'auth.signup.firstName' | translate }}
+    </label>
     <input pInputText type="text" id="firstName" name="firstName" class="w-full">
 </div>
 <div class="mb-3">
-    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="lastName">Last Name</label>
+    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="lastName">
+        {{ 'auth.signup.lastName' | translate }}
+    </label>
     <input pInputText type="text" id="lastName" name="lastName" class="w-full">
 </div>
 <div class="mb-3">
-    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="email">Email</label>
+    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="email">
+        {{ 'auth.signup.email' | translate }}
+    </label>
     <input pInputText type="email" id="email" name="email" class="w-full">
 </div>
 <div class="mb-3">
-    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="password">Password</label>
+    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="password">
+        {{ 'auth.signup.password' | translate }}
+    </label>
     <input pInputText type="password" id="password" name="password" class="w-full">
 </div>
 <div class="mb-3">
-    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="confirmPassword">Confirm Password</label>
+    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="confirmPassword">
+        {{ 'auth.signup.confirmPassword' | translate }}
+    </label>
     <input pInputText type="password" id="confirmPassword" name="confirmPassword" class="w-full">
 </div>
 <div class="mb-3">
-    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="terms">Accept Terms and Conditions</label>
-    <p-checkbox [binary]="true" inputId="terms"></p-checkbox>
+    <span class="mr-3"><p-checkbox [binary]="true" inputId="terms"></p-checkbox></span>
+    <label class="mb-2 text-sm font-medium cursor-pointer text-gray-900 dark:text-white" for="terms">{{
+        'auth.signup.termsAndConditions' | translate }}</label>
 </div>
 <div class="mb-3">
     <button pButton pRipple type="submit" class="w-full">Sign Up</button>
 </div>
 <div class="mb-3">
-    <p>Already have an account? <a [routerLink]="['../login']" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Login here</a>.</p>
+    <p> {{ 'auth.signup.haveAccount' | translate }}
+        <a [routerLink]="['../login']" class="font-medium text-primary-600 hover:underline dark:text-primary-500">{{
+            'auth.signup.loginHere' | translate }}</a>.
+    </p>
 </div>
 <div class="mb-3">
-    <p>By signing up, you agree to our <a [routerLink]="['/terms']" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Terms and Conditions</a> and <a
-            [routerLink]="['/privacy']" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Privacy Policy</a>.</p>
+    <p> {{ 'auth.signup.bySigningUp' | translate }} <a [routerLink]="['/terms']"
+            class="font-medium text-primary-600 hover:underline dark:text-primary-500">{{ 'auth.signup.tnc' | translate
+            }}</a> and <a [routerLink]="['/privacy']"
+            class="font-medium text-primary-600 hover:underline dark:text-primary-500">{{ 'auth.signup.privacy' |
+            translate }}</a>.</p>
 </div>

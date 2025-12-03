@@ -246,6 +246,21 @@
     "labelNewPassword": "New Password",
     "passwordHint": "Password must be 8-16 characters long including at least 1 lowercase, 1 uppercase letter & 1 number.",
     "labelConfirmPassword": "Confirm Password",
+    "signup": {
+      "titleSignup": "Create an account",
+      "infoTextSignup": "Sign up to get started",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "haveAccount": "Already have an account?",
+      "bySigningUp": "By signing up, you agree to our",
+      "loginHere": "Login here",
+      "tnc": "Terms and Conditions",
+      "privacy": "Privacy Policy",
+      "termsAndConditions": "I accept the Terms and Conditions"
+    },
     "aria": {
       "labelOTP": "Enter OTP",
       "labelEmail": "Enter Email Address",
