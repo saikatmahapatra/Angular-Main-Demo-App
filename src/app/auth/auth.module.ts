@@ -10,10 +10,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TwoFactorAuthComponent } from './components/login-form/two-factor-auth/two-factor-auth.component';
 import { PrimeNgModule } from '../prime-ng.module';
 import { TranslateLangModule } from '../translate-language.module';
+import { SignupComponent } from './components/signup/signup.component';
 
 @NgModule({
   declarations: [
-    AuthLayoutComponent, LoginFormComponent, ForgotPasswordFormComponent, ResetPasswordFormComponent, TwoFactorAuthComponent
+    AuthLayoutComponent, LoginFormComponent, ForgotPasswordFormComponent, ResetPasswordFormComponent, TwoFactorAuthComponent, SignupComponent
   ],
   imports: [
     CommonModule,
