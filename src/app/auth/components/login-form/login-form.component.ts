@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, UntypedFormBuilder, FormGroup, Validators, FormArray, NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '@core/services/auth.service';
-import { AlertService } from '@core/services/alert.service';
 import { FormValidationService } from '@core/services/form-validation.service';
 import { CommonService } from '@core/services/common.service';
 import { MessageService } from 'primeng/api';
