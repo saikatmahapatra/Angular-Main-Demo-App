@@ -4,7 +4,7 @@
 
 export const environment = {
   name: 'dev',
-  productName: "MyApp CRM",
+  productName: "myCRM",
   version: require('../../package.json').version,
   production: false,
   apiBaseUrl: "http://localhost/ci-emp-portal-api/",
