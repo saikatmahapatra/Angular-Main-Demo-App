@@ -3,16 +3,16 @@ import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor, HttpErrorResponse
 import { Observable, throwError, of } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { AuthService } from '../services/auth.service';
-import { AlertService } from '../services/alert.service';
 import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 
 @Injectable()
 export class HttpErrorInterceptor implements HttpInterceptor {
 
   constructor(
     private authSvc: AuthService,
-    private alertSvc: AlertService,
-    private router: Router
+    private router: Router,
+    private messageService: MessageService
   ) { }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
@@ -42,26 +42,26 @@ export class HttpErrorInterceptor implements HttpInterceptor {
     switch (error.status) {
       case 400:
         let message = error?.error?.message ? error.error.message : 'We are unable to process your request at this moment. Please try after sometime.';
-        this.alertSvc.setAlert('error', message, false);
+        this.messageService.add({ severity: 'error', summary: 'Error', detail: message });
         handled = true;
         break;
 
       case 401:
         if (this.router.url != '/login') {
           this.authSvc.clearStorageData();
-          this.alertSvc.setAlert('error', 'Please login to continue.', true);
+          this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Please login to continue.' });
           handled = true;
         }
         break;
 
       case 403:
         this.authSvc.clearStorageData();
-        this.alertSvc.setAlert('error', 'Please login to continue.', true);
+        this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Please login to continue.' });
         handled = true;
         break;
 
       default:
-        this.alertSvc.setAlert('error', error.message, false);
+        this.messageService.add({ severity: 'error', summary: 'Error', detail: error.message });
         break;
     }
 

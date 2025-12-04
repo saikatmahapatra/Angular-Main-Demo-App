@@ -2,17 +2,17 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, NgForm, Validators } from '@angular/forms';
 import { Route, Router } from '@angular/router';
-import { AlertService } from '@core/services/alert.service';
 import { ApiService } from '@core/services/api.service';
 import { CommonService } from '@core/services/common.service';
 import { FormValidationService } from '@core/services/form-validation.service';
+import { MessageService } from 'primeng/api';
 import { MyAppConfig } from 'src/app/app.config';
 
 @Component({
-    selector: 'app-forgot-password-form',
-    templateUrl: './forgot-password-form.component.html',
-    styleUrls: ['./forgot-password-form.component.scss'],
-    standalone: false
+  selector: 'app-forgot-password-form',
+  templateUrl: './forgot-password-form.component.html',
+  styleUrls: ['./forgot-password-form.component.scss'],
+  standalone: false
 })
 export class ForgotPasswordFormComponent implements OnInit {
 
@@ -21,12 +21,12 @@ export class ForgotPasswordFormComponent implements OnInit {
 
   constructor(
     private commonSvc: CommonService,
-    private alertSvc: AlertService,
+    private messageService: MessageService,
     private apiSvc: ApiService,
     private fb: UntypedFormBuilder,
     private formValidationSvc: FormValidationService,
     private router: Router
-  ) { 
+  ) {
     this.commonSvc.setTitle('Forgot Password');
   }
 
@@ -48,7 +48,7 @@ export class ForgotPasswordFormComponent implements OnInit {
       this.apiSvc.post(MyAppConfig.apiUrl.checkEmail, postData).subscribe({
         next: (response: any) => {
           if (response.status == 'success') {
-            this.alertSvc.setAlert('success', response.message, true);
+            this.messageService.add({ severity: 'success', summary: 'Success', detail: response.message });
             this.router.navigate(['auth/reset-password']);
           }
         },

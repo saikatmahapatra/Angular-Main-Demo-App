@@ -4,7 +4,6 @@ import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { MyAppConfig } from 'src/app/app.config';
-import { AlertService } from './alert.service';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,8 +11,7 @@ export class AuthService {
   private loggedInUserSubject!: BehaviorSubject<any>;
   public loggedInUser!: Observable<any>;
 
-  constructor(private http: HttpClient, private router: Router,
-    private alertSvc: AlertService) {
+  constructor(private http: HttpClient, private router: Router) {
     const loggedInData: any = localStorage.getItem('userProfile');
     this.loggedInUserSubject = new BehaviorSubject<any>(JSON.parse(loggedInData));
     this.loggedInUser = this.loggedInUserSubject.asObservable();
