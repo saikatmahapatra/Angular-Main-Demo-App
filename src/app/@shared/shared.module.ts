@@ -34,6 +34,7 @@ import { CheckboxComponent } from './components/@ui-component-lib/checkbox/check
 import { TranslateLangModule } from '../translate-language.module';
 import { AppMenuitemComponent } from './components/sidebar/menuitem.component';
 import { ThemeConfigComponent } from './components/theme-config/theme-config.component';
+import { LogoComponent } from './components/logo/logo.component';
 
 
 const data = [
@@ -65,7 +66,8 @@ const data = [
   SelectComponent,
   RadioComponent,
   CheckboxComponent,
-  ThemeConfigComponent
+  ThemeConfigComponent,
+  LogoComponent
 ];
 
 @NgModule({
@@ -78,7 +80,7 @@ const data = [
     PrimeNgModule
   ],
   declarations: [
-    ...data    
+    ...data   
   ],
   providers: [],
   exports: [
