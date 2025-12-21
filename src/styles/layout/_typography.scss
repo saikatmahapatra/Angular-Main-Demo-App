@@ -8,7 +8,7 @@ h6 {
     font-family: inherit;
     font-weight: 700;
     line-height: 1.5;
-    color: var(--text-color);
+    color: var(--app-text-color);
 
     &:first-child {
         margin-top: 0;
@@ -42,7 +42,7 @@ h6 {
 mark {
     background: #fff8e1;
     padding: 0.25rem 0.4rem;
-    border-radius: var(--content-border-radius);
+    border-radius: var(--app-content-border-radius);
     font-family: monospace;
 }
 
@@ -53,7 +53,7 @@ blockquote {
 }
 
 hr {
-    border-top: solid var(--surface-border);
+    border-top: solid var(--app-surface-border);
     border-width: 1px 0 0 0;
     margin: 1rem 0;
 }

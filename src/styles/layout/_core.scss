@@ -1,12 +1,12 @@
 html {
     height: 100%;
-    font-size: 14px;
+    font-size: 14px; // root font size
 }
 
 body {
     font-family: 'Lato', sans-serif;
-    color: var(--text-color);
-    background-color: var(--surface-ground);
+    color: var(--app-text-color);
+    background-color: var(--app-surface-ground);
     margin: 0;
     padding: 0;
     min-height: 100%;

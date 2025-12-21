@@ -234,9 +234,9 @@ export class AnalyticsComponent implements OnInit {
 
   renderBarChart() {
     const documentStyle = getComputedStyle(document.documentElement);
-    const textColor = documentStyle.getPropertyValue('--text-color');
-    const textColorSecondary = documentStyle.getPropertyValue('--text-color-secondary');
-    const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
+    const textColor = documentStyle.getPropertyValue('--app-text-color');
+    const textColorSecondary = documentStyle.getPropertyValue('--app-text-color-secondary');
+    const surfaceBorder = documentStyle.getPropertyValue('--app-surface-border');
 
     this.barChartData = {
       labels: this.barChartDataLabel,
@@ -289,7 +289,7 @@ export class AnalyticsComponent implements OnInit {
 
   renderDoughnutChart() {
     const documentStyle = getComputedStyle(document.documentElement);
-    const textColor = documentStyle.getPropertyValue('--text-color');
+    const textColor = documentStyle.getPropertyValue('--app-text-color');
     this.doughnutChartData = {
       labels: this.doughnutChartLabel,
       datasets: [
@@ -315,7 +315,7 @@ export class AnalyticsComponent implements OnInit {
 
   renderPieChart() {
     const documentStyle = getComputedStyle(document.documentElement);
-    const textColor = documentStyle.getPropertyValue('--text-color');
+    const textColor = documentStyle.getPropertyValue('--app-text-color');
 
     this.pieChartData = {
       labels: this.pieChartLabel,

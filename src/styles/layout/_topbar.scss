@@ -8,8 +8,8 @@
     top: 0;
     width: 100%;
     padding: 0 2rem;
-    background-color: var(--surface-card);
-    transition: left var(--layout-section-transition-duration);
+    background-color: var(--app-surface-card);
+    transition: left var(--app-layout-section-transition-duration);
     display: flex;
     align-items: center;
 
@@ -23,8 +23,8 @@
         display: inline-flex;
         align-items: center;
         font-size: 1.5rem;
-        border-radius: var(--content-border-radius);
-        color: var(--text-color);
+        border-radius: var(--app-content-border-radius);
+        color: var(--app-text-color);
         font-weight: 500;
         gap: 0.5rem;
 
@@ -41,16 +41,16 @@
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        color: var(--text-color-secondary);
+        color: var(--app-text-color-secondary);
         border-radius: 50%;
         width: 2.5rem;
         height: 2.5rem;
-        color: var(--text-color);
-        transition: background-color var(--element-transition-duration);
+        color: var(--app-text-color);
+        transition: background-color var(--app-element-transition-duration);
         cursor: pointer;
 
         &:hover {
-            background-color: var(--surface-hover);
+            background-color: var(--app-surface-hover);
         }
 
         &:focus-visible {
@@ -67,8 +67,8 @@
         }
 
         &.layout-topbar-action-highlight {
-            background-color: var(--primary-color);
-            color: var(--primary-contrast-color);
+            background-color: var(--app-primary-color);
+            color: var(--app-primary-contrast-color);
         }
     }
 
@@ -116,18 +116,18 @@
 
         .layout-topbar-menu {
             position: absolute;
-            background-color: var(--surface-overlay);
+            background-color: var(--app-surface-overlay);
             transform-origin: top;
             box-shadow:
                 0px 3px 5px rgba(0, 0, 0, 0.02),
                 0px 0px 2px rgba(0, 0, 0, 0.05),
                 0px 1px 4px rgba(0, 0, 0, 0.08);
-            border-radius: var(--content-border-radius);
+            border-radius: var(--app-content-border-radius);
             padding: 1rem;
             right: 2rem;
             top: 4rem;
             min-width: 15rem;
-            border: 1px solid var(--surface-border);
+            border: 1px solid var(--app-surface-border);
 
             .layout-topbar-menu-content {
                 gap: 0.5rem;
@@ -138,7 +138,7 @@
                 width: 100%;
                 height: auto;
                 justify-content: flex-start;
-                border-radius: var(--content-border-radius);
+                border-radius: var(--app-content-border-radius);
                 padding: 0.5rem 1rem;
 
                 i {

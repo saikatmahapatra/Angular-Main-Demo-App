@@ -10,10 +10,10 @@
     top: 6rem;
     left: 2rem;
     transition:
-        transform var(--layout-section-transition-duration),
-        left var(--layout-section-transition-duration);
-    background-color: var(--surface-overlay);
-    border-radius: var(--content-border-radius);
+        transform var(--app-layout-section-transition-duration),
+        left var(--app-layout-section-transition-duration);
+    background-color: var(--app-surface-overlay);
+    border-radius: var(--app-content-border-radius);
     padding: 0.5rem 1.5rem;
 }
 
@@ -27,7 +27,7 @@
             font-size: 0.857rem;
             text-transform: uppercase;
             font-weight: 700;
-            color: var(--text-color);
+            color: var(--app-text-color);
             margin: 0.75rem 0;
         }
 
@@ -64,13 +64,13 @@
             align-items: center;
             position: relative;
             outline: 0 none;
-            color: var(--text-color);
+            color: var(--app-text-color);
             cursor: pointer;
             padding: 0.75rem 1rem;
-            border-radius: var(--content-border-radius);
+            border-radius: var(--app-content-border-radius);
             transition:
-                background-color var(--element-transition-duration),
-                box-shadow var(--element-transition-duration);
+                background-color var(--app-element-transition-duration),
+                box-shadow var(--app-element-transition-duration);
 
             .layout-menuitem-icon {
                 margin-right: 0.5rem;
@@ -79,16 +79,16 @@
             .layout-submenu-toggler {
                 font-size: 75%;
                 margin-left: auto;
-                transition: transform var(--element-transition-duration);
+                transition: transform var(--app-element-transition-duration);
             }
 
             &.active-route {
                 font-weight: 700;
-                color: var(--primary-color);
+                color: var(--app-primary-color);
             }
 
             &:hover {
-                background-color: var(--surface-hover);
+                background-color: var(--app-surface-hover);
             }
 
             &:focus {
@@ -98,7 +98,7 @@
 
         ul {
             overflow: hidden;
-            border-radius: var(--content-border-radius);
+            border-radius: var(--app-content-border-radius);
 
             li {
                 a {

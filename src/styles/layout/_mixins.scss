@@ -1,15 +1,15 @@
 @mixin focused() {
-    outline-width: var(--focus-ring-width);
-    outline-style: var(--focus-ring-style);
-    outline-color: var(--focus-ring-color);
-    outline-offset: var(--focus-ring-offset);
-    box-shadow: var(--focus-ring-shadow);
+    outline-width: var(--app-focus-ring-width);
+    outline-style: var(--app-focus-ring-style);
+    outline-color: var(--app-focus-ring-color);
+    outline-offset: var(--app-focus-ring-offset);
+    box-shadow: var(--app-focus-ring-shadow);
     transition:
-        box-shadow var(--transition-duration),
-        outline-color var(--transition-duration);
+        box-shadow var(--app-transition-duration),
+        outline-color var(--app-transition-duration);
 }
 
 @mixin focused-inset() {
     outline-offset: -1px;
-    box-shadow: inset var(--focus-ring-shadow);
+    box-shadow: inset var(--app-focus-ring-shadow);
 }
