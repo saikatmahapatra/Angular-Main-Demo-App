@@ -1,3 +1,4 @@
+<h1 class="page-title">{{ 'home.title' | translate }}</h1>
 <div class="grid grid-cols-12 gap-8">
     <!-- <div class="col-span-12 lg:col-span-6 xl:col-span-3">
         <div class="card mb-0">
@@ -81,12 +82,12 @@
                 [placeHolderText]="'Search...'"></app-search-input>
             @for (item of post; track item; let i = $index) {
             <div class="mb-3">
-                <a class="text-primary-600 hover:underline dark:text-primary-500"
+                <a class="text-primary-600 hover:underline dark:text-primary-500 mr-2"
                     [routerLink]="['post-details', item.id]" [state]="{ newsPageNumber: currentPageIndex }"
                     aria-label="{{item?.content_title}}" title="{{item?.content_title}}" role="link">
                     {{item?.content_title}}
                 </a>
-                <span class="text-muted text-sm ml-3" [innerHTML]="getTimeStampInfo(item)"></span>
+                <span class="text-muted" [innerHTML]="getTimeStampInfo(item)"></span>
             </div>
             }
             <p-paginator [rows]="itemPerPage" [first]="first" [totalRecords]="totalRecords"

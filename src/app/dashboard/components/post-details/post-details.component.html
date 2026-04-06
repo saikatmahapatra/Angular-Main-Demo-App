@@ -1,24 +1,17 @@
 <!-- <h1 class="page-title">View Details</h1> -->
-<h1 class="page-title" [innerHTML]="post?.content_title"></h1>
-<div class="back-to-page">
+<h1 class="page-title">{{post?.content_title}}</h1>
+<div class="back-to-page mb-3">
   <a [routerLink]="['/dashboard']" [state]="{ newsPageNumber: paginationPageNumber }">
-    <app-icon [name]="'chevronLeft'" [styleClass]=""></app-icon>Back
+    {{ 'home.goBack' | translate }}
   </a>
 </div>
 
 @if (post?.id) {
-  <div class="row mt-3">
-    <div class="col-12">
-      <div class="card">
-        <div class="card-header">Details <span class="badge rounded-pill bg-primary" >{{post?.content_type}}</span></div>
-        <div class="card-body">
-          <!-- <h4 class="card-title" [innerHTML]="post?.content_title"></h4> -->
-          <div class="main-content-description-wrapper" [innerHTML]="post?.content_text"></div>
-        </div>
-        <div class="card-footer">
-          <span class="small text-secondary">{{getTimeStampInfo(post)}}</span>
-        </div>
-      </div>
+  <div class="col-span-12">
+    <div class="card mb-0">
+      <!-- <h3>{{post?.content_title}}</h3> -->
+      <p>{{post?.content_type}}, <span class="text-sm">{{getTimeStampInfo(post)}}</span></p>
+      <div class="main-content-description-wrapper" [innerHTML]="post?.content_text"></div>
     </div>
   </div>
 }

@@ -302,6 +302,8 @@
     "updateHeader": "Latest Updates",
     "noLatestUpdates": "No latest updates to show.",
     "viewAll": "View All",
-    "currentMonthsData": "* Indicates current month's data"
+    "currentMonthsData": "* Indicates current month's data",
+    "postDetails": "Showing details...",
+    "goBack": "Go back to dashboard"
   }
 }
