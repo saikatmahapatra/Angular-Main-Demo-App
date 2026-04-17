@@ -7,11 +7,13 @@ import Lara from '@primeuix/themes/lara';
 import Nora from '@primeuix/themes/nora';
 import { PrimeNG } from 'primeng/config';
 import { LayoutService } from '@shared/services/layout.service';
+import MyPreset from 'src/app/mypreset';
 
 const presets = {
   Aura,
   Lara,
-  Nora
+  Nora,
+  MyPreset
 } as const;
 
 declare type KeyOfType<T> = keyof T extends infer U ? U : never;
