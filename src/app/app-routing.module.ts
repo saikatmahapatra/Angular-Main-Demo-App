@@ -22,7 +22,7 @@ const routes: Routes = [
     children: [
       {
         path: 'auth',
-        loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+        loadChildren: () => import('./@features/auth/auth.module').then(m => m.AuthModule)
       },
     ]
   },
@@ -37,37 +37,37 @@ const routes: Routes = [
     children: [
       {
         path: 'uikit',
-        loadChildren: () => import('./app-demo/app-demo.module').then(m => m.AppDemoModule)
+        loadChildren: () => import('./app-demo-ui-kit/app-demo.module').then(m => m.AppDemoModule)
       },
       {
         path: 'dashboard',
         canActivateChild: [AuthGuard],
-        loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
+        loadChildren: () => import('./@features/dashboard/dashboard.module').then(m => m.DashboardModule)
       },
       {
         path: 'emp',
         canActivateChild: [AuthGuard],
-        loadChildren: () => import('./user/user.module').then(m => m.UserModule)
+        loadChildren: () => import('./@features/user/user.module').then(m => m.UserModule)
       },
       {
         path: 'cms',
         canActivateChild: [AuthGuard],
-        loadChildren: () => import('./cms/cms.module').then(m => m.CmsModule)
+        loadChildren: () => import('./@features/cms/cms.module').then(m => m.CmsModule)
       },
       {
         path: 'timesheet',
         canActivateChild: [AuthGuard],
-        loadChildren: () => import('./timesheet/timesheet.module').then(m => m.TimesheetModule)
+        loadChildren: () => import('./@features/timesheet/timesheet.module').then(m => m.TimesheetModule)
       },
       {
         path: 'project',
         canActivateChild: [AuthGuard],
-        loadChildren: () => import('./project/project.module').then(m => m.ProjectModule)
+        loadChildren: () => import('./@features/project/project.module').then(m => m.ProjectModule)
       },
       {
         path: 'leave',
         canActivateChild: [AuthGuard],
-        loadChildren: () => import('./leave/leave.module').then(m => m.LeaveModule)
+        loadChildren: () => import('./@features/leave/leave.module').then(m => m.LeaveModule)
       },
       // {
       //   path: 'asset-management',
@@ -77,7 +77,7 @@ const routes: Routes = [
       {
         path: 'settings',
         canActivateChild: [AuthGuard],
-        loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule)
+        loadChildren: () => import('./@features/settings/settings.module').then(m => m.SettingsModule)
       }
 
     ]
@@ -96,7 +96,7 @@ const routes: Routes = [
   },
   {
     path: 'site',
-    loadChildren: () => import('./web-page/web-page.module').then(m => m.WebPageModule)
+    loadChildren: () => import('./@features/web-page/web-page.module').then(m => m.WebPageModule)
   },
   {
     path: '**', // wildcard will be at always last
