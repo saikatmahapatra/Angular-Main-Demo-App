@@ -92,13 +92,13 @@ export class ManageUsersComponent implements OnInit {
     this.expandedRows = {};
   }
 
-  onRowExpand(event: TableRowExpandEvent) {
-        this.messageService.add({ severity: 'info', summary: 'Product Expanded', detail: event.data.name, life: 3000 });
-    }
+  // onRowExpand(event: TableRowExpandEvent) {
+  //   this.messageService.add({ severity: 'info', summary: 'Product Expanded', detail: event.data.name, life: 3000 });
+  // }
 
-    onRowCollapse(event: TableRowCollapseEvent) {
-        this.messageService.add({ severity: 'success', summary: 'Product Collapsed', detail: event.data.name, life: 3000 });
-    }
+  // onRowCollapse(event: TableRowCollapseEvent) {
+  //   this.messageService.add({ severity: 'success', summary: 'Product Collapsed', detail: event.data.name, life: 3000 });
+  // }
 
   // getUserInterval() {
   //   this.subscription = timer(0, 10000).pipe(

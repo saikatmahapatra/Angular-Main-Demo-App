@@ -11,7 +11,7 @@
 </div>
 <div class="mb">
   <p-table [value]="userList" [tableStyle]="{ 'min-width': '50rem' }" dataKey="id" [rowHover]="true"
-    [expandedRowKeys]="expandedRows" (onRowExpand)="onRowExpand($event)" (onRowCollapse)="onRowCollapse($event)">
+    [expandedRowKeys]="expandedRows">
     <ng-template #caption>
       <div class="flex flex-wrap justify-end gap-2">
         <p-button severity="secondary" label="Expand All" icon="pi pi-plus" text (onClick)="expandAll()" />
@@ -50,7 +50,54 @@
     <ng-template #expandedrow let-moreData>
       <tr>
         <td colspan="8">
-          {{moreData | json}}
+          <div class="p-4">
+            <table class="w-full border-collapse border border-gray-300">
+              <tr class="bg-gray-100">
+                <th class="border border-gray-300 p-2 text-left">Field</th>
+                <th class="border border-gray-300 p-2 text-left">Value</th>
+                <th class="border border-gray-300 p-2 text-left">Field</th>
+                <th class="border border-gray-300 p-2 text-left">Value</th>
+              </tr>
+              <tr>
+                <td class="border border-gray-300 p-2 font-bold">Name</td>
+                <td class="border border-gray-300 p-2">{{moreData.user_full_name}}</td>
+                <td class="border border-gray-300 p-2 font-bold">Designation & Department</td>
+                <td class="border border-gray-300 p-2">{{moreData.designation_name}}; {{moreData.department_name}}
+                </td>
+
+              </tr>
+              <tr>
+                <td class="border border-gray-300 p-2 font-bold">Email</td>
+                <td class="border border-gray-300 p-2">{{moreData.user_email}}</td>
+                <td class="border border-gray-300 p-2 font-bold">Phone</td>
+                <td class="border border-gray-300 p-2">{{moreData.user_phone}}</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-300 p-2 font-bold">Gender</td>
+                <td class="border border-gray-300 p-2">{{moreData.user_gender}}</td>
+                <td class="border border-gray-300 p-2 font-bold">Role</td>
+                <td class="border border-gray-300 p-2">{{moreData.role_name}}</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-300 p-2 font-bold">DOB</td>
+                <td class="border border-gray-300 p-2">{{moreData.user_dob}}</td>
+                <td class="border border-gray-300 p-2 font-bold">DOJ</td>
+                <td class="border border-gray-300 p-2">{{moreData.user_doj}}</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-300 p-2 font-bold">Employment Type</td>
+                <td class="border border-gray-300 p-2">{{moreData.employment_type_name}}</td>
+                <td class="border border-gray-300 p-2 font-bold">Blood Group</td>
+                <td class="border border-gray-300 p-2">{{moreData.user_blood_group}}</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-300 p-2 font-bold">Base Location</td>
+                <td class="border border-gray-300 p-2">{{moreData.base_work_location_name}}</td>
+                <td class="border border-gray-300 p-2 font-bold">Workspace Type</td>
+                <td class="border border-gray-300 p-2">{{moreData.workspace_type_name}}</td>
+              </tr>
+            </table>
+          </div>
         </td>
       </tr>
     </ng-template>
