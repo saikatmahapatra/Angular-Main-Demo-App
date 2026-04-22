@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ChangeDetectorRef, ViewEncapsulation, Input, ViewChild, ViewChildren, QueryList } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ChangeDetectorRef, ViewEncapsulation, Input, ViewChild, ViewChildren, QueryList, signal } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { ContentCardComponent } from '../content-card/content-card.component';
 import { ExcelService } from '@core/services/excel.service';
@@ -14,6 +14,8 @@ export class TestComponent implements OnInit, AfterViewInit {
   showShubhead: boolean = false;
   routeData: any;
   msg = '';
+
+  myVal = signal(51);
 
 
   dataForExcel: any = [];
@@ -69,5 +71,9 @@ export class TestComponent implements OnInit, AfterViewInit {
       }
     });
     this.excelService.exportToExcel(fileToExport, 'MyFile-' + new Date().getTime());
+  }
+
+  updateValue() {
+    this.myVal.set(this.myVal() + 1);
   }
 }

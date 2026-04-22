@@ -26,4 +26,8 @@
 
 
 <h4>JSON to Excel Export</h4>
-<button type="button" class="btn btn-success" (click)="exportToExcel()">Export Data Demo</button>
+<button pButton type="button" (click)="exportToExcel()">Export Data Demo</button>
+
+
+<h4>Signal Value: {{ myVal() }}</h4>
+<button pButton (click)="updateValue()" label="Test Signal Value Change"></button>
