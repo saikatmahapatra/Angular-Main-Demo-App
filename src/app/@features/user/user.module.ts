@@ -21,9 +21,9 @@ import { AddEditPayrollInfoComponent } from './components/add-edit-payroll-info/
 import { EditApproversComponent } from './components/edit-approvers/edit-approvers.component';
 import { PeopleILeadComponent } from './components/people-i-lead/people-i-lead.component';
 import { ViewEmployeesComponent } from './components/view-employees/view-employees.component';
-import { PrimeNgModule } from '../../prime-ng.module';
 import { ViewMyProfileComponent } from './components/view-my-profile/view-my-profile.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
+import { APP_UI_COMPONENTS } from 'src/app/@app-ui-lib';
 
 @NgModule({
   imports: [
@@ -33,7 +33,7 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
     ReactiveFormsModule,
     SharedModule,
     UserRoutingModule,
-    PrimeNgModule
+    ...APP_UI_COMPONENTS
   ],
   declarations: [
     ManageUsersComponent,

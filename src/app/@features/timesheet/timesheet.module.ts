@@ -6,9 +6,9 @@ import { TimesheetLayoutComponent } from './timesheet-layout.component';
 import { TimesheetFormComponent } from './components/timesheet-form/timesheet-form.component';
 import { ViewTimesheetComponent } from './components/view-timesheet/view-timesheet.component';
 import { SharedModule } from '../../@shared/shared.module';
-import { PrimeNgModule } from '../../prime-ng.module';
 import { EditTimesheetComponent } from './components/edit-timesheet/edit-timesheet.component';
 import { TimesheetReportComponent } from './components/timesheet-report/timesheet-report.component';
+import { APP_UI_COMPONENTS } from 'src/app/@app-ui-lib';
 @NgModule({
   declarations: [
     TimesheetLayoutComponent,
@@ -23,7 +23,7 @@ import { TimesheetReportComponent } from './components/timesheet-report/timeshee
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    PrimeNgModule
+    ...APP_UI_COMPONENTS
   ]
 })
 export class TimesheetModule { }

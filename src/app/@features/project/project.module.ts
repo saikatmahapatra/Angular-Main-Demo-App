@@ -9,7 +9,7 @@ import { ProjectLayoutComponent } from './project-layout.component';
 import { SharedModule } from '../../@shared/shared.module';
 import { ManageProjectComponent } from './components/manage-project/manage-project.component';
 import { ManageTaskComponent } from './components/manage-task/manage-task.component';
-import { PrimeNgModule } from '../../prime-ng.module';
+import { APP_UI_COMPONENTS } from 'src/app/@app-ui-lib';
 
 
 @NgModule({
@@ -26,7 +26,7 @@ import { PrimeNgModule } from '../../prime-ng.module';
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
-    PrimeNgModule
+    ...APP_UI_COMPONENTS
   ]
 })
 export class ProjectModule { }

@@ -19,13 +19,13 @@ import { StatusIndicatorDirective } from './directives/status-indicator.directiv
 import { ThemeSwitchComponent } from './components/theme-switch/theme-switch.component';
 //import { CookieConsentComponent } from './components/cookie-consent/cookie-consent.component';
 import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.component';
-import { PrimeNgModule } from '../prime-ng.module';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { LanguageSwitchComponent } from './components/language-switch/language-switch.component';
 import { TranslateLangModule } from '../translate-language.module';
 import { AppMenuitemComponent } from './components/sidebar/menuitem.component';
 import { ThemeConfigComponent } from './components/theme-config/theme-config.component';
 import { LogoComponent } from './components/logo/logo.component';
+import { APP_UI_COMPONENTS } from '../@app-ui-lib';
 
 
 const data = [
@@ -59,7 +59,7 @@ const data = [
     CommonModule,
     FormsModule,
     ReactiveFormsModule, 
-    PrimeNgModule
+    ...APP_UI_COMPONENTS
   ],
   declarations: [
     ...data   

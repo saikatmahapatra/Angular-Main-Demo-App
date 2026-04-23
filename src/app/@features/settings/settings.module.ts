@@ -5,10 +5,10 @@ import { SettingsRoutingModule } from './settings-routing.module';
 import { SettingsLayoutComponent } from './settings-layout.component';
 import { SiteSettingsComponent } from './components/site-settings/site-settings.component';
 import { SiteMetaComponent } from './components/site-meta/site-meta.component';
-import { PrimeNgModule } from '../../prime-ng.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../../@shared/shared.module';
 import { SrbacComponent } from './components/srbac/srbac.component';
+import { APP_UI_COMPONENTS } from 'src/app/@app-ui-lib';
 
 
 @NgModule({
@@ -22,7 +22,7 @@ import { SrbacComponent } from './components/srbac/srbac.component';
     CommonModule,
     SharedModule,
     SettingsRoutingModule,
-    PrimeNgModule,
+    ...APP_UI_COMPONENTS,
     FormsModule,
     ReactiveFormsModule
   ]

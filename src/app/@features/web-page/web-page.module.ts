@@ -12,10 +12,10 @@ import { PolicyComponent } from './components/policy/policy.component';
 import { WebPageLayoutComponent } from './web-page-layout.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { FooterWidgetComponent } from './components/footer-widget/footer-widget.component';
-import { PrimeNgModule } from '../../prime-ng.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from "@shared/shared.module";
+import { APP_UI_COMPONENTS } from 'src/app/@app-ui-lib';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -34,7 +34,7 @@ import { SharedModule } from "@shared/shared.module";
   imports: [
     CommonModule,
     WebPageRoutingModule,
-    PrimeNgModule,
+    ...APP_UI_COMPONENTS,
     SharedModule,
     FormsModule,
     ReactiveFormsModule,

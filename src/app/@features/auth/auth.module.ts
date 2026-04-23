@@ -8,9 +8,9 @@ import { ResetPasswordFormComponent } from './components/reset-password-form/res
 import { SharedModule } from '../../@shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TwoFactorAuthComponent } from './components/login-form/two-factor-auth/two-factor-auth.component';
-import { PrimeNgModule } from '../../prime-ng.module';
 import { TranslateLangModule } from '../../translate-language.module';
 import { SignupComponent } from './components/signup/signup.component';
+import { APP_UI_COMPONENTS } from 'src/app/@app-ui-lib';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { SignupComponent } from './components/signup/signup.component';
     CommonModule,
     TranslateLangModule,
     AuthRoutingModule,
-    PrimeNgModule,
+    ...APP_UI_COMPONENTS,
     CommonModule,
     SharedModule,
     FormsModule,

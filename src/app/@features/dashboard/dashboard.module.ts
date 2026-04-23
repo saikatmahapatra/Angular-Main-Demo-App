@@ -5,12 +5,12 @@ import { DashboardLayoutComponent } from './dashboard-layout.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../../@shared/shared.module';
 import { PostDetailsComponent } from './components/post-details/post-details.component';
-import { PrimeNgModule } from '../../prime-ng.module';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { AnalyticsComponent } from './components/analytics/analytics.component';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateLangModule } from '../../translate-language.module';
 import { DashboardLandingPageComponent } from './components/dashboard-landing-page/dashboard-landing-page.component';
+import { APP_UI_COMPONENTS } from 'src/app/@app-ui-lib';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import { DashboardLandingPageComponent } from './components/dashboard-landing-pa
     SharedModule,
     RouterModule,
     DashboardRoutingModule,
-    PrimeNgModule,
+    ...APP_UI_COMPONENTS,
     FullCalendarModule ,
     ReactiveFormsModule,
     FormsModule

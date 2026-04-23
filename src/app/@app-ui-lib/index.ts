@@ -20,7 +20,6 @@ export const APP_UI_COMPONENTS = [
   SelectComponent
 ] as const;
 
-// Export them individually for tree-shaking and modern imports
 export * from "./button/button.component";
 export * from "./charts/charts.component";
 export * from "./icon/icon.component";

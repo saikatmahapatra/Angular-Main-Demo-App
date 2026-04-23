@@ -9,9 +9,9 @@ import { ManageCmsComponent } from './components/manage-cms/manage-cms.component
 import { AddContentComponent } from './components/add-content/add-content.component';
 import { ViewHolidaysComponent } from './components/view-holidays/view-holidays.component';
 import { ViewHrPoliciesComponent } from './components/view-hr-policies/view-hr-policies.component';
-import { PrimeNgModule } from '../../prime-ng.module';
 import { ManageHolidaysComponent } from './components/manage-holidays/manage-holidays.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { APP_UI_COMPONENTS } from 'src/app/@app-ui-lib';
 
 @NgModule({
   imports: [
@@ -21,7 +21,7 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    PrimeNgModule,
+    ...APP_UI_COMPONENTS,
     EditorModule
   ],
   declarations: [
