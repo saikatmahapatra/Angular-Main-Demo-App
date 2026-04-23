@@ -37,7 +37,12 @@ const routes: Routes = [
     children: [
       {
         path: 'uikit',
-        loadChildren: () => import('./app-demo-ui-kit/app-demo.module').then(m => m.AppDemoModule)
+        pathMatch: 'full',
+        redirectTo: 'demo'
+      },
+      {
+        path: 'demo',
+        loadChildren: () => import('./app-demo/app-demo.module').then(m => m.AppDemoModule)
       },
       {
         path: 'dashboard',
