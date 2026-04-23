@@ -15,22 +15,13 @@ import { ValidationErrorComponent } from './components/validation-error/validati
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { SearchInputComponent } from './components/search-input/search-input.component';
-import { FileUploadComponent } from './components/@ui-component-lib/file-upload/file-upload.component';
 import { StatusIndicatorDirective } from './directives/status-indicator.directive';
 import { ThemeSwitchComponent } from './components/theme-switch/theme-switch.component';
-import { IconComponent } from './components/@ui-component-lib/icon/icon.component';
 //import { CookieConsentComponent } from './components/cookie-consent/cookie-consent.component';
 import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.component';
 import { PrimeNgModule } from '../prime-ng.module';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { LanguageSwitchComponent } from './components/language-switch/language-switch.component';
-import { ButtonComponent } from './components/@ui-component-lib/button/button.component';
-import { DataTableComponent } from './components/@ui-component-lib/data-table/data-table.component';
-import { ChartsComponent } from './components/@ui-component-lib/charts/charts.component';
-import { InputComponent } from './components/@ui-component-lib/input/input.component';
-import { SelectComponent } from './components/@ui-component-lib/select/select.component';
-import { RadioComponent } from './components/@ui-component-lib/radio/radio.component';
-import { CheckboxComponent } from './components/@ui-component-lib/checkbox/checkbox.component';
 import { TranslateLangModule } from '../translate-language.module';
 import { AppMenuitemComponent } from './components/sidebar/menuitem.component';
 import { ThemeConfigComponent } from './components/theme-config/theme-config.component';
@@ -52,20 +43,11 @@ const data = [
   AppMenuitemComponent,
   LoaderComponent,
   SearchInputComponent,
-  FileUploadComponent,
   StatusIndicatorDirective,
   ThemeSwitchComponent,
-  IconComponent,
   ScrollToTopComponent,
   BreadcrumbComponent,
   LanguageSwitchComponent,
-  ButtonComponent,
-  DataTableComponent,
-  ChartsComponent,
-  InputComponent,
-  SelectComponent,
-  RadioComponent,
-  CheckboxComponent,
   ThemeConfigComponent,
   LogoComponent
 ];
