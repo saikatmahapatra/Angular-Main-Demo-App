@@ -1,10 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
-
+import { CommonModule } from '@angular/common'; // 1. Import CommonModule
 @Component({
     selector: 'app-icon',
     templateUrl: './icon.component.html',
     styleUrls: ['./icon.component.scss'],
-    standalone: true
+    standalone: true,
+    imports: [CommonModule] // 2. Add CommonModule to imports
+
 })
 export class IconComponent implements OnInit {
   @Input() lib: string = 'material'; // bootstrap | primeng | material
