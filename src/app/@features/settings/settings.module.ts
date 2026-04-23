@@ -8,7 +8,7 @@ import { SiteMetaComponent } from './components/site-meta/site-meta.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../../@shared/shared.module';
 import { SrbacComponent } from './components/srbac/srbac.component';
-import { APP_UI_COMPONENTS } from 'src/app/@app-ui-lib';
+import { APP_UI_KIT } from 'src/app/@ui-kit';
 
 
 @NgModule({
@@ -22,7 +22,7 @@ import { APP_UI_COMPONENTS } from 'src/app/@app-ui-lib';
     CommonModule,
     SharedModule,
     SettingsRoutingModule,
-    ...APP_UI_COMPONENTS,
+    ...APP_UI_KIT,
     FormsModule,
     ReactiveFormsModule
   ]

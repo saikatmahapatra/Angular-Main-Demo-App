@@ -10,7 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TwoFactorAuthComponent } from './components/login-form/two-factor-auth/two-factor-auth.component';
 import { TranslateLangModule } from '../../translate-language.module';
 import { SignupComponent } from './components/signup/signup.component';
-import { APP_UI_COMPONENTS } from 'src/app/@app-ui-lib';
+import { APP_UI_KIT } from 'src/app/@ui-kit';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { APP_UI_COMPONENTS } from 'src/app/@app-ui-lib';
     CommonModule,
     TranslateLangModule,
     AuthRoutingModule,
-    ...APP_UI_COMPONENTS,
+    ...APP_UI_KIT,
     CommonModule,
     SharedModule,
     FormsModule,

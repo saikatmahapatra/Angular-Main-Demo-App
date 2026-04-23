@@ -54,7 +54,7 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { StyleClassModule } from 'primeng/styleclass';
 import { SelectModule } from 'primeng/select';
 
-export const PRIME_NG_CORE_MODULES = [
+export const PRIME_NG_CORE = [
   ButtonModule,
   Ripple,
   MessageModule,
@@ -112,6 +112,7 @@ export const PRIME_NG_CORE_MODULES = [
 
 
 // ---------------------------------------------------------
+// UI Library Encapsulation
 // Wrapper Components based on PrimeNG Modules
 // ---------------------------------------------------------
 
@@ -124,9 +125,8 @@ import { IconComponent } from "./icon/icon.component";
 // import { RadioComponent } from "./radio/radio.component";
 // import { SelectComponent } from "./select/select.component";
 
-// Group them for easy legacy importing
-export const APP_UI_COMPONENTS = [
-  ...PRIME_NG_CORE_MODULES,
+
+export const APP_UI_WRAPPER = [
   // ButtonComponent,
   // ChartsComponent,
   IconComponent,
@@ -135,6 +135,12 @@ export const APP_UI_COMPONENTS = [
   // FileUploadComponent,
   // RadioComponent,
   // SelectComponent
+]
+
+// Group them for easy legacy importing
+export const APP_UI_KIT = [
+  ...PRIME_NG_CORE,
+  ...APP_UI_WRAPPER
 ] as const;
 
 // export * from "./button/button.component";

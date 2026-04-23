@@ -10,7 +10,7 @@ import { AnalyticsComponent } from './components/analytics/analytics.component';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateLangModule } from '../../translate-language.module';
 import { DashboardLandingPageComponent } from './components/dashboard-landing-page/dashboard-landing-page.component';
-import { APP_UI_COMPONENTS } from 'src/app/@app-ui-lib';
+import { APP_UI_KIT } from 'src/app/@ui-kit';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import { APP_UI_COMPONENTS } from 'src/app/@app-ui-lib';
     SharedModule,
     RouterModule,
     DashboardRoutingModule,
-    ...APP_UI_COMPONENTS,
+    ...APP_UI_KIT,
     FullCalendarModule ,
     ReactiveFormsModule,
     FormsModule

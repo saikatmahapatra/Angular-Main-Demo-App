@@ -15,7 +15,7 @@ import { FooterWidgetComponent } from './components/footer-widget/footer-widget.
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from "@shared/shared.module";
-import { APP_UI_COMPONENTS } from 'src/app/@app-ui-lib';
+import { APP_UI_KIT } from 'src/app/@ui-kit';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -34,7 +34,7 @@ import { APP_UI_COMPONENTS } from 'src/app/@app-ui-lib';
   imports: [
     CommonModule,
     WebPageRoutingModule,
-    ...APP_UI_COMPONENTS,
+    ...APP_UI_KIT,
     SharedModule,
     FormsModule,
     ReactiveFormsModule,

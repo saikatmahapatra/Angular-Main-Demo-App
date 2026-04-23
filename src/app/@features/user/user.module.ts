@@ -23,7 +23,7 @@ import { PeopleILeadComponent } from './components/people-i-lead/people-i-lead.c
 import { ViewEmployeesComponent } from './components/view-employees/view-employees.component';
 import { ViewMyProfileComponent } from './components/view-my-profile/view-my-profile.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
-import { APP_UI_COMPONENTS } from 'src/app/@app-ui-lib';
+import { APP_UI_KIT } from 'src/app/@ui-kit';
 
 @NgModule({
   imports: [
@@ -33,7 +33,7 @@ import { APP_UI_COMPONENTS } from 'src/app/@app-ui-lib';
     ReactiveFormsModule,
     SharedModule,
     UserRoutingModule,
-    ...APP_UI_COMPONENTS
+    ...APP_UI_KIT
   ],
   declarations: [
     ManageUsersComponent,

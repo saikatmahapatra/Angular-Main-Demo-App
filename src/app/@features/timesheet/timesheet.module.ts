@@ -8,7 +8,7 @@ import { ViewTimesheetComponent } from './components/view-timesheet/view-timeshe
 import { SharedModule } from '../../@shared/shared.module';
 import { EditTimesheetComponent } from './components/edit-timesheet/edit-timesheet.component';
 import { TimesheetReportComponent } from './components/timesheet-report/timesheet-report.component';
-import { APP_UI_COMPONENTS } from 'src/app/@app-ui-lib';
+import { APP_UI_KIT } from 'src/app/@ui-kit';
 @NgModule({
   declarations: [
     TimesheetLayoutComponent,
@@ -23,7 +23,7 @@ import { APP_UI_COMPONENTS } from 'src/app/@app-ui-lib';
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    ...APP_UI_COMPONENTS
+    ...APP_UI_KIT
   ]
 })
 export class TimesheetModule { }

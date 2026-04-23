@@ -26,7 +26,7 @@ import { PrimeNgUiKitComponent } from './components/prime-ng-ui-kit/prime-ng-ui-
 //import { KoreAiComponent } from './kore-ai/kore-ai.component';
 import { TranslateLangModule } from '../translate-language.module';
 import { AppDemoLayoutComponent } from './app-demo-layout.component';
-import { APP_UI_COMPONENTS } from '../@app-ui-lib';
+import { APP_UI_KIT } from '../@ui-kit';
 
 @NgModule({
   imports: [
@@ -38,7 +38,7 @@ import { APP_UI_COMPONENTS } from '../@app-ui-lib';
     AngularDemoRoutingModule,
     AgGridModule,
     TranslateLangModule,
-    ...APP_UI_COMPONENTS
+    ...APP_UI_KIT
   ],
   declarations: [
     AppDemoLayoutComponent,

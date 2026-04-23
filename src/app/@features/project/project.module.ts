@@ -9,7 +9,7 @@ import { ProjectLayoutComponent } from './project-layout.component';
 import { SharedModule } from '../../@shared/shared.module';
 import { ManageProjectComponent } from './components/manage-project/manage-project.component';
 import { ManageTaskComponent } from './components/manage-task/manage-task.component';
-import { APP_UI_COMPONENTS } from 'src/app/@app-ui-lib';
+import { APP_UI_KIT } from 'src/app/@ui-kit';
 
 
 @NgModule({
@@ -26,7 +26,7 @@ import { APP_UI_COMPONENTS } from 'src/app/@app-ui-lib';
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
-    ...APP_UI_COMPONENTS
+    ...APP_UI_KIT
   ]
 })
 export class ProjectModule { }

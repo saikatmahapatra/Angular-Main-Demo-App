@@ -9,7 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LeaveDetailsActionsComponent } from './components/leave-details-actions/leave-details-actions.component';
 import { SharedModule } from '../../@shared/shared.module';
 import { LeaveBalanceCalculationComponent } from './components/leave-balance-calculation/leave-balance-calculation.component';
-import { APP_UI_COMPONENTS } from 'src/app/@app-ui-lib';
+import { APP_UI_KIT } from 'src/app/@ui-kit';
 
 
 @NgModule({
@@ -24,7 +24,7 @@ import { APP_UI_COMPONENTS } from 'src/app/@app-ui-lib';
     CommonModule,
     LeaveRoutingModule,
     SharedModule,
-    ...APP_UI_COMPONENTS,
+    ...APP_UI_KIT,
     FormsModule,
     ReactiveFormsModule
   ],

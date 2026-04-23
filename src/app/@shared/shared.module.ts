@@ -25,7 +25,7 @@ import { TranslateLangModule } from '../translate-language.module';
 import { AppMenuitemComponent } from './components/sidebar/menuitem.component';
 import { ThemeConfigComponent } from './components/theme-config/theme-config.component';
 import { LogoComponent } from './components/logo/logo.component';
-import { APP_UI_COMPONENTS } from '../@app-ui-lib';
+import { APP_UI_KIT } from '../@ui-kit';
 
 
 const data = [
@@ -59,7 +59,7 @@ const data = [
     CommonModule,
     FormsModule,
     ReactiveFormsModule, 
-    ...APP_UI_COMPONENTS
+    ...APP_UI_KIT
   ],
   declarations: [
     ...data   

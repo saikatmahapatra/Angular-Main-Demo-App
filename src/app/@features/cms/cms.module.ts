@@ -11,7 +11,7 @@ import { ViewHolidaysComponent } from './components/view-holidays/view-holidays.
 import { ViewHrPoliciesComponent } from './components/view-hr-policies/view-hr-policies.component';
 import { ManageHolidaysComponent } from './components/manage-holidays/manage-holidays.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
-import { APP_UI_COMPONENTS } from 'src/app/@app-ui-lib';
+import { APP_UI_KIT } from 'src/app/@ui-kit';
 
 @NgModule({
   imports: [
@@ -21,7 +21,7 @@ import { APP_UI_COMPONENTS } from 'src/app/@app-ui-lib';
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    ...APP_UI_COMPONENTS,
+    ...APP_UI_KIT,
     EditorModule
   ],
   declarations: [
