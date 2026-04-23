@@ -5,7 +5,7 @@ import { event } from 'jquery';
     selector: 'app-file-upload',
     templateUrl: './file-upload.component.html',
     styleUrls: ['./file-upload.component.scss'],
-    standalone: false
+    standalone: true
 })
 export class FileUploadComponent implements OnInit {
 

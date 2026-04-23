@@ -10,7 +10,7 @@ const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
 
 @Component({
   selector: 'app-input',
-  standalone: false,
+  standalone: true,
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.scss'],
   // IMPORTANT: Register the custom value accessor here.

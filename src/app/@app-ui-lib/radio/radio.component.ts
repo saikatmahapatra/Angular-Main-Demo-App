@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-radio',
-  standalone: false,
+  standalone: true,
   templateUrl: './radio.component.html',
   styleUrl: './radio.component.scss'
 })

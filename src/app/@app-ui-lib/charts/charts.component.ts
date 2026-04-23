@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-charts',
-  standalone: false,
+  standalone: true,
   templateUrl: './charts.component.html',
   styleUrl: './charts.component.scss'
 })

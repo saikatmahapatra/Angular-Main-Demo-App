@@ -4,7 +4,7 @@ import { Component, OnInit, Input } from '@angular/core';
     selector: 'app-icon',
     templateUrl: './icon.component.html',
     styleUrls: ['./icon.component.scss'],
-    standalone: false
+    standalone: true
 })
 export class IconComponent implements OnInit {
   @Input() lib: string = 'material'; // bootstrap | primeng | material
