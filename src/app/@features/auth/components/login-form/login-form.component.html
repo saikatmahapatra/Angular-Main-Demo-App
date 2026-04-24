@@ -3,15 +3,17 @@
 </h1>
 <form [formGroup]="loginForm" class="space-y-4 md:space-y-6" (ngSubmit)="onSubmit()">
   <div>
-    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{'auth.yourEmail' | translate}}</label>
+    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{'auth.yourEmail' |
+      translate}}</label>
     <input pInputText type="text" placeholder="{{ 'auth.placeholderUsername' | translate }}" formControlName="userName"
       aria-label="Username" aria-describedby="basic-addon1" class="w-full" id="email" />
     <app-validation-error [control]="f['userName']"></app-validation-error>
   </div>
   <div>
-    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{'auth.yourPassword' | translate}}</label>
-    <input pInputText type="password" placeholder="{{ 'auth.placeholderPassword' | translate }}" formControlName="password"
-      aria-label="Password" aria-describedby="basic-addon2" class="w-full" id="password" />
+    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{'auth.yourPassword' |
+      translate}}</label>
+    <input pInputText type="password" placeholder="{{ 'auth.placeholderPassword' | translate }}"
+      formControlName="password" aria-label="Password" aria-describedby="basic-addon2" class="w-full" id="password" />
     <app-validation-error [control]="f['password']"></app-validation-error>
   </div>
   <div class="flex items-center justify-between">
@@ -28,8 +30,7 @@
     <a class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
       routerLink="../forgot-password">{{ 'auth.forgotPassword' | translate }}</a>
   </div>
-  <button pButton pRipple type="submit" class="w-full" [disabled]="loading || loginForm.invalid" [loading]="loading">{{ 'button.submit' | translate
-    }}</button>
+  <app-button [type]="'submit'" [label]="('button.submit' | translate)" [disabled]="loading || loginForm.invalid" [loading]="loading" [class]="'w-full'"></app-button>
   <p class="text-sm font-light text-gray-500 dark:text-gray-400">
     Don't have an account yet? <a [routerLink]="['../sign-up']"
       class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a>
