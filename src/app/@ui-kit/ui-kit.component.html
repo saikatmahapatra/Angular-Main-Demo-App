@@ -4,20 +4,20 @@
     <div>PrimeNG based design system components</div>
 
     <h3>Buttons</h3>
-    <app-button [severity]="'primary'" [label]="'Primary'" class="mr-3" (click)="saveItem()"></app-button>
-    <app-button [severity]="'primary'" [rounded]="true" class="mr-3">Rounded</app-button>
-    <app-button [severity]="'primary'" [icon]="'pi pi-save'" class="mr-3"></app-button>
-    <app-button [severity]="'primary'" class="mr-3">
+    <app-button [label]="'Primary'" class="mr-3" (click)="saveItem()"></app-button>
+    <app-button [rounded]="true" class="mr-3">Rounded</app-button>
+    <app-button [icon]="'pi pi-check'" class="mr-3"></app-button>
+    <app-button [icon]="'pi pi-check'" [rounded]="true" [variant]="'outlined'" class="mr-3"></app-button>
+    <app-button class="mr-3">
         <app-icon [name]="'pi pi-check'" [styleCSS]="{fontSize: '1rem'}"></app-icon>
         Custom Icon
     </app-button>
-    <app-button [severity]="'primary'" [variant]="'outlined'" class="mr-3">Outlined</app-button>
-    <app-button [severity]="'success'" [icon]="'pi pi-pencil'" [variant]="'outlined'" class="mr-3"></app-button>
+    <app-button [variant]="'outlined'" class="mr-3">Outlined</app-button>
+    <app-button [variant]="'text'" class="mr-3">Text Button</app-button>
+    <app-button [raised]="true" class="mr-3">Raised Button</app-button>
+    <app-button [disabled]="true" class="mr-3">Disabled</app-button>
+    <app-button [icon]="'pi pi-pencil'" [variant]="'outlined'" class="mr-3"></app-button>
     <app-button [severity]="'danger'" [icon]="'pi pi-trash'" [variant]="'outlined'" class="mr-3"></app-button>
-    <app-button [severity]="'primary'" [variant]="'text'" class="mr-3">Text Button</app-button>
-    <app-button [severity]="'primary'" [raised]="true" class="mr-3">Raised Button</app-button>
-    <app-button [severity]="'primary'" [disabled]="true" class="mr-3">Disabled</app-button>
-    <app-button [severity]="'secondary'" [label]="'Secondary'" class="mr-3"></app-button>
     <app-button [severity]="'success'" [label]="'Success'" class="mr-3"></app-button>
     <app-button [severity]="'danger'" [label]="'Danger'" class="mr-3"></app-button>
     <app-button [severity]="'info'" [label]="'Info'" class="mr-3"></app-button>
