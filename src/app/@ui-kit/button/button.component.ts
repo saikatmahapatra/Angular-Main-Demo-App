@@ -18,6 +18,8 @@ export type Variant = 'text' | 'raised' | 'outlined' | null | any;
       [rounded]="rounded()"
       [variant]="variant()"
       [raised]="raised()"
+      [loading]="loading()"
+      [styleClass]="class()"
       (onClick)="handleClick($event)">
       <ng-content></ng-content>
     </p-button>
@@ -33,6 +35,8 @@ export class ButtonComponent {
   outlined = input(false);
   rounded = input(false);
   raised = input(false);
+  loading = input(false);
+  class = input<string | undefined>(undefined);
   click = output<MouseEvent>();
 
   handleClick(event: MouseEvent) {
