@@ -17,6 +17,16 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'uikit',
+    component: UnauthenticatedLayoutComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./@ui-kit/ui-kit.module').then(m => m.UiKitModule)
+      }
+    ]
+  },
+  {
     path: '',
     component: UnauthenticatedLayoutComponent,
     children: [
@@ -35,11 +45,6 @@ const routes: Routes = [
     path: '',
     component: AuthenticatedLayoutComponent,
     children: [
-      {
-        path: 'uikit',
-        pathMatch: 'full',
-        redirectTo: 'demo'
-      },
       {
         path: 'demo',
         loadChildren: () => import('./app-demo/app-demo.module').then(m => m.AppDemoModule)

@@ -1,7 +1,7 @@
 import { Component, input, output } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 
-export type AppButtonSeverity = 'primary' | 'secondary' | 'success' | 'info' | 'danger' | 'contrast';
+export type AppButtonSeverity = 'primary' | 'secondary' | 'success' | 'info' | 'danger' | 'contrast' | 'warn';
 
 @Component({
   selector: 'app-button',
