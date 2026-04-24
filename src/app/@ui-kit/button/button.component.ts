@@ -33,11 +33,11 @@ export class ButtonComponent {
   outlined = input(false);
   rounded = input(false);
   raised = input(false);
-  action = output<MouseEvent>();
+  click = output<MouseEvent>();
 
   handleClick(event: MouseEvent) {
     if (!this.disabled()) {
-      this.action.emit(event);
+      this.click.emit(event);
     }
   }
 }
