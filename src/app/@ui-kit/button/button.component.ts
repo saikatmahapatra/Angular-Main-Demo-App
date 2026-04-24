@@ -1,26 +1,38 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, input, output } from '@angular/core';
+import { ButtonModule } from 'primeng/button';
+
+export type AppButtonSeverity = 'primary' | 'secondary' | 'success' | 'info' | 'danger' | 'contrast';
 
 @Component({
   selector: 'app-button',
   standalone: true,
-  templateUrl: './button.component.html',
-  styleUrl: './button.component.scss'
+  imports: [ButtonModule],
+  template: `
+    <p-button 
+      [type]="type()"
+      [label]="label()" 
+      [icon]="icon()" 
+      [severity]="severity()" 
+      [disabled]="disabled()"
+      [outlined]="outlined()"
+      (onClick)="handleClick($event)">
+      <ng-content></ng-content>
+    </p-button>
+  `
 })
-export class ButtonComponent implements OnInit {
-  @Input() type: 'button' | 'submit' | 'reset' = 'button';
-  @Input() btnType: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' = 'primary';
-  @Input() label: string = 'Button';
-  @Input() size: 'small' | 'medium' | 'large' | 'normal' = 'normal';
-  @Input() icon: string = '';
-  @Input() iconPosition: 'left' | 'right' = 'left';
-  @Input() fullWidth: boolean = false;
-  @Input() loading: boolean = false;
-  @Input() disabled: boolean = false;
-  @Input() rounded: boolean = false;
-  @Input() outlined: boolean = false;
-  @Input() raised: boolean = false;
+export class ButtonComponent {
+  type = input<'button' | 'submit' | 'reset'>('button');
+  label = input<string | undefined>(undefined);
+  icon = input<string | undefined>(undefined);
+  severity = input<AppButtonSeverity>('primary');
+  disabled = input(false);
+  outlined = input(false);
 
-  constructor() {}
+  action = output<MouseEvent>();
 
-  ngOnInit(): void {}
+  handleClick(event: MouseEvent) {
+    if (!this.disabled()) {
+      this.action.emit(event);
+    }
+  }
 }

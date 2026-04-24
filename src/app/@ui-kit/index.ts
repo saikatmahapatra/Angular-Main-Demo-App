@@ -116,7 +116,7 @@ export const PRIME_NG_CORE = [
 // Wrapper Components based on PrimeNG Modules
 // ---------------------------------------------------------
 
-// import { ButtonComponent } from "./button/button.component";
+import { ButtonComponent as AppButtonComponent } from "./button/button.component";
 // import { ChartsComponent } from "./charts/charts.component";
 import { IconComponent } from "./icon/icon.component";
 // import { DataTableComponent } from "./data-table/data-table.component";
@@ -127,7 +127,7 @@ import { IconComponent } from "./icon/icon.component";
 
 
 export const APP_UI_WRAPPER = [
-  // ButtonComponent,
+  AppButtonComponent,
   // ChartsComponent,
   IconComponent,
   // DataTableComponent,
@@ -143,7 +143,7 @@ export const APP_UI_KIT = [
   ...APP_UI_WRAPPER
 ] as const;
 
-// export * from "./button/button.component";
+export * from "./button/button.component";
 // export * from "./charts/charts.component";
 export * from "./icon/icon.component";
 // export * from "./data-table/data-table.component";
