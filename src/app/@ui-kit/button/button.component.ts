@@ -15,6 +15,7 @@ export type AppButtonSeverity = 'primary' | 'secondary' | 'success' | 'info' | '
       [severity]="severity()" 
       [disabled]="disabled()"
       [outlined]="outlined()"
+      [rounded]="rounded()"
       (onClick)="handleClick($event)">
       <ng-content></ng-content>
     </p-button>
@@ -27,7 +28,7 @@ export class ButtonComponent {
   severity = input<AppButtonSeverity>('primary');
   disabled = input(false);
   outlined = input(false);
-
+  rounded = input(false);
   action = output<MouseEvent>();
 
   handleClick(event: MouseEvent) {
