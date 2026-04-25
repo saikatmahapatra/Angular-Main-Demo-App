@@ -1,12 +1,13 @@
 import { Component, input, output } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
+import { TooltipModule } from 'primeng/tooltip';
 
 export type AppButtonSeverity = 'primary' | 'secondary' | 'success' | 'info' | 'danger' | 'contrast' | 'warn';
 export type Variant = 'text' | 'raised' | 'outlined' | null | any;
 @Component({
   selector: 'app-button',
   standalone: true,
-  imports: [ButtonModule],
+  imports: [ButtonModule, TooltipModule],
   template: `
     <p-button 
       [type]="type()"
@@ -20,6 +21,9 @@ export type Variant = 'text' | 'raised' | 'outlined' | null | any;
       [raised]="raised()"
       [loading]="loading()"
       [styleClass]="class()"
+      [title]="title()"
+      [pTooltip]="tooltip()"
+      [tooltipPosition]="tooltipPosition()"
       (onClick)="handleClick($event)">
       <ng-content></ng-content>
     </p-button>
@@ -36,8 +40,16 @@ export class ButtonComponent {
   rounded = input(false);
   raised = input(false);
   loading = input(false);
-  class = input<string | undefined>(undefined);
+  class = input<string | undefined>('');
+  title = input<string | undefined>('');
+  tooltip = input<string | undefined>('');
+  tooltipPosition = input<'top' | 'bottom' | 'left' | 'right'>('left');
   clickAction = output<MouseEvent>();
+  toolTipText: string | undefined = undefined;
+
+  // constructor() {
+  //   this.toolTipText = this.showTooltip() ? this.title() || this.tooltip() : undefined;
+  // }
 
   handleClick(event: MouseEvent) {
     if (!this.disabled()) {
