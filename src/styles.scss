@@ -1,7 +1,9 @@
-@use "./styles/tailwind.css";
 @use "./styles/layout/layout";
 @use "node_modules/primeicons/primeicons";
 //@use "./styles/demo/demo.scss";
 
 // Bootstrap
 //@import "node_modules/bootstrap/scss/bootstrap";
+
+// Tailwind CSS import recommmended indirectly by a css file
+@import "./styles/tailwind-import.css";
