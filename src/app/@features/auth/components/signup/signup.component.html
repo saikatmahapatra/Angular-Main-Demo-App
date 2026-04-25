@@ -1,54 +1,52 @@
-<h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+<h1 class="page-title h3">
     {{ 'auth.signup.titleSignup' | translate }}
 </h1>
 <div class="mb-3">
-    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="firstName">
+    <label class="form-label" for="firstName">
         {{ 'auth.signup.firstName' | translate }}
     </label>
-    <input pInputText type="text" id="firstName" name="firstName" class="w-full">
+    <input pInputText type="text" id="firstName" name="firstName" class="w-100 d-block">
 </div>
 <div class="mb-3">
-    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="lastName">
+    <label class="form-label" for="lastName">
         {{ 'auth.signup.lastName' | translate }}
     </label>
-    <input pInputText type="text" id="lastName" name="lastName" class="w-full">
+    <input pInputText type="text" id="lastName" name="lastName" class="w-100 d-block">
 </div>
 <div class="mb-3">
-    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="email">
+    <label class="form-label" for="email">
         {{ 'auth.signup.email' | translate }}
     </label>
-    <input pInputText type="email" id="email" name="email" class="w-full">
+    <input pInputText type="email" id="email" name="email" class="w-100 d-block">
 </div>
 <div class="mb-3">
-    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="password">
+    <label class="form-label" for="password">
         {{ 'auth.signup.password' | translate }}
     </label>
-    <input pInputText type="password" id="password" name="password" class="w-full">
+    <input pInputText type="password" id="password" name="password" class="w-100 d-block">
 </div>
 <div class="mb-3">
-    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="confirmPassword">
+    <label class="form-label" for="confirmPassword">
         {{ 'auth.signup.confirmPassword' | translate }}
     </label>
-    <input pInputText type="password" id="confirmPassword" name="confirmPassword" class="w-full">
+    <input pInputText type="password" id="confirmPassword" name="confirmPassword" class="w-100 d-block">
+</div>
+<div class="mb-3 d-flex align-items-center">
+    <span class="me-1"><p-checkbox [binary]="true" inputId="terms"></p-checkbox></span>
+    <label class="form-label" for="terms">{{ 'auth.signup.termsAndConditions' | translate }}</label>
 </div>
 <div class="mb-3">
-    <span class="mr-3"><p-checkbox [binary]="true" inputId="terms"></p-checkbox></span>
-    <label class="mb-2 text-sm font-medium cursor-pointer text-gray-900 dark:text-white" for="terms">{{
-        'auth.signup.termsAndConditions' | translate }}</label>
+    <button pButton pRipple type="submit" class="w-100 d-block">Sign Up</button>
 </div>
-<div class="mb-3">
-    <button pButton pRipple type="submit" class="w-full">Sign Up</button>
-</div>
-<div class="mb-3">
-    <p class="text-sm font-light text-gray-500 dark:text-gray-400"> {{ 'auth.signup.haveAccount' | translate }}
-        <a [routerLink]="['../login']" class="font-medium text-primary-600 hover:underline dark:text-primary-500">{{
-            'auth.signup.loginHere' | translate }}</a>.
+<div class="mb-3 small">
+    <p class=""> {{ 'auth.signup.haveAccount' | translate }}
+        <a [routerLink]="['../login']">{{ 'auth.signup.loginHere' | translate }}</a>.
     </p>
 </div>
-<div class="mb-3">
-    <p class="text-sm font-light text-gray-500 dark:text-gray-400"> {{ 'auth.signup.bySigningUp' | translate }} <a [routerLink]="['/terms']"
-            class="font-medium text-primary-600 hover:underline dark:text-primary-500">{{ 'auth.signup.tnc' | translate
-            }}</a> and <a [routerLink]="['/privacy']"
-            class="font-medium text-primary-600 hover:underline dark:text-primary-500">{{ 'auth.signup.privacy' |
-            translate }}</a>.</p>
+<div class="mb-3 small">
+    <p>
+        {{ 'auth.signup.bySigningUp' | translate }} <a [routerLink]="['/terms']">{{ 'auth.signup.tnc' |
+            translate
+            }}</a> and <a [routerLink]="['/privacy']">{{ 'auth.signup.privacy' | translate }}</a>.
+    </p>
 </div>
