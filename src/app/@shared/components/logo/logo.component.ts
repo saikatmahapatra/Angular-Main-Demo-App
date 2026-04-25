@@ -1,4 +1,5 @@
 import { Component, input, output } from '@angular/core';
+import { MyAppConfig } from 'src/app/app.config';
 
 @Component({
   selector: 'app-logo',
@@ -8,5 +9,5 @@ import { Component, input, output } from '@angular/core';
 })
 export class LogoComponent {
   className = input<string>('logo');
-  productName = input<string>('Angular Demo App');
+  productName = input<string | undefined>(MyAppConfig.productName);
 }
