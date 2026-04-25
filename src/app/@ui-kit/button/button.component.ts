@@ -37,11 +37,11 @@ export class ButtonComponent {
   raised = input(false);
   loading = input(false);
   class = input<string | undefined>(undefined);
-  click = output<MouseEvent>();
+  action = output<MouseEvent>();
 
   handleClick(event: MouseEvent) {
     if (!this.disabled()) {
-      this.click.emit(event);
+      this.action.emit(event);
     }
   }
 }
