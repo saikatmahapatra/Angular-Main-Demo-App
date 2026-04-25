@@ -1,37 +1,38 @@
-<h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+<h1 class="page-title h3">
   {{ 'auth.titleLogin' | translate }}
 </h1>
-<form [formGroup]="loginForm" class="space-y-4 md:space-y-6" (ngSubmit)="onSubmit()">
-  <div>
-    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{'auth.yourEmail' |
-      translate}}</label>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="email" class="form-label">{{'auth.yourEmail' | translate}}</label>
     <input pInputText type="text" placeholder="{{ 'auth.placeholderUsername' | translate }}" formControlName="userName"
-      aria-label="Username" aria-describedby="basic-addon1" class="w-full" id="email" />
+      class="w-100 d-block" id="email" />
     <app-validation-error [control]="f['userName']"></app-validation-error>
   </div>
-  <div>
+  <div class="mb-3">
     <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{'auth.yourPassword' |
       translate}}</label>
     <input pInputText type="password" placeholder="{{ 'auth.placeholderPassword' | translate }}"
-      formControlName="password" aria-label="Password" aria-describedby="basic-addon2" class="w-full" id="password" />
+      formControlName="password" aria-label="Password" aria-describedby="basic-addon2" class="w-100 d-block"
+      id="password" />
     <app-validation-error [control]="f['password']"></app-validation-error>
   </div>
-  <div class="flex items-center justify-between">
-    <div class="flex items-start">
-      <div class="flex items-center h-5">
-        <input id="remember" aria-describedby="remember" type="checkbox"
-          class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
-          required="">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <div class="d-flex items-start">
+      <div class="d-flex align-items-center">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
       </div>
-      <div class="ml-3 text-sm">
-        <label for="remember" class="text-gray-500 dark:text-gray-300">{{ 'auth.rememberMe' | translate }}</label>
+      <div class="ms-1">
+        <label class="form-check-label" for="exampleCheck1">{{ 'auth.rememberMe' | translate }}</label>
       </div>
     </div>
-    <a class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
-      routerLink="../forgot-password">{{ 'auth.forgotPassword' | translate }}</a>
+    <a class="" routerLink="../forgot-password">{{ 'auth.forgotPassword' | translate }}</a>
   </div>
-  <app-button [type]="'submit'" [label]="('button.submit' | translate)" [disabled]="loading || loginForm.invalid" [loading]="loading" [class]="'w-full'"></app-button>
-  <p class="text-sm font-light text-gray-500 dark:text-gray-400 pt-4">
+
+
+  <app-button [type]="'submit'" [label]="('button.submit' | translate)" [disabled]="loading || loginForm.invalid"
+    [loading]="loading" [class]="'w-100 d-block'"></app-button>
+
+  <p class="pt-4">
     Don't have an account yet? <a [routerLink]="['../sign-up']"
       class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a>
   </p>
