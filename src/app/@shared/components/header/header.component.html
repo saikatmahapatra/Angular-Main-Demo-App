@@ -1,7 +1,7 @@
 <header>
   <div class="layout-topbar">
     <div class="layout-topbar-logo-container">
-      <app-button [type]="'button'" [icon]="'pi pi-bars'" [variant]="'outlined'" [class]="'layout-topbar-action mr-4'" [rounded]="true" (clickAction)="layoutService.onMenuToggle()"></app-button>
+      <app-button [type]="'button'" [icon]="'pi pi-bars'" [variant]="'outlined'" [class]="'layout-topbar-action mr-4'" (clickAction)="layoutService.onMenuToggle()"></app-button>
       <a class="layout-topbar-logo" routerLink="/">
         <app-logo></app-logo>
         <span>{{product}}</span>
@@ -10,7 +10,7 @@
 
     <div class="layout-topbar-actions">
       <div class="layout-config-menu">
-        <app-button [type]="'button'" [icon]="(layoutService.isDarkTheme() ? 'pi pi-moon' : 'pi pi-sun')" [variant]="'outlined'" [rounded]="true" [class]="'layout-topbar-action'" (clickAction)="toggleDarkMode()"></app-button>
+        <app-button [type]="'button'" [icon]="(layoutService.isDarkTheme() ? 'pi pi-moon' : 'pi pi-sun')" [variant]="'outlined'" [class]="'layout-topbar-action'" (clickAction)="toggleDarkMode()"></app-button>
         <!-- <div class="relative">
           <button class="layout-topbar-action layout-topbar-action-highlight" pStyleClass="@next"
             enterFromClass="hidden" enterActiveClass="animate-scalein" leaveToClass="hidden"
