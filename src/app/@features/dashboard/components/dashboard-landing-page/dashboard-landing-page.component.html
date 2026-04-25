@@ -1,88 +1,33 @@
-<h1 class="page-title">{{ 'home.title' | translate }}</h1>
-<div class="grid grid-cols-12 gap-8">
-    <!-- <div class="col-span-12 lg:col-span-6 xl:col-span-3">
-        <div class="card mb-0">
-            <div class="flex justify-between mb-4">
-                <div>
-                    <span class="block text-muted-color font-medium mb-4">Orders</span>
-                    <div class="text-surface-900 dark:text-surface-0 font-medium text-xl">152</div>
-                </div>
-                <div class="flex items-center justify-center bg-blue-100 dark:bg-blue-400/10 rounded-border"
-                    style="width: 2.5rem; height: 2.5rem">
-                    <i class="pi pi-shopping-cart text-blue-500 text-xl!"></i>
-                </div>
-            </div>
-            <span class="text-primary font-medium">24 new </span>
-            <span class="text-muted-color">since last visit</span>
-        </div>
-    </div>
-    <div class="col-span-12 lg:col-span-6 xl:col-span-3">
-        <div class="card mb-0">
-            <div class="flex justify-between mb-4">
-                <div>
-                    <span class="block text-muted-color font-medium mb-4">Revenue</span>
-                    <div class="text-surface-900 dark:text-surface-0 font-medium text-xl">$2.100</div>
-                </div>
-                <div class="flex items-center justify-center bg-orange-100 dark:bg-orange-400/10 rounded-border"
-                    style="width: 2.5rem; height: 2.5rem">
-                    <i class="pi pi-dollar text-orange-500 text-xl!"></i>
-                </div>
-            </div>
-            <span class="text-primary font-medium">%52+ </span>
-            <span class="text-muted-color">since last week</span>
-        </div>
-    </div>
-    <div class="col-span-12 lg:col-span-6 xl:col-span-3">
-        <div class="card mb-0">
-            <div class="flex justify-between mb-4">
-                <div>
-                    <span class="block text-muted-color font-medium mb-4">Customers</span>
-                    <div class="text-surface-900 dark:text-surface-0 font-medium text-xl">28441</div>
-                </div>
-                <div class="flex items-center justify-center bg-cyan-100 dark:bg-cyan-400/10 rounded-border"
-                    style="width: 2.5rem; height: 2.5rem">
-                    <i class="pi pi-users text-cyan-500 text-xl!"></i>
-                </div>
-            </div>
-            <span class="text-primary font-medium">520 </span>
-            <span class="text-muted-color">newly registered</span>
-        </div>
-    </div> -->
-
-
+<h1 class="page-title h3">{{ 'home.title' | translate }}</h1>
+<div class="row g-4">
     @for (stat of stats; track stat; let index = $index) {
-    <div class="col-span-12 lg:col-span-6 xl:col-span-3">
+    <div class="col-12 col-lg-6 col-xl-3">
         <div class="card mb-0">
-            <div class="flex justify-between mb-4">
+            <div class="d-flex justify-content-between mb-4">
                 <div>
-                    <!-- {{pageContent.home.stats[stat?.cmsNodeKeyName].heading | json}} -->
-                    <span class="block text-muted-color font-medium mb-4">{{stat?.heading}}</span>
-                    <div class="text-surface-900 dark:text-surface-0 font-medium text-xl">{{stat?.count}}</div>
+                    <span class="d-block fw-semibold mb-3">{{stat?.heading}}</span>
+                    <div class="fs-4 fw-semibold text-dark">{{stat?.count}}</div>
                 </div>
-                <div class="flex items-center justify-center bg-purple-100 dark:bg-purple-400/10 rounded-border"
+                <div class="d-flex align-items-center justify-content-center bg-primary-subtle rounded"
                     style="width: 2.5rem; height: 2.5rem">
-                    <app-icon [name]="stat?.icon" [styleClass]="'text-purple-500 text-xl!'"></app-icon>
+                    <app-icon [name]="stat?.icon" [styleClass]="'text-primary fs-4'"></app-icon>
                 </div>
             </div>
-            <span class="text-primary font-medium">{{stat?.count}} </span>
-            <span class="text-muted-color">some text</span>
+            <span class="text-primary fw-semibold">{{stat?.count}}</span>
+            <span class="text-muted">some text</span>
         </div>
     </div>
     }
 
-    <!-- <div class="col-span-12 text-sm">
-        {{ 'home.currentMonthsData' | translate }}
-    </div> -->
-
-    <div class="col-span-12 xl:col-span-12">
+    <div class="col-12">
         <div class="card mb-0">
-            <h6>{{ 'home.updateHeader' | translate }}</h6>
+            <h6 class="mb-4">{{ 'home.updateHeader' | translate }}</h6>
             @if (post.length > 0) {
             <app-search-input (inputValue)="getSearchInputVal($event)" [resetInput]="resetSearchInput"
                 [placeHolderText]="'Search...'"></app-search-input>
             @for (item of post; track item; let i = $index) {
             <div class="mb-3">
-                <a class="text-primary-600 hover:underline dark:text-primary-500 mr-2"
+                <a class="link-primary text-decoration-none me-2"
                     [routerLink]="['post-details', item.id]" [state]="{ newsPageNumber: currentPageIndex }"
                     aria-label="{{item?.content_title}}" title="{{item?.content_title}}" role="link">
                     {{item?.content_title}}
@@ -100,16 +45,4 @@
             }
         </div>
     </div>
-    <!-- <div class="col-span-12 xl:col-span-6">
-        <div class="card mb-0">
-            @if (calendarVisible) {
-            <full-calendar [options]='calendarOptions' #calendar>
-                <ng-template #eventContent let-arg>
-                    <b>{{ arg.timeText }}</b>
-                    <i>{{ arg.event.title }}</i>
-                </ng-template>
-            </full-calendar>
-            }
-        </div>
-    </div> -->
 </div>
