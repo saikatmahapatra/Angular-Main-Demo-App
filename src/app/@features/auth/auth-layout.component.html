@@ -2,10 +2,9 @@
     <div class="container d-flex flex-column justify-content-center align-items-center py-5">
         <app-alert-message></app-alert-message>
 
-        <a [routerLink]="['/']"
-             class="d-flex align-items-center mb-4 fs-2 fw-semibold text-decoration-none text-dark">
+        <a [routerLink]="['/']" class="d-flex align-items-center mb-4 fs-2 fw-semibold h2">
             <app-logo [className]="'logo login-logo'"></app-logo>
-            {{ productName }}
+            <span>{{ productName }}</span>
         </a>
 
         <div class="card shadow rounded w-100 mx-auto" style="max-width: 28rem;">
