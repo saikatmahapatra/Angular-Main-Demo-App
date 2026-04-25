@@ -2,7 +2,7 @@
   {{ 'auth.titleLogin' | translate }}
 </h1>
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-  <div class="mb-3">
+  <div class="mb-4">
     <label for="email" class="form-label">{{'auth.yourEmail' | translate}}</label>
     <input pInputText type="text" placeholder="{{ 'auth.placeholderUsername' | translate }}" formControlName="userName"
       class="w-100 d-block" id="email" />
