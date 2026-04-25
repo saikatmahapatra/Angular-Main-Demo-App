@@ -57,7 +57,8 @@
             @include focused();
         }
 
-        i, .pi {
+        i,
+        .pi {
             font-size: 1.25rem;
         }
 
@@ -94,6 +95,12 @@
         display: flex;
         gap: 1rem;
     }
+}
+
+.auth-page-logo {
+    width: 4rem;
+    height: 4rem;
+    margin-right: 0.5rem;
 }
 
 @media (max-width: 991px) {

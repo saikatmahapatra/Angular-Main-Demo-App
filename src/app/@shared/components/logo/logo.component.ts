@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-logo',
@@ -7,5 +7,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./logo.component.scss']
 })
 export class LogoComponent {
-  @Input() cssClass: string = 'h-12 mr-2'; //h-12 mr-2
+  className = input<string>('logo');
+  productName = input<string>('Angular Demo App');
 }

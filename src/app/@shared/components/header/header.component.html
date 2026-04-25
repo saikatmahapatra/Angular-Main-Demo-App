@@ -3,7 +3,7 @@
     <div class="layout-topbar-logo-container">
       <app-button [type]="'button'" [icon]="'pi pi-bars'" [variant]="'outlined'" [class]="'layout-topbar-action me-4'" (clickAction)="layoutService.onMenuToggle()"></app-button>
       <a class="layout-topbar-logo" routerLink="/">
-        <app-logo></app-logo>
+        <app-logo [className]="'logo header-logo'"></app-logo>
         <span>{{product}}</span>
       </a>
     </div>
