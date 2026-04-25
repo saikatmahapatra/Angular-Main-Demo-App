@@ -10,7 +10,7 @@
 
     <div class="layout-topbar-actions">
       <div class="layout-config-menu">
-        <app-button [type]="'button'" [icon]="(layoutService.isDarkTheme() ? 'pi pi-moon' : 'pi pi-sun')" [variant]="'outlined'" [rounded]="true" [class]="'layout-topbar-action'" (action)="toggleDarkMode()"></app-button>
+        <app-button [type]="'button'" [icon]="(layoutService.isDarkTheme() ? 'pi pi-moon' : 'pi pi-sun')" [variant]="'outlined'" [rounded]="true" [class]="'layout-topbar-action'" (clickAction)="toggleDarkMode()"></app-button>
         <!-- <div class="relative">
           <button class="layout-topbar-action layout-topbar-action-highlight" pStyleClass="@next"
             enterFromClass="hidden" enterActiveClass="animate-scalein" leaveToClass="hidden"
