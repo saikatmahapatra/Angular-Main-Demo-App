@@ -27,7 +27,8 @@
 
     <div class="my-4">
         <h3>Input Text</h3>
-        <!-- <app-input [label]="'Username'" [placeholder]="'Enter your username'"> </app-input> -->
-        <p>You typed: {{ nameInput }}</p>
+        <app-input [type]="'text'" [label]="'Username'" [placeholder]="'Enter your username'" [(ngModel)]="username"> </app-input>
+        <app-input [type]="'number'" [label]="'Age'" [placeholder]="'Enter your age'" [(ngModel)]="age"> </app-input>
+        <p>You typed: {{ username }}</p>
     </div>
 </div>

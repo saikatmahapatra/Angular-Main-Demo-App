@@ -5,6 +5,7 @@ import { UiKitRoutingModule } from './ui-kit-routing.module';
 import { UiKitComponent } from './ui-kit.component';
 import { APP_UI_KIT } from '.';
 import { SharedModule } from "@shared/shared.module";
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { SharedModule } from "@shared/shared.module";
     UiKitRoutingModule,
     ...APP_UI_KIT,
     SharedModule,
+    FormsModule
 ]
 })
 export class UiKitModule { }

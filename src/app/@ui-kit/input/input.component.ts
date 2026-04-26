@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
   template: `
     <div class="flex flex-col gap-2">
       @if(label() !== '') {
-      <label [for]="inputId()" class="font-semibold text-sm">
+      <label [for]="inputId()" class="form-label">
         {{ label() }}
       </label>
       }
@@ -23,7 +23,11 @@ import { CommonModule } from '@angular/common';
         [(ngModel)]="value" 
         (ngModelChange)="onModelChange($event)"
         (blur)="onBlur()"
-        class="w-full" />
+        [attr.minlength]="minLength() !== null ? minLength() : null"
+        [attr.maxlength]="maxLength() !== null ? maxLength() : null"
+        [attr.min]="min() !== null ? min() : null"
+        [attr.max]="max() !== null ? max() : null"
+        class="w-100" />
     </div>
   `,
   styles: ``,
@@ -36,16 +40,19 @@ import { CommonModule } from '@angular/common';
     }
   ]
 })
-export class InputComponent implements ControlValueAccessor{
+export class InputComponent implements ControlValueAccessor {
   // Component Inputs
   label = input<string>('');
   placeholder = input<string>('');
   type = input<'text' | 'password' | 'email' | 'number'>('text');
   inputId = input<string>(`app-input-${Math.random().toString(36).substring(2, 9)}`);
-
   // Internal State
   value: string = '';
   disabled: boolean = false;
+  minLength = input<number | null>(null);
+  maxLength = input<number | null>(null);
+  min = input<number | null>(null);
+  max = input<number | null>(null);
 
   // Callbacks provided by Angular Forms
   private onChange: (value: any) => void = () => { };
