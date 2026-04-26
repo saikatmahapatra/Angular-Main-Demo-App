@@ -1,25 +1,33 @@
 <app-header></app-header>
 <div class="p-3 mt-5">
-    <h1>UI/UX Design System</h1>
-    <div>PrimeNG based design system components</div>
+    <div class="my-4">
+        <h1>UI/UX Design System</h1>
+        <div>PrimeNG based design system components</div>
 
-    <h3>Buttons</h3>
-    <app-button [label]="'Primary'" class="me-2" (clickAction)="saveItem()"></app-button>
-    <app-button [rounded]="true" class="me-2">Rounded</app-button>
-    <app-button [icon]="'pi pi-check'" class="me-2"></app-button>
-    <app-button [icon]="'pi pi-check'" [rounded]="true" [variant]="'outlined'" class="me-2"></app-button>
-    <app-button class="me-2">
-        <app-icon [name]="'pi pi-check'" [styleCSS]="{fontSize: '1rem'}"></app-icon>
-        Custom Icon
-    </app-button>
-    <app-button [variant]="'outlined'" class="me-2">Outlined</app-button>
-    <app-button [variant]="'text'" class="me-2">Text Button</app-button>
-    <app-button [raised]="true" class="me-2">Raised Button</app-button>
-    <app-button [disabled]="true" class="me-2">Disabled</app-button>
-    <app-button [icon]="'pi pi-pencil'" [variant]="'outlined'" class="me-2"></app-button>
-    <app-button [severity]="'danger'" [icon]="'pi pi-trash'" [variant]="'outlined'" class="me-2"></app-button>
-    <app-button [severity]="'success'" [label]="'Success'" class="me-2"></app-button>
-    <app-button [severity]="'danger'" [label]="'Danger'" class="me-2"></app-button>
-    <app-button [severity]="'info'" [label]="'Info'" class="me-2"></app-button>
-    <app-button [severity]="'warn'" [label]="'Warning'" class="me-2"></app-button>
+        <h3>Buttons</h3>
+        <app-button [label]="'Primary'" class="me-2" (clickAction)="saveItem()"></app-button>
+        <app-button [rounded]="true" class="me-2">Rounded</app-button>
+        <app-button [icon]="'pi pi-check'" class="me-2"></app-button>
+        <app-button [icon]="'pi pi-check'" [rounded]="true" [variant]="'outlined'" class="me-2"></app-button>
+        <app-button class="me-2">
+            <app-icon [name]="'pi pi-check'" [styleCSS]="{fontSize: '1rem'}"></app-icon>
+            Custom Icon
+        </app-button>
+        <app-button [variant]="'outlined'" class="me-2">Outlined</app-button>
+        <app-button [variant]="'text'" class="me-2">Text Button</app-button>
+        <app-button [raised]="true" class="me-2">Raised Button</app-button>
+        <app-button [disabled]="true" class="me-2">Disabled</app-button>
+        <app-button [icon]="'pi pi-pencil'" [variant]="'outlined'" class="me-2"></app-button>
+        <app-button [severity]="'danger'" [icon]="'pi pi-trash'" [variant]="'outlined'" class="me-2"></app-button>
+        <app-button [severity]="'success'" [label]="'Success'" class="me-2"></app-button>
+        <app-button [severity]="'danger'" [label]="'Danger'" class="me-2"></app-button>
+        <app-button [severity]="'info'" [label]="'Info'" class="me-2"></app-button>
+        <app-button [severity]="'warn'" [label]="'Warning'" class="me-2"></app-button>
+    </div>
+
+    <div class="my-4">
+        <h3>Input Text</h3>
+        <!-- <app-input [label]="'Username'" [placeholder]="'Enter your username'"> </app-input> -->
+        <p>You typed: {{ nameInput }}</p>
+    </div>
 </div>

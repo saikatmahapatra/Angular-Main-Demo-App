@@ -116,25 +116,15 @@ export const PRIME_NG_CORE = [
 // Wrapper Components based on PrimeNG Modules
 // ---------------------------------------------------------
 
-import { ButtonComponent as AppButtonComponent } from "./button/button.component";
-// import { ChartsComponent } from "./charts/charts.component";
+import { ButtonComponent } from "./button/button.component";
 import { IconComponent } from "./icon/icon.component";
-// import { DataTableComponent } from "./data-table/data-table.component";
-// import { InputComponent } from "./input/input.component";
-// import { FileUploadComponent } from "./file-upload/file-upload.component";
-// import { RadioComponent } from "./radio/radio.component";
-// import { SelectComponent } from "./select/select.component";
+import { InputComponent } from "./input/input.component";
 
 
 export const APP_UI_WRAPPER = [
-  AppButtonComponent,
-  // ChartsComponent,
+  ButtonComponent,
   IconComponent,
-  // DataTableComponent,
-  // InputComponent,
-  // FileUploadComponent,
-  // RadioComponent,
-  // SelectComponent
+  InputComponent
 ]
 
 // Group them for easy legacy importing
@@ -144,10 +134,5 @@ export const APP_UI_KIT = [
 ] as const;
 
 export * from "./button/button.component";
-// export * from "./charts/charts.component";
 export * from "./icon/icon.component";
-// export * from "./data-table/data-table.component";
-// export * from "./input/input.component";
-// export * from "./file-upload/file-upload.component";
-// export * from "./radio/radio.component";
-// export * from "./select/select.component";
+export * from "./input/input.component";

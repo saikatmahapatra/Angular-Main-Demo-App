@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./ui-kit.component.scss']
 })
 export class UiKitComponent {
+  nameInput: string = '';
   saveItem() {
     console.log('Item saved!');
   }

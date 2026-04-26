@@ -15,7 +15,7 @@ import { SharedModule } from "@shared/shared.module";
     CommonModule,
     UiKitRoutingModule,
     ...APP_UI_KIT,
-    SharedModule
+    SharedModule,
 ]
 })
 export class UiKitModule { }
