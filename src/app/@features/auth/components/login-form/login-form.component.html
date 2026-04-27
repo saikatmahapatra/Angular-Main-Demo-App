@@ -3,37 +3,27 @@
 </h1>
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
   <div class="mb-4">
-    <label for="email" class="form-label">{{'auth.yourEmail' | translate}}</label>
-    <input pInputText type="text" placeholder="{{ 'auth.placeholderUsername' | translate }}" formControlName="userName"
-      class="w-100 d-block" id="email" />
+    <label for="username" class="form-label">{{'auth.yourEmail' | translate}}</label>
+    <app-input [type]="'text'" [name]="'username'" [id]="'username'"
+      [placeholder]="'auth.placeholderUsername' | translate" formControlName="userName" [class]="'w-100'"
+      [ariaLabel]="'Username'"></app-input>
     <app-validation-error [control]="f['userName']"></app-validation-error>
   </div>
   <div class="mb-3">
-    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{'auth.yourPassword' |
-      translate}}</label>
-    <input pInputText type="password" placeholder="{{ 'auth.placeholderPassword' | translate }}"
-      formControlName="password" aria-label="Password" aria-describedby="basic-addon2" class="w-100 d-block"
-      id="password" />
+    <label for="password" class="form-label">{{'auth.yourPassword' | translate}}</label>
+    <app-input [type]="'password'" [name]="'password'" [id]="'password'"
+      [placeholder]="'auth.placeholderPassword' | translate" formControlName="password" [class]="'w-100'"
+      [ariaLabel]="'Password'"></app-input>
     <app-validation-error [control]="f['password']"></app-validation-error>
   </div>
   <div class="d-flex justify-content-between align-items-center mb-4">
-    <div class="d-flex items-start">
-      <div class="d-flex align-items-center">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      </div>
-      <div class="ms-1">
-        <label class="form-check-label" for="exampleCheck1">{{ 'auth.rememberMe' | translate }}</label>
-      </div>
-    </div>
+    <app-checkbox [label]="'auth.rememberMe' | translate"></app-checkbox>
     <a class="" routerLink="../forgot-password">{{ 'auth.forgotPassword' | translate }}</a>
   </div>
-
-
   <app-button [type]="'submit'" [label]="('button.submit' | translate)" [disabled]="loading || loginForm.invalid"
     [loading]="loading" [class]="'w-100 d-block'"></app-button>
 
   <p class="pt-4">
-    Don't have an account yet? <a [routerLink]="['../sign-up']"
-      class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a>
+    Don't have an account yet? <a [routerLink]="['../sign-up']" class="">Sign up</a>
   </p>
 </form>
