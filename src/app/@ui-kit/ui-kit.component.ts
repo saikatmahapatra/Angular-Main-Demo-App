@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from '@shared/shared.module';
 import { APP_UI_KIT } from '.';
+import { AppDataGridAction } from './data-grid/data-grid.component';
 
 @Component({
   selector: 'app-ui-kit',
@@ -56,6 +57,27 @@ export class UiKitComponent {
     { id: 1, name: 'Arif Rahman', department: 'Engineering', location: 'Dhaka', salary: 82000 },
     { id: 2, name: 'Nadia Islam', department: 'Finance', location: 'Chattogram', salary: 76000 },
     { id: 3, name: 'Samir Roy', department: 'Product', location: 'Khulna', salary: 91000 }
+  ];
+
+  readonly employeeActions: AppDataGridAction[] = [
+    {
+      icon: 'pi pi-eye',
+      severity: 'info',
+      tooltip: 'View',
+      onClick: (row) => console.log('View', row)
+    },
+    {
+      icon: 'pi pi-pencil',
+      severity: 'success',
+      tooltip: 'Edit',
+      onClick: (row) => console.log('Edit', row)
+    },
+    {
+      icon: 'pi pi-trash',
+      severity: 'danger',
+      tooltip: 'Delete',
+      onClick: (row) => console.log('Delete', row)
+    }
   ];
 
   readonly chartData = {

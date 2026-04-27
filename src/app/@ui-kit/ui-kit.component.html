@@ -98,8 +98,8 @@
     </div>
 
     <div class="my-4">
-        <h3>Data Grid (Sorting + Row Expansion)</h3>
+        <h3>Data Grid (Sorting + Row Expansion + Actions)</h3>
         <app-data-grid [caption]="'Employee Summary'" [columns]="employeeColumns" [value]="employeeData" [dataKey]="'id'"
-            [expandableRows]="true" [sortMode]="'single'"></app-data-grid>
+            [expandableRows]="true" [sortMode]="'single'" [actions]="employeeActions"></app-data-grid>
     </div>
 </div>
