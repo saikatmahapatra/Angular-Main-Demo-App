@@ -27,6 +27,7 @@ import { CommonModule } from '@angular/common';
         (onBlur)="onBlur()"
         [min]="min() !== null ? min() : undefined"
         [max]="max() !== null ? max() : undefined"
+        [attr.aria-label]="ariaLabel()"
         [inputStyleClass]="'w-100'" />
       } @else {
       <input 
@@ -43,6 +44,7 @@ import { CommonModule } from '@angular/common';
         [attr.maxlength]="maxLength() !== null ? maxLength() : null"
         [attr.min]="min() !== null ? min() : null"
         [attr.max]="max() !== null ? max() : null"
+        [attr.aria-label]="ariaLabel()"
         class="w-100" />
       }
     </div>
@@ -71,6 +73,7 @@ export class InputComponent implements ControlValueAccessor {
   maxLength = input<number | null>(null);
   min = input<number | null>(null);
   max = input<number | null>(null);
+  ariaLabel = input<string>('');
 
   // Callbacks provided by Angular Forms
   private onChange: (value: any) => void = () => { };

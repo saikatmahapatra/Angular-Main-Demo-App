@@ -8,7 +8,7 @@ import { CheckboxModule } from 'primeng/checkbox';
   standalone: true,
   imports: [CommonModule, FormsModule, CheckboxModule],
   template: `
-    <div class="flex align-items-center gap-2">
+    <div style="display: flex; align-items: center; gap: 0.5rem;">
       <p-checkbox
         [binary]="true"
         [inputId]="inputId()"
