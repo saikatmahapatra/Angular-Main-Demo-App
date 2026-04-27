@@ -10,7 +10,7 @@ describe('CheckboxComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [CheckboxComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(CheckboxComponent);
     component = fixture.componentInstance;

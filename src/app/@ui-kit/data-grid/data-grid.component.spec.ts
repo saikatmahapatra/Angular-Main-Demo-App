@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SelectComponent } from './select.component';
+import { DataGridComponent } from './data-grid.component';
 
-describe('SelectComponent', () => {
-  let component: SelectComponent;
-  let fixture: ComponentFixture<SelectComponent>;
+describe('DataGridComponent', () => {
+  let component: DataGridComponent;
+  let fixture: ComponentFixture<DataGridComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [SelectComponent]
+      declarations: [DataGridComponent]
     })
       .compileComponents();
 
-    fixture = TestBed.createComponent(SelectComponent);
+    fixture = TestBed.createComponent(DataGridComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
