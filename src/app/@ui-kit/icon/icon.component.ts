@@ -1,12 +1,19 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CommonModule } from '@angular/common'; // 1. Import CommonModule
 @Component({
-    selector: 'app-icon',
-    templateUrl: './icon.component.html',
-    styleUrls: ['./icon.component.scss'],
-    standalone: true,
-    imports: [CommonModule] // 2. Add CommonModule to imports
-
+  selector: 'app-icon',
+  styles: ``,
+  standalone: true,
+  imports: [CommonModule],
+  template: `
+    @if (lib !== 'material') {
+      <i [class]="getIconClass()" [ngClass]="styleClass" [style]="styleCSS" aria-hidden="true"></i>
+    }
+    @if (lib === 'material') {
+      <span [ngClass]="styleClass" class="icon-asset material-symbols-outlined" aria-hidden="true"
+      [innerHTML]="getIconClass()"></span>
+    }
+`
 })
 export class IconComponent implements OnInit {
   @Input() lib: string = 'material'; // bootstrap | primeng | material
