@@ -86,10 +86,67 @@
                 </div>
             </div>
 
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <app-date-picker [name]="'dateRange'" [label]="'Date Range'" [selectionMode]="'range'"
+                        [numberOfMonths]="2" [showIcon]="true" [showButtonBar]="true" [(ngModel)]="dateRange"></app-date-picker>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <app-alert-message [severity]="'info'" [summary]="'Heads up'"
+                        [detail]="'This is the inline alert-message wrapper.'"></app-alert-message>
+                </div>
+            </div>
+
             <div class="my-3">
+                <pre> {{ dateRange | json }} </pre>
                 <pre> {{ myForm | json }} </pre>
             </div>
         </form>
+    </div>
+
+    <div class="my-4">
+        <h3>Card</h3>
+        <app-card [style]="{ width: '100%' }" [styleClass]="'shadow-1'">
+            <div card-header class="px-3 pt-3 pb-0">
+                <h5 class="m-0">Wrapper Card Header</h5>
+            </div>
+
+            <div class="p-3 pt-2">
+                Card body accepts any projected content, including forms, tables, and custom layouts.
+            </div>
+
+            <div card-footer class="px-3 pb-3 flex gap-2 justify-content-end">
+                <app-button [label]="'Cancel'" [severity]="'secondary'"></app-button>
+                <app-button [label]="'Save'"></app-button>
+            </div>
+        </app-card>
+    </div>
+
+    <div class="my-4">
+        <h3>Popup</h3>
+        <app-button [label]="'Open Popup'" (clickAction)="openPopup()"></app-button>
+        <app-popup [(visible)]="showPopup" [header]="'Popup Wrapper'">
+            <div class="p-2">
+                Popup body accepts arbitrary content such as forms, tables, and action areas.
+            </div>
+            <div popup-footer class="flex gap-2 justify-content-end w-100">
+                <app-button [label]="'Close'" [severity]="'secondary'" (clickAction)="closePopup()"></app-button>
+                <app-button [label]="'Confirm'" (clickAction)="closePopup()"></app-button>
+            </div>
+        </app-popup>
+    </div>
+
+    <div class="my-4">
+        <h3>Alert Message / Toast</h3>
+        <app-alert-message #toastAlert [mode]="'toast'"></app-alert-message>
+        <div class="flex gap-2 flex-wrap">
+            <app-button [label]="'Show Success Toast'"
+                (clickAction)="toastAlert.success('Saved', 'Record updated successfully', 3000)"></app-button>
+            <app-button [label]="'Show Warning Toast'" [severity]="'warn'"
+                (clickAction)="toastAlert.warn('Warning', 'Please review the form', 3000)"></app-button>
+            <app-button [label]="'Show Error Toast'" [severity]="'danger'"
+                (clickAction)="toastAlert.error('Error', 'Something went wrong', 3000)"></app-button>
+        </div>
     </div>
 
     <div class="my-4">

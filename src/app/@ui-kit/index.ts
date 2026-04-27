@@ -117,23 +117,35 @@ export const PRIME_NG_CORE = [
 // ---------------------------------------------------------
 
 import { ButtonComponent } from "./button/button.component";
+import { AlertMessageComponent } from "./alert-message/alert-message.component";
+import { CardComponent, CardFooterDirective, CardHeaderDirective } from "./card/card.component";
 import { ChartsComponent } from "./charts/charts.component";
 import { CheckboxComponent } from "./checkbox/checkbox.component";
 import { DataGridComponent } from "./data-grid/data-grid.component";
+import { DatePickerComponent } from "./date-picker/date-picker.component";
 import { IconComponent } from "./icon/icon.component";
 import { InputComponent } from "./input/input.component";
+import { PopupComponent, PopupFooterDirective, PopupHeaderDirective } from "./popup/popup.component";
 import { RadioButtonComponent } from "./radio-button/radio-button.component";
 import { SelectComponent } from "./select/select.component";
 import { TextAreaComponent } from "./text-area/text-area.component";
 
 
 export const APP_UI_WRAPPER = [
+  AlertMessageComponent,
   ButtonComponent,
+  CardComponent,
+  CardFooterDirective,
+  CardHeaderDirective,
   ChartsComponent,
   CheckboxComponent,
   DataGridComponent,
+  DatePickerComponent,
   IconComponent,
   InputComponent,
+  PopupComponent,
+  PopupFooterDirective,
+  PopupHeaderDirective,
   RadioButtonComponent,
   SelectComponent,
   TextAreaComponent
@@ -146,11 +158,15 @@ export const APP_UI_KIT = [
 ] as const;
 
 export * from "./button/button.component";
+export * from "./alert-message/alert-message.component";
+export * from "./card/card.component";
 export * from "./charts/charts.component";
 export * from "./checkbox/checkbox.component";
 export * from "./data-grid/data-grid.component";
+export * from "./date-picker/date-picker.component";
 export * from "./icon/icon.component";
 export * from "./input/input.component";
+export * from "./popup/popup.component";
 export * from "./radio-button/radio-button.component";
 export * from "./select/select.component";
 export * from "./text-area/text-area.component";

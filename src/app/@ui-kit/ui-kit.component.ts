@@ -13,6 +13,9 @@ import { AppDataGridAction } from './data-grid/data-grid.component';
   styleUrls: ['./ui-kit.component.scss']
 })
 export class UiKitComponent {
+  dateRange: Date[] | null = null;
+  showPopup = false;
+
   myForm = {
     firstname: '' as string,
     lastname: '' as string,
@@ -117,5 +120,13 @@ export class UiKitComponent {
 
   saveItem() {
     console.log('Item saved!');
+  }
+
+  openPopup() {
+    this.showPopup = true;
+  }
+
+  closePopup() {
+    this.showPopup = false;
   }
 }
