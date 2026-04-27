@@ -14,7 +14,6 @@ import { ChartModule } from 'primeng/chart';
       <p-chart [type]="type()" [data]="data()" [options]="options()" [height]="height()"></p-chart>
     </div>
   `,
-  styleUrl: './charts.component.scss'
 })
 export class ChartsComponent {
   title = input<string>('');

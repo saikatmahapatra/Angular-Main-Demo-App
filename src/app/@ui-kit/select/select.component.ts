@@ -51,7 +51,6 @@ export interface AppSelectOption {
       }
     </div>
   `,
-  styleUrl: './select.component.scss',
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

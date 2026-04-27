@@ -22,7 +22,6 @@ import { CheckboxModule } from 'primeng/checkbox';
       }
     </div>
   `,
-  styleUrl: './checkbox.component.scss',
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
