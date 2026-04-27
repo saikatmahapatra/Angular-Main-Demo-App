@@ -4,8 +4,8 @@
         <div class="card">
             <div class="card-header">List of Employees</div>
             <div class="card-body">
-                <app-search-input (inputValue)="getSearchKeyword($event)"
-                    [placeHolderText]="'Search...'"></app-search-input>
+                <!-- <app-search-input (inputValue)="getSearchKeyword($event)"
+                    [placeHolderText]="'Search...'"></app-search-input> -->
                 <p-table #dt [value]="empList" dataKey="id" [rowHover]="true" [filterDelay]="0"
                     [globalFilterFields]="['id','user_full_name','user_email']"
                     styleClass="p-datatable-sm table-font-sm ">

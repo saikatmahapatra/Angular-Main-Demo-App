@@ -23,8 +23,8 @@
         <div class="card mb-0">
             <h6 class="mb-4">{{ 'home.updateHeader' | translate }}</h6>
             @if (post.length > 0) {
-            <app-search-input (inputValue)="getSearchInputVal($event)" [resetInput]="resetSearchInput"
-                [placeHolderText]="'Search...'"></app-search-input>
+            <!-- <app-search-input (inputValue)="getSearchInputVal($event)" [resetInput]="resetSearchInput"
+                [placeHolderText]="'Search...'"></app-search-input> -->
             @for (item of post; track item; let i = $index) {
             <div class="mb-3">
                 <a class="link-primary text-decoration-none me-2"

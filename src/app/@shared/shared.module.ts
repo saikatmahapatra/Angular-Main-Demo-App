@@ -14,7 +14,6 @@ import { AuthenticatedLayoutComponent } from './components/layouts/authenticated
 import { ValidationErrorComponent } from './components/validation-error/validation-error.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { LoaderComponent } from './components/loader/loader.component';
-import { SearchInputComponent } from './components/search-input/search-input.component';
 import { StatusIndicatorDirective } from './directives/status-indicator.directive';
 import { ThemeSwitchComponent } from './components/theme-switch/theme-switch.component';
 //import { CookieConsentComponent } from './components/cookie-consent/cookie-consent.component';
@@ -42,7 +41,6 @@ const data = [
   SidebarComponent,
   AppMenuitemComponent,
   LoaderComponent,
-  SearchInputComponent,
   StatusIndicatorDirective,
   ThemeSwitchComponent,
   ScrollToTopComponent,
