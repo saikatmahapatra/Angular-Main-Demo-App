@@ -119,12 +119,14 @@ export const PRIME_NG_CORE = [
 import { ButtonComponent } from "./button/button.component";
 import { IconComponent } from "./icon/icon.component";
 import { InputComponent } from "./input/input.component";
+import { TextAreaComponent } from "./text-area/text-area.component";
 
 
 export const APP_UI_WRAPPER = [
   ButtonComponent,
   IconComponent,
-  InputComponent
+  InputComponent,
+  TextAreaComponent
 ]
 
 // Group them for easy legacy importing
@@ -136,3 +138,4 @@ export const APP_UI_KIT = [
 export * from "./button/button.component";
 export * from "./icon/icon.component";
 export * from "./input/input.component";
+export * from "./text-area/text-area.component";

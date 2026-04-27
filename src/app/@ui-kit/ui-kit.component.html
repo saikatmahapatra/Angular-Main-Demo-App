@@ -26,9 +26,14 @@
     </div>
 
     <div class="my-4">
-        <h3>Input Text</h3>
-        <app-input [type]="'text'" [label]="'Username'" [placeholder]="'Enter your username'" [(ngModel)]="username"> </app-input>
-        <app-input [type]="'number'" [label]="'Age'" [placeholder]="'Enter your age'" [(ngModel)]="age"> </app-input>
-        <p>You typed: {{ username }}</p>
+        <h3>Form Controls</h3>
+        <app-input [type]="'text'" [label]="'Username'" [placeholder]="'Enter your username'"
+            [(ngModel)]="myForm.username"></app-input>
+        <app-input [type]="'number'" [label]="'Age'" [placeholder]="'Enter your age (number)'" [(ngModel)]="myForm.age">
+        </app-input>
+
+        <app-text-area [label]="'Bio'" [placeholder]="'Enter your bio'" [(ngModel)]="myForm.bio"></app-text-area>
+
     </div>
+    <p> {{ myForm | json }} </p>
 </div>
