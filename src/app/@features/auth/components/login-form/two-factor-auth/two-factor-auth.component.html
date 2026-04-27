@@ -7,12 +7,18 @@
         <h6>Please enter the one time password <br> to verify your account</h6>
         <div> <span>A code has been sent to</span> <small> 987****9897</small> </div>
         <div id="otp" class="inputs d-flex flex-row justify-content-center mt-2">
-          <input class="m-2 text-center form-control" type="text" id="first" maxlength="1" />
-          <input class="m-2 text-center form-control" type="text" id="second" maxlength="1" />
-          <input class="m-2 text-center form-control" type="text" id="third" maxlength="1" />
-          <input class="m-2 text-center form-control" type="text" id="fourth" maxlength="1" />
-          <input class="m-2 text-center form-control" type="text" id="fifth" maxlength="1" />
-          <input class="m-2 text-center form-control" type="text" id="sixth" maxlength="1" />
+          <app-input [type]="'text'" [name]="'otpFirst'" [inputId]="'otpFirst'" [maxLength]="1"
+            class="d-block" style="width: 3rem;"></app-input>
+          <app-input [type]="'text'" [name]="'otpSecond'" [inputId]="'otpSecond'" [maxLength]="1"
+            class="d-block" style="width: 3rem;"></app-input>
+          <app-input [type]="'text'" [name]="'otpThird'" [inputId]="'otpThird'" [maxLength]="1"
+            class="d-block" style="width: 3rem;"></app-input>
+          <app-input [type]="'text'" [name]="'otpFourth'" [inputId]="'otpFourth'" [maxLength]="1"
+            class="d-block" style="width: 3rem;"></app-input>
+          <app-input [type]="'text'" [name]="'otpFifth'" [inputId]="'otpFifth'" [maxLength]="1"
+            class="d-block" style="width: 3rem;"></app-input>
+          <app-input [type]="'text'" [name]="'otpSixth'" [inputId]="'otpSixth'" [maxLength]="1"
+            class="d-block" style="width: 3rem;"></app-input>
         </div>
       </div>
 
@@ -25,12 +31,8 @@
 </div>
 
 <div class="d-grid gap-2">
-  <button type="submit" class="btn btn-primary" [disabled]="loading">
-    @if (loading) {
-      <span class="spinner-border spinner-border-sm me-1"></span>
-    }
-    Validate
-  </button>
+  <app-button [type]="'submit'" [label]="'Validate'" [disabled]="loading" [loading]="loading"
+    [class]="'w-100 d-block'"></app-button>
 </div>
 <div class="my-3"><a routerLink="../login">Back to Login Page</a></div>
 </form>

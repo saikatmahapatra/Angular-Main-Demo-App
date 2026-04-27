@@ -4,14 +4,14 @@
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
   <div class="mb-4">
     <label for="username" class="form-label">{{'auth.yourEmail' | translate}}</label>
-    <app-input [type]="'text'" [name]="'username'" [id]="'username'"
+    <app-input [type]="'text'" [name]="'username'" [inputId]="'username'"
       [placeholder]="'auth.placeholderUsername' | translate" formControlName="userName" [class]="'w-100'"
       [ariaLabel]="'Username'"></app-input>
     <app-validation-error [control]="f['userName']"></app-validation-error>
   </div>
   <div class="mb-3">
     <label for="password" class="form-label">{{'auth.yourPassword' | translate}}</label>
-    <app-input [type]="'password'" [name]="'password'" [id]="'password'"
+    <app-input [type]="'password'" [name]="'password'" [inputId]="'password'"
       [placeholder]="'auth.placeholderPassword' | translate" formControlName="password" [class]="'w-100'"
       [ariaLabel]="'Password'"></app-input>
     <app-validation-error [control]="f['password']"></app-validation-error>
