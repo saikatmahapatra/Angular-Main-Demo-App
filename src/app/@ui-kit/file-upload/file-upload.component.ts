@@ -2,18 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { event } from 'jquery';
 
 @Component({
-  selector: 'app-file-upload',
-  standalone: true,
-  template: `
-    <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
-    <button class="btn btn-success" (click)="fileUpload.click()">
-    <app-icon [name]="'upload'"></app-icon> Upload File</button>
-    `,
-  styles: `
-    .file-input {
-      display: none;
-    }
-    `
+    selector: 'app-file-upload',
+    templateUrl: './file-upload.component.html',
+    styleUrls: ['./file-upload.component.scss'],
+    standalone: true
 })
 export class FileUploadComponent implements OnInit {
 
