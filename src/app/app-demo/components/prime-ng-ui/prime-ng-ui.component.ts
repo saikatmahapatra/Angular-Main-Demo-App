@@ -3,14 +3,14 @@ import { MenuItem, ToastMessageOptions, MessageService } from 'primeng/api';
 import { FileUpload } from 'primeng/fileupload';
 
 @Component({
-  selector: 'app-prime-ng-ui-kit',
-  templateUrl: './prime-ng-ui-kit.component.html',
-  styleUrls: ['./prime-ng-ui-kit.component.scss'],
+  selector: 'app-prime-ng-ui',
+  templateUrl: './prime-ng-ui.component.html',
+  styleUrls: ['./prime-ng-ui.component.scss'],
   providers: [MessageService],
   standalone: false
 })
 
-export class PrimeNgUiKitComponent implements OnInit {
+export class PrimeNgUiComponent implements OnInit {
 
   checked = true;
   value1: number = 42723;

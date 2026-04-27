@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PrimeNgUiKitComponent } from './prime-ng-ui-kit.component';
+import { PrimeNgUiComponent } from './prime-ng-ui.component';
 
-describe('PrimeNgUiKitComponent', () => {
-  let component: PrimeNgUiKitComponent;
-  let fixture: ComponentFixture<PrimeNgUiKitComponent>;
+describe('PrimeNgUiComponent', () => {
+  let component: PrimeNgUiComponent;
+  let fixture: ComponentFixture<PrimeNgUiComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PrimeNgUiKitComponent ]
+      declarations: [ PrimeNgUiComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PrimeNgUiKitComponent);
+    fixture = TestBed.createComponent(PrimeNgUiComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

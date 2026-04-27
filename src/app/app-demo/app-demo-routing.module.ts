@@ -17,7 +17,7 @@ import { TransferFundComponent } from './components/transfer-fund/transfer-fund.
 import { ContentCardComponent } from './components/content-card/content-card.component';
 import { AgGridTableExampleComponent } from './components/ag-grid-table-example/ag-grid-table-example.component';
 import { TranslationDemoComponent } from './components/translation-demo/translation-demo.component';
-import { PrimeNgUiKitComponent } from './components/prime-ng-ui-kit/prime-ng-ui-kit.component';
+import { PrimeNgUiComponent } from './components/prime-ng-ui/prime-ng-ui.component';
 //import { KoreAiComponent } from './kore-ai/kore-ai.component';
 
 const routes: Routes = [{
@@ -42,7 +42,7 @@ const routes: Routes = [{
     { path: 'ag-grid', component: AgGridTableExampleComponent },
     { path: 'translate', component: TranslationDemoComponent},
     //{ path: 'kore-ai', component: KoreAiComponent},
-    { path: 'prime-ng', component: PrimeNgUiKitComponent}
+    { path: 'prime-ng', component: PrimeNgUiComponent}
   ]
 }];
 

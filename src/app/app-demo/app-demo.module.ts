@@ -22,7 +22,7 @@ import { ContentCardComponent } from './components/content-card/content-card.com
 import { AgGridModule } from 'ag-grid-angular';
 import { AgGridTableExampleComponent } from './components/ag-grid-table-example/ag-grid-table-example.component';
 import { TranslationDemoComponent } from './components/translation-demo/translation-demo.component';
-import { PrimeNgUiKitComponent } from './components/prime-ng-ui-kit/prime-ng-ui-kit.component';
+import { PrimeNgUiComponent } from './components/prime-ng-ui/prime-ng-ui.component';
 //import { KoreAiComponent } from './kore-ai/kore-ai.component';
 import { TranslateLangModule } from '../translate-language.module';
 import { AppDemoLayoutComponent } from './app-demo-layout.component';
@@ -59,7 +59,7 @@ import { APP_UI_KIT } from '../@ui-kit';
     ContentCardComponent,
     AgGridTableExampleComponent,
     TranslationDemoComponent,
-    PrimeNgUiKitComponent,
+    PrimeNgUiComponent,
     //KoreAiComponent,
   ],
   exports: [
