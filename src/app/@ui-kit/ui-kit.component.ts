@@ -17,9 +17,7 @@ export class UiKitComponent {
     gender: '' as string, // radio button
     country: '' as string, // select dropdown
     skills: [] as string[], // multi-select
-    terms1Accepted: false as boolean, // checkbox
-    terms2Accepted: true as boolean, // checkbox
-    terms3Accepted: false as boolean // checkbox
+    termsAccepted: false as boolean
   }
 
   readonly genderOptions = [
