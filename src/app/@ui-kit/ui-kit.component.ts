@@ -8,8 +8,10 @@ import { Component } from '@angular/core';
 })
 export class UiKitComponent {
   myForm = {
-    username: '' as string,
-    age: null as number | null,
+    firstname: '' as string,
+    lastname: '' as string,
+    email: '' as string,
+    mobile: '' as string,
     bio: '' as string,
     gender: '' as string, // radio button
     country: '' as string, // select dropdown

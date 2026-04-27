@@ -44,7 +44,7 @@ export class InputComponent implements ControlValueAccessor {
   // Component Inputs
   label = input<string>('');
   placeholder = input<string>('');
-  type = input<'text' | 'password' | 'email' | 'number'>('text');
+  type = input<'text' | 'password' | 'email' | 'number' | 'tel'>('text');
   inputId = input<string>(`app-input-${Math.random().toString(36).substring(2, 9)}`);
   // Internal State
   value: string = '';
