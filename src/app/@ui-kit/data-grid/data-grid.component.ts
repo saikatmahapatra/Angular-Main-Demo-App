@@ -70,7 +70,7 @@ export interface AppDataGridColumn {
         </tr>
       </ng-template>
 
-      <ng-template pTemplate="rowexpansion" let-rowData>
+      <ng-template pTemplate="expandedrow" let-rowData>
         <tr>
           <td [attr.colspan]="columns().length + (expandableRows() ? 1 : 0)">
             <div class="p-3 surface-50 border-round-sm">
