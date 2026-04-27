@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonService } from '../@core/services/common.service';
+import { CommonService } from '../../@core/services/common.service';
 
 @Component({
   selector: 'app-app-demo-layout',

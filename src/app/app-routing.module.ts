@@ -47,7 +47,7 @@ const routes: Routes = [
     children: [
       {
         path: 'demo',
-        loadChildren: () => import('./app-demo/app-demo.module').then(m => m.AppDemoModule)
+        loadChildren: () => import('./@features/app-demo/app-demo.module').then(m => m.AppDemoModule)
       },
       {
         path: 'dashboard',

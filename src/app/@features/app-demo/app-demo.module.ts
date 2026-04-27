@@ -2,7 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { SharedModule } from '../@shared/shared.module';
+import { SharedModule } from '../../@shared/shared.module';
 import { AngularDemoRoutingModule } from './app-demo-routing.module';
 import { TemplateDataBindingComponent } from './components/template-data-binding/template-data-binding.component';
 import { AngularDirectiveComponent } from './components/angular-directive/angular-directive.component';
@@ -24,9 +24,9 @@ import { AgGridTableExampleComponent } from './components/ag-grid-table-example/
 import { TranslationDemoComponent } from './components/translation-demo/translation-demo.component';
 import { PrimeNgUiComponent } from './components/prime-ng-ui/prime-ng-ui.component';
 //import { KoreAiComponent } from './kore-ai/kore-ai.component';
-import { TranslateLangModule } from '../translate-language.module';
+import { TranslateLangModule } from '../../translate-language.module';
 import { AppDemoLayoutComponent } from './app-demo-layout.component';
-import { APP_UI_KIT } from '../@ui-kit';
+import { APP_UI_KIT } from '../../@ui-kit';
 
 @NgModule({
   imports: [
