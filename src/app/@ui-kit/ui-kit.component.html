@@ -38,26 +38,68 @@
                         [(ngModel)]="myForm.lastname"></app-input>
                 </div>
             </div>
+
             <div class="row">
-                <div class="col-md-12 mb-3">
+                <div class="col-md-6 mb-3">
                     <app-input [type]="'email'" [name]="'email'" [label]="'Email'" [placeholder]="'Enter your email'"
                         [(ngModel)]="myForm.email"></app-input>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 mb-3">
-                    <app-input [type]="'tel'" [name]="'mobile'" [label]="'Mobile'" [placeholder]="'Enter your mobile number'"
-                        [(ngModel)]="myForm.mobile" [minLength]="10" [maxlength]="10"></app-input>
+                <div class="col-md-6 mb-3">
+                    <app-input [type]="'number'" [name]="'age'" [label]="'Age (InputNumber)'" [placeholder]="'Enter your age'"
+                        [(ngModel)]="myForm.age" [min]="18" [max]="65"></app-input>
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <app-input [type]="'tel'" [name]="'mobile'" [label]="'Mobile'" [placeholder]="'Enter your mobile number'"
+                        [(ngModel)]="myForm.mobile" [minLength]="10" [maxLength]="10"></app-input>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <app-radio-button [name]="'gender'" [label]="'Gender'" [options]="genderOptions"
+                        [(ngModel)]="myForm.gender"></app-radio-button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <app-select [name]="'country'" [label]="'Country (Single Select)'" [placeholder]="'Select country'"
+                        [options]="countryOptions" [filter]="true" [(ngModel)]="myForm.country"></app-select>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <app-select [name]="'skills'" [label]="'Skills (Multi Select Chips)'" [placeholder]="'Select skills'"
+                        [options]="skillOptions" [multiple]="true" [filter]="true" [(ngModel)]="myForm.skills"></app-select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <app-checkbox [name]="'terms1Accepted'" [label]="'Accept terms and conditions'"
+                        [(ngModel)]="myForm.terms1Accepted"></app-checkbox>
+                </div>
+            </div>
+
             <div class="row">
                 <div class="col-md-12 mb-3">
                     <app-text-area [name]="'bio'" [label]="'Bio'" [placeholder]="'Enter your bio (max 250 characters)'"
-                        [(ngModel)]="myForm.bio" [maxlength]="250"></app-text-area>
+                        [(ngModel)]="myForm.bio" [maxLength]="250"></app-text-area>
                 </div>
-                <div class="my-3">
-                    <pre> {{ myForm | json }} </pre>
-                </div>
+            </div>
+
+            <div class="my-3">
+                <pre> {{ myForm | json }} </pre>
             </div>
         </form>
     </div>
+
+    <div class="my-4">
+        <h3>Charts</h3>
+        <app-charts [title]="'Quarterly Revenue'" [type]="'bar'" [data]="chartData" [options]="chartOptions"></app-charts>
+    </div>
+
+    <div class="my-4">
+        <h3>Data Grid (Sorting + Row Expansion)</h3>
+        <app-data-grid [caption]="'Employee Summary'" [columns]="employeeColumns" [value]="employeeData" [dataKey]="'id'"
+            [expandableRows]="true" [sortMode]="'single'"></app-data-grid>
+    </div>
+</div>

@@ -16,6 +16,7 @@ import { CommonModule } from '@angular/common';
       }
       <textarea
         [id]="textareaId()"
+        [name]="name()"
         pTextarea
         [placeholder]="placeholder()"
         [disabled]="disabled"
@@ -44,6 +45,7 @@ import { CommonModule } from '@angular/common';
 export class TextAreaComponent implements ControlValueAccessor {
   // Component Inputs
   label = input<string>('');
+  name = input<string>('');
   placeholder = input<string>('');
   textareaId = input<string>(`app-text-area-${Math.random().toString(36).substring(2, 9)}`);
   // Internal State
