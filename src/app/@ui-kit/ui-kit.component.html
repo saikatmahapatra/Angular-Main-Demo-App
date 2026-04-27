@@ -29,34 +29,35 @@
         <h3>Form Controls</h3>
         <form>
             <div class="row">
-                <div class="col-md-6 mb-3"><app-input [type]="'text'" [label]="'First Name'"
-                        [placeholder]="'Enter your first name'" [(ngModel)]="myForm.firstname" [minLength]="1"
-                        [maxLength]="30"></app-input></div>
-                <div class="col-md-6 mb-3"><app-input [type]="'text'" [label]="'Last Name'"
-                        [placeholder]="'Enter your last name'" [(ngModel)]="myForm.lastname" [minLength]="1"
-                        [maxLength]="64"></app-input></div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 mb-3">
-                    <app-input [type]="'email'" [label]="'Email'" [placeholder]="'Enter your email'"
-                        [(ngModel)]="myForm.email" [maxLength]="200"></app-input>
+                <div class="col-md-6 mb-3">
+                    <app-input [type]="'text'" [name]="'firstName'" [label]="'First Name'" [placeholder]="'Enter your first name'"
+                        [(ngModel)]="myForm.firstname"></app-input>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <app-input [type]="'text'" [name]="'lastName'" [label]="'Last Name'" [placeholder]="'Enter your last name'"
+                        [(ngModel)]="myForm.lastname"></app-input>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12 mb-3">
-                    <app-input [type]="'tel'" [label]="'Mobile'" [placeholder]="'Enter your mobile number'"
-                        [(ngModel)]="myForm.mobile" [minLength]="10" [maxLength]="10"></app-input>
+                    <app-input [type]="'email'" [name]="'email'" [label]="'Email'" [placeholder]="'Enter your email'"
+                        [(ngModel)]="myForm.email"></app-input>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12 mb-3">
-                    <app-text-area [label]="'Bio'" [placeholder]="'Enter your bio (max 250 characters)'"
-                        [(ngModel)]="myForm.bio" [maxLength]="250"></app-text-area>
+                    <app-input [type]="'tel'" [name]="'mobile'" [label]="'Mobile'" [placeholder]="'Enter your mobile number'"
+                        [(ngModel)]="myForm.mobile" [minLength]="10" [maxlength]="10"></app-input>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <app-text-area [name]="'bio'" [label]="'Bio'" [placeholder]="'Enter your bio (max 250 characters)'"
+                        [(ngModel)]="myForm.bio" [maxlength]="250"></app-text-area>
                 </div>
                 <div class="my-3">
                     <pre> {{ myForm | json }} </pre>
                 </div>
             </div>
-            <app-button [label]="'Submit'"></app-button>
         </form>
     </div>
