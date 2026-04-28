@@ -31,6 +31,7 @@ export interface AppAlertMessage {
       [closable]="closable()"
       [variant]="variant()"
       [size]="size()"
+      [icon]="icon()"
       [escape]="escape()"
       [styleClass]="styleClass()">
     </p-message>
@@ -50,7 +51,8 @@ export class AlertMessageComponent {
   detail = input<string>('');
   closable = input<boolean>(false);
   variant = input<AppAlertVariant>('simple');
-  size = input<AppAlertSize | undefined>(undefined);
+  size = input<AppAlertSize>();
+  icon = input<string>('');
   escape = input<boolean>(true);
   styleClass = input<string>('');
   autoShow = input<boolean>(false);
