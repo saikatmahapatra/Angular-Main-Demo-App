@@ -48,22 +48,26 @@ export class CardFooterDirective { }
         </ng-template>
       </p-card>
     } @else {
-      <div class="card" [ngClass]="styleClass()" [ngStyle]="style()">
-        <div class="card-header">
-          @if (headerContent()) {
-          <ng-content select="[card-header]"></ng-content>
-          } @else if (header() !== '') {
-          <div class="h5">{{ header() }}</div>
-          }
-        </div>
+      <div class="card" [ngClass]="styleClass()" [ngStyle]="style()">        
+        @if (headerContent()) {
+          <div class="card-header">
+            <ng-content select="[card-header]"></ng-content>
+          </div>
+        } @else if (header() !== '') {
+          <div class="card-header">
+            <div class="h5">{{ header() }}</div>
+          </div>
+        }
+
         <div class="card-body">
           <ng-content select="[card-body]"></ng-content>
         </div>
-        <div class="card-footer">
-          @if (footerContent()) {
+        
+        @if (footerContent()) {
+          <div class="card-footer">
             <ng-content select="[card-footer]"></ng-content>
-          }
-        </div>
+          </div>
+        }
       </div>
     }
   `
