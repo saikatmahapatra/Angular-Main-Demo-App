@@ -2,22 +2,22 @@ import { CommonModule } from '@angular/common';
 import { Component, contentChild, Directive, input, model } from '@angular/core';
 import { DialogModule } from 'primeng/dialog';
 
-export type AppPopupPosition = 'center' | 'top' | 'bottom' | 'left' | 'right' | 'topleft' | 'topright' | 'bottomleft' | 'bottomright';
+export type AppModalPosition = 'center' | 'top' | 'bottom' | 'left' | 'right' | 'topleft' | 'topright' | 'bottomleft' | 'bottomright';
 
 @Directive({
-  selector: '[popup-header]',
+  selector: '[modal-header]',
   standalone: true
 })
-export class PopupHeaderDirective { }
+export class ModalHeaderDirective { }
 
 @Directive({
-  selector: '[popup-footer]',
+  selector: '[modal-footer]',
   standalone: true
 })
-export class PopupFooterDirective { }
+export class ModalFooterDirective { }
 
 @Component({
-  selector: 'app-popup',
+  selector: 'app-modal',
   standalone: true,
   imports: [CommonModule, DialogModule],
   template: `
@@ -40,27 +40,27 @@ export class PopupFooterDirective { }
       (visibleChange)="visible.set($event)">
       <ng-template pTemplate="header">
         @if (headerContent()) {
-        <ng-content select="[popup-header]"></ng-content>
+        <ng-content select="[modal-header]"></ng-content>
         } @else {
-        <div>{{ header() }}</div>
+        <div class="h5">{{ header() }}</div>
         }
       </ng-template>
 
-      <div class="app-popup-body">
+      <div class="app-modal-body">
         <ng-content></ng-content>
       </div>
 
       <ng-template pTemplate="footer">
         @if (footerContent()) {
-        <ng-content select="[popup-footer]"></ng-content>
+        <ng-content select="[modal-footer]"></ng-content>
         }
       </ng-template>
     </p-dialog>
   `
 })
-export class PopupComponent {
-  protected readonly headerContent = contentChild(PopupHeaderDirective);
-  protected readonly footerContent = contentChild(PopupFooterDirective);
+export class ModalComponent {
+  protected readonly headerContent = contentChild(ModalHeaderDirective);
+  protected readonly footerContent = contentChild(ModalFooterDirective);
 
   visible = model<boolean>(false);
   header = input<string>('');
@@ -72,7 +72,7 @@ export class PopupComponent {
   dismissableMask = input<boolean>(true);
   showHeader = input<boolean>(true);
   blockScroll = input<boolean>(true);
-  position = input<AppPopupPosition>('center');
+  position = input<AppModalPosition>('center');
   styleClass = input<string>('');
   style = input<Record<string, string>>({ width: '40rem' });
   contentStyle = input<Record<string, string>>({});

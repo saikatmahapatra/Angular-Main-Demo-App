@@ -125,7 +125,7 @@ import { DataGridComponent } from "./data-grid/data-grid.component";
 import { DatePickerComponent } from "./date-picker/date-picker.component";
 import { IconComponent } from "./icon/icon.component";
 import { InputComponent } from "./input/input.component";
-import { PopupComponent, PopupFooterDirective, PopupHeaderDirective } from "./popup/popup.component";
+import { ModalComponent, ModalFooterDirective, ModalHeaderDirective } from "./modal/modal.component";
 import { RadioButtonComponent } from "./radio-button/radio-button.component";
 import { SelectComponent } from "./select/select.component";
 import { TextAreaComponent } from "./text-area/text-area.component";
@@ -143,9 +143,9 @@ export const APP_UI_WRAPPER = [
   DatePickerComponent,
   IconComponent,
   InputComponent,
-  PopupComponent,
-  PopupFooterDirective,
-  PopupHeaderDirective,
+  ModalComponent,
+  ModalFooterDirective,
+  ModalHeaderDirective,
   RadioButtonComponent,
   SelectComponent,
   TextAreaComponent
@@ -166,7 +166,7 @@ export * from "./data-grid/data-grid.component";
 export * from "./date-picker/date-picker.component";
 export * from "./icon/icon.component";
 export * from "./input/input.component";
-export * from "./popup/popup.component";
+export * from "./modal/modal.component";
 export * from "./radio-button/radio-button.component";
 export * from "./select/select.component";
 export * from "./text-area/text-area.component";
