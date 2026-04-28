@@ -30,12 +30,12 @@
         <form>
             <div class="row">
                 <div class="col-md-6 mb-3">
-                    <app-input [type]="'text'" [name]="'firstName'" [label]="'First Name'" [placeholder]="'Enter your first name'"
-                        [(ngModel)]="myForm.firstname"></app-input>
+                    <app-input [type]="'text'" [name]="'firstName'" [label]="'First Name'"
+                        [placeholder]="'Enter your first name'" [(ngModel)]="myForm.firstname"></app-input>
                 </div>
                 <div class="col-md-6 mb-3">
-                    <app-input [type]="'text'" [name]="'lastName'" [label]="'Last Name'" [placeholder]="'Enter your last name'"
-                        [(ngModel)]="myForm.lastname"></app-input>
+                    <app-input [type]="'text'" [name]="'lastName'" [label]="'Last Name'"
+                        [placeholder]="'Enter your last name'" [(ngModel)]="myForm.lastname"></app-input>
                 </div>
             </div>
 
@@ -45,15 +45,16 @@
                         [(ngModel)]="myForm.email"></app-input>
                 </div>
                 <div class="col-md-6 mb-3">
-                    <app-input [type]="'number'" [name]="'age'" [label]="'Age (InputNumber)'" [placeholder]="'Enter your age'"
-                        [(ngModel)]="myForm.age" [min]="18" [max]="65"></app-input>
+                    <app-input [type]="'number'" [name]="'age'" [label]="'Age (InputNumber)'"
+                        [placeholder]="'Enter your age'" [(ngModel)]="myForm.age" [min]="18" [max]="65"></app-input>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-6 mb-3">
-                    <app-input [type]="'tel'" [name]="'mobile'" [label]="'Mobile'" [placeholder]="'Enter your mobile number'"
-                        [(ngModel)]="myForm.mobile" [minLength]="10" [maxLength]="10"></app-input>
+                    <app-input [type]="'tel'" [name]="'mobile'" [label]="'Mobile'"
+                        [placeholder]="'Enter your mobile number'" [(ngModel)]="myForm.mobile" [minLength]="10"
+                        [maxLength]="10"></app-input>
                 </div>
                 <div class="col-md-6 mb-3">
                     <app-radio-button [name]="'gender'" [label]="'Gender'" [options]="genderOptions"
@@ -67,8 +68,9 @@
                         [options]="countryOptions" [filter]="true" [(ngModel)]="myForm.country"></app-select>
                 </div>
                 <div class="col-md-6 mb-3">
-                    <app-select [name]="'skills'" [label]="'Skills (Multi Select Chips)'" [placeholder]="'Select skills'"
-                        [options]="skillOptions" [multiple]="true" [filter]="true" [(ngModel)]="myForm.skills"></app-select>
+                    <app-select [name]="'skills'" [label]="'Skills (Multi Select Chips)'"
+                        [placeholder]="'Select skills'" [options]="skillOptions" [multiple]="true" [filter]="true"
+                        [(ngModel)]="myForm.skills"></app-select>
                 </div>
             </div>
 
@@ -89,7 +91,8 @@
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <app-date-picker [name]="'dateRange'" [label]="'Date Range'" [selectionMode]="'range'"
-                        [numberOfMonths]="2" [showIcon]="true" [showButtonBar]="true" [(ngModel)]="dateRange"></app-date-picker>
+                        [numberOfMonths]="2" [showIcon]="true" [showButtonBar]="true"
+                        [(ngModel)]="dateRange"></app-date-picker>
                 </div>
             </div>
 
@@ -136,12 +139,18 @@
         <h3>Alert Message / Toast</h3>
         <app-alert-message #toastAlert [mode]="'toast'"></app-alert-message>
         <div class="mb-3">
-            <app-alert-message [severity]="'info'" [icon]="'pi pi-info-circle'" [summary]="'Heads up'" [detail]="'This is the inline alert-message wrapper.'" [styleClass]="'mb-3'"></app-alert-message>
-            <app-alert-message [severity]="'warn'" [icon]="'pi pi-exclamation-triangle'" [summary]="'Heads up'" [detail]="'This is the inline alert-message wrapper.'" [styleClass]="'mb-3'"></app-alert-message>
-            <app-alert-message [severity]="'success'" [icon]="'pi pi-check-circle'" [summary]="'Heads up'" [detail]="'This is the inline alert-message wrapper.'" [styleClass]="'mb-3'"></app-alert-message>
-            <app-alert-message [severity]="'error'" [icon]="'pi pi-times-circle'" [summary]="'Heads up'" [detail]="'This is the inline alert-message wrapper.'" [styleClass]="'mb-3'"></app-alert-message>
-            <app-alert-message [severity]="'secondary'" [icon]="'pi pi-info-circle'" [summary]="'Heads up'" [detail]="'This is the inline alert-message wrapper.'" [styleClass]="'mb-3'"></app-alert-message>
-            <app-alert-message [severity]="'contrast'" [icon]="'pi pi-info-circle'" [summary]="'Heads up'" [detail]="'This is the inline alert-message wrapper.'" [styleClass]="'mb-3'"></app-alert-message>
+            <app-alert-message [severity]="'info'" [icon]="'pi pi-info-circle'" [summary]="'Heads up'"
+                [detail]="'This is the inline alert-message wrapper.'" [styleClass]="'mb-3'"></app-alert-message>
+            <app-alert-message [severity]="'warn'" [icon]="'pi pi-exclamation-triangle'" [summary]="'Heads up'"
+                [detail]="'This is the inline alert-message wrapper.'" [styleClass]="'mb-3'"></app-alert-message>
+            <app-alert-message [severity]="'success'" [icon]="'pi pi-check-circle'" [summary]="'Heads up'"
+                [detail]="'This is the inline alert-message wrapper.'" [styleClass]="'mb-3'"></app-alert-message>
+            <app-alert-message [severity]="'error'" [icon]="'pi pi-times-circle'" [summary]="'Heads up'"
+                [detail]="'This is the inline alert-message wrapper.'" [styleClass]="'mb-3'"></app-alert-message>
+            <app-alert-message [severity]="'secondary'" [icon]="'pi pi-info-circle'" [summary]="'Heads up'"
+                [detail]="'This is the inline alert-message wrapper.'" [styleClass]="'mb-3'"></app-alert-message>
+            <app-alert-message [severity]="'contrast'" [icon]="'pi pi-info-circle'" [summary]="'Heads up'"
+                [detail]="'This is the inline alert-message wrapper.'" [styleClass]="'mb-3'"></app-alert-message>
         </div>
         <div class="d-flex gap-2 flex-wrap">
             <app-button [label]="'Show Success Toast'" [severity]="'success'"
@@ -155,12 +164,13 @@
 
     <div class="my-4">
         <h3>Charts</h3>
-        <app-charts [title]="'Quarterly Revenue'" [type]="'bar'" [data]="chartData" [options]="chartOptions"></app-charts>
+        <app-charts [title]="'Quarterly Revenue'" [type]="'bar'" [data]="chartData"
+            [options]="chartOptions"></app-charts>
     </div>
 
     <div class="my-4">
         <h3>Data Grid (Sorting + Row Expansion + Actions)</h3>
-        <app-data-grid [caption]="'Employee Summary'" [columns]="employeeColumns" [value]="employeeData" [dataKey]="'id'"
-            [expandableRows]="true" [sortMode]="'single'" [actions]="employeeActions"></app-data-grid>
+        <app-data-grid [caption]="'Employee Summary'" [columns]="employeeColumns" [value]="employeeData"
+            [dataKey]="'id'" [expandableRows]="true" [sortMode]="'single'" [actions]="employeeActions"></app-data-grid>
     </div>
 </div>
