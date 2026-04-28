@@ -25,27 +25,47 @@ export class CardFooterDirective { }
   standalone: true,
   imports: [CommonModule, CardModule],
   template: `
-    <p-card [style]="style()" [styleClass]="styleClass()" [subheader]="subheader()">
-      <ng-template pTemplate="header">
-        @if (headerContent()) {
-        <ng-content select="[card-header]"></ng-content>
-        } @else if (header() !== '') {
-        <div class="p-card-title m-0 px-3 pt-3">{{ header() }}</div>
-        }
-      </ng-template>
+    @if(lib() === 'primeng') {
+      <p-card [style]="style()" [styleClass]="styleClass()" [subheader]="subheader()">
+        <ng-template pTemplate="header">
+          @if (headerContent()) {
+          <ng-content select="[card-header]"></ng-content>
+          } @else if (header() !== '') {
+          <div class="p-card-title m-0 px-3 pt-3">{{ header() }}</div>
+          }
+        </ng-template>
 
-      @if (title() !== '') {
-      <ng-template pTemplate="title">{{ title() }}</ng-template>
-      }
-
-      <ng-content select="[card-body]"></ng-content>
-      
-      <ng-template pTemplate="footer">
-        @if (footerContent()) {
-        <ng-content select="[card-footer]"></ng-content>
+        @if (title() !== '') {
+        <ng-template pTemplate="title">{{ title() }}</ng-template>
         }
-      </ng-template>
-    </p-card>
+
+        <ng-content select="[card-body]"></ng-content>
+        
+        <ng-template pTemplate="footer">
+          @if (footerContent()) {
+          <ng-content select="[card-footer]"></ng-content>
+          }
+        </ng-template>
+      </p-card>
+    } @else {
+      <div class="card" [ngClass]="styleClass()" [ngStyle]="style()">
+        <div class="card-header">
+          @if (headerContent()) {
+          <ng-content select="[card-header]"></ng-content>
+          } @else if (header() !== '') {
+          <div class="h5">{{ header() }}</div>
+          }
+        </div>
+        <div class="card-body">
+          <ng-content select="[card-body]"></ng-content>
+        </div>
+        <div class="card-footer">
+          @if (footerContent()) {
+            <ng-content select="[card-footer]"></ng-content>
+          }
+        </div>
+      </div>
+    }
   `
 })
 export class CardComponent {
