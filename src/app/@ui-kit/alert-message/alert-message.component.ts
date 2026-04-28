@@ -50,8 +50,8 @@ export class AlertMessageComponent {
   summary = input<string>('');
   detail = input<string>('');
   closable = input<boolean>(false);
-  variant = input<AppAlertVariant>('simple');
-  size = input<AppAlertSize>();
+  variant = input<AppAlertVariant | undefined>(undefined);
+  size = input<AppAlertSize | undefined>(undefined);
   icon = input<string>('');
   escape = input<boolean>(true);
   styleClass = input<string>('');
