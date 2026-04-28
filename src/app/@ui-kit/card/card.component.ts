@@ -26,7 +26,7 @@ export class CardFooterDirective { }
   imports: [CommonModule, CardModule],
   template: `
     @if(lib() === 'primeng') {
-      <p-card [style]="style()" [styleClass]="styleClass()" [subheader]="subheader()">
+      <p-card [style]="style()" [class]="styleClass()" [subheader]="subheader()">
         <ng-template pTemplate="header">
           @if (headerContent()) {
           <ng-content select="[card-header]"></ng-content>
