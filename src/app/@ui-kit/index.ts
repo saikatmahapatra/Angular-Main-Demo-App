@@ -118,7 +118,7 @@ export const PRIME_NG_CORE = [
 
 import { ButtonComponent } from "./button/button.component";
 import { AlertMessageComponent } from "./alert-message/alert-message.component";
-import { CardComponent, CardFooterDirective, CardHeaderDirective } from "./card/card.component";
+import { CardComponent, CardHeaderDirective, CardBodyDirective, CardFooterDirective } from "./card/card.component";
 import { ChartsComponent } from "./charts/charts.component";
 import { CheckboxComponent } from "./checkbox/checkbox.component";
 import { DataGridComponent } from "./data-grid/data-grid.component";
@@ -135,8 +135,9 @@ export const APP_UI_WRAPPER = [
   AlertMessageComponent,
   ButtonComponent,
   CardComponent,
-  CardFooterDirective,
   CardHeaderDirective,
+  CardBodyDirective,
+  CardFooterDirective,
   ChartsComponent,
   CheckboxComponent,
   DataGridComponent,
