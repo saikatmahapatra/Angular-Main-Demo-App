@@ -53,7 +53,7 @@ export class CardComponent {
   protected readonly bodyContent = contentChild(CardBodyDirective);
   protected readonly footerContent = contentChild(CardFooterDirective);
 
-  lib = input<'bs' | 'primeng'>('primeng');
+  lib = input<'bootstrap' | 'primeng' | 'material'>('primeng');
   header = input<string>('');
   title = input<string>('');
   subheader = input<string>('');
