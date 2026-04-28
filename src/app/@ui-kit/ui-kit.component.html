@@ -140,7 +140,7 @@
         <h3>Alert Message / Toast</h3>
         <app-alert-message #toastAlert [mode]="'toast'"></app-alert-message>
         <div class="d-flex gap-2 flex-wrap">
-            <app-button [label]="'Show Success Toast'"
+            <app-button [label]="'Show Success Toast'" [severity]="'success'"
                 (clickAction)="toastAlert.success('Saved', 'Record updated successfully', 3000)"></app-button>
             <app-button [label]="'Show Warning Toast'" [severity]="'warn'"
                 (clickAction)="toastAlert.warn('Warning', 'Please review the form', 3000)"></app-button>
