@@ -29,21 +29,21 @@ export class CardFooterDirective { }
       <p-card [style]="style()" [class]="styleClass()" [subheader]="subheader()">
         <ng-template pTemplate="header">
           @if (headerContent()) {
-          <ng-content select="[card-header]"></ng-content>
+            <ng-container *ngTemplateOutlet="headerSlot"></ng-container>
           } @else if (header() !== '') {
-          <div class="p-card-title m-0 px-3 pt-3">{{ header() }}</div>
+            <div class="p-card-title m-0 px-3 pt-3">{{ header() }}</div>
           }
         </ng-template>
 
         @if (title() !== '') {
-        <ng-template pTemplate="title">{{ title() }}</ng-template>
+          <ng-template pTemplate="title">{{ title() }}</ng-template>
         }
 
-        <ng-content select="[card-body]"></ng-content>
+        <ng-container *ngTemplateOutlet="bodySlot"></ng-container>
         
         <ng-template pTemplate="footer">
           @if (footerContent()) {
-          <ng-content select="[card-footer]"></ng-content>
+            <ng-container *ngTemplateOutlet="footerSlot"></ng-container>
           }
         </ng-template>
       </p-card>
@@ -51,7 +51,7 @@ export class CardFooterDirective { }
       <div class="card" [ngClass]="styleClass()" [ngStyle]="style()">        
         @if (headerContent()) {
           <div class="card-header">
-            <ng-content select="[card-header]"></ng-content>
+            <ng-container *ngTemplateOutlet="headerSlot"></ng-container>
           </div>
         } @else if (header() !== '') {
           <div class="card-header">
@@ -60,16 +60,29 @@ export class CardFooterDirective { }
         }
 
         <div class="card-body">
-          <ng-content select="[card-body]"></ng-content>
+          <ng-container *ngTemplateOutlet="bodySlot"></ng-container>
         </div>
         
         @if (footerContent()) {
           <div class="card-footer">
-            <ng-content select="[card-footer]"></ng-content>
+            <ng-container *ngTemplateOutlet="footerSlot"></ng-container>
           </div>
         }
       </div>
     }
+
+    <!-- Projection slot templates -->
+    <ng-template #headerSlot>
+      <ng-content select="[card-header]"></ng-content>
+    </ng-template>
+
+    <ng-template #bodySlot>
+      <ng-content select="[card-body]"></ng-content>
+    </ng-template>
+
+    <ng-template #footerSlot>
+      <ng-content select="[card-footer]"></ng-content>
+    </ng-template>
   `
 })
 export class CardComponent {
