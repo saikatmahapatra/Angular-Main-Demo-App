@@ -136,10 +136,12 @@
         <h3>Alert Message / Toast</h3>
         <app-alert-message #toastAlert [mode]="'toast'"></app-alert-message>
         <div class="mb-3">
-            <app-alert-message [severity]="'info'" [icon]="'pi pi-info-circle'" [summary]="'Heads up'" [detail]="'This is the inline alert-message wrapper.'"></app-alert-message>
-            <app-alert-message [severity]="'warn'" [summary]="'Heads up'" [detail]="'This is the inline alert-message wrapper.'"></app-alert-message>
-            <app-alert-message [severity]="'success'" [summary]="'Heads up'" [detail]="'This is the inline alert-message wrapper.'"></app-alert-message>
-            <app-alert-message [severity]="'error'" [summary]="'Heads up'" [detail]="'This is the inline alert-message wrapper.'"></app-alert-message>
+            <app-alert-message [severity]="'info'" [icon]="'pi pi-info-circle'" [summary]="'Heads up'" [detail]="'This is the inline alert-message wrapper.'" [styleClass]="'mb-3'"></app-alert-message>
+            <app-alert-message [severity]="'warn'" [icon]="'pi pi-exclamation-triangle'" [summary]="'Heads up'" [detail]="'This is the inline alert-message wrapper.'" [styleClass]="'mb-3'"></app-alert-message>
+            <app-alert-message [severity]="'success'" [icon]="'pi pi-check-circle'" [summary]="'Heads up'" [detail]="'This is the inline alert-message wrapper.'" [styleClass]="'mb-3'"></app-alert-message>
+            <app-alert-message [severity]="'error'" [icon]="'pi pi-times-circle'" [summary]="'Heads up'" [detail]="'This is the inline alert-message wrapper.'" [styleClass]="'mb-3'"></app-alert-message>
+            <app-alert-message [severity]="'secondary'" [icon]="'pi pi-info-circle'" [summary]="'Heads up'" [detail]="'This is the inline alert-message wrapper.'" [styleClass]="'mb-3'"></app-alert-message>
+            <app-alert-message [severity]="'contrast'" [icon]="'pi pi-info-circle'" [summary]="'Heads up'" [detail]="'This is the inline alert-message wrapper.'" [styleClass]="'mb-3'"></app-alert-message>
         </div>
         <div class="d-flex gap-2 flex-wrap">
             <app-button [label]="'Show Success Toast'" [severity]="'success'"
