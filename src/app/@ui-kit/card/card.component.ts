@@ -9,6 +9,12 @@ import { CardModule } from 'primeng/card';
 export class CardHeaderDirective { }
 
 @Directive({
+  selector: '[card-body]',
+  standalone: true
+})
+export class CardBodyDirective { }
+
+@Directive({
   selector: '[card-footer]',
   standalone: true
 })
@@ -32,10 +38,8 @@ export class CardFooterDirective { }
       <ng-template pTemplate="title">{{ title() }}</ng-template>
       }
 
-      <div class="app-card-body">
-        <ng-content></ng-content>
-      </div>
-
+      <ng-content select="[card-body]"></ng-content>
+      
       <ng-template pTemplate="footer">
         @if (footerContent()) {
         <ng-content select="[card-footer]"></ng-content>
@@ -46,8 +50,10 @@ export class CardFooterDirective { }
 })
 export class CardComponent {
   protected readonly headerContent = contentChild(CardHeaderDirective);
+  protected readonly bodyContent = contentChild(CardBodyDirective);
   protected readonly footerContent = contentChild(CardFooterDirective);
 
+  lib = input<'bs' | 'primeng'>('primeng');
   header = input<string>('');
   title = input<string>('');
   subheader = input<string>('');
