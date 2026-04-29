@@ -58,13 +58,13 @@
               }
             </td>
             <td>
-              <div class="d-flex gap-2">
+              <div class="d-flex">
                 <app-button [severity]="'secondary'" [icon]="'pi pi-pencil'" [rounded]="true" [text]="true"
-                  (clickAction)="editUserProfile(rowData?.id)"></app-button>
+                  (clickAction)="editUserProfile(rowData?.id)" [tooltip]="'Edit User'"></app-button>
                 <app-button [severity]="'secondary'" [icon]="'pi pi-user'" [rounded]="true" [text]="true"
-                  (clickAction)="redirectToProfile(rowData?.id)"></app-button>
+                  (clickAction)="redirectToProfile(rowData?.id)" [tooltip]="'View Profile'"></app-button>
                 <app-button [severity]="'secondary'" [icon]="'pi pi-chart-bar'" [rounded]="true" [text]="true"
-                  (clickAction)="navigateToAnalytics(rowData?.id)"></app-button>
+                  (clickAction)="navigateToAnalytics(rowData?.id)" [tooltip]="'View Analytics'"></app-button>
               </div>
             </td>
           </tr>
