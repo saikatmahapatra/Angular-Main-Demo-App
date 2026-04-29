@@ -142,4 +142,11 @@ export class ManageUsersComponent implements OnInit {
     this.router.navigate(['/emp/add'], navigationExtras);
   }
 
+  navigateToAnalytics(id: number) {
+    const navigationExtras: NavigationExtras = {
+      state: { manageUserPageIndex: this.currentPageIndex },
+    };
+    this.router.navigate(['/dashboard/analytics/emp/' + id], navigationExtras);
+  }
+
 }

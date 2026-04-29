@@ -46,9 +46,26 @@
             <td>{{rowData.user_phone}}</td>
             <td>{{rowData.designation_name}}</td>
             <td>{{rowData.department_name}}</td>
-            <td>{{rowData.user_status}}</td>
             <td>
-              BTN
+              @if (rowData?.user_status === 'Y') {
+              <app-icon class="text-success" [name]="'circle'" [tooltip]="'Active'"></app-icon>
+              }
+              @if (rowData?.user_status === 'N') {
+              <app-icon class="text-warning" [name]="'circle'" [tooltip]="'Inactive'"></app-icon>
+              }
+              @if (rowData?.user_status === 'A') {
+              <app-icon class="text-danger" [name]="'circle'" [tooltip]="'Archived'"></app-icon>
+              }
+            </td>
+            <td>
+              <div class="d-flex gap-2">
+                <app-button [severity]="'secondary'" [icon]="'pi pi-pencil'" [rounded]="true" [text]="true"
+                  (clickAction)="editUserProfile(rowData?.id)"></app-button>
+                <app-button [severity]="'secondary'" [icon]="'pi pi-user'" [rounded]="true" [text]="true"
+                  (clickAction)="redirectToProfile(rowData?.id)"></app-button>
+                <app-button [severity]="'secondary'" [icon]="'pi pi-chart-bar'" [rounded]="true" [text]="true"
+                  (clickAction)="navigateToAnalytics(rowData?.id)"></app-button>
+              </div>
             </td>
           </tr>
         </ng-template>
