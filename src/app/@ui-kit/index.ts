@@ -129,6 +129,9 @@ import { ModalComponent, ModalFooterDirective, ModalHeaderDirective } from "./mo
 import { RadioButtonComponent } from "./radio-button/radio-button.component";
 import { SelectComponent } from "./select/select.component";
 import { TextAreaComponent } from "./text-area/text-area.component";
+import { PaginationComponent } from "./pagination/pagination.component";
+import { AccordionComponent } from "./accordion/accordion.component";
+import { ToolbarComponent } from "./toolbar/toolbar.component";
 
 
 export const APP_UI_WRAPPER = [
@@ -149,7 +152,10 @@ export const APP_UI_WRAPPER = [
   ModalHeaderDirective,
   RadioButtonComponent,
   SelectComponent,
-  TextAreaComponent
+  TextAreaComponent,
+  PaginationComponent,
+  AccordionComponent,
+  ToolbarComponent
 ]
 
 // Group them for easy legacy importing
@@ -171,3 +177,6 @@ export * from "./modal/modal.component";
 export * from "./radio-button/radio-button.component";
 export * from "./select/select.component";
 export * from "./text-area/text-area.component";
+export * from "./pagination/pagination.component";
+export * from "./accordion/accordion.component";
+export * from "./toolbar/toolbar.component";
