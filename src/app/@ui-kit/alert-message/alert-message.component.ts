@@ -24,7 +24,7 @@ export interface AppAlertMessage {
   standalone: true,
   imports: [CommonModule, MessageModule, ToastModule],
   template: `
-    @if (mode() === 'inline') {
+    @if (mode() === 'inline' && resolvedText()) {
     <p-message
       [severity]="severity()"
       [text]="resolvedText()"
@@ -37,7 +37,7 @@ export interface AppAlertMessage {
     </p-message>
     }
 
-    @if (mode() === 'toast' || renderToastHost()) {
+    @if (mode() === 'toast' || renderToastHost() && resolvedText()) {
     <p-toast [key]="toastKey()" [position]="toastPosition()"></p-toast>
     }
   `
