@@ -1,28 +1,32 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, input } from '@angular/core';
 import { CommonModule } from '@angular/common'; // 1. Import CommonModule
+import { TooltipModule } from 'primeng/tooltip';
+
 @Component({
   selector: 'app-icon',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TooltipModule],
   template: `
-    @if (lib !== 'material') {
-      <i [class]="getIconClass()" [ngClass]="styleClass" [style]="styleCSS" aria-hidden="true"></i>
+    @if (lib() !== 'material') {
+      <i [class]="getIconClass()" [ngClass]="styleClass" [style]="styleCSS()" aria-hidden="true" [pTooltip]="tooltip()" [tooltipPosition]="tooltipPosition()"></i>
     }
-    @if (lib === 'material') {
+    @if (lib() === 'material') {
       <span [ngClass]="styleClass" class="icon-asset material-symbols-outlined" aria-hidden="true"
-      [innerHTML]="getIconClass()"></span>
+      [innerHTML]="getIconClass()" [pTooltip]="tooltip()" [tooltipPosition]="tooltipPosition()"></span>
     }
   `
 })
 export class IconComponent implements OnInit {
-  @Input() lib: string = 'material'; // bootstrap | primeng | material
-  @Input() name: string = '';
-  @Input() width: number = 16;
-  @Input() height: number = 16;
-  @Input() fill: string = 'currentColor';
-  @Input() styleClass: any = '';
-  @Input() svg: boolean = false;
-  @Input() styleCSS: any = '';
+  lib = input<string>('material');
+  name = input<string>('');
+  width = input<number>(16);
+  height = input<number>(16);
+  fill = input<string>('currentColor');
+  styleClass = input<any>('');
+  svg = input<boolean>(false);
+  styleCSS = input<any>('');
+  tooltip = input<string>('');
+  tooltipPosition = input<'top' | 'bottom' | 'left' | 'right'>('top');
 
   // Icons
   icons: any = {
@@ -100,14 +104,14 @@ export class IconComponent implements OnInit {
   }
 
   getIconClass() {
-    if (this.lib == 'material') {
-      return this.icons[this.name]?.material ? this.icons[this.name]?.material : 'info';
+    if (this.lib() == 'material') {
+      return this.icons[this.name()]?.material ? this.icons[this.name()]?.material : 'info';
     }
-    if (this.lib == 'primeng') {
-      return this.icons[this.name]?.primeng ? this.icons[this.name]?.primeng : 'pi pi-question-circle';
+    if (this.lib() == 'primeng') {
+      return this.icons[this.name()]?.primeng ? this.icons[this.name()]?.primeng : 'pi pi-question-circle';
     }
-    if (this.lib == 'bootstrap') {
-      return this.icons[this.name]?.bootstrap ? this.icons[this.name]?.bootstrap : 'bi bi-question-circle';
+    if (this.lib() == 'bootstrap') {
+      return this.icons[this.name()]?.bootstrap ? this.icons[this.name()]?.bootstrap : 'bi bi-question-circle';
     }
   }
 
