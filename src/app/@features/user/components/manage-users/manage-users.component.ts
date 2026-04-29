@@ -84,13 +84,13 @@ export class ManageUsersComponent implements OnInit {
     });
   }
 
-  expandAll() {
-    this.expandedRows = this.userList.reduce((acc: { [x: string]: boolean; }, p: { id: string | number; }) => (acc[p.id] = true) && acc, {});
-  }
+  // expandAll() {
+  //   this.expandedRows = this.userList.reduce((acc: { [x: string]: boolean; }, p: { id: string | number; }) => (acc[p.id] = true) && acc, {});
+  // }
 
-  collapseAll() {
-    this.expandedRows = {};
-  }
+  // collapseAll() {
+  //   this.expandedRows = {};
+  // }
 
   // onRowExpand(event: TableRowExpandEvent) {
   //   this.messageService.add({ severity: 'info', summary: 'Product Expanded', detail: event.data.name, life: 3000 });
@@ -133,6 +133,13 @@ export class ManageUsersComponent implements OnInit {
     this.totalRecords = 0;
     this.itemPerPage = 10;
     this.first = 0;
+  }
+
+  navigateToAddUser() {
+    const navigationExtras: NavigationExtras = {
+      state: { manageUserPageIndex: this.currentPageIndex },
+    };
+    this.router.navigate(['/emp/add'], navigationExtras);
   }
 
 }
