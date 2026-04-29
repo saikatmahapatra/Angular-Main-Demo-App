@@ -19,6 +19,7 @@ export type Variant = 'text' | 'raised' | 'outlined' | null | any;
       [rounded]="rounded()"
       [variant]="variant()"
       [raised]="raised()"
+      [text]="text()"
       [loading]="loading()"
       [styleClass]="class()"
       [title]="title()"
@@ -39,6 +40,7 @@ export class ButtonComponent {
   outlined = input(false);
   rounded = input(false);
   raised = input(false);
+  text = input(false);
   loading = input(false);
   class = input<string | undefined>('');
   title = input<string | undefined>('');
