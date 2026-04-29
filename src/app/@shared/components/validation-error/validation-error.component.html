@@ -1,5 +1,3 @@
 @if (errorMessage !== null) {
-  <div class="mt-1 text-sm error-message">
-    {{ errorMessage }}
-  </div>
+  <app-alert-message [severity]="'error'" [detail]="errorMessage" [styleClass]="'mt-1'"></app-alert-message>
 }
