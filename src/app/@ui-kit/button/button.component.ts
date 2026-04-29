@@ -45,7 +45,7 @@ export class ButtonComponent {
   class = input<string | undefined>('');
   title = input<string | undefined>('');
   tooltip = input<string | undefined>('');
-  tooltipPosition = input<'top' | 'bottom' | 'left' | 'right'>('left');
+  tooltipPosition = input<'top' | 'bottom' | 'left' | 'right'>('right');
   clickAction = output<MouseEvent>();
   toolTipText: string | undefined = undefined;
 

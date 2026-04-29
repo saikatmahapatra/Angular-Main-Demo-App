@@ -26,7 +26,7 @@ export class IconComponent implements OnInit {
   svg = input<boolean>(false);
   styleCSS = input<any>('');
   tooltip = input<string>('');
-  tooltipPosition = input<'top' | 'bottom' | 'left' | 'right'>('top');
+  tooltipPosition = input<'top' | 'bottom' | 'left' | 'right'>('right');
 
   // Icons
   icons: any = {
