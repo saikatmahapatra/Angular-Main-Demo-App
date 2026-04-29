@@ -16,7 +16,7 @@ export class HeaderComponent {
   constructor(public layoutService: LayoutService) {
   }
 
-  toggleDarkMode() {
-    this.layoutService.layoutConfig.update((state) => ({ ...state, darkTheme: !state.darkTheme }));
-  }
+  // toggleDarkMode() {
+  //   this.layoutService.layoutConfig.update((state) => ({ ...state, darkTheme: !state.darkTheme }));
+  // }
 }
