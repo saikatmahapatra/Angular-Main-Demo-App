@@ -1,6 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { FormControl, FormBuilder, FormGroup, Validators, FormArray, AbstractControl } from '@angular/forms';
-import { FormValidationService } from '../../../@core/services/form-validation.service';
+import { Component, OnInit, input } from '@angular/core';
+import { AbstractControl } from '@angular/forms';
+import { FormValidationService } from '@core/services/form-validation.service';
 @Component({
     selector: 'app-validation-error',
     templateUrl: './validation-error.component.html',
@@ -10,8 +10,7 @@ import { FormValidationService } from '../../../@core/services/form-validation.s
 })
 export class ValidationErrorComponent implements OnInit {
 
-  @Input()
-  control!: AbstractControl;
+  control = input<AbstractControl>();
 
   constructor(private formValidationSvc: FormValidationService) { }
 
@@ -22,11 +21,13 @@ export class ValidationErrorComponent implements OnInit {
 
   //get err message
   get errorMessage() {
-    const fG = this.control.parent;
-    for (const validationRule in this.control.errors) {
-      if (this.control.errors.hasOwnProperty(validationRule)) {
-        if ((this.control.touched) && this.control.errors[validationRule]) {
-          return this.formValidationSvc.getValidatorErrorMessage(validationRule, this.control.errors[validationRule]);
+    const control = this.control();
+    if (!control) return null;
+    const fG = control.parent;
+    for (const validationRule in control.errors) {
+      if (control.errors.hasOwnProperty(validationRule)) {
+        if ((control.touched) && control.errors[validationRule]) {
+          return this.formValidationSvc.getValidatorErrorMessage(validationRule, control.errors[validationRule]);
         }
       }
     }
