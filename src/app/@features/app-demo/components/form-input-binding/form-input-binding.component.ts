@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { CommonService } from '../../../../@core/services/common.service';
 @Component({
     selector: 'app-form-input-binding',
     templateUrl: './form-input-binding.component.html',
     providers: [],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class FormInputBindingComponent implements OnInit {

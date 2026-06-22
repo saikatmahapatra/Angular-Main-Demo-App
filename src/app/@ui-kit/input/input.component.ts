@@ -1,4 +1,4 @@
-import { Component, input, forwardRef } from '@angular/core';
+import { Component, input, forwardRef, ChangeDetectionStrategy } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputNumberModule } from 'primeng/inputnumber';
@@ -50,6 +50,7 @@ import { CommonModule } from '@angular/common';
     </div>
   `,
   styles: ``,
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [
     {
       // This is the magic token that tells Angular Forms this component can act as an input

@@ -13,7 +13,7 @@
                 </th>
                 <td>
                   <div
-                    [innerHTML]="currentApprovers?.user_supervisor_id ? (currentApprovers?.supervisor_name + ' ('+currentApprovers?.supervisor_email+')'):  '-'">
+                    [innerHTML]="currentApprovers?.user_supervisor_id ? ($safeNavigationMigration(currentApprovers?.supervisor_name) + ' ('+$safeNavigationMigration(currentApprovers?.supervisor_email)+')'):  '-'">
                   </div>
                 </td>
               </tr>
@@ -23,7 +23,7 @@
                 </th>
                 <td>
                   <div
-                    [innerHTML]="currentApprovers?.user_director_approver_id ? (currentApprovers?.director_name + ' ('+currentApprovers?.director_email+')'):  '-'">
+                    [innerHTML]="currentApprovers?.user_director_approver_id ? ($safeNavigationMigration(currentApprovers?.director_name) + ' ('+$safeNavigationMigration(currentApprovers?.director_email)+')'):  '-'">
                   </div>
                 </td>
               </tr>
@@ -33,7 +33,7 @@
                 </th>
                 <td>
                   <div
-                    [innerHTML]="currentApprovers?.user_hr_approver_id ? (currentApprovers?.hr_name + ' ('+currentApprovers?.hr_email+')'):  '-'">
+                    [innerHTML]="currentApprovers?.user_hr_approver_id ? ($safeNavigationMigration(currentApprovers?.hr_name) + ' ('+$safeNavigationMigration(currentApprovers?.hr_email)+')'):  '-'">
                   </div>
                 </td>
               </tr>
@@ -43,7 +43,7 @@
                 </th>
                 <td>
                   <div
-                    [innerHTML]="currentApprovers?.user_finance_approver_id ? (currentApprovers?.finance_name + ' ('+currentApprovers?.finance_email+')'):  '-'">
+                    [innerHTML]="currentApprovers?.user_finance_approver_id ? ($safeNavigationMigration(currentApprovers?.finance_name) + ' ('+$safeNavigationMigration(currentApprovers?.finance_email)+')'):  '-'">
                   </div>
                 </td>
               </tr>

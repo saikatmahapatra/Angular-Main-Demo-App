@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { AppDemoService } from '../../services/app-demo.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -6,6 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
     selector: 'app-angular-services',
     templateUrl: './angular-services.component.html',
     providers: [AppDemoService],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class AngularServicesComponent implements OnInit {

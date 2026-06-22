@@ -1,5 +1,5 @@
 import { HttpHeaders, HttpParams } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { AlertService } from '@core/services/alert.service';
 import { ApiService } from '@core/services/api.service';
@@ -11,6 +11,7 @@ import { MyAppConfig } from 'src/app/app.config';
     selector: 'app-manage-holidays',
     templateUrl: './manage-holidays.component.html',
     styleUrls: ['./manage-holidays.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ManageHolidaysComponent implements OnInit {

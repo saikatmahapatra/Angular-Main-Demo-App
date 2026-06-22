@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { MyAppConfig } from 'src/app/app.config';
 
@@ -6,6 +6,7 @@ import { MyAppConfig } from 'src/app/app.config';
   selector: 'app-footer-widget',
   standalone: false,
   templateUrl: './footer-widget.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./footer-widget.component.scss']
 })
 export class FooterWidgetComponent {

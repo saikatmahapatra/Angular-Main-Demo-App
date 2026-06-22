@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl, UntypedFormBuilder, FormGroup, Validators, FormArray, NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '@core/services/auth.service';
@@ -9,6 +9,7 @@ import { CommonService } from '@core/services/common.service';
     selector: 'app-two-factor-auth',
     templateUrl: './two-factor-auth.component.html',
     styleUrls: ['./two-factor-auth.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class TwoFactorAuthComponent {

@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { UntypedFormControl, UntypedFormBuilder, FormGroup, Validators, UntypedFormArray } from '@angular/forms';
 import { FormValidationService } from '@core/services/form-validation.service';
 @Component({
     selector: 'app-reactive-form',
     templateUrl: './reactive-form.component.html',
     providers: [FormValidationService],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ReactiveFormComponent implements OnInit {

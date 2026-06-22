@@ -45,13 +45,13 @@
             <dt class="col-md-4 col-lg-3">Department</dt>
             <dd class="col-md-8 col-lg-9" [innerHTML]="userInfo?.department_name || '-'"></dd>
             <dt class="col-md-4 col-lg-3">Date of Joining</dt>
-            <dd class="col-md-8 col-lg-9">{{userInfo?.user_doj | date:'dd/MM/yyyy'}}</dd>
+            <dd class="col-md-8 col-lg-9">{{$safeNavigationMigration(userInfo?.user_doj) | date:'dd/MM/yyyy'}}</dd>
             <dt class="col-md-4 col-lg-3">Personal Email</dt>
             <dd class="col-md-8 col-lg-9">{{userInfo?.user_email2 || '-'}}</dd>
             <dt class="col-md-4 col-lg-3">Work Phone</dt>
             <dd class="col-md-8 col-lg-9">{{userInfo?.user_phone2 || '-'}}</dd>
             <dt class="col-md-4 col-lg-3">Date of Birth</dt>
-            <dd class="col-md-8 col-lg-9">{{userInfo?.user_dob | date:'dd/MM/yyyy'}}</dd>
+            <dd class="col-md-8 col-lg-9">{{$safeNavigationMigration(userInfo?.user_dob) | date:'dd/MM/yyyy'}}</dd>
             <dt class="col-md-4 col-lg-3">Gender</dt>
             <dd class="col-md-8 col-lg-9">{{userInfo?.user_gender}}</dd>
             <dt class="col-md-4 col-lg-3">Blood Group</dt>
@@ -151,7 +151,7 @@
       <div class="my-3">
         <h6 class="fw-bold">{{userInfo?.designation_name}}</h6>
         <div [innerHTML]="orgName"></div>
-        <div class="text-muted">{{userInfo?.user_doj | date:'dd/MM/yyyy'}} - {{userInfo?.user_dor ?
+        <div class="text-muted">{{$safeNavigationMigration(userInfo?.user_doj) | date:'dd/MM/yyyy'}} - {{userInfo?.user_dor ?
           (userInfo.user_dor| date: 'dd/MM/yyyy') : 'Present'}}
         </div>
       </div>
@@ -165,7 +165,7 @@
             }
             <span [innerHTML]="exp.job_location_name"></span>
           </div>
-          <div class="text-muted">{{exp?.from_date | date: 'dd/MM/yyyy'}} - {{exp?.to_date | date:
+          <div class="text-muted">{{$safeNavigationMigration(exp?.from_date) | date: 'dd/MM/yyyy'}} - {{$safeNavigationMigration(exp?.to_date) | date:
             'dd/MM/yyyy'}}
           </div>
           @if (selfAccount) {
@@ -274,24 +274,24 @@
       <dt class="col-md-4 col-lg-3">L1 Workflow Approver</dt>
       <dd class="col-md-8 col-lg-9">
         <div
-          [innerHTML]="approvers?.user_supervisor_id ? (approvers?.supervisor_name + ' ('+approvers?.supervisor_email+')'):  '-'">
+          [innerHTML]="approvers?.user_supervisor_id ? ($safeNavigationMigration(approvers?.supervisor_name) + ' ('+$safeNavigationMigration(approvers?.supervisor_email)+')'):  '-'">
         </div>
       </dd>
       <dt class="col-md-4 col-lg-3">L2 Workflow Approver</dt>
       <dd class="col-md-8 col-lg-9">
         <div
-          [innerHTML]="approvers?.director_name ? (approvers?.director_name + ' ('+approvers?.director_email+')'):  '-'">
+          [innerHTML]="approvers?.director_name ? ($safeNavigationMigration(approvers?.director_name) + ' ('+$safeNavigationMigration(approvers?.director_email)+')'):  '-'">
         </div>
       </dd>
       <dt class="col-md-4 col-lg-3">HR Approver</dt>
       <dd class="col-md-8 col-lg-9">
-        <div [innerHTML]="approvers?.hr_name ? (approvers?.hr_name + ' ('+approvers?.hr_email+')'):  '-'">
+        <div [innerHTML]="approvers?.hr_name ? ($safeNavigationMigration(approvers?.hr_name) + ' ('+$safeNavigationMigration(approvers?.hr_email)+')'):  '-'">
         </div>
       </dd>
       <dt class="col-md-4 col-lg-3">Finance Approver</dt>
       <dd class="col-md-8 col-lg-9">
         <div
-          [innerHTML]="approvers?.finance_name ? (approvers?.finance_name + ' ('+approvers?.finance_email+')'):  '-'">
+          [innerHTML]="approvers?.finance_name ? ($safeNavigationMigration(approvers?.finance_name) + ' ('+$safeNavigationMigration(approvers?.finance_email)+')'):  '-'">
         </div>
       </dd>
     </dl>
@@ -305,23 +305,23 @@
     <dl class="row">
       <dt class="col-md-3">Casual Leave (CL)</dt>
       <dd class="col-md-3">
-        <span [innerHTML]="leaveBalance?.cl ? leaveBalance?.cl : '-'"></span>
+        <span [innerHTML]="leaveBalance?.cl ? $safeNavigationMigration(leaveBalance?.cl) : '-'"></span>
       </dd>
       <dt class="col-md-3">Sick Leave (SL)</dt>
       <dd class="col-md-3">
-        <span [innerHTML]="leaveBalance?.sl ? leaveBalance?.sl : '-'"></span>
+        <span [innerHTML]="leaveBalance?.sl ? $safeNavigationMigration(leaveBalance?.sl) : '-'"></span>
       </dd>
       <dt class="col-md-3">Privileged Leave (PL)</dt>
       <dd class="col-md-3">
-        <span [innerHTML]="leaveBalance?.pl ? leaveBalance?.pl : '-'"></span>
+        <span [innerHTML]="leaveBalance?.pl ? $safeNavigationMigration(leaveBalance?.pl) : '-'"></span>
       </dd>
       <dt class="col-md-3">Optional Leave (OL)</dt>
       <dd class="col-md-3">
-        <span [innerHTML]="leaveBalance?.ol ? leaveBalance?.ol : '-'"></span>
+        <span [innerHTML]="leaveBalance?.ol ? $safeNavigationMigration(leaveBalance?.ol) : '-'"></span>
       </dd>
       <dt class="col-md-3">Comp. Off (CO)</dt>
       <dd class="col-md-3">
-        <span [innerHTML]="leaveBalance?.co ? leaveBalance?.co : '-'"></span>
+        <span [innerHTML]="leaveBalance?.co ? $safeNavigationMigration(leaveBalance?.co) : '-'"></span>
       </dd>
     </dl>
   }
@@ -353,9 +353,9 @@
   </dd>
   <dt class="col-md-4 col-lg-3">Status Updated On</dt>
   <dd class="col-md-8 col-lg-9">
-    {{userInfo?.user_status_updated_on | date:
+    {{$safeNavigationMigration(userInfo?.user_status_updated_on) | date:
     'dd/MM/yyyy h:mm:ss a'}}
-    @if (userInfo?.user_status_updated_on === null) {
+    @if ($safeNavigationMigration(userInfo?.user_status_updated_on) === null) {
       <span>-</span>
     }
   </dd>
@@ -364,18 +364,18 @@
   <dd class="col-md-8 col-lg-9">{{userInfo?.role_name}}</dd>
 
   <dt class="col-md-4 col-lg-3">User Since</dt>
-  <dd class="col-md-8 col-lg-9">{{userInfo?.user_created_on | date: 'dd/MM/yyyy h:mm:ss a'}}</dd>
+  <dd class="col-md-8 col-lg-9">{{$safeNavigationMigration(userInfo?.user_created_on) | date: 'dd/MM/yyyy h:mm:ss a'}}</dd>
 
   @if (userInfo?.user_status === 'A' ) {
     <dt class="col-md-4 col-lg-3">Date of Release</dt>
   }
   @if (userInfo?.user_status === 'A' ) {
-    <dd class="col-md-8 col-lg-9">{{userInfo?.user_dor |
+    <dd class="col-md-8 col-lg-9">{{$safeNavigationMigration(userInfo?.user_dor) |
     date:'dd-MM-y'}}</dd>
   }
 
   <dt class="col-md-4 col-lg-3">Last Login</dt>
-  <dd class="col-md-8 col-lg-9">{{userInfo?.user_login_date_time | date: 'dd/MM/yyyy h:mm:ss a'}}</dd>
+  <dd class="col-md-8 col-lg-9">{{$safeNavigationMigration(userInfo?.user_login_date_time) | date: 'dd/MM/yyyy h:mm:ss a'}}</dd>
 </dl>
 </section>
 </div>

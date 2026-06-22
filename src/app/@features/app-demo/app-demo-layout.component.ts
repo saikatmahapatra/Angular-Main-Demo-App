@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonService } from '../../@core/services/common.service';
 
 @Component({
   selector: 'app-app-demo-layout',
   standalone: false,
   templateUrl: './app-demo-layout.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './app-demo-layout.component.scss',
 })
 export class AppDemoLayoutComponent {

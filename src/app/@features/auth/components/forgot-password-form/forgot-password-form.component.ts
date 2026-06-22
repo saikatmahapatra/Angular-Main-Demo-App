@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { UntypedFormBuilder, NgForm, Validators } from '@angular/forms';
 import { Route, Router } from '@angular/router';
 import { ApiService } from '@core/services/api.service';
@@ -12,6 +12,7 @@ import { MyAppConfig } from 'src/app/app.config';
   selector: 'app-forgot-password-form',
   templateUrl: './forgot-password-form.component.html',
   styleUrls: ['./forgot-password-form.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false
 })
 export class ForgotPasswordFormComponent implements OnInit {

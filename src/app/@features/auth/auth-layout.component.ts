@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { MyAppConfig } from 'src/app/app.config';
 import { CommonService } from '../../@core/services/common.service';
 
@@ -6,6 +6,7 @@ import { CommonService } from '../../@core/services/common.service';
   selector: 'app-auth-layout',
   templateUrl: './auth-layout.component.html',
   styleUrls: ['./auth-layout.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false
 })
 export class AuthLayoutComponent {

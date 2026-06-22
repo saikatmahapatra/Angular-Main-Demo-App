@@ -116,7 +116,7 @@
                             </td>
                             <td>
                                 <span class="p-column-title">Bulk Updated On</span>
-                                {{rowData?.leave_balance_bulk_updated_on | date: 'dd/MM/yyyy h:mm:ss a'}}
+                                {{$safeNavigationMigration(rowData?.leave_balance_bulk_updated_on) | date: 'dd/MM/yyyy h:mm:ss a'}}
                             </td>
                             <!-- <td>
                                     <span class="p-column-title"> Updated On</span>
@@ -126,7 +126,7 @@
                                 <span class="p-column-title"> Action</span>
                                 <button pButton pRipple type="button" icon="pi pi-cog"
                                     class="p-button-rounded p-button-text p-button-secondary"
-                                    (click)="editUserProfile(rowData?.user_id)"></button>
+                                    (click)="editUserProfile($safeNavigationMigration(rowData?.user_id))"></button>
                             </td>
                         </tr>
                     </ng-template>

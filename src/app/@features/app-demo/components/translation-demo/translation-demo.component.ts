@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { languageList } from '@utils/const/language.list';
 
@@ -6,6 +6,7 @@ import { languageList } from '@utils/const/language.list';
     selector: 'app-translation-demo',
     templateUrl: './translation-demo.component.html',
     styleUrls: ['./translation-demo.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class TranslationDemoComponent implements OnInit {

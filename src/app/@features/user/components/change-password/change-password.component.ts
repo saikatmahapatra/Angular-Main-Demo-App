@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { UntypedFormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AlertService } from '@core/services/alert.service';
 import { ApiService } from '@core/services/api.service';
@@ -9,6 +9,7 @@ import { MyAppConfig } from 'src/app/app.config';
     selector: 'app-change-password',
     templateUrl: './change-password.component.html',
     styleUrls: ['./change-password.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ChangePasswordComponent implements OnInit {

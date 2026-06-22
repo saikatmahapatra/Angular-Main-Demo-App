@@ -1,5 +1,5 @@
 import { HttpParams } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ApiService } from '@core/services/api.service';
 import { MyAppConfig } from 'src/app/app.config';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -9,6 +9,7 @@ import { AuthService } from '@core/services/auth.service';
     selector: 'app-post-details',
     templateUrl: './post-details.component.html',
     styleUrls: ['./post-details.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class PostDetailsComponent implements OnInit {

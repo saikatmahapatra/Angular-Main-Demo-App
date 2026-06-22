@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
@@ -6,6 +6,7 @@ import { switchMap } from 'rxjs/operators';
     selector: 'app-transfer-fund',
     templateUrl: './transfer-fund.component.html',
     styleUrls: ['./transfer-fund.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class TransferFundComponent implements OnInit {

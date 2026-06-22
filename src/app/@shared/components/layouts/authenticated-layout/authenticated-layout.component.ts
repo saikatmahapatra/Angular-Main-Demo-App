@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { CommonService } from '@core/services/common.service';
 import { NavigationService } from '@core/services/navigation.service';
@@ -8,6 +8,7 @@ import { LayoutService } from '@shared/services/layout.service';
   selector: 'app-authenticated-layout',
   templateUrl: './authenticated-layout.component.html',
   styleUrls: ['./authenticated-layout.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false
 })
 export class AuthenticatedLayoutComponent {

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from '@shared/shared.module';
 import { APP_UI_KIT } from '.';
@@ -10,6 +10,7 @@ import { AppDataGridAction } from './data-grid/data-grid.component';
   standalone: true,
   imports: [CommonModule, FormsModule, SharedModule, APP_UI_KIT],
   templateUrl: './ui-kit.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./ui-kit.component.scss']
 })
 export class UiKitComponent {

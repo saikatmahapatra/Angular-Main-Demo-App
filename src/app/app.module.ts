@@ -12,6 +12,7 @@ import {
   HTTP_INTERCEPTORS,
   provideHttpClient,
   withInterceptorsFromDi,
+  withXhr
 } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { CoreModule } from './@core/core.module';
@@ -75,7 +76,7 @@ export function initializeApp(configService: ConfigService) {
       return initializerFn();
     }),
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
-    provideHttpClient(withInterceptorsFromDi()),
+    provideHttpClient(withXhr(), withInterceptorsFromDi()),
     providePrimeNG({ theme: { preset: MyPreset, options: { darkModeSelector: '.app-dark' } } }),
     MessageService
   ],

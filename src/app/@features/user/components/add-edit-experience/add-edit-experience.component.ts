@@ -1,5 +1,5 @@
 import { HttpParams } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AlertService } from '@core/services/alert.service';
@@ -11,6 +11,7 @@ import { MyAppConfig } from 'src/app/app.config';
     selector: 'app-add-edit-experience',
     templateUrl: './add-edit-experience.component.html',
     styleUrls: ['./add-edit-experience.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class AddEditExperienceComponent implements OnInit {

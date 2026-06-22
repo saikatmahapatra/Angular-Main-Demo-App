@@ -1,5 +1,5 @@
 import { HttpParams } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { UntypedFormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertService } from '@core/services/alert.service';
@@ -13,6 +13,7 @@ import { State } from '@utils/models/IState';
     selector: 'app-add-edit-address',
     templateUrl: './add-edit-address.component.html',
     styleUrls: ['./add-edit-address.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class AddEditAddressComponent implements OnInit {

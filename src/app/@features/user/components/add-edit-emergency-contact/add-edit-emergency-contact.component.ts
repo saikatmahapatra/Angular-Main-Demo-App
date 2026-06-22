@@ -1,5 +1,5 @@
 import { HttpParams } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl, UntypedFormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { AlertService } from '@core/services/alert.service';
@@ -11,6 +11,7 @@ import { MyAppConfig } from 'src/app/app.config';
     selector: 'app-add-edit-emergency-contact',
     templateUrl: './add-edit-emergency-contact.component.html',
     styleUrls: ['./add-edit-emergency-contact.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class AddEditEmergencyContactComponent implements OnInit {

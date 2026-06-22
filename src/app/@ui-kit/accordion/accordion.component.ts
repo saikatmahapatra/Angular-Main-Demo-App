@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { AccordionModule } from 'primeng/accordion';
 
 @Component({
@@ -11,6 +11,7 @@ import { AccordionModule } from 'primeng/accordion';
       accordion works!
     </p>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styles: ``,
 })
 export class AccordionComponent {

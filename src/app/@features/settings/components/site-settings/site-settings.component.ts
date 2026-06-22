@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertService } from '@core/services/alert.service';
@@ -12,6 +12,7 @@ import { MyAppConfig } from 'src/app/app.config';
     selector: 'app-site-settings',
     templateUrl: './site-settings.component.html',
     styleUrls: ['./site-settings.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class SiteSettingsComponent implements OnInit {

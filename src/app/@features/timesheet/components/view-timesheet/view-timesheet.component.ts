@@ -1,5 +1,5 @@
 import { HttpErrorResponse, HttpParams } from '@angular/common/http';
-import { Component, OnInit, ViewChild, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewChild, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { ApiService } from '@core/services/api.service';
 import { AuthService } from '@core/services/auth.service';
 import { MyAppConfig } from 'src/app/app.config';
@@ -10,6 +10,7 @@ import { AlertService } from '@core/services/alert.service';
     selector: 'app-view-timesheet',
     templateUrl: './view-timesheet.component.html',
     styleUrls: ['./view-timesheet.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ViewTimesheetComponent implements OnInit {

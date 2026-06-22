@@ -1,5 +1,5 @@
 import { HttpHeaders, HttpParams } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { AlertService } from '@core/services/alert.service';
 import { ApiService } from '@core/services/api.service';
 import { CommonService } from '@core/services/common.service';
@@ -9,6 +9,7 @@ import { MyAppConfig } from 'src/app/app.config';
     selector: 'app-view-holidays',
     templateUrl: './view-holidays.component.html',
     styleUrls: ['./view-holidays.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ViewHolidaysComponent implements OnInit {

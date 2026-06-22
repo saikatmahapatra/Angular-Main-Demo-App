@@ -1,5 +1,5 @@
 import { HttpHeaders } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ApiService } from '@core/services/api.service';
 import { CommonService } from '@core/services/common.service';
 import { MyAppConfig } from 'src/app/app.config';
@@ -8,6 +8,7 @@ import { MyAppConfig } from 'src/app/app.config';
     selector: 'app-people-i-lead',
     templateUrl: './people-i-lead.component.html',
     styleUrls: ['./people-i-lead.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class PeopleILeadComponent implements OnInit {

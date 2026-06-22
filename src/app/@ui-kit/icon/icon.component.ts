@@ -1,4 +1,4 @@
-import { Component, OnInit, input } from '@angular/core';
+import { Component, OnInit, input, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common'; // 1. Import CommonModule
 import { TooltipModule } from 'primeng/tooltip';
 
@@ -6,6 +6,7 @@ import { TooltipModule } from 'primeng/tooltip';
   selector: 'app-icon',
   standalone: true,
   imports: [CommonModule, TooltipModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: `
     @if (lib() !== 'material') {
       <i [class]="getIconClass()" [ngClass]="styleClass" [style]="styleCSS()" aria-hidden="true" [pTooltip]="tooltip()" [tooltipPosition]="tooltipPosition()"></i>

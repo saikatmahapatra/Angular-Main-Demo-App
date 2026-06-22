@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ToolbarModule } from 'primeng/toolbar';
 
 @Component({
@@ -11,6 +11,7 @@ import { ToolbarModule } from 'primeng/toolbar';
       toolbar works!
     </p>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styles: ``,
 })
 export class ToolbarComponent {

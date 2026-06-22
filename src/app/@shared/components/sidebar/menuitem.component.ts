@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input } from '@angular/core';
+import { Component, HostBinding, Input, ChangeDetectionStrategy } from '@angular/core';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
@@ -58,6 +58,7 @@ import { LayoutService } from '@shared/services/layout.service';
           }
         </ng-container>
         `,
+    changeDetection: ChangeDetectionStrategy.Eager,
     providers: [LayoutService]
 })
 export class AppMenuitemComponent {

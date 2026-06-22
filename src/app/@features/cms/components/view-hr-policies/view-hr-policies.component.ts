@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { CommonService } from '@core/services/common.service';
 
 @Component({
     selector: 'app-view-hr-policies',
     templateUrl: './view-hr-policies.component.html',
     styleUrls: ['./view-hr-policies.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ViewHrPoliciesComponent implements OnInit {

@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { event } from 'jquery';
 
 @Component({
   selector: 'app-file-upload',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: `
     
     `

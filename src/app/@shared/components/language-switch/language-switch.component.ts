@@ -1,10 +1,11 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ChangeDetectionStrategy } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { languageList } from '@utils/const/language.list';
 @Component({
     selector: 'app-language-switch',
     templateUrl: './language-switch.component.html',
     styleUrl: './language-switch.component.scss',
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class LanguageSwitchComponent implements OnInit {

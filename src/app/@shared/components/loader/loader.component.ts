@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { delay } from 'rxjs/operators';
 import { LoaderService } from '@core/services/loader.service';
 
@@ -6,6 +6,7 @@ import { LoaderService } from '@core/services/loader.service';
     selector: 'app-loader',
     templateUrl: './loader.component.html',
     styleUrls: ['./loader.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class LoaderComponent implements OnInit {

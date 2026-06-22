@@ -60,11 +60,11 @@
             <td>
               <div class="d-flex">
                 <app-button [severity]="'secondary'" [icon]="'pi pi-pencil'" [rounded]="true" [text]="true"
-                  (clickAction)="editUserProfile(rowData?.id)" [tooltip]="'Edit User'"></app-button>
+                  (clickAction)="editUserProfile($safeNavigationMigration(rowData?.id))" [tooltip]="'Edit User'"></app-button>
                 <app-button [severity]="'secondary'" [icon]="'pi pi-user'" [rounded]="true" [text]="true"
-                  (clickAction)="redirectToProfile(rowData?.id)" [tooltip]="'View Profile'"></app-button>
+                  (clickAction)="redirectToProfile($safeNavigationMigration(rowData?.id))" [tooltip]="'View Profile'"></app-button>
                 <app-button [severity]="'secondary'" [icon]="'pi pi-chart-bar'" [rounded]="true" [text]="true"
-                  (clickAction)="navigateToAnalytics(rowData?.id)" [tooltip]="'View Analytics'"></app-button>
+                  (clickAction)="navigateToAnalytics($safeNavigationMigration(rowData?.id))" [tooltip]="'View Analytics'"></app-button>
               </div>
             </td>
           </tr>

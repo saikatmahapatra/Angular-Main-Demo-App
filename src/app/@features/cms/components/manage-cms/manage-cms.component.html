@@ -75,7 +75,7 @@
             </td>
             <td>
               <span class="p-column-title">Created On</span>
-              {{rowData?.content_created_on | date: 'dd/MM/yyyy h:mm:ss a'}}
+              {{$safeNavigationMigration(rowData?.content_created_on) | date: 'dd/MM/yyyy h:mm:ss a'}}
             </td>
             <!-- <td>
             <span class="p-column-title">Created By</span>
@@ -111,13 +111,13 @@
                 <tr>
                   <td class="fw-bold w-25">Description</td>
                   <td>
-                    <div class="content-preview" [innerHTML]="rowData?.content_text"></div>
+                    <div class="content-preview" [innerHTML]="$safeNavigationMigration(rowData?.content_text)"></div>
                   </td>
                 </tr>
                 <tr>
                   <td class="fw-bold w-25">Updated On</td>
                   <td>
-                    {{rowData?.content_updated_on ? (rowData?.content_updated_on | date:
+                    {{rowData?.content_updated_on ? ($safeNavigationMigration(rowData?.content_updated_on) | date:
                     'dd/MM/yyyy h:mm:ss a') : '-' }}
                   </td>
                 </tr>

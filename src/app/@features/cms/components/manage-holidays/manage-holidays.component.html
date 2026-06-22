@@ -96,11 +96,11 @@
               <tr class="p-selectable-row">
                 <td>
                   <span class="p-column-title">Date</span>
-                  {{rowData?.holiday_date | date: 'MMM dd, yyyy'}}
+                  {{$safeNavigationMigration(rowData?.holiday_date) | date: 'MMM dd, yyyy'}}
                 </td>
                 <td>
                   <span class="p-column-title">Date</span>
-                  {{rowData?.holiday_date | date: 'EEEE'}}
+                  {{$safeNavigationMigration(rowData?.holiday_date) | date: 'EEEE'}}
                 </td>
                 <td>
                   <span class="p-column-title">Occasion</span>

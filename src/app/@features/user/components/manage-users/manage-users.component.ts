@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { CommonService } from '../../../../@core/services/common.service';
 import { ApiService } from '../../../../@core/services/api.service';
@@ -15,6 +15,7 @@ import { MessageService } from 'primeng/api';
   selector: 'app-manage-users',
   templateUrl: './manage-users.component.html',
   providers: [ApiService],
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false
 })
 export class ManageUsersComponent implements OnInit {

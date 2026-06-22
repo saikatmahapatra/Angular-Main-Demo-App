@@ -1,9 +1,10 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
     selector: 'app-scroll-to-top',
     templateUrl: './scroll-to-top.component.html',
     styleUrls: ['./scroll-to-top.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ScrollToTopComponent implements OnInit {

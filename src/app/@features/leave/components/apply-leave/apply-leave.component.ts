@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertService } from '@core/services/alert.service';
@@ -11,6 +11,7 @@ import { MyAppConfig } from 'src/app/app.config';
     selector: 'app-apply-leave',
     templateUrl: './apply-leave.component.html',
     styleUrls: ['./apply-leave.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ApplyLeaveComponent implements OnInit {

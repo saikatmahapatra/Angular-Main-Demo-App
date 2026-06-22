@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, forwardRef, input } from '@angular/core';
+import { Component, forwardRef, input, ChangeDetectionStrategy } from '@angular/core';
 import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { DatePickerModule } from 'primeng/datepicker';
 
@@ -39,6 +39,7 @@ export type AppDatePickerSelectionMode = 'single' | 'multiple' | 'range';
       </p-datepicker>
     </div>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

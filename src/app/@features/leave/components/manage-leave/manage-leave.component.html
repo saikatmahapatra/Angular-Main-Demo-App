@@ -110,7 +110,7 @@
         <tr class="p-selectable-row">
           <td>
             <span class="p-column-title">Apply Date</span>
-            {{rowData?.leave_created_on | date: 'dd/MM/yyyy'}}
+            {{$safeNavigationMigration(rowData?.leave_created_on) | date: 'dd/MM/yyyy'}}
           </td>
           <td>
             <span class="p-column-title">Application No</span>
@@ -122,7 +122,7 @@
           </td>
           <td>
             <span class="p-column-title">From</span>
-            {{rowData?.leave_from_date | date: 'dd/MM/yyyy'}} - {{rowData?.leave_to_date | date:
+            {{$safeNavigationMigration(rowData?.leave_from_date) | date: 'dd/MM/yyyy'}} - {{$safeNavigationMigration(rowData?.leave_to_date) | date:
             'dd/MM/yyyy'}}
           </td>
           <!-- <td>
@@ -157,8 +157,8 @@
               ></app-icon>
             }
           </span>
-          <span [pTooltip]="rowData?.supervisor_approver_name">{{
-            (rowData?.supervisor_approver_name | slice
+          <span [pTooltip]="$safeNavigationMigration(rowData?.supervisor_approver_name)">{{
+            ($safeNavigationMigration(rowData?.supervisor_approver_name) | slice
           : 0: 8) + '...' }}</span>
 
           @if (rowData?.supervisor_approver_id !== rowData?.director_approver_id) {
@@ -191,7 +191,7 @@
           }
           @if (rowData?.supervisor_approver_id !== rowData?.director_approver_id) {
             <span
-              [pTooltip]="rowData?.director_approver_name">{{ (rowData?.director_approver_name |
+              [pTooltip]="$safeNavigationMigration(rowData?.director_approver_name)">{{ ($safeNavigationMigration(rowData?.director_approver_name) |
               slice : 0:
             8) + '...' }}</span>
           }
@@ -200,8 +200,8 @@
 
         <td>
           <span class="p-column-title">Status</span>
-          <span [innerHTML]="getStatusText(rowData?.leave_status)?.text"
-          class="badge {{getStatusText(rowData?.leave_status)?.cssClass}}"></span>
+          <span [innerHTML]="$safeNavigationMigration(getStatusText($safeNavigationMigration(rowData?.leave_status))?.text)"
+          class="badge {{getStatusText($safeNavigationMigration(rowData?.leave_status))?.cssClass}}"></span>
         </td>
 
         <td>

@@ -69,11 +69,11 @@
               </td>
               <td>
                 <span class="p-column-title">Start Date</span>
-                {{rowData?.project_start_date ? (rowData?.project_start_date | date: 'dd/MM/yyyy') : '-' }}
+                {{rowData?.project_start_date ? ($safeNavigationMigration(rowData?.project_start_date) | date: 'dd/MM/yyyy') : '-' }}
               </td>
               <td>
                 <span class="p-column-title">End Date</span>
-                {{rowData?.project_end_date ? (rowData?.project_end_date | date: 'dd/MM/yyyy') : '-' }}
+                {{rowData?.project_end_date ? ($safeNavigationMigration(rowData?.project_end_date) | date: 'dd/MM/yyyy') : '-' }}
               </td>
               <td>
                 <span class="p-column-title">Status</span>
@@ -91,7 +91,7 @@
 
               <td>
                 <span class="p-column-title">Added On</span>
-                {{rowData?.created_on ? (rowData?.created_on | date: 'dd/MM/yyyy h:mm:ss a') : '-' }}
+                {{rowData?.created_on ? ($safeNavigationMigration(rowData?.created_on) | date: 'dd/MM/yyyy h:mm:ss a') : '-' }}
               </td>
 
               <td>
@@ -116,7 +116,7 @@
                     <tr>
                       <td class="fw-bold w-25">Updated On</td>
                       <td>
-                        {{rowData?.updated_on ? (rowData?.updated_on | date: 'dd/MM/yyyy h:mm:ss a') :
+                        {{rowData?.updated_on ? ($safeNavigationMigration(rowData?.updated_on) | date: 'dd/MM/yyyy h:mm:ss a') :
                         '-' }}
                       </td>
                     </tr>

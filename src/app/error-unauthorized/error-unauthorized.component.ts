@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonService } from '../@core/services/common.service';
 
@@ -6,6 +6,7 @@ import { CommonService } from '../@core/services/common.service';
     selector: 'app-error-unauthorized',
     templateUrl: './error-unauthorized.component.html',
     styleUrls: ['./error-unauthorized.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ErrorUnauthorizedComponent implements OnInit {

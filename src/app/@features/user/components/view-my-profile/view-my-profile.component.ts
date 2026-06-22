@@ -1,5 +1,5 @@
 import { HttpParams } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertService } from '@core/services/alert.service';
 import { ApiService } from '@core/services/api.service';
@@ -10,6 +10,7 @@ import { addressType, userStatus } from '@utils/const/data.array';
     selector: 'app-view-profile',
     templateUrl: './view-my-profile.component.html',
     styleUrls: ['./view-my-profile.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ViewMyProfileComponent implements OnInit {

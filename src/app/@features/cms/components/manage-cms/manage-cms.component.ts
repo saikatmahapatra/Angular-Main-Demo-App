@@ -1,5 +1,5 @@
 import { HttpHeaders, HttpParams } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertService } from '@core/services/alert.service';
 import { ApiService } from '@core/services/api.service';
@@ -10,6 +10,7 @@ import { MyAppConfig } from 'src/app/app.config';
     selector: 'app-manage-cms',
     templateUrl: './manage-cms.component.html',
     styleUrls: ['./manage-cms.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ManageCmsComponent implements OnInit {

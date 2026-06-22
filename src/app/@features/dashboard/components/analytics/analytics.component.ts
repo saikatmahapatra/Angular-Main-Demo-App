@@ -1,5 +1,5 @@
 import { HttpErrorResponse, HttpParams } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { forkJoin } from 'rxjs';
@@ -13,6 +13,7 @@ import { MyAppConfig } from 'src/app/app.config';
     selector: 'app-analytics',
     templateUrl: './analytics.component.html',
     styleUrls: ['./analytics.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class AnalyticsComponent implements OnInit {

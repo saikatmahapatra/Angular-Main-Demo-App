@@ -1,5 +1,5 @@
 import { HttpHeaders, HttpParams } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertService } from '@core/services/alert.service';
 import { ApiService } from '@core/services/api.service';
@@ -11,6 +11,7 @@ import * as XLSX from 'xlsx';
     selector: 'app-leave-balance-calculation',
     templateUrl: './leave-balance-calculation.component.html',
     styleUrls: ['./leave-balance-calculation.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class LeaveBalanceCalculationComponent implements OnInit {

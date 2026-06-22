@@ -1,5 +1,5 @@
 import {throwError as observableThrowError,  Observable } from 'rxjs';
-import { AfterViewChecked, ElementRef, ViewChild, Component, OnInit, ViewEncapsulation, Input, EventEmitter, Output } from '@angular/core';
+import { AfterViewChecked, ElementRef, ViewChild, Component, OnInit, ViewEncapsulation, Input, EventEmitter, Output, ChangeDetectionStrategy } from '@angular/core';
 import { KoreAiService } from './kore-ai.service';
 import { FormControl, UntypedFormBuilder, UntypedFormGroup, Validators, FormArray } from '@angular/forms';
 @Component({
@@ -7,6 +7,7 @@ import { FormControl, UntypedFormBuilder, UntypedFormGroup, Validators, FormArra
     templateUrl: './kore-ai.component.html',
     styleUrls: ['./kore-ai.component.scss', './animations.scss'],
     encapsulation: ViewEncapsulation.None,
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 

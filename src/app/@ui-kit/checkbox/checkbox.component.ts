@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, forwardRef, input } from '@angular/core';
+import { Component, forwardRef, input, ChangeDetectionStrategy } from '@angular/core';
 import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { CheckboxModule } from 'primeng/checkbox';
 
@@ -22,6 +22,7 @@ import { CheckboxModule } from 'primeng/checkbox';
       }
     </div>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

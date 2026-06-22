@@ -1,5 +1,5 @@
 import { HttpErrorResponse, HttpParams } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { AbstractControl, AsyncValidatorFn, UntypedFormBuilder, ValidationErrors, Validators } from '@angular/forms';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { Observable, forkJoin, of } from 'rxjs';
@@ -14,6 +14,7 @@ import { addressType, userStatus } from '@utils/const/data.array';
     selector: 'app-edit-user',
     templateUrl: './edit-user.component.html',
     styleUrls: ['./edit-user.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class EditUserComponent {

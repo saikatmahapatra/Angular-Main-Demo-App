@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { CommonService } from '../../@core/services/common.service';
 
 @Component({
     selector: 'app-timesheet-layout',
     templateUrl: './timesheet-layout.component.html',
     styleUrls: ['./timesheet-layout.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class TimesheetLayoutComponent implements OnInit {

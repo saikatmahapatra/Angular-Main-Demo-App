@@ -105,8 +105,8 @@
                   <select class="form-select" id="designation" formControlName="designation">
                     <option value="">Select</option>
                     @for (data of designationList; track data; let i = $index) {
-                      <option [value]="data?.id"
-                      [innerHTML]="data?.name"></option>
+                      <option [value]="$safeNavigationMigration(data?.id)"
+                      [innerHTML]="$safeNavigationMigration(data?.name)"></option>
                     }
                     <option value="-1">Others</option>
                   </select>

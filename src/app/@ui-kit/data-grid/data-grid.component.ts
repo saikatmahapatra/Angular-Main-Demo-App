@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import { TooltipModule } from 'primeng/tooltip';
@@ -121,6 +121,7 @@ export interface AppDataGridAction {
       </ng-template>
     </p-table>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styles: ``,
 })
 export class DataGridComponent {

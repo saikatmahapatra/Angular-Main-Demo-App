@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { MenuItem, ToastMessageOptions, MessageService } from 'primeng/api';
 import { FileUpload } from 'primeng/fileupload';
 
@@ -7,6 +7,7 @@ import { FileUpload } from 'primeng/fileupload';
   templateUrl: './prime-ng-ui.component.html',
   styleUrls: ['./prime-ng-ui.component.scss'],
   providers: [MessageService],
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false
 })
 

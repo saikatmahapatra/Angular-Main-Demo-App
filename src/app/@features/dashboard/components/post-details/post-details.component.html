@@ -11,7 +11,7 @@
     <div class="card mb-0">
       <!-- <h3>{{post?.content_title}}</h3> -->
       <p>{{post?.content_type}}, <span class="text-sm">{{getTimeStampInfo(post)}}</span></p>
-      <div class="main-content-description-wrapper" [innerHTML]="post?.content_text"></div>
+      <div class="main-content-description-wrapper" [innerHTML]="$safeNavigationMigration(post?.content_text)"></div>
     </div>
   </div>
 }

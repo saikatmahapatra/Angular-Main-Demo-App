@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { UntypedFormBuilder, NgForm, Validators } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
@@ -13,6 +13,7 @@ import { MyAppConfig } from 'src/app/app.config';
     templateUrl: './reset-password-form.component.html',
     styleUrls: ['./reset-password-form.component.scss'],
     providers: [FormValidationService],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ResetPasswordFormComponent implements OnInit {

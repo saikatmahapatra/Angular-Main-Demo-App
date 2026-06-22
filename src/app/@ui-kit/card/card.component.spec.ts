@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CardComponent, CardFooterDirective, CardHeaderDirective } from './card.component';
@@ -6,6 +6,7 @@ import { CardComponent, CardFooterDirective, CardHeaderDirective } from './card.
 @Component({
   standalone: true,
   imports: [CardComponent, CardHeaderDirective, CardFooterDirective],
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: `
     <app-card>
       <div card-header>Projected Header</div>

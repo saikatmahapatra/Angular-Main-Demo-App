@@ -71,7 +71,7 @@
                             </td>
                             <td>
                                 <span class="p-column-title">Email</span>
-                                <span [pTooltip]="rowData?.user_email">{{ (rowData?.user_email | slice : 0: 20) + '...'
+                                <span [pTooltip]="$safeNavigationMigration(rowData?.user_email)">{{ ($safeNavigationMigration(rowData?.user_email) | slice : 0: 20) + '...'
                                     }}</span>
                             </td>
                             <td>

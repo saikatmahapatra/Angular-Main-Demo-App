@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { ChartModule } from 'primeng/chart';
 
 @Component({
   selector: 'app-charts',
   standalone: true,
   imports: [CommonModule, ChartModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: `
     <div class="flex flex-column gap-2">
       @if (title() !== '') {

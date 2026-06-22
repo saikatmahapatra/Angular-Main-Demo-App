@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, effect, inject, input } from '@angular/core';
+import { Component, effect, inject, input, ChangeDetectionStrategy } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { MessageModule } from 'primeng/message';
 import { ToastModule } from 'primeng/toast';
@@ -23,6 +23,7 @@ export interface AppAlertMessage {
   selector: 'app-alert-message',
   standalone: true,
   imports: [CommonModule, MessageModule, ToastModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: `
     @if (mode() === 'inline' && resolvedText()) {
     <p-message

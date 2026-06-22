@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl, UntypedFormBuilder, FormGroup, Validators, FormArray, NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '@core/services/auth.service';
@@ -13,6 +13,7 @@ import { HttpErrorResponse } from '@angular/common/http';
     templateUrl: './login-form.component.html',
     styleUrls: ['./login-form.component.scss'],
     providers: [AuthService, FormValidationService],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class LoginFormComponent implements OnInit {

@@ -1,4 +1,4 @@
-import { Component, VERSION, OnInit } from '@angular/core';
+import { Component, VERSION, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router, Event, NavigationStart, NavigationCancel, NavigationEnd, NavigationError } from '@angular/router';
 import { LoaderService } from './@core/services/loader.service';
 import { Meta, Title } from "@angular/platform-browser";
@@ -7,6 +7,7 @@ import { MyAppConfig } from 'src/app/app.config';
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class AppComponent implements OnInit {

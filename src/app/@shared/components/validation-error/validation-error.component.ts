@@ -1,4 +1,4 @@
-import { Component, OnInit, input } from '@angular/core';
+import { Component, OnInit, input, ChangeDetectionStrategy } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
 import { FormValidationService } from '@core/services/form-validation.service';
 @Component({
@@ -6,6 +6,7 @@ import { FormValidationService } from '@core/services/form-validation.service';
     templateUrl: './validation-error.component.html',
     styleUrls: ['./validation-error.component.scss'],
     providers: [FormValidationService],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ValidationErrorComponent implements OnInit {

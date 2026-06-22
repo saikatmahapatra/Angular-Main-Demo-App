@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { forkJoin } from 'rxjs';
 import { AlertService } from '@core/services/alert.service';
 import { ApiService } from '@core/services/api.service';
@@ -10,6 +10,7 @@ import { MyAppConfig } from 'src/app/app.config';
     selector: 'app-srbac',
     templateUrl: './srbac.component.html',
     styleUrls: ['./srbac.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class SrbacComponent implements OnInit {

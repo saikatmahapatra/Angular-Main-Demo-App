@@ -1,5 +1,5 @@
 import { HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Component, OnInit, ViewEncapsulation, OnChanges, SimpleChanges, ViewChild, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, OnChanges, SimpleChanges, ViewChild, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
 import { UntypedFormBuilder, Validators, UntypedFormArray, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -14,6 +14,7 @@ import { MyAppConfig } from 'src/app/app.config';
     templateUrl: './timesheet-form.component.html',
     styleUrls: ['./timesheet-form.component.scss'],
     encapsulation: ViewEncapsulation.None,
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class TimesheetFormComponent implements OnInit {

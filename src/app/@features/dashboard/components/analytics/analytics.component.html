@@ -37,8 +37,8 @@
                 <tr>
                   <td class="fw-semibold">Email</td>
                   <td>
-                    <span [pTooltip]="userDetails?.user_email"
-                      tooltipPosition="top">{{(userDetails?.user_email | slice : 0: 15) +
+                    <span [pTooltip]="$safeNavigationMigration(userDetails?.user_email)"
+                      tooltipPosition="top">{{($safeNavigationMigration(userDetails?.user_email) | slice : 0: 15) +
                     '...'}}</span>
                   </td>
                   <td class="fw-semibold">Phone</td>
@@ -101,17 +101,17 @@
                   </td>
                   <td class="fw-semibold">Added On:</td>
                   <td>
-                    {{projectInfoData?.created_on | date: 'dd/MM/yyyy'}}
+                    {{$safeNavigationMigration(projectInfoData?.created_on) | date: 'dd/MM/yyyy'}}
                   </td>
                 </tr>
                 <tr>
                   <td class="fw-semibold">Start Date:</td>
                   <td>
-                    {{projectInfoData?.project_start_date | date:'dd/MM/yyyy'}}
+                    {{$safeNavigationMigration(projectInfoData?.project_start_date) | date:'dd/MM/yyyy'}}
                   </td>
                   <td class="fw-semibold">End Date:</td>
                   <td>
-                    {{projectInfoData?.project_end_date | date: 'dd/MM/yyyy'}}
+                    {{$safeNavigationMigration(projectInfoData?.project_end_date) | date: 'dd/MM/yyyy'}}
                   </td>
                 </tr>
                 <tr>

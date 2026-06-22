@@ -1,5 +1,5 @@
 import { HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Component, OnInit, Output, Input } from '@angular/core';
+import { Component, OnInit, Output, Input, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '@core/services/api.service';
 import { AuthService } from '@core/services/auth.service';
@@ -18,6 +18,7 @@ import { TranslateService } from '@ngx-translate/core';
   selector: 'app-dashboard-landing-page',
   standalone: false,
   templateUrl: './dashboard-landing-page.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './dashboard-landing-page.component.scss',
 })
 export class DashboardLandingPageComponent {

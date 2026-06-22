@@ -77,7 +77,7 @@
         <select class="form-select" id="leaveType" formControlName="leaveType">
           <option value="">Select</option>
           @for (data of leaveType; track data) {
-            <option [value]="data?.val" [innerHTML]="data.text"></option>
+            <option [value]="$safeNavigationMigration(data?.val)" [innerHTML]="data.text"></option>
           }
         </select>
         <app-validation-error [control]="myForm.controls['leaveType']"></app-validation-error>
@@ -87,7 +87,7 @@
         <select class="form-select" id="leaveSlot" formControlName="leaveSlot">
           <option value="">Select</option>
           @for (data of leaveSlot; track data) {
-            <option [value]="data?.val" [innerHTML]="data.text"></option>
+            <option [value]="$safeNavigationMigration(data?.val)" [innerHTML]="data.text"></option>
           }
         </select>
         <app-validation-error [control]="myForm.controls['leaveSlot']"></app-validation-error>
@@ -97,7 +97,7 @@
         <select class="form-select" id="leaveReasonId" formControlName="leaveReasonId">
           <option value="">Select</option>
           @for (data of leaveReasonList; track data) {
-            <option [value]="data?.id" [innerHTML]="data.name"></option>
+            <option [value]="$safeNavigationMigration(data?.id)" [innerHTML]="data.name"></option>
           }
         </select>
         <app-validation-error [control]="myForm.controls['leaveReasonId']"></app-validation-error>

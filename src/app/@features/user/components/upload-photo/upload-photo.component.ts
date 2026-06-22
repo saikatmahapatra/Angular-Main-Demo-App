@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
     selector: 'app-upload-photo',
     templateUrl: './upload-photo.component.html',
     styleUrls: ['./upload-photo.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class UploadPhotoComponent implements OnInit {

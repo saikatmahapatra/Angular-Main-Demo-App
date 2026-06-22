@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, contentChild, Directive, input, model } from '@angular/core';
+import { Component, contentChild, Directive, input, model, ChangeDetectionStrategy } from '@angular/core';
 import { DialogModule } from 'primeng/dialog';
 
 export type AppModalPosition = 'center' | 'top' | 'bottom' | 'left' | 'right' | 'topleft' | 'topright' | 'bottomleft' | 'bottomright';
@@ -20,6 +20,7 @@ export class ModalFooterDirective { }
   selector: 'app-modal',
   standalone: true,
   imports: [CommonModule, DialogModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: `
     <p-dialog
       [modal]="modal()"

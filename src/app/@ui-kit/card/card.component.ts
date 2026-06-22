@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, contentChild, Directive, input } from '@angular/core';
+import { Component, contentChild, Directive, input, ChangeDetectionStrategy } from '@angular/core';
 import { CardModule } from 'primeng/card';
 
 @Directive({
@@ -24,6 +24,7 @@ export class CardFooterDirective { }
   selector: 'app-card',
   standalone: true,
   imports: [CommonModule, CardModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: `
     @if(lib() === 'primeng') {
       <p-card [style]="style()" [class]="styleClass()" [subheader]="subheader()">

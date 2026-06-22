@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl, UntypedFormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
 import { min } from 'lodash';
 import { AlertService } from '@core/services/alert.service';
@@ -10,6 +10,7 @@ import { MyAppConfig } from 'src/app/app.config';
     selector: 'app-add-user',
     templateUrl: './add-user.component.html',
     styleUrls: ['./add-user.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class AddUserComponent implements OnInit {

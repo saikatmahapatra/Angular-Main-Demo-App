@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AgGridAngular } from 'ag-grid-angular';
 import { CellClickedEvent, ColDef, GridOptions, GridReadyEvent } from 'ag-grid-community';
@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
     selector: 'app-ag-grid-table-example',
     templateUrl: './ag-grid-table-example.component.html',
     styleUrls: ['./ag-grid-table-example.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 

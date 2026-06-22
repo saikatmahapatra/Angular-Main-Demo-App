@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ChangeDetectorRef, ViewEncapsulation, Input, ViewChild, ViewChildren, QueryList, signal } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ChangeDetectorRef, ViewEncapsulation, Input, ViewChild, ViewChildren, QueryList, signal, ChangeDetectionStrategy } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { ContentCardComponent } from '../content-card/content-card.component';
 import { ExcelService } from '@core/services/excel.service';
@@ -6,6 +6,7 @@ import { ExcelService } from '@core/services/excel.service';
     selector: 'app-test',
     templateUrl: './test.component.html',
     styleUrls: ['./test.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class TestComponent implements OnInit, AfterViewInit {

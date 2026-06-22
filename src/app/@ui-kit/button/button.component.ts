@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { Component, input, output, ChangeDetectionStrategy } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { TooltipModule } from 'primeng/tooltip';
 
@@ -8,6 +8,7 @@ export type Variant = 'text' | 'raised' | 'outlined' | null | any;
   selector: 'app-button',
   standalone: true,
   imports: [ButtonModule, TooltipModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: `
     <p-button 
       [type]="type()"

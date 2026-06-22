@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonService } from '../@core/services/common.service';
 
@@ -6,6 +6,7 @@ import { CommonService } from '../@core/services/common.service';
     selector: 'app-error-page-not-found',
     templateUrl: './error-page-not-found.component.html',
     styleUrls: ['./error-page-not-found.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ErrorPageNotFoundComponent implements OnInit {

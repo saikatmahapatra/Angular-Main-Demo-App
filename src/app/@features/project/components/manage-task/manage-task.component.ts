@@ -1,5 +1,5 @@
 import { HttpHeaders, HttpParams } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { AlertService } from '@core/services/alert.service';
 import { ApiService } from '@core/services/api.service';
@@ -10,6 +10,7 @@ import { MyAppConfig } from 'src/app/app.config';
     selector: 'app-manage-task',
     templateUrl: './manage-task.component.html',
     styleUrls: ['./manage-task.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ManageTaskComponent implements OnInit {

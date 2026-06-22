@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { LayoutService } from '@shared/services/layout.service';
 
 @Component({
   selector: 'app-theme-switch',
   templateUrl: './theme-switch.component.html',
   styleUrls: ['./theme-switch.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false
 })
 export class ThemeSwitchComponent {

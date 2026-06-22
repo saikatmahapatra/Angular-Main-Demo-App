@@ -1,5 +1,5 @@
 import { HttpHeaders, HttpParams } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, NavigationEnd, NavigationExtras, Router } from '@angular/router';
 import { AlertService } from '@core/services/alert.service';
@@ -12,6 +12,7 @@ import { MyAppConfig } from 'src/app/app.config';
     selector: 'app-manage-leave',
     templateUrl: './manage-leave.component.html',
     styleUrls: ['./manage-leave.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ManageLeaveComponent implements OnInit {

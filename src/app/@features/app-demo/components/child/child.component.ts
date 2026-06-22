@@ -1,9 +1,10 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { OrdersService } from '../parent/orders.service';
 @Component({
     selector: 'app-child-comp',
     templateUrl: './child.component.html',
     providers: [OrdersService],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ChildComponent implements OnInit {
