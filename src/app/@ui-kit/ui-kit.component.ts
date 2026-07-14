@@ -3,7 +3,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from '@shared/shared.module';
 import { APP_UI_KIT } from '.';
-import { AppDataGridAction } from './data-grid/data-grid.component';
+import { AppDataTableAction } from './data-table/data-table.component';
 
 @Component({
   selector: 'app-ui-kit',
@@ -17,6 +17,7 @@ export class UiKitComponent {
   dateRange: Date[] | null = null;
   showModal = false;
 
+  // Form example
   myForm = {
     firstname: '' as string,
     lastname: '' as string,
@@ -49,7 +50,9 @@ export class UiKitComponent {
     { label: 'PrimeNG', value: 'primeng' },
     { label: 'RxJS', value: 'rxjs' }
   ];
+  // Form example ends here
 
+  // Data table
   readonly employeeColumns = [
     { field: 'name', header: 'Name', sortable: true },
     { field: 'department', header: 'Department', sortable: true },
@@ -63,7 +66,7 @@ export class UiKitComponent {
     { id: 3, name: 'Samir Roy', department: 'Product', location: 'Khulna', salary: 91000 }
   ];
 
-  readonly employeeActions: AppDataGridAction[] = [
+  readonly employeeActions: AppDataTableAction[] = [
     {
       icon: 'pi pi-eye',
       severity: 'info',
@@ -83,7 +86,9 @@ export class UiKitComponent {
       onClick: (row) => console.log('Delete', row)
     }
   ];
+  // Data table ends here
 
+  // Data visualization chart
   readonly chartData = {
     labels: ['Q1', 'Q2', 'Q3', 'Q4'],
     datasets: [
@@ -118,6 +123,8 @@ export class UiKitComponent {
       }
     }
   };
+
+  // Data visualization chart ends here
 
   saveItem() {
     console.log('Item saved!');

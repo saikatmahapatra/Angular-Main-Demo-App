@@ -121,7 +121,7 @@ import { AlertMessageComponent } from "./alert-message/alert-message.component";
 import { CardComponent, CardHeaderDirective, CardBodyDirective, CardFooterDirective } from "./card/card.component";
 import { ChartsComponent } from "./charts/charts.component";
 import { CheckboxComponent } from "./checkbox/checkbox.component";
-import { DataGridComponent } from "./data-grid/data-grid.component";
+import { DataTableComponent } from "./data-table/data-table.component";
 import { DatePickerComponent } from "./date-picker/date-picker.component";
 import { IconComponent } from "./icon/icon.component";
 import { InputComponent } from "./input/input.component";
@@ -143,7 +143,7 @@ export const APP_UI_WRAPPER = [
   CardFooterDirective,
   ChartsComponent,
   CheckboxComponent,
-  DataGridComponent,
+  DataTableComponent,
   DatePickerComponent,
   IconComponent,
   InputComponent,
@@ -169,7 +169,7 @@ export * from "./alert-message/alert-message.component";
 export * from "./card/card.component";
 export * from "./charts/charts.component";
 export * from "./checkbox/checkbox.component";
-export * from "./data-grid/data-grid.component";
+export * from "./data-table/data-table.component";
 export * from "./date-picker/date-picker.component";
 export * from "./icon/icon.component";
 export * from "./input/input.component";

@@ -4,13 +4,13 @@ import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import { TooltipModule } from 'primeng/tooltip';
 
-export interface AppDataGridColumn {
+export interface AppDataTableColumn {
   field: string;
   header: string;
   sortable?: boolean;
 }
 
-export interface AppDataGridAction {
+export interface AppDataTableAction {
   label?: string;
   icon?: string;
   severity?: 'primary' | 'secondary' | 'success' | 'info' | 'warn' | 'danger' | 'help' | 'contrast';
@@ -19,7 +19,7 @@ export interface AppDataGridAction {
 }
 
 @Component({
-  selector: 'app-data-grid',
+  selector: 'app-data-table',
   standalone: true,
   imports: [CommonModule, TableModule, ButtonModule, TooltipModule],
   template: `
@@ -124,7 +124,7 @@ export interface AppDataGridAction {
   changeDetection: ChangeDetectionStrategy.Eager,
   styles: ``,
 })
-export class DataGridComponent {
+export class DataTableComponent {
   caption = input<string>('');
   loading = input<boolean>(false);
   expandableRows = input<boolean>(true);
@@ -132,8 +132,8 @@ export class DataGridComponent {
   dataKey = input<string>('id');
   emptyMessage = input<string>('No data found');
   value = input<any[]>([]);
-  columns = input<AppDataGridColumn[]>([]);
-  actions = input<AppDataGridAction[]>([]);
+  columns = input<AppDataTableColumn[]>([]);
+  actions = input<AppDataTableAction[]>([]);
   tableStyle = input<{ [klass: string]: string }>({ 'min-width': '50rem' });
 
   resolveCell(rowData: Record<string, unknown>, field: string): string {
