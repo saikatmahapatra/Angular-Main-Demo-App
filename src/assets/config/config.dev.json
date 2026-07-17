@@ -1,5 +1,5 @@
 {
-    "apiBaseUrl": "http://localhost/PHP-CI-REST-Backend-Emp-Portal/api/",
+    "apiBaseUrl": "http://portal.ueipl.co.in/backend/api/",
     "maintenanceMode": false,
     "mfaEnabled": true
 }
