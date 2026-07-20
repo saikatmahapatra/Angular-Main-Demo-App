@@ -1,34 +1,39 @@
-import { Component, input, output, ChangeDetectionStrategy } from '@angular/core';
+import { Component, input, output, computed, ChangeDetectionStrategy } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { TooltipModule } from 'primeng/tooltip';
 
 export type AppButtonSeverity = 'primary' | 'secondary' | 'success' | 'info' | 'danger' | 'contrast' | 'warn';
 export type Variant = 'text' | 'raised' | 'outlined' | null | any;
+
 @Component({
   selector: 'app-button',
   standalone: true,
   imports: [ButtonModule, TooltipModule],
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <p-button 
+    <button
+      pButton
       [type]="type()"
-      [label]="label()" 
-      [icon]="icon()" 
-      [severity]="severity()" 
+      [severity]="severity()"
       [disabled]="disabled()"
-      [outlined]="outlined()"
+      [outlined]="isOutlined()"
       [rounded]="rounded()"
-      [variant]="variant()"
-      [raised]="raised()"
-      [text]="text()"
+      [raised]="isRaised()"
+      [text]="isText()"
       [loading]="loading()"
-      [styleClass]="class()"
+      [class]="class()"
       [title]="title()"
       [pTooltip]="tooltip()"
       [tooltipPosition]="tooltipPosition()"
-      (onClick)="handleClick($event)">
+      (click)="handleClick($event)">
+      @if (icon()) {
+        <span [class]="icon()" pButtonIcon></span>
+      }
+      @if (label()) {
+        <span pButtonLabel>{{ label() }}</span>
+      }
       <ng-content></ng-content>
-    </p-button>
+    </button>
   `
 })
 export class ButtonComponent {
@@ -48,11 +53,10 @@ export class ButtonComponent {
   tooltip = input<string | undefined>('');
   tooltipPosition = input<'top' | 'bottom' | 'left' | 'right'>('right');
   clickAction = output<MouseEvent>();
-  toolTipText: string | undefined = undefined;
 
-  // constructor() {
-  //   this.toolTipText = this.showTooltip() ? this.title() || this.tooltip() : undefined;
-  // }
+  isOutlined = computed(() => this.outlined() || this.variant() === 'outlined');
+  isRaised = computed(() => this.raised() || this.variant() === 'raised');
+  isText = computed(() => this.text() || this.variant() === 'text');
 
   handleClick(event: MouseEvent) {
     if (!this.disabled()) {
