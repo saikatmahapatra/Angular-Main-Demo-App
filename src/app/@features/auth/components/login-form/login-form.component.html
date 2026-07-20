@@ -20,8 +20,8 @@
     <app-checkbox [label]="'auth.rememberMe' | translate"></app-checkbox>
     <a class="" routerLink="../forgot-password">{{ 'auth.forgotPassword' | translate }}</a>
   </div>
-  <app-button [type]="'submit'" [label]="('button.submit' | translate)" [disabled]="loading || loginForm.invalid"
-    [loading]="loading" [class]="'w-100 d-block'"></app-button>
+  <app-button [type]="'submit'" [disabled]="loading || loginForm.invalid"
+    [loading]="loading" [class]="'w-100 d-block'">{{ 'button.submit' | translate }}</app-button>
 
   <p class="pt-4">
     Don't have an account yet? <a [routerLink]="['../sign-up']" class="">Sign up</a>

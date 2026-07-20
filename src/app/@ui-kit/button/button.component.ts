@@ -22,24 +22,23 @@ export type Variant = 'text' | 'raised' | 'outlined' | null | any;
       [text]="isText()"
       [loading]="loading()"
       [class]="class()"
-      [title]="title()"
       [pTooltip]="tooltip()"
       [tooltipPosition]="tooltipPosition()"
       (click)="handleClick($event)">
-      @if (icon()) {
-        <span [class]="icon()" pButtonIcon></span>
-      }
-      @if (label()) {
-        <span pButtonLabel>{{ label() }}</span>
+      @if (icon() && iconPosition() === 'left') {
+        <span class="mr-2" [class]="icon()" pButtonIcon></span>
       }
       <ng-content></ng-content>
+      @if (icon() && iconPosition() === 'right') {
+        <span class="ml-2" [class]="icon()" pButtonIcon></span>
+      }
     </button>
   `
 })
 export class ButtonComponent {
   type = input<'button' | 'submit' | 'reset'>('button');
-  label = input<string | undefined>(undefined);
   icon = input<string | undefined>(undefined);
+  iconPosition = input<'left' | 'right'>('left');
   severity = input<AppButtonSeverity>('primary');
   variant = input<Variant>(null);
   disabled = input(false);
@@ -49,11 +48,9 @@ export class ButtonComponent {
   text = input(false);
   loading = input(false);
   class = input<string | undefined>('');
-  title = input<string | undefined>('');
   tooltip = input<string | undefined>('');
   tooltipPosition = input<'top' | 'bottom' | 'left' | 'right'>('right');
   clickAction = output<MouseEvent>();
-
   isOutlined = computed(() => this.outlined() || this.variant() === 'outlined');
   isRaised = computed(() => this.raised() || this.variant() === 'raised');
   isText = computed(() => this.text() || this.variant() === 'text');

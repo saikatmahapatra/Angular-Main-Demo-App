@@ -5,7 +5,7 @@
         <div>PrimeNG based UI components</div>
 
         <h3>Buttons</h3>
-        <app-button [label]="'Primary'" class="me-2" (clickAction)="saveItem()"></app-button>
+        <app-button class="me-2" (clickAction)="saveItem()">Primary</app-button>
         <app-button [rounded]="true" class="me-2">Rounded</app-button>
         <app-button [icon]="'pi pi-check'" class="me-2"></app-button>
         <app-button [icon]="'pi pi-check'" [rounded]="true" [variant]="'outlined'" class="me-2"></app-button>
@@ -13,7 +13,7 @@
         <app-button [icon]="'pi pi-check'" [severity]="'success'" [rounded]="true" [text]="true"></app-button>
         <app-button [icon]="'pi pi-trash'" [severity]="'danger'" [rounded]="true" [text]="true"></app-button>
         <app-button class="me-2">
-            <app-icon [name]="'pi pi-check'" [styleCSS]="{fontSize: '1rem'}"></app-icon>
+            <app-icon [name]="'pi pi-check'"></app-icon>
             Custom Icon
         </app-button>
         <app-button [variant]="'outlined'" class="me-2">Outlined</app-button>
@@ -22,10 +22,10 @@
         <app-button [disabled]="true" class="me-2">Disabled</app-button>
         <app-button [icon]="'pi pi-pencil'" [variant]="'outlined'" class="me-2"></app-button>
         <app-button [severity]="'danger'" [icon]="'pi pi-trash'" [variant]="'outlined'" class="me-2"></app-button>
-        <app-button [severity]="'success'" [label]="'Success'" class="me-2"></app-button>
-        <app-button [severity]="'danger'" [label]="'Danger'" class="me-2"></app-button>
-        <app-button [severity]="'info'" [label]="'Info'" class="me-2"></app-button>
-        <app-button [severity]="'warn'" [label]="'Warning'" class="me-2"></app-button>
+        <app-button [severity]="'success'" class="me-2">Success</app-button>
+        <app-button [severity]="'danger'" class="me-2">Danger</app-button>
+        <app-button [severity]="'info'" class="me-2">Info</app-button>
+        <app-button [severity]="'warn'" class="me-2">Warning</app-button>
     </div>
 
     <div class="my-4">
@@ -118,22 +118,22 @@
             </div>
 
             <div card-footer class="d-flex gap-2 justify-content-end">
-                <app-button [label]="'Cancel'" [severity]="'secondary'"></app-button>
-                <app-button [label]="'Save'"></app-button>
+                <app-button [severity]="'secondary'">Cancel</app-button>
+                <app-button [severity]="'success'">Save</app-button>
             </div>
         </app-card>
     </div>
 
     <div class="my-4">
         <h3>Modal</h3>
-        <app-button [label]="'Open Modal'" (clickAction)="openModal()"></app-button>
+        <app-button (clickAction)="openModal()">Open Modal</app-button>
         <app-modal [(visible)]="showModal" [header]="'Modal Wrapper Title'">
             <div class="p-2">
                 Modal body accepts arbitrary content such as forms, tables, and action areas.
             </div>
             <div modal-footer class="d-flex gap-2 justify-content-end">
-                <app-button [label]="'Close'" [severity]="'secondary'" (clickAction)="closeModal()"></app-button>
-                <app-button [label]="'Confirm'" (clickAction)="closeModal()"></app-button>
+                <app-button [severity]="'secondary'" (clickAction)="closeModal()">Close</app-button>
+                <app-button (clickAction)="closeModal()">Confirm</app-button>
             </div>
         </app-modal>
     </div>
@@ -171,12 +171,12 @@
                 [detail]="'This is the inline alert-message wrapper.'" [styleClass]="'mb-3'"></app-alert-message>
         </div>
         <div class="d-flex gap-2 flex-wrap">
-            <app-button [label]="'Show Success Toast'" [severity]="'success'"
-                (clickAction)="toastAlert.success('Saved', 'Record updated successfully', 3000)"></app-button>
-            <app-button [label]="'Show Warning Toast'" [severity]="'warn'"
-                (clickAction)="toastAlert.warn('Warning', 'Please review the form', 3000)"></app-button>
-            <app-button [label]="'Show Error Toast'" [severity]="'danger'"
-                (clickAction)="toastAlert.error('Error', 'Something went wrong', 3000)"></app-button>
+            <app-button [severity]="'success'"
+                (clickAction)="toastAlert.success('Saved', 'Record updated successfully', 3000)">Show Success Toast</app-button>
+            <app-button [severity]="'warn'"
+                (clickAction)="toastAlert.warn('Warning', 'Please review the form', 3000)">Show Warning Toast</app-button>
+            <app-button [severity]="'danger'"
+                (clickAction)="toastAlert.error('Error', 'Something went wrong', 3000)">Show Error Toast</app-button>
         </div>
     </div>
 
