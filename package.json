@@ -62,7 +62,7 @@
     "@types/jquery": "^3.5.14",
     "@types/lodash": "^4.14.176",
     "@types/node": "^26.0.0",
-    "bootstrap": "^5.3.2",
+    "bootstrap": "^5.3.8",
     "bootstrap-icons": "^1.11.1",
     "istanbul-lib-instrument": "^6.0.3",
     "jasmine-core": "~3.10.0",
