@@ -10,7 +10,8 @@
                 </div>
                 <div class="d-flex align-items-center justify-content-center bg-primary-subtle rounded"
                     style="width: 2.5rem; height: 2.5rem">
-                    <app-icon [name]="$safeNavigationMigration(stat?.icon)" [styleClass]="'text-primary fs-4'"></app-icon>
+                    <app-icon [name]="$safeNavigationMigration(stat?.icon)"
+                        [styleClass]="'text-primary fs-4'"></app-icon>
                 </div>
             </div>
             <span class="text-primary fw-semibold">{{stat?.count}}</span>
@@ -27,18 +28,17 @@
                 [placeHolderText]="'Search...'"></app-search-input> -->
             @for (item of post; track item; let i = $index) {
             <div class="mb-3">
-                <a class="link-primary text-decoration-none me-2"
-                    [routerLink]="['post-details', item.id]" [state]="{ newsPageNumber: currentPageIndex }"
-                    aria-label="{{item?.content_title}}" title="{{item?.content_title}}" role="link">
+                <a class="link-primary text-decoration-none me-2" [routerLink]="['post-details', item.id]"
+                    [state]="{ newsPageNumber: currentPageIndex }" aria-label="{{item?.content_title}}"
+                    title="{{item?.content_title}}" role="link">
                     {{item?.content_title}}
                 </a>
                 <span class="text-muted" [innerHTML]="getTimeStampInfo(item)"></span>
             </div>
             }
-            <p-paginator [rows]="itemPerPage" [first]="first" [totalRecords]="totalRecords"
-                [rowsPerPageOptions]="itemPerPageDropdown" [showCurrentPageReport]="true"
-                currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-                (onPageChange)="paginate($event)"></p-paginator>
+            <app-pagination [itemPerPage]="itemPerPage" [first]="first" [totalRecords]="totalRecords"
+                [itemPerPageDropdown]="itemPerPageDropdown" [currentPageIndex]="currentPageIndex"
+                (handlePageChange)="paginate($event)"></app-pagination>
             }
             @if (post.length === 0) {
             <p>{{ 'home.noLatestUpdates' | translate }}</p>

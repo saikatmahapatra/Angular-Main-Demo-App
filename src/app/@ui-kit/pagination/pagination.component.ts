@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input, output } from '@angular/core';
 import { PaginatorModule } from 'primeng/paginator';
 
 @Component({
@@ -7,13 +7,31 @@ import { PaginatorModule } from 'primeng/paginator';
   standalone: true,
   imports: [CommonModule, PaginatorModule],
   template: `
-    <p>
-      pagination works!
-    </p>
+    <p-paginator 
+      [rows]="itemPerPage()" 
+      [first]="first()" 
+      [totalRecords]="totalRecords()"
+      [rowsPerPageOptions]="itemPerPageDropdown()" 
+      [showCurrentPageReport]="showCurrentPageReport()" 
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+      (onPageChange)="handlePaginationEvent($event)">
+    </p-paginator>
+
   `,
   changeDetection: ChangeDetectionStrategy.Eager,
   styles: ``,
 })
 export class PaginationComponent {
+  // Pagination Config
+  currentPageIndex = input<number>(0);
+  first = input<number>(0);
+  totalRecords = input<number>(0);
+  itemPerPage = input<number>(10);
+  itemPerPageDropdown = input<number[]>([10, 20, 30, 50, 100, 150, 200]);
+  handlePageChange = output<MouseEvent>();
+  showCurrentPageReport = input<boolean>(true);
 
+  handlePaginationEvent(event: any) {
+    this.handlePageChange.emit(event);
+  }
 }
