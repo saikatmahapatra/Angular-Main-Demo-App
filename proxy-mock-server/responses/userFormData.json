@@ -1,233 +1,697 @@
 {
-    "status": "error",
-    "message": null,
-    "data": {
-      "designations": [
-        {
-          "id": "4",
-          "name": "Accountant"
-        },
-        {
-          "id": "5",
-          "name": "Advisor"
-        },
-        {
-          "id": "46",
-          "name": "Assistant Manager"
-        },
-        {
-          "id": "6",
-          "name": "Assistant Surveyor"
-        },
-        {
-          "id": "44",
-          "name": "Associate"
-        },
-        {
-          "id": "28",
-          "name": "BD Executive"
-        },
-        {
-          "id": "1",
-          "name": "CEO"
-        },
-        {
-          "id": "3",
-          "name": "CFO"
-        },
-        {
-          "id": "2",
-          "name": "CTO"
-        },
-        {
-          "id": "26",
-          "name": "Data Analyst"
-        },
-        {
-          "id": "27",
-          "name": "Executive"
-        },
-        {
-          "id": "7",
-          "name": "Geologist"
-        },
-        {
-          "id": "8",
-          "name": "Geomatic"
-        },
-        {
-          "id": "43",
-          "name": "GIS Executive"
-        },
-        {
-          "id": "30",
-          "name": "HOD of Coal"
-        },
-        {
-          "id": "36",
-          "name": "HOD of Finance"
-        },
-        {
-          "id": "32",
-          "name": "HOD of Geophysics"
-        },
-        {
-          "id": "42",
-          "name": "HOD of GeoTech & HydroGeo"
-        },
-        {
-          "id": "34",
-          "name": "HOD of GIS"
-        },
-        {
-          "id": "29",
-          "name": "HOD of HR & Admin"
-        },
-        {
-          "id": "33",
-          "name": "HOD of Minor Minerals"
-        },
-        {
-          "id": "31",
-          "name": "HOD of Non Coal"
-        },
-        {
-          "id": "35",
-          "name": "HOD of Survey"
-        },
-        {
-          "id": "9",
-          "name": "HR Executive"
-        },
-        {
-          "id": "47",
-          "name": "Mining Engineer"
-        },
-        {
-          "id": "11",
-          "name": "Office Coordinator"
-        },
-        {
-          "id": "12",
-          "name": "Secretariate"
-        },
-        {
-          "id": "22",
-          "name": "Sr. Accountant"
-        },
-        {
-          "id": "13",
-          "name": "Sr. Consultant Geophysics"
-        },
-        {
-          "id": "14",
-          "name": "Sr. Geologist"
-        },
-        {
-          "id": "17",
-          "name": "Surveyor"
-        },
-        {
-          "id": "37",
-          "name": "Trainee"
-        },
-        {
-          "id": "19",
-          "name": "Trainee Geologist"
-        },
-        {
-          "id": "10",
-          "name": "Trainee HR Executive"
-        },
-        {
-          "id": "18",
-          "name": "Trainee Surveyor"
-        },
-        {
-          "id": "20",
-          "name": "VP - Operation"
-        },
-        {
-          "id": "21",
-          "name": "VP - Technical"
-        }
-      ],
-      "departments": [
-        {
-          "id": "7",
-          "name": "Accounts"
-        },
-        {
-          "id": "12",
-          "name": "Administration"
-        },
-        {
-          "id": "13",
-          "name": "Business Development"
-        },
-        {
-          "id": "1",
-          "name": "Coal"
-        },
-        {
-          "id": "10",
-          "name": "Geological Exploration"
-        },
-        {
-          "id": "11",
-          "name": "Geophysics"
-        },
-        {
-          "id": "4",
-          "name": "GIS"
-        },
-        {
-          "id": "6",
-          "name": "HR & Admin"
-        },
-        {
-          "id": "9",
-          "name": "Mine Plan"
-        },
-        {
-          "id": "3",
-          "name": "Minor Minerals"
-        },
-        {
-          "id": "2",
-          "name": "Non Coal"
-        },
-        {
-          "id": "8",
-          "name": "Others"
-        },
-        {
-          "id": "5",
-          "name": "Survey"
-        }
-      ],
-      "employmentTypes": [
-        {
-          "id": "1",
-          "name": "Employee Full Time"
-        },
-        {
-          "id": "2",
-          "name": "Employee Part Time"
-        },
-        {
-          "id": "4",
-          "name": "Non Employee"
-        },
-        {
-          "id": "5",
-          "name": "Probationary"
-        },
-        {
-          "id": "3",
-          "name": "Contractual"
-        }
-      ]
-    },
-    "token": null
-  }
+  "status": null,
+  "message": null,
+  "data": {
+    "designations": [
+      {
+        "id": "188",
+        "name": "Accountant"
+      },
+      {
+        "id": "189",
+        "name": "Advisor"
+      },
+      {
+        "id": "556",
+        "name": "Advisor - Geology"
+      },
+      {
+        "id": "228",
+        "name": "Assistant Manager"
+      },
+      {
+        "id": "190",
+        "name": "Assistant Surveyor"
+      },
+      {
+        "id": "226",
+        "name": "Associate"
+      },
+      {
+        "id": "565",
+        "name": "Associate Consultant - Geology"
+      },
+      {
+        "id": "561",
+        "name": "Associate Consultant - GIS &RS"
+      },
+      {
+        "id": "221",
+        "name": "Associate Manager"
+      },
+      {
+        "id": "210",
+        "name": "BD Executive"
+      },
+      {
+        "id": "185",
+        "name": "CEO"
+      },
+      {
+        "id": "187",
+        "name": "CFO"
+      },
+      {
+        "id": "554",
+        "name": "Chief Consultant"
+      },
+      {
+        "id": "553",
+        "name": "Civil Engineer"
+      },
+      {
+        "id": "562",
+        "name": "Consultant"
+      },
+      {
+        "id": "186",
+        "name": "CTO"
+      },
+      {
+        "id": "208",
+        "name": "Data Analyst"
+      },
+      {
+        "id": "555",
+        "name": "Electrical Engineer"
+      },
+      {
+        "id": "209",
+        "name": "Executive"
+      },
+      {
+        "id": "191",
+        "name": "Geologist"
+      },
+      {
+        "id": "192",
+        "name": "Geomatic"
+      },
+      {
+        "id": "560",
+        "name": "Geophysicist"
+      },
+      {
+        "id": "225",
+        "name": "GIS Executive"
+      },
+      {
+        "id": "227",
+        "name": "GIS Trainee"
+      },
+      {
+        "id": "506",
+        "name": "HOD"
+      },
+      {
+        "id": "212",
+        "name": "HOD of Coal"
+      },
+      {
+        "id": "218",
+        "name": "HOD of Finance"
+      },
+      {
+        "id": "214",
+        "name": "HOD of Geophysics"
+      },
+      {
+        "id": "224",
+        "name": "HOD of GeoTech & HydroGeo"
+      },
+      {
+        "id": "216",
+        "name": "HOD of GIS"
+      },
+      {
+        "id": "211",
+        "name": "HOD of HR & Admin"
+      },
+      {
+        "id": "215",
+        "name": "HOD of Minor Minerals"
+      },
+      {
+        "id": "213",
+        "name": "HOD of Non Coal"
+      },
+      {
+        "id": "217",
+        "name": "HOD of Survey"
+      },
+      {
+        "id": "193",
+        "name": "HR Executive"
+      },
+      {
+        "id": "559",
+        "name": "Intern - Geologist"
+      },
+      {
+        "id": "563",
+        "name": "Junio Consultant - Geology"
+      },
+      {
+        "id": "558",
+        "name": "Junior Consultant - GIS & RS"
+      },
+      {
+        "id": "564",
+        "name": "Mechanic"
+      },
+      {
+        "id": "567",
+        "name": "Mechanical Engineer"
+      },
+      {
+        "id": "229",
+        "name": "Mining Engineer"
+      },
+      {
+        "id": "195",
+        "name": "Office Coordinator"
+      },
+      {
+        "id": "552",
+        "name": "Principal Consultant"
+      },
+      {
+        "id": "557",
+        "name": "Receptionist"
+      },
+      {
+        "id": "206",
+        "name": "Sales Executive"
+      },
+      {
+        "id": "196",
+        "name": "Secretariate"
+      },
+      {
+        "id": "220",
+        "name": "SEISMIC OBSERVER"
+      },
+      {
+        "id": "566",
+        "name": "Senior Consultant - Geology"
+      },
+      {
+        "id": "568",
+        "name": "Site Coordinator"
+      },
+      {
+        "id": "507",
+        "name": "Software Engineer"
+      },
+      {
+        "id": "204",
+        "name": "Sr. Accountant"
+      },
+      {
+        "id": "197",
+        "name": "Sr. Consultant Geophysics"
+      },
+      {
+        "id": "198",
+        "name": "Sr. Geologist"
+      },
+      {
+        "id": "207",
+        "name": "Sr. Surveyor"
+      },
+      {
+        "id": "205",
+        "name": "Survey Tainee"
+      },
+      {
+        "id": "199",
+        "name": "Surveyor"
+      },
+      {
+        "id": "219",
+        "name": "Trainee"
+      },
+      {
+        "id": "201",
+        "name": "Trainee Geologist"
+      },
+      {
+        "id": "194",
+        "name": "Trainee HR Executive"
+      },
+      {
+        "id": "200",
+        "name": "Trainee Surveyor"
+      },
+      {
+        "id": "202",
+        "name": "VP - Operation"
+      },
+      {
+        "id": "203",
+        "name": "VP - Technical"
+      }
+    ],
+    "departments": [
+      {
+        "id": "7",
+        "name": "Accounts"
+      },
+      {
+        "id": "12",
+        "name": "Administration"
+      },
+      {
+        "id": "13",
+        "name": "Business Development"
+      },
+      {
+        "id": "1",
+        "name": "Coal"
+      },
+      {
+        "id": "8",
+        "name": "General Business"
+      },
+      {
+        "id": "10",
+        "name": "Geological Exploration"
+      },
+      {
+        "id": "11",
+        "name": "Geophysics"
+      },
+      {
+        "id": "4",
+        "name": "GIS"
+      },
+      {
+        "id": "6",
+        "name": "HR & Admin"
+      },
+      {
+        "id": "508",
+        "name": "IT"
+      },
+      {
+        "id": "9",
+        "name": "Mine Plan"
+      },
+      {
+        "id": "3",
+        "name": "Minor Minerals"
+      },
+      {
+        "id": "2",
+        "name": "Non Coal"
+      },
+      {
+        "id": "5",
+        "name": "Survey"
+      }
+    ],
+    "employmentTypes": [
+      {
+        "id": "250",
+        "name": "Contractual"
+      },
+      {
+        "id": "248",
+        "name": "Employee Full Time"
+      },
+      {
+        "id": "249",
+        "name": "Employee Part Time"
+      },
+      {
+        "id": "251",
+        "name": "Non Employee"
+      },
+      {
+        "id": "252",
+        "name": "Probationary"
+      }
+    ],
+    "states": [
+      {
+        "id": "309",
+        "name": "Andaman and Nicobar Islands"
+      },
+      {
+        "id": "281",
+        "name": "Andhra Pradesh"
+      },
+      {
+        "id": "282",
+        "name": "Arunachal Pradesh"
+      },
+      {
+        "id": "283",
+        "name": "Assam"
+      },
+      {
+        "id": "284",
+        "name": "Bihar"
+      },
+      {
+        "id": "310",
+        "name": "Chandigarh"
+      },
+      {
+        "id": "285",
+        "name": "Chhattisgarh"
+      },
+      {
+        "id": "311",
+        "name": "Dadar and Nagar Haveli"
+      },
+      {
+        "id": "312",
+        "name": "Daman and Diu"
+      },
+      {
+        "id": "313",
+        "name": "Delhi"
+      },
+      {
+        "id": "286",
+        "name": "Goa"
+      },
+      {
+        "id": "287",
+        "name": "Gujarat"
+      },
+      {
+        "id": "288",
+        "name": "Haryana"
+      },
+      {
+        "id": "289",
+        "name": "Himachal Pradesh"
+      },
+      {
+        "id": "290",
+        "name": "Jammu and Kashmir"
+      },
+      {
+        "id": "291",
+        "name": "Jharkhand"
+      },
+      {
+        "id": "292",
+        "name": "Karnataka"
+      },
+      {
+        "id": "293",
+        "name": "Kerala"
+      },
+      {
+        "id": "314",
+        "name": "Lakshadeep"
+      },
+      {
+        "id": "294",
+        "name": "Madya Pradesh"
+      },
+      {
+        "id": "295",
+        "name": "Maharashtra"
+      },
+      {
+        "id": "296",
+        "name": "Manipur"
+      },
+      {
+        "id": "297",
+        "name": "Meghalaya"
+      },
+      {
+        "id": "298",
+        "name": "Mizoram"
+      },
+      {
+        "id": "299",
+        "name": "Nagaland"
+      },
+      {
+        "id": "300",
+        "name": "Orissa"
+      },
+      {
+        "id": "315",
+        "name": "Pondicherry"
+      },
+      {
+        "id": "301",
+        "name": "Punjab"
+      },
+      {
+        "id": "302",
+        "name": "Rajasthan"
+      },
+      {
+        "id": "303",
+        "name": "Sikkim"
+      },
+      {
+        "id": "304",
+        "name": "Tamil Nadu"
+      },
+      {
+        "id": "305",
+        "name": "Tripura"
+      },
+      {
+        "id": "307",
+        "name": "Uttar Pradesh"
+      },
+      {
+        "id": "306",
+        "name": "Uttaranchal"
+      },
+      {
+        "id": "308",
+        "name": "West Bengal"
+      }
+    ],
+    "cities": [
+      {
+        "id": "449",
+        "name": "Ahmedabad"
+      },
+      {
+        "id": "474",
+        "name": "Alipurduar"
+      },
+      {
+        "id": "462",
+        "name": "Asansol"
+      },
+      {
+        "id": "479",
+        "name": "Balurghat"
+      },
+      {
+        "id": "446",
+        "name": "Bangalore"
+      },
+      {
+        "id": "481",
+        "name": "Bangaon"
+      },
+      {
+        "id": "472",
+        "name": "Bankura"
+      },
+      {
+        "id": "463",
+        "name": "Bardhaman"
+      },
+      {
+        "id": "505",
+        "name": "Berhamore"
+      },
+      {
+        "id": "445",
+        "name": "Chennai"
+      },
+      {
+        "id": "456",
+        "name": "Coimbatore"
+      },
+      {
+        "id": "480",
+        "name": "Cooch Behar"
+      },
+      {
+        "id": "461",
+        "name": "Durgapur"
+      },
+      {
+        "id": "469",
+        "name": "Hazaribag"
+      },
+      {
+        "id": "502",
+        "name": "Hoogly"
+      },
+      {
+        "id": "477",
+        "name": "Howrah"
+      },
+      {
+        "id": "447",
+        "name": "Hyderabad"
+      },
+      {
+        "id": "452",
+        "name": "Jaipur"
+      },
+      {
+        "id": "458",
+        "name": "Jodhpur"
+      },
+      {
+        "id": "473",
+        "name": "Kalyani"
+      },
+      {
+        "id": "454",
+        "name": "Kanpur"
+      },
+      {
+        "id": "476",
+        "name": "Kharagpur"
+      },
+      {
+        "id": "453",
+        "name": "Kochi"
+      },
+      {
+        "id": "442",
+        "name": "Kolkata"
+      },
+      {
+        "id": "460",
+        "name": "Madurai"
+      },
+      {
+        "id": "468",
+        "name": "Malda"
+      },
+      {
+        "id": "444",
+        "name": "Mumbai"
+      },
+      {
+        "id": "475",
+        "name": "Nadia"
+      },
+      {
+        "id": "455",
+        "name": "Nagpur"
+      },
+      {
+        "id": "443",
+        "name": "National Capital Region (NCR)"
+      },
+      {
+        "id": "471",
+        "name": "North 24 Parganas"
+      },
+      {
+        "id": "465",
+        "name": "Paschim Medinipur"
+      },
+      {
+        "id": "448",
+        "name": "Pune"
+      },
+      {
+        "id": "464",
+        "name": "Purba Medinipur"
+      },
+      {
+        "id": "504",
+        "name": "Purulia"
+      },
+      {
+        "id": "478",
+        "name": "Raiganj"
+      },
+      {
+        "id": "457",
+        "name": "Raipur"
+      },
+      {
+        "id": "551",
+        "name": "Raniganj"
+      },
+      {
+        "id": "459",
+        "name": "Salem"
+      },
+      {
+        "id": "467",
+        "name": "Sliliguri"
+      },
+      {
+        "id": "470",
+        "name": "South 24 Parganas"
+      },
+      {
+        "id": "450",
+        "name": "Surat"
+      },
+      {
+        "id": "451",
+        "name": "Visakhapatnam"
+      }
+    ],
+    "workspace_solution": [
+      {
+        "id": "18",
+        "name": "Hybrid"
+      },
+      {
+        "id": "19",
+        "name": "Office"
+      },
+      {
+        "id": "16",
+        "name": "Remote"
+      }
+    ],
+    "work_location": [
+      {
+        "id": "483",
+        "name": "Asansol"
+      },
+      {
+        "id": "485",
+        "name": "Assam"
+      },
+      {
+        "id": "482",
+        "name": "Durgapur"
+      },
+      {
+        "id": "484",
+        "name": "Jharkhand"
+      },
+      {
+        "id": "20",
+        "name": "Kolkata"
+      },
+      {
+        "id": "486",
+        "name": "Meghalaya"
+      },
+      {
+        "id": "487",
+        "name": "Raipur"
+      }
+    ]
+  },
+  "token": null
+}

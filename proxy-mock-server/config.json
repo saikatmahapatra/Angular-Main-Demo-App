@@ -76,21 +76,6 @@
                 "get"
             ]
         },
-        "users": {
-            "mockFile": "user.json",
-            "verbs": [
-                "get",
-                "post",
-                "put"
-            ]
-        },
-        "userDetails": {
-            "mockFile": "userDetails.json",
-            "verbs": [
-                "get",
-                "post"
-            ]
-        },
         "user/userDetails": {
             "mockFile": "userDetails.json",
             "verbs": [
@@ -98,8 +83,36 @@
             ],
             "switch": "myProfile"
         },
-        "userFormData": {
+        "user/userFormData": {
             "mockFile": "userFormData.json",
+            "verbs": [
+                "get"
+            ]
+        },
+        "cms/getHolidays": {
+            "mockFile": "getHolidays.json",
+            "verbs": [
+                "get"
+            ]
+        },
+        "leave/getLeave": {
+            "mockFile": "getLeave.json",
+            "verbs": [
+                "get",
+                "post"
+            ],
+            "switch": "pageName",
+            "switchResponses": {
+                "pageNameleaveDetails": {
+                    "mockFile": "getLeaveDetails.json"
+                },
+                "pageNameleaveHistoryDetails": {
+                    "mockFile": "getLeaveDetails.json"
+                }
+            }
+        },
+        "leave/getLeaveDetails": {
+            "mockFile": "getLeaveDetails.json",
             "verbs": [
                 "get"
             ]
