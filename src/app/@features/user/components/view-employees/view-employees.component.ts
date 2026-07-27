@@ -1,4 +1,4 @@
-import { HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpParams } from '@angular/common/http';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { AlertService } from '@core/services/alert.service';
 import { ApiService } from '@core/services/api.service';
@@ -58,14 +58,13 @@ export class ViewEmployeesComponent implements OnInit {
     //this.empList = [];
     let options = {};
     let queryParams = new HttpParams();
-    let headers = new HttpHeaders();
-    headers = headers.set('perPage', String(this.itemPerPage));
-    headers = headers.set('page', String(this.currentPageIndex));
+    queryParams = queryParams.append('perPage', String(this.itemPerPage));
+    queryParams = queryParams.append('page', String(this.currentPageIndex));
     this.showTableDataLoading = true;
     if(this.searchKeyword.trim()) {
       queryParams = queryParams.append('keywords', this.searchKeyword.trim());
     }
-    options = { params: queryParams, headers: headers };
+    options = { params: queryParams };
     this.apiSvc.get(MyAppConfig.apiUrl.getEmployees, options).subscribe({
       next: (val: any) => {
         this.totalRecords = val?.data?.num_rows;

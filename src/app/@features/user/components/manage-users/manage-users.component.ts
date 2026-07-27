@@ -6,7 +6,7 @@ import { AlertService } from '@core/services/alert.service';
 import { of, Subscription, timer } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { MyAppConfig } from 'src/app/app.config';
-import { HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpParams } from '@angular/common/http';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { TableRowCollapseEvent, TableRowExpandEvent } from 'primeng/table';
 import { MessageService } from 'primeng/api';
@@ -66,14 +66,13 @@ export class ManageUsersComponent implements OnInit {
   }
 
   getUsersList() {
-    let headers = new HttpHeaders();
     let queryParams = new HttpParams();
-    headers = headers.set('perPage', String(this.itemPerPage));
-    headers = headers.set('page', String(this.currentPageIndex));
+    queryParams = queryParams.append('perPage', String(this.itemPerPage));
+    queryParams = queryParams.append('page', String(this.currentPageIndex));
     if (this.searchKeyword.trim()) {
       queryParams = queryParams.append('keywords', this.searchKeyword.trim());
     }
-    let options = { headers: headers, params: queryParams };
+    let options = { params: queryParams };
     this.showTableDataLoading = true;
     this.apiSvc.get(MyAppConfig.apiUrl.getUsers, options).subscribe({
       next: (val: any) => {

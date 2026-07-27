@@ -1,4 +1,4 @@
-import { HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpParams } from '@angular/common/http';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { AlertService } from '@core/services/alert.service';
 import { ApiService } from '@core/services/api.service';
@@ -57,10 +57,9 @@ export class EditApproversComponent implements OnInit {
   getEmp() {
     let queryParams = new HttpParams();
     let postData = { keywords: this.searchKeywords, action: 'search' };
-    let headers = new HttpHeaders();
-    headers = headers.set('perPage', String(this.itemPerPage));
-    headers = headers.set('page', String(this.currentPageIndex));
-    this.apiSvc.post(MyAppConfig.apiUrl.searchUser, postData, { headers: headers }).subscribe({
+    queryParams = queryParams.append('perPage', String(this.itemPerPage));
+    queryParams = queryParams.append('page', String(this.currentPageIndex));
+    this.apiSvc.post(MyAppConfig.apiUrl.searchUser, postData, { params: queryParams }).subscribe({
       next: (response: any) => {
         this.data = response?.data?.data_rows;
         this.totalRecords = response?.data?.num_rows;

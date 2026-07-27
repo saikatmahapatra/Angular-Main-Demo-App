@@ -1,4 +1,4 @@
-import { HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpParams } from '@angular/common/http';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { AlertService } from '@core/services/alert.service';
@@ -67,15 +67,14 @@ export class ManageHolidaysComponent implements OnInit {
   }
 
   getHolidays() {
-    let headers = new HttpHeaders();
     let params = new HttpParams();
     if (this.selectedYear) {
       params = params.append('year', this.selectedYear)
     }
-    headers = headers.set('perPage', String(this.itemPerPage));
-    headers = headers.set('page', String(this.currentPageIndex));
+    params = params.append('perPage', String(this.itemPerPage));
+    params = params.append('page', String(this.currentPageIndex));
     this.showTableDataLoading = true;
-    this.apiSvc.get(MyAppConfig.apiUrl.getHolidays, { headers: headers, params: params }).subscribe((response: any) => {
+    this.apiSvc.get(MyAppConfig.apiUrl.getHolidays, { params: params }).subscribe((response: any) => {
       this.totalRecords = response?.data['num_rows'];
       this.dataRow = response?.data['data_rows'];
       this.showTableDataLoading = false;

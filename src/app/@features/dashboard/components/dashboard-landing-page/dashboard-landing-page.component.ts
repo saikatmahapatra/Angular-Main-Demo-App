@@ -1,4 +1,4 @@
-import { HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Component, OnInit, Output, Input, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '@core/services/api.service';
@@ -103,10 +103,9 @@ export class DashboardLandingPageComponent {
       queryParams = queryParams.append('searchBy', this.searchKeyword);
     }
     queryParams = queryParams.append('pageName', 'dashboardPosts');
-    let headers = new HttpHeaders();
-    headers = headers.set('perPage', String(this.itemPerPage));
-    headers = headers.set('page', String(this.currentPageIndex));
-    let options = { headers: headers, params: queryParams };
+    queryParams = queryParams.append('perPage', String(this.itemPerPage));
+    queryParams = queryParams.append('page', String(this.currentPageIndex));
+    let options = { params: queryParams };
     this.apiSvc.get(MyAppConfig.apiUrl.getPosts, options).subscribe((response: any) => {
       this.totalRecords = response?.data['num_rows'];
       this.post = response?.data['data_rows'];

@@ -1,4 +1,4 @@
-import { HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Component, OnInit, ViewEncapsulation, OnChanges, SimpleChanges, ViewChild, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
 import { UntypedFormBuilder, Validators, UntypedFormArray, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -138,10 +138,9 @@ export class TimesheetFormComponent implements OnInit {
     queryParams = queryParams.append('userId', this.authSvc.getUserId());
     queryParams = queryParams.append('month', this.month);
     queryParams = queryParams.append('year', this.year);
-    let headers = new HttpHeaders();
-    headers = headers.set('perPage', String(this.itemPerPage));
-    headers = headers.set('page', String(this.currentPageIndex));
-    let options = { headers: headers, params: queryParams };
+    queryParams = queryParams.append('perPage', String(this.itemPerPage));
+    queryParams = queryParams.append('page', String(this.currentPageIndex));
+    let options = { params: queryParams };
     this.apiSvc.get(MyAppConfig.apiUrl.getTimesheet, options).subscribe({
       next: (response: any) => {
         this.entryFound = true;

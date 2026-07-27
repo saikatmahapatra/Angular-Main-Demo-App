@@ -1,4 +1,4 @@
-import { HttpHeaders } from '@angular/common/http';
+import { HttpParams } from '@angular/common/http';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ApiService } from '@core/services/api.service';
 import { CommonService } from '@core/services/common.service';
@@ -40,11 +40,11 @@ export class PeopleILeadComponent implements OnInit {
   }
 
   getUsersList() {
-    let headers = new HttpHeaders();
-    headers = headers.set('perPage', String(this.itemPerPage));
-    headers = headers.set('page', String(this.currentPageIndex));
+    let params = new HttpParams();
+    params = params.append('perPage', String(this.itemPerPage));
+    params = params.append('page', String(this.currentPageIndex));
     this.showTableDataLoading = true;
-    this.apiSvc.get(MyAppConfig.apiUrl.getReportees, { headers: headers }).subscribe({
+    this.apiSvc.get(MyAppConfig.apiUrl.getReportees, { params: params }).subscribe({
       next: (val: any) => {
         this.totalRecords = val?.data?.num_rows;
         this.userList = val?.data?.data_rows;

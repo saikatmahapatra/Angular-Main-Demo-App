@@ -1,4 +1,4 @@
-import { HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpParams } from '@angular/common/http';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertService } from '@core/services/alert.service';
@@ -49,11 +49,10 @@ export class LeaveBalanceCalculationComponent implements OnInit {
   }
 
   getLeaveBalance() {
-    let headers = new HttpHeaders();
     let params = new HttpParams();
-    headers = headers.set('perPage', String(this.itemPerPage));
-    headers = headers.set('page', String(this.currentPageIndex));
-    this.apiSvc.get(MyAppConfig.apiUrl.getEmpLeaveBalance, { headers: headers }).subscribe({
+    params = params.append('perPage', String(this.itemPerPage));
+    params = params.append('page', String(this.currentPageIndex));
+    this.apiSvc.get(MyAppConfig.apiUrl.getEmpLeaveBalance, { params: params }).subscribe({
       next: (response: any) => {
         //console.log(response);
         this.dataForExcel = [];

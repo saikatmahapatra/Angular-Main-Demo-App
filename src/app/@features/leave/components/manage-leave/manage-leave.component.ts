@@ -1,4 +1,4 @@
-import { HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpParams } from '@angular/common/http';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, NavigationEnd, NavigationExtras, Router } from '@angular/router';
@@ -110,12 +110,11 @@ export class ManageLeaveComponent implements OnInit {
   }
 
   getLeaveData() {
-    let headers = new HttpHeaders();
     let params = new HttpParams();
-    headers = headers.set('perPage', String(this.itemPerPage));
-    headers = headers.set('page', String(this.currentPageIndex));
+    params = params.append('perPage', String(this.itemPerPage));
+    params = params.append('page', String(this.currentPageIndex));
     this.showTableDataLoading = true;
-    this.apiSvc.post(MyAppConfig.apiUrl.getLeaves, this.searchForm.value, { headers: headers }).subscribe({
+    this.apiSvc.post(MyAppConfig.apiUrl.getLeaves, this.searchForm.value, { params: params }).subscribe({
       next: (response: any) => {
         //console.log(response);
         this.loading = false;

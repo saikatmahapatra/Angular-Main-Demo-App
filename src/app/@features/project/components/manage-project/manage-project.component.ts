@@ -1,4 +1,4 @@
-import { HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpParams } from '@angular/common/http';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { AlertService } from '@core/services/alert.service';
@@ -43,12 +43,11 @@ export class ManageProjectComponent implements OnInit {
   }
 
   getProjects() {
-    let headers = new HttpHeaders();
     let params = new HttpParams();
-    headers = headers.set('perPage', String(this.itemPerPage));
-    headers = headers.set('page', String(this.currentPageIndex));
+    params = params.append('perPage', String(this.itemPerPage));
+    params = params.append('page', String(this.currentPageIndex));
     this.showTableDataLoading = true;
-    this.apiSvc.get(MyAppConfig.apiUrl.getProject, { headers: headers, params: params }).subscribe((response: any) => {
+    this.apiSvc.get(MyAppConfig.apiUrl.getProject, { params: params }).subscribe((response: any) => {
       this.totalRecords = response?.data['num_rows'];
       this.dataRow = response?.data['data_rows'];
       this.showTableDataLoading = false;
