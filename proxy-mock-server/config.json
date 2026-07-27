@@ -91,6 +91,13 @@
                 "post"
             ]
         },
+        "user/userDetails": {
+            "mockFile": "userDetails.json",
+            "verbs": [
+                "get"
+            ],
+            "switch": "myProfile"
+        },
         "userFormData": {
             "mockFile": "userFormData.json",
             "verbs": [
