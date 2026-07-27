@@ -9,7 +9,7 @@ export const environment = {
   production: false,
   apiBaseUrl: "http://localhost/ci-emp-portal-api/",
   mockAPIUrl: "http://localhost:7878/",
-  useMockServer: false
+  useMockServer: true
 };
 
 /*

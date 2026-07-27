@@ -1,0 +1,30 @@
+{
+    "status": null,
+    "message": null,
+    "data": {
+        "num_rows": 1,
+        "data_rows": [
+            {
+                "id": "133",
+                "content_type": "notice",
+                "content_title": "Implementation of Mandatory Notice Period Policy",
+                "content_slug": null,
+                "content_text": "<p data-start=\"169\" data-end=\"355\">This is to inform all employees of <em data-start=\"204\" data-end=\"240\">United Exploration India Pvt. Ltd.<\/em> that, with effect from <strong data-start=\"264\" data-end=\"286\">1st September 2025<\/strong>, the following policy regarding notice periods will be applicable:<\/p>\n<ol data-start=\"357\" data-end=\"570\">\n<li data-start=\"357\" data-end=\"460\">\n<p data-start=\"360\" data-end=\"460\"><strong data-start=\"360\" data-end=\"383\">Confirmed Employees<\/strong>: A mandatory notice period of <strong data-start=\"414\" data-end=\"432\">two (2) months<\/strong> is required to be served.<\/p>\n<\/li>\n<li data-start=\"461\" data-end=\"570\">\n<p data-start=\"464\" data-end=\"570\"><strong data-start=\"464\" data-end=\"490\">Probationary Employees<\/strong>: A mandatory notice period of <strong data-start=\"521\" data-end=\"542\">fifteen (15) days<\/strong> is required to be served.<\/p>\n<\/li>\n<\/ol>\n<p data-start=\"572\" data-end=\"591\">Please note that:<\/p>\n<ul data-start=\"592\" data-end=\"848\">\n<li data-start=\"592\" data-end=\"749\">\n<p data-start=\"594\" data-end=\"749\">Failure to comply with the stipulated notice period will result in <strong data-start=\"661\" data-end=\"707\">non-release of the Full & Final settlement<\/strong> and <strong data-start=\"712\" data-end=\"746\">no issuance of a release order<\/strong>.<\/p>\n<\/li>\n<li data-start=\"750\" data-end=\"848\">\n<p data-start=\"752\" data-end=\"848\">This policy <strong data-start=\"764\" data-end=\"802\">supersedes all previous amendments<\/strong> or communications regarding notice periods.<\/p>\n<\/li>\n<\/ul>\n<p data-start=\"850\" data-end=\"936\">All employees are advised to take due note of the above and ensure strict adherence.<\/p>\n<p data-start=\"850\" data-end=\"936\">\u00a0<\/p>\n<p data-start=\"938\" data-end=\"1003\"><strong data-start=\"938\" data-end=\"964\">By Order of Management<\/strong><br data-start=\"964\" data-end=\"967\">United Exploration India Pvt. Ltd.<\/p>",
+                "content_meta_keywords": null,
+                "content_meta_description": null,
+                "content_meta_author": null,
+                "content_display_from_date": null,
+                "content_display_to_date": null,
+                "content_created_by": "11",
+                "content_created_on": "2025-09-09 18:44:57",
+                "content_updated_by": null,
+                "content_updated_on": null,
+                "content_status": "Y",
+                "content_archived": "N",
+                "user_email": "admin@unitedexploration.co.in",
+                "user_full_name": "Arijit Dey"
+            }
+        ]
+    },
+    "token": null
+}

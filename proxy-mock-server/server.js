@@ -18,7 +18,7 @@ var express = require('express'),
 apiMocker.defaults = {
     "port": "8888",
     "mockDirectory": "./responses/",
-    "allowedDomains": ["http://localhost:4200"],
+    "allowedDomains": ["*"],
     "allowedHeaders": ["Content-Type", "Accept-Language", "channelId", "countrycode"],
     "allowedHeaders": ["Access-Control-Allow-Credentials", "true"],
     "webServices": {}
@@ -467,11 +467,53 @@ apiMocker.setRoute = function(options) {
 
 // CORS middleware
 apiMocker.corsMiddleware = function(req, res, next) {
-    var allowedHeaders = apiMocker.options.allowedHeaders.join(',');
-    res.header('Access-Control-Allow-Origin', apiMocker.options.allowedDomains);
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    var configuredHeaders = apiMocker.options.allowedHeaders || [];
+    if (!(configuredHeaders instanceof Array)) {
+        configuredHeaders = [configuredHeaders];
+    }
+
+    var requestHeaders = (req.headers['access-control-request-headers'] || '')
+        .split(',')
+        .map(function(header) {
+            return header.trim();
+        })
+        .filter(function(header) {
+            return !!header;
+        });
+
+    var allowedHeaders = _.chain(configuredHeaders.concat(requestHeaders).concat([
+            'Origin',
+            'X-Requested-With',
+            'Content-Type',
+            'Accept',
+            'X-HTTP-Method-Override',
+            'Authorization',
+            'perPage',
+            'page'
+        ]))
+        .map(function(header) {
+            return (header || '').toString().trim();
+        })
+        .filter(function(header) {
+            return !!header;
+        })
+        .uniq()
+        .value()
+        .join(',');
+
+    var allowedDomains = apiMocker.options.allowedDomains;
+    if (allowedDomains instanceof Array) {
+        allowedDomains = allowedDomains.join(',');
+    }
+
+    res.header('Access-Control-Allow-Origin', allowedDomains || '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
     res.header('Access-Control-Allow-Credentials', 'true');
     res.header('Access-Control-Allow-Headers', allowedHeaders);
+
+    if (req.method === 'OPTIONS') {
+        return res.sendStatus(200);
+    }
 
     next();
 };

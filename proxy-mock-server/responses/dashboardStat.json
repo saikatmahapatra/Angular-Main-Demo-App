@@ -1,0 +1,79 @@
+{
+    "status": "success",
+    "message": null,
+    "data": [
+        {
+            "targetRole": "1",
+            "heading": "active employee accounts",
+            "infoText": "",
+            "textCSS": "",
+            "bg_css": "",
+            "digitCSS": "text-primary",
+            "icon": "users",
+            "iconCss": "#6f42c1",
+            "count": "60\/140",
+            "url": "emp\/manage"
+        },
+        {
+            "targetRole": "1",
+            "heading": "projects",
+            "infoText": "",
+            "textCSS": "",
+            "bg_css": "",
+            "digitCSS": "text-secondary",
+            "icon": "projects",
+            "iconCss": "#6f42c1",
+            "count": "230",
+            "url": "project\/manage-project"
+        },
+        {
+            "targetRole": "1",
+            "heading": "employees logged tasks *",
+            "infoText": "",
+            "textCSS": "",
+            "bg_css": "",
+            "digitCSS": "text-success",
+            "icon": "calendar",
+            "iconCss": "#6f42c1",
+            "count": "23",
+            "url": "timesheet\/report"
+        },
+        {
+            "targetRole": "1",
+            "heading": "leave apps. approved *",
+            "infoText": "",
+            "textCSS": "",
+            "bg_css": "",
+            "digitCSS": "text-info",
+            "icon": "check",
+            "iconCss": "#6f42c1",
+            "count": "0\/0",
+            "url": "leave\/manage"
+        },
+        {
+            "targetRole": "3",
+            "heading": "leave apps. waiting for your review",
+            "infoText": "",
+            "textCSS": "",
+            "bg_css": "",
+            "digitCSS": "text-warning",
+            "icon": "pendingaction",
+            "iconCss": "#6f42c1",
+            "count": "0",
+            "url": "leave\/requests-to-approve"
+        },
+        {
+            "targetRole": "3",
+            "heading": "days task you have logged *",
+            "infoText": "",
+            "textCSS": "",
+            "bg_css": "",
+            "digitCSS": "text-danger",
+            "icon": "clock",
+            "iconCss": "#6f42c1",
+            "count": "0",
+            "url": "timesheet\/log-work"
+        }
+    ],
+    "token": null
+}

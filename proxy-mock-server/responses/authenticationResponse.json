@@ -1,17 +1,13 @@
 {
-    "status": "error",
+    "status": null,
     "message": "Login Successfull",
     "data": {
-      "id": "1",
-      "user_role": "1",
-      "user_role_name": "Super Admin",
-      "user_firstname": "Portal",
-      "user_lastname": "Admin",
-      "user_email": "webuidevs@gmail.com",
-      "user_profile_pic": null,
-      "user_login_date_time": "2022-08-05 14:23:40",
-      "user_emp_id": "0000",
-      "designation_name": "VP - Technical"
+        "id": "1",
+        "user_role": "1",
+        "user_role_name": "Admin",
+        "user_full_name": "MyApp Developer",
+        "user_email": "webuidevs@gmail.com",
+        "user_login_date_time": "2026-07-27 17:26:25"
     },
-    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIxIiwidXNlckVtYWlsIjoid2VidWlkZXZzQGdtYWlsLmNvbSIsIkFQSV9USU1FIjoxNjU5Njk3MTE2fQ.EpHBceRqEXZANX4PlZZrFLXJVCwDORybuy0KufvaoMo"
-  }
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIxIiwidXNlclJvbGVJZCI6IjEiLCJ1c2VyRW1haWwiOiJ3ZWJ1aWRldnNAZ21haWwuY29tIiwiQVBJX1RJTUUiOjE3ODUxNTM3MjB9.MVlGPk3STZcmFi1UUqDm0KP09eTuHW3DHQxv0FeBvKY"
+}

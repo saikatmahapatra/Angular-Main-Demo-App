@@ -33,18 +33,47 @@
                 "put"
             ]
         },
-        "authenticate": {
+        "auth/authenticate": {
             "mockFile": "authenticationResponse.json",
             "verbs": [
                 "post"
             ]
         },
-        "dashboardStat": {
-            "mockFile": "content.json",
+        "auth/validateToken": {
+            "mockFile": "validateToken.json",
             "verbs": [
-                "get",
-                "post",
-                "put"
+                "get"
+            ]
+        },
+        "auth/validateRolePermissions": {
+            "mockFile": "validateRolePermissions.json",
+            "verbs": [
+                "get"
+            ]
+        },
+        "cms/getDashboardStat": {
+            "mockFile": "dashboardStat.json",
+            "verbs": [
+                "get"
+            ]
+        },
+        "cms/getPosts": {
+            "mockFile": "getPosts.json",
+            "verbs": [
+                "get"
+            ],
+            "switch": "pageName"
+        },
+        "user/getUser": {
+            "mockFile": "user.json",
+            "verbs": [
+                "get"
+            ]
+        },
+        "cms/getPostById": {
+            "mockFile": "getPostById.json",
+            "verbs": [
+                "get"
             ]
         },
         "users": {
@@ -68,7 +97,6 @@
                 "get"
             ]
         },
-
         "/*": {
             "default": true,
             "host": "http://localhost:4200"
