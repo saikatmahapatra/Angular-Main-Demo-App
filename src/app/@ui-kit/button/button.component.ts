@@ -14,17 +14,17 @@ export type Variant = 'text' | 'raised' | 'outlined' | null | any;
     <button
       pButton
       [type]="type()"
-      [severity]="severity()"
-      [disabled]="disabled()"
-      [outlined]="isOutlined()"
       [rounded]="rounded()"
-      [raised]="isRaised()"
-      [text]="isText()"
+      [severity]="severity()"
+      [outlined]="outlined() || variant() === 'outlined'"      
+      [raised]="raised() || variant() === 'raised'"
+      [text]="text() || variant() === 'text'"
       [loading]="loading()"
       [class]="class()"
       [pTooltip]="tooltip()"
       [tooltipPosition]="tooltipPosition()"
-      (click)="handleClick($event)">
+      (click)="handleClick($event)"
+      [disabled]="disabled()">
       @if (icon() && iconPosition() === 'left') {
         <span class="mr-2" [class]="icon()" pButtonIcon></span>
       }
@@ -51,9 +51,6 @@ export class ButtonComponent {
   tooltip = input<string | undefined>('');
   tooltipPosition = input<'top' | 'bottom' | 'left' | 'right'>('right');
   clickAction = output<MouseEvent>();
-  isOutlined = computed(() => this.outlined() || this.variant() === 'outlined');
-  isRaised = computed(() => this.raised() || this.variant() === 'raised');
-  isText = computed(() => this.text() || this.variant() === 'text');
 
   handleClick(event: MouseEvent) {
     if (!this.disabled()) {

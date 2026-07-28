@@ -3,29 +3,40 @@
     <div class="my-4">
         <h1>UI Kit - Design System</h1>
         <div>PrimeNG based UI components</div>
-
+    </div>
+    
+    <div class="my-4">
         <h3>Buttons</h3>
-        <app-button class="me-2" (clickAction)="saveItem()">Primary</app-button>
-        <app-button [rounded]="true" class="me-2">Rounded</app-button>
-        <app-button [icon]="'pi pi-check'" class="me-2"></app-button>
-        <app-button [icon]="'pi pi-check'" [rounded]="true" [variant]="'outlined'" class="me-2"></app-button>
-        <app-button [icon]="'pi pi-check'" [rounded]="true" [text]="true"></app-button>
-        <app-button [icon]="'pi pi-check'" [severity]="'success'" [rounded]="true" [text]="true"></app-button>
-        <app-button [icon]="'pi pi-trash'" [severity]="'danger'" [rounded]="true" [text]="true"></app-button>
-        <app-button class="me-2">
-            <app-icon [name]="'pi pi-check'"></app-icon>
-            Custom Icon
-        </app-button>
-        <app-button [variant]="'outlined'" class="me-2">Outlined</app-button>
-        <app-button [variant]="'text'" class="me-2">Text Button</app-button>
-        <app-button [raised]="true" class="me-2">Raised Button</app-button>
-        <app-button [disabled]="true" class="me-2">Disabled</app-button>
-        <app-button [icon]="'pi pi-pencil'" [variant]="'outlined'" class="me-2"></app-button>
-        <app-button [severity]="'danger'" [icon]="'pi pi-trash'" [variant]="'outlined'" class="me-2"></app-button>
-        <app-button [severity]="'success'" class="me-2">Success</app-button>
-        <app-button [severity]="'danger'" class="me-2">Danger</app-button>
-        <app-button [severity]="'info'" class="me-2">Info</app-button>
-        <app-button [severity]="'warn'" class="me-2">Warning</app-button>
+        <app-button (clickAction)="saveItem()">Primary</app-button>
+        <app-button (clickAction)="saveItem()" [severity]="'secondary'">Secondary</app-button>
+        <app-button [rounded]="true">Primary Rounded</app-button>
+        <app-button [rounded]="true" [severity]="'secondary'">Secondary Rounded</app-button>
+
+        <app-button [severity]="'success'">Success</app-button>
+        <app-button [severity]="'danger'">Danger</app-button>
+        <app-button [severity]="'info'">Info</app-button>
+        <app-button [severity]="'warn'">Warning</app-button>
+        <app-button [raised]="true">Raised Button</app-button>
+        <app-button [disabled]="true">Disabled</app-button>
+
+        <h3>Outlined Buttons</h3>
+        <app-button [variant]="'outlined'">Primary</app-button>
+        <app-button [variant]="'outlined'" [severity]="'secondary'">Secondary</app-button>
+        <app-button [variant]="'outlined'" [severity]="'success'">Success</app-button>
+        <app-button [variant]="'outlined'" [severity]="'danger'">Danger</app-button>
+        <app-button [variant]="'outlined'" [severity]="'info'">Info</app-button>
+        <app-button [variant]="'outlined'" [severity]="'warn'">Warning</app-button>
+
+        <h3>Text Buttons</h3>
+        <app-button [variant]="'text'">Text Button</app-button>
+
+        <h3>Icon Buttons</h3>
+        <app-button [icon]="'pi pi-check'"></app-button>
+        <app-button [icon]="'pi pi-pencil'" [variant]="'outlined'"></app-button>
+        <app-button [icon]="'pi pi-check'" [rounded]="true" [variant]="'outlined'"></app-button>
+        <app-button [icon]="'pi pi-user'" [rounded]="true" [variant]="'text'"></app-button>
+        <app-button [icon]="'pi pi-check'" [severity]="'success'" [rounded]="true" [variant]="'text'"></app-button>
+        <app-button [icon]="'pi pi-trash'" [severity]="'danger'" [rounded]="true" [variant]="'text'"></app-button>
     </div>
 
     <div class="my-4">

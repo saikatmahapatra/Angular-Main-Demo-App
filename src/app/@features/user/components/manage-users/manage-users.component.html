@@ -43,7 +43,7 @@
         <ng-template #body let-rowData let-expanded="expanded">
           <tr>
             <td>
-              <p-button type="button" pRipple [pRowToggler]="rowData" [text]="true" severity="secondary"
+              <p-button type="button" pRipple [pRowToggler]="rowData" [variant]="'text'" severity="secondary"
                 [rounded]="true" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'" />
             </td>
             <td>{{rowData?.user_full_name}}</td>
@@ -64,13 +64,13 @@
             </td>
             <td>
               <div class="d-flex">
-                <app-button [severity]="'secondary'" [icon]="'pi pi-pencil'" [rounded]="true" [text]="true"
+                <app-button [severity]="'secondary'" [icon]="'pi pi-pencil'" [rounded]="true" [variant]="'text'"
                   (clickAction)="editUserProfile($safeNavigationMigration(rowData?.id))"
                   [tooltip]="'Edit User'"></app-button>
-                <app-button [severity]="'secondary'" [icon]="'pi pi-user'" [rounded]="true" [text]="true"
+                <app-button [severity]="'secondary'" [icon]="'pi pi-user'" [rounded]="true" [variant]="'text'"
                   (clickAction)="redirectToProfile($safeNavigationMigration(rowData?.id))"
                   [tooltip]="'View Profile'"></app-button>
-                <app-button [severity]="'secondary'" [icon]="'pi pi-chart-bar'" [rounded]="true" [text]="true"
+                <app-button [severity]="'secondary'" [icon]="'pi pi-chart-bar'" [rounded]="true" [variant]="'text'"
                   (clickAction)="navigateToAnalytics($safeNavigationMigration(rowData?.id))"
                   [tooltip]="'View Analytics'"></app-button>
               </div>
