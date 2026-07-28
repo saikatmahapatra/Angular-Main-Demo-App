@@ -50,21 +50,35 @@ export class CardFooterDirective { }
       </p-card>
     } @else {
       <div class="card" [ngClass]="styleClass()" [ngStyle]="style()">        
-        @if (headerContent()) {
+        @if (headerContent() && !inBody()) {
           <div class="card-header">
             <ng-container *ngTemplateOutlet="headerSlot"></ng-container>
           </div>
-        } @else if (header() !== '') {
+        } @else if (header() !== '' && !inBody()) {
           <div class="card-header">
             <div class="h5">{{ header() }}</div>
           </div>
         }
 
-        <div class="card-body">
+        <div class="card-body" [ngClass]="inBody() ? 'px-0 py-0' : ''">
+          @if (headerContent() && inBody()) {
+            <div class="card-header-no-use pb-3">
+              <ng-container *ngTemplateOutlet="headerSlot"></ng-container>
+            </div>
+          } @else if (header() !== '' && inBody()) {
+            <div class="card-header-no-use pb-3">
+              <div class="h5">{{ header() }}</div>
+            </div>
+          }
           <ng-container *ngTemplateOutlet="bodySlot"></ng-container>
+          @if(footerContent() && inBody()) {
+            <div class="card-footer-no-use pt-3">
+              <ng-container *ngTemplateOutlet="footerSlot"></ng-container>
+            </div>
+          }
         </div>
         
-        @if (footerContent()) {
+        @if (footerContent() && !inBody()) {
           <div class="card-footer">
             <ng-container *ngTemplateOutlet="footerSlot"></ng-container>
           </div>
@@ -91,7 +105,7 @@ export class CardComponent {
   protected readonly bodyContent = contentChild(CardBodyDirective);
   protected readonly footerContent = contentChild(CardFooterDirective);
 
-  lib = input<'bootstrap' | 'primeng' | 'material'>('primeng');
+  lib = input<'bootstrap' | 'primeng' | 'material'>('bootstrap');
   header = input<string>('');
   title = input<string>('');
   subheader = input<string>('');
