@@ -1,15 +1,20 @@
 <h1 class="page-title">Manage Employees</h1>
 <div class="mb-4">
-  <p-toolbar>
+  <app-toolbar [styleClass]="'mb-3'">
     <ng-template #start>
-      <app-button label="Add New" icon="pi pi-plus" severity="secondary" (clickAction)="navigateToAddUser()" />
+      <app-button severity="success" (clickAction)="navigateToAddUser()" class="me-2">Add New</app-button>
+      <!-- <app-button [icon]="'pi pi-plus'" [variant]="'outlined'" [severity]="'success'"></app-button> -->
     </ng-template>
+
     <ng-template #end>
-      <app-input [placeholder]="'Search'" [(ngModel)]="searchKeyword" />
-      <app-button label="Search" icon="pi pi-search" severity="secondary"
-        (clickAction)="getSearchKeyword(searchKeyword)" />
+      <div class="d-flex gap-2">
+        <app-input [placeholder]="'Search'" [(ngModel)]="searchKeyword" />
+        <app-button label="Search" icon="pi pi-search" severity="secondary"
+          (clickAction)="getSearchKeyword(searchKeyword)" />
+      </div>
     </ng-template>
-  </p-toolbar>
+  </app-toolbar>
+
 </div>
 <div class="mb">
 
@@ -60,11 +65,14 @@
             <td>
               <div class="d-flex">
                 <app-button [severity]="'secondary'" [icon]="'pi pi-pencil'" [rounded]="true" [text]="true"
-                  (clickAction)="editUserProfile($safeNavigationMigration(rowData?.id))" [tooltip]="'Edit User'"></app-button>
+                  (clickAction)="editUserProfile($safeNavigationMigration(rowData?.id))"
+                  [tooltip]="'Edit User'"></app-button>
                 <app-button [severity]="'secondary'" [icon]="'pi pi-user'" [rounded]="true" [text]="true"
-                  (clickAction)="redirectToProfile($safeNavigationMigration(rowData?.id))" [tooltip]="'View Profile'"></app-button>
+                  (clickAction)="redirectToProfile($safeNavigationMigration(rowData?.id))"
+                  [tooltip]="'View Profile'"></app-button>
                 <app-button [severity]="'secondary'" [icon]="'pi pi-chart-bar'" [rounded]="true" [text]="true"
-                  (clickAction)="navigateToAnalytics($safeNavigationMigration(rowData?.id))" [tooltip]="'View Analytics'"></app-button>
+                  (clickAction)="navigateToAnalytics($safeNavigationMigration(rowData?.id))"
+                  [tooltip]="'View Analytics'"></app-button>
               </div>
             </td>
           </tr>
