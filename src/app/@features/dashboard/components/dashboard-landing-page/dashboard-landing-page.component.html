@@ -2,7 +2,7 @@
 <div class="row g-4">
     @for (stat of stats; track stat; let index = $index) {
     <div class="col-12 col-lg-6 col-xl-3">
-        <app-card [style]="{ width: '100%' }" [styleClass]="'mb-0'">
+        <app-card>
             <div card-body class="d-flex justify-content-between mb-4">
                 <div>
                     <span class="d-block fw-semibold mb-3">{{stat?.heading}}</span>
@@ -23,8 +23,8 @@
     }
 
     <div class="col-12">
-        <app-card [style]="{ width: '100%' }" class="mb-0">
-            <div card-header class="px-3 pt-3 pb-0">
+        <app-card>
+            <div card-header>
                 <h5 class="m-0">{{ 'home.updateHeader' | translate }}</h5>
             </div>
             <div card-body>
