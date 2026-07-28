@@ -1,9 +1,9 @@
 <h1 class="page-title">Change Workflow Approvers</h1>
 <div class="row">
   <div class="col-12">
-    <div class="card">
-      <div class="card-header">My Approvers</div>
-      <div class="card-body">
+    <app-card>
+      <div card-header>My Approvers</div>
+      <div card-body>
         <div class="table-responsive">
           <table class="table table-sm table-bordered">
             <tbody>
@@ -51,11 +51,11 @@
           </table>
         </div>
       </div>
-    </div>
+    </app-card>
 
-    <div class="card mt-3">
-      <div class="card-header">Change or Set Approvers</div>
-      <div class="card-body">
+    <app-card styleClass="mt-3">
+      <div card-header>Change or Set Approvers</div>
+      <div card-body>
         <!-- <app-search-input (inputValue)="getSearchInputVal($event)"
         [placeHolderText]="'Search Name/Email...'"></app-search-input> -->
 
@@ -99,6 +99,6 @@
           </div>
         }
       </div>
-    </div>
+    </app-card>
   </div>
 </div>

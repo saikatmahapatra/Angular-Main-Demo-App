@@ -1,9 +1,9 @@
 <h1 class="page-title">Manage Projects</h1>
 <div class="row">
   <div class="col-12">
-    <div class="card">
-      <div class="card-header">List of Projects</div>
-      <div class="card-body">
+    <app-card>
+      <div card-header>List of Projects</div>
+      <div card-body>
         <a [routerLink]="['/project/add-project']" class="btn btn-success mb-3">
           <app-icon [name]="'add'"></app-icon>
           Add New Project
@@ -138,7 +138,7 @@
           currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
         (onPageChange)="paginate($event)"></p-paginator>
       </div> <!--/.card-body-->
-    </div> <!--/.card-->
+    </app-card> <!--/.card-->
 
   </div>
 </div>

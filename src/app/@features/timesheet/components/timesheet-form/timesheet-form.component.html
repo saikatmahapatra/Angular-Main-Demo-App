@@ -2,9 +2,9 @@
 <a [routerLink]="['/dashboard/my-analytics/emp/', loggedInUserId]">View My Analytics <app-icon [name]="'chevronRight'" [styleClass]=""></app-icon></a>
 <div class="row mt-3">
   <div class="col-md-12">
-    <div class="card">
-      <div class="card-header">Timesheet Form</div>
-      <div class="card-body">
+    <app-card>
+      <div card-header>Timesheet Form</div>
+      <div card-body>
         <form [formGroup]="myForm" class="form app-form" (ngSubmit)="onSubmit()">
           <input type="hidden" formControlName="id">
           <input type="hidden" formControlName="action" value="add">
@@ -88,15 +88,15 @@
         </div>
       </form>
     </div>
-  </div>
+  </app-card>
 
-  <div class="card mt-3">
-    <div class="card-header">Work Log - {{monthName}}, {{year}}</div>
-    <div class="card-body">
+  <app-card styleClass="mt-3">
+    <div card-header>Work Log - {{monthName}}, {{year}}</div>
+    <div card-body>
       <h5 class="card-title"></h5>
       <app-view-timesheet [timeSheetLogData]="timesheetData"
       (recordDeleted)="isDeleteComplete($event)"></app-view-timesheet>
     </div>
-  </div>
+  </app-card>
 </div>
 </div>

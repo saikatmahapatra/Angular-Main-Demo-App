@@ -4,10 +4,10 @@
 </div>
 <div class="row">
   <div class="col-12">
-    <div class="card">
-      <div class="card-header">Form</div>
+    <app-card>
+      <div card-header>Form</div>
 
-      <div class="card-body">
+      <div card-body>
         <form [formGroup]="myForm" class="form app-form" (ngSubmit)="onSubmit()">
           <input type="hidden" formControlName="id">
           <input type="hidden" formControlName="action">
@@ -123,6 +123,6 @@
         <!-- <p class="debug">Form Status: <span class="text-bold">{{ myForm.status }}</span></p>
         <p class="debug">{{myForm.value|json}}</p> -->
       </div>
-    </div>
+    </app-card>
   </div>
 </div>

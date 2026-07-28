@@ -1,6 +1,7 @@
 <div class="grid grid-cols-12 gap-8">
   <div class="col-span-12 lg:col-span-6 xl:col-span-3">
-    <div class="card mb-0">
+    <app-card styleClass="mb-0">
+  <div card-body>
       <div class="flex justify-between mb-4">
         <div>
           <span class="block text-muted-color font-medium mb-4">Orders</span>
@@ -14,9 +15,11 @@
       <span class="text-primary font-medium">24 new </span>
       <span class="text-muted-color">since last visit</span>
     </div>
+</app-card>
   </div>
   <div class="col-span-12 lg:col-span-6 xl:col-span-3">
-    <div class="card mb-0">
+    <app-card styleClass="mb-0">
+  <div card-body>
       <div class="flex justify-between mb-4">
         <div>
           <span class="block text-muted-color font-medium mb-4">Revenue</span>
@@ -30,9 +33,11 @@
       <span class="text-primary font-medium">%52+ </span>
       <span class="text-muted-color">since last week</span>
     </div>
+</app-card>
   </div>
   <div class="col-span-12 lg:col-span-6 xl:col-span-3">
-    <div class="card mb-0">
+    <app-card styleClass="mb-0">
+  <div card-body>
       <div class="flex justify-between mb-4">
         <div>
           <span class="block text-muted-color font-medium mb-4">Customers</span>
@@ -46,9 +51,11 @@
       <span class="text-primary font-medium">520 </span>
       <span class="text-muted-color">newly registered</span>
     </div>
+</app-card>
   </div>
   <div class="col-span-12 lg:col-span-6 xl:col-span-3">
-    <div class="card mb-0">
+    <app-card styleClass="mb-0">
+  <div card-body>
       <div class="flex justify-between mb-4">
         <div>
           <span class="block text-muted-color font-medium mb-4">Comments</span>
@@ -62,14 +69,23 @@
       <span class="text-primary font-medium">85 </span>
       <span class="text-muted-color">responded</span>
     </div>
+</app-card>
   </div>
   <div class="col-span-12 xl:col-span-6">
-    <div class="card mb-0">col-span-12 xl:col-span-6</div>
-    <div class="card mb-0">col-span-12 xl:col-span-6</div>
+    <app-card styleClass="mb-0">
+  <div card-body>col-span-12 xl:col-span-6</div>
+</app-card>
+    <app-card styleClass="mb-0">
+  <div card-body>col-span-12 xl:col-span-6</div>
+</app-card>
   </div>
   <div class="col-span-12 xl:col-span-6">
-    <div class="card mb-0">col-span-12 xl:col-span-6</div>
-    <div class="card mb-0">col-span-12 xl:col-span-6</div>
+    <app-card styleClass="mb-0">
+  <div card-body>col-span-12 xl:col-span-6</div>
+</app-card>
+    <app-card styleClass="mb-0">
+  <div card-body>col-span-12 xl:col-span-6</div>
+</app-card>
   </div>
 </div>
 
@@ -77,7 +93,8 @@
 
 <div class="flex flex-col md:flex-row gap-8 mt-8">
   <div class="md:w-1/2">
-    <div class="card flex flex-col gap-4">
+    <app-card styleClass="flex flex-col gap-4">
+  <div card-body>
       <div class="font-semibold text-xl">Default</div>
       <div class="flex flex-wrap gap-2">
         <p-button label="Submit"></p-button>
@@ -85,7 +102,9 @@
         <p-button label="Link" class="p-button-link" />
       </div>
     </div>
-    <div class="card flex flex-col gap-4">
+</app-card>
+    <app-card styleClass="flex flex-col gap-4">
+  <div card-body>
       <div class="font-semibold text-xl">Severities</div>
       <div class="flex flex-wrap gap-2">
         <p-button label="Primary" />
@@ -98,7 +117,9 @@
         <p-button label="Contrast" severity="contrast" />
       </div>
     </div>
-    <div class="card flex flex-col gap-4">
+</app-card>
+    <app-card styleClass="flex flex-col gap-4">
+  <div card-body>
       <div class="font-semibold text-xl">Text</div>
       <div class="flex flex-wrap gap-2">
         <p-button label="Primary" text />
@@ -111,7 +132,9 @@
         <p-button label="Plain" text />
       </div>
     </div>
-    <div class="card flex flex-col gap-4">
+</app-card>
+    <app-card styleClass="flex flex-col gap-4">
+  <div card-body>
       <div class="font-semibold text-xl">Outlined</div>
       <div class="flex flex-wrap gap-2">
         <p-button label="Primary" outlined />
@@ -124,7 +147,9 @@
         <p-button label="Contrast" severity="contrast" outlined />
       </div>
     </div>
-    <div class="card flex flex-col gap-4">
+</app-card>
+    <app-card styleClass="flex flex-col gap-4">
+  <div card-body>
       <div class="font-semibold text-xl">Group</div>
       <div class="flex flex-wrap gap-2">
         <p-buttongroup>
@@ -134,7 +159,9 @@
         </p-buttongroup>
       </div>
     </div>
-    <div class="card flex flex-col gap-4">
+</app-card>
+    <app-card styleClass="flex flex-col gap-4">
+  <div card-body>
       <div class="font-semibold text-xl">SplitButton</div>
       <div class="flex flex-wrap gap-2">
         <p-splitbutton label="Save" [model]="items"></p-splitbutton>
@@ -147,7 +174,9 @@
         <p-splitbutton label="Save" [model]="items" severity="contrast"></p-splitbutton>
       </div>
     </div>
-    <div class="card flex flex-col gap-4">
+</app-card>
+    <app-card styleClass="flex flex-col gap-4">
+  <div card-body>
       <div class="font-semibold text-xl">Templating</div>
       <div class="flex flex-wrap gap-2">
         <p-button type="button">
@@ -159,9 +188,11 @@
         </p-button>
       </div>
     </div>
+</app-card>
   </div>
   <div class="md:w-1/2">
-    <div class="card flex flex-col gap-4">
+    <app-card styleClass="flex flex-col gap-4">
+  <div card-body>
       <div class="font-semibold text-xl">Icons</div>
       <div class="flex flex-wrap gap-2">
         <p-button icon="pi pi-bookmark"></p-button>
@@ -169,7 +200,9 @@
         <p-button label="Bookmark" icon="pi pi-bookmark" iconPos="right"></p-button>
       </div>
     </div>
-    <div class="card flex flex-col gap-4">
+</app-card>
+    <app-card styleClass="flex flex-col gap-4">
+  <div card-body>
       <div class="font-semibold text-xl">Raised</div>
       <div class="flex flex-wrap gap-2">
         <p-button label="Primary" raised />
@@ -182,7 +215,9 @@
         <p-button label="Contrast" severity="contrast" raised />
       </div>
     </div>
-    <div class="card flex flex-col gap-4">
+</app-card>
+    <app-card styleClass="flex flex-col gap-4">
+  <div card-body>
       <div class="font-semibold text-xl">Rounded</div>
       <div class="flex flex-wrap gap-2">
         <p-button label="Primary" rounded />
@@ -195,7 +230,9 @@
         <p-button label="Contrast" severity="contrast" rounded />
       </div>
     </div>
-    <div class="card flex flex-col gap-4">
+</app-card>
+    <app-card styleClass="flex flex-col gap-4">
+  <div card-body>
       <div class="font-semibold text-xl">Rounded Icons</div>
       <div class="flex flex-wrap gap-2">
         <p-button icon="pi pi-check" rounded />
@@ -207,7 +244,9 @@
         <p-button icon="pi pi-times" severity="danger" rounded />
       </div>
     </div>
-    <div class="card flex flex-col gap-4">
+</app-card>
+    <app-card styleClass="flex flex-col gap-4">
+  <div card-body>
       <div class="font-semibold text-xl">Rounded Text</div>
       <div class="flex flex-wrap gap-2">
         <p-button icon="pi pi-check" text raised rounded />
@@ -219,7 +258,9 @@
         <p-button icon="pi pi-times" severity="danger" text raised rounded />
       </div>
     </div>
-    <div class="card flex flex-col gap-4">
+</app-card>
+    <app-card styleClass="flex flex-col gap-4">
+  <div card-body>
       <div class="font-semibold text-xl">Rounded Outlined</div>
       <div class="flex flex-wrap gap-2">
         <p-button icon="pi pi-check" rounded outlined />
@@ -231,7 +272,9 @@
         <p-button icon="pi pi-times" severity="danger" rounded outlined />
       </div>
     </div>
-    <!-- <div class="card flex flex-col gap-4">
+</app-card>
+    <!-- <app-card styleClass="flex flex-col gap-4">
+  <div card-body>
     <div class="font-semibold text-xl">Loading</div>
     <div class="flex flex-wrap gap-2">
       <p-button type="button" label="Search" icon="pi pi-search" [loading]="loading[0]" (click)="load(0)" />
@@ -239,7 +282,8 @@
       <p-button type="button" styleClass="h-full" icon="pi pi-search" [loading]="loading[2]" (click)="load(2)" />
       <p-button type="button" label="Search" [loading]="loading[3]" (click)="load(3)" />
     </div>
-  </div> -->
+  </div>
+</app-card> -->
   </div>
 </div>
 
@@ -247,7 +291,8 @@
 <p-fluid>
   <div class="flex flex-col md:flex-row gap-8">
     <div class="md:w-1/2">
-      <div class="card flex flex-col gap-4">
+      <app-card styleClass="flex flex-col gap-4">
+  <div card-body>
         <div class="font-semibold text-xl">Vertical</div>
         <div class="flex flex-col gap-2">
           <label for="name1">Name</label>
@@ -262,8 +307,10 @@
           <input pInputText id="age1" type="text" />
         </div>
       </div>
+</app-card>
 
-      <div class="card flex flex-col gap-4 mt-8">
+      <app-card styleClass="flex flex-col gap-4 mt-8">
+  <div card-body>
         <div class="font-semibold text-xl">Vertical Grid</div>
         <div class="flex flex-wrap gap-6">
           <div class="flex flex-col grow basis-0 gap-2">
@@ -276,9 +323,11 @@
           </div>
         </div>
       </div>
+</app-card>
     </div>
     <div class="md:w-1/2">
-      <div class="card flex flex-col gap-4">
+      <app-card styleClass="flex flex-col gap-4">
+  <div card-body>
         <div class="font-semibold text-xl">Horizontal</div>
         <div class="grid grid-cols-12 gap-4 grid-cols-12 gap-2">
           <label for="name3" class="flex items-center col-span-12 mb-2 md:col-span-2 md:mb-0">Name</label>
@@ -293,8 +342,10 @@
           </div>
         </div>
       </div>
+</app-card>
 
-      <div class="card flex flex-col gap-4">
+      <app-card styleClass="flex flex-col gap-4">
+  <div card-body>
         <div class="font-semibold text-xl">Inline</div>
         <div class="flex flex-wrap items-start gap-6">
           <div class="field">
@@ -308,7 +359,9 @@
           <p-button label="Submit" [fluid]="false"></p-button>
         </div>
       </div>
-      <div class="card flex flex-col gap-4">
+</app-card>
+      <app-card styleClass="flex flex-col gap-4">
+  <div card-body>
         <div class="font-semibold text-xl">Help Text</div>
         <div class="flex flex-wrap gap-2">
           <label for="username">Username</label>
@@ -316,11 +369,13 @@
           <small>Enter your username to reset your password.</small>
         </div>
       </div>
+</app-card>
     </div>
   </div>
 
   <div class="flex mt-8">
-    <div class="card flex flex-col gap-6 w-full">
+    <app-card styleClass="flex flex-col gap-6 w-full">
+  <div card-body>
       <div class="font-semibold text-xl">Advanced</div>
       <div class="flex flex-col md:flex-row gap-6">
         <div class="flex flex-wrap gap-2 w-full">
@@ -349,6 +404,7 @@
         </div>
       </div>
     </div>
+</app-card>
   </div>
 </p-fluid>
 
@@ -366,7 +422,8 @@
 </div>
 
 <div class="flex mt-8">
-  <div class="card w-full">
+  <app-card styleClass="w-full">
+  <div card-body>
     <p-table [value]="products">
       <ng-template pTemplate="header">
         <tr>
@@ -388,12 +445,14 @@
     <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="totalRecords"
       [rowsPerPageOptions]="rowsPerPageOptions"></p-paginator>
   </div>
+</app-card>
 </div>
 
 
 
 <div class="flex mt-8">
-  <div class="card w-full">
+  <app-card styleClass="w-full">
+  <div card-body>
     <p-messages [(value)]="serverSideMsg" [enableService]="false"></p-messages>
     <p>To display a toast message in full width we need to use <code>position="top-center" styleClass="w-100"</code>
       attributes. For additional customization refer to PrimeNG official documentation.</p>
@@ -405,11 +464,13 @@
     <button type="button" pButton pRipple (click)="showError()" label="Error Toast"
       class="p-button-danger me-3"></button>
   </div>
+</app-card>
 </div>
 
 
 <div class="flex mt-8">
-  <div class="card gap-6 w-full">
+  <app-card styleClass="gap-6 w-full">
+  <div card-body>
     <h5>Charts</h5>
     <div class="my-4">
       @for (type of chartTypes; track type) {
@@ -429,4 +490,5 @@
     </div>
     <p-chart [type]="chartType" [data]="chartData" [options]="chartOptions"></p-chart>
   </div>
+</app-card>
 </div>

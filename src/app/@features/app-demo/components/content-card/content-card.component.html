@@ -4,9 +4,9 @@ component. For example, you could have a Card component that accepts content pro
 
 <p>Message from parent = {{message}}</p>
 
-<div class="card">
-  <div class="card-header">This component will accept content from test.component.ts. <a routerLink="../test">Click here</a></div>
-  <div class="card-body">
+<app-card>
+  <div card-header>This component will accept content from test.component.ts. <a routerLink="../test">Click here</a></div>
+  <div card-body>
     <ng-content></ng-content>
     <ng-content select="[slot1]"></ng-content>
     <ng-content select="[slot2]"></ng-content>
@@ -19,4 +19,4 @@ component. For example, you could have a Card component that accepts content pro
     </ul>
 
   </div>
-</div>
+</app-card>

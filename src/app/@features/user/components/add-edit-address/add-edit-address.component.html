@@ -5,11 +5,11 @@
 
 <div class="row">
   <div class="col-12">
-    <div class="card">
-      <div class="card-header">
+    <app-card>
+      <div card-header>
         Form
       </div>
-      <div class="card-body">
+      <div card-body>
         <div class="row">
           <div class="col-md-6 col-lg-5 col-xl-4">
             <form [formGroup]="myForm" class="form app-form" (ngSubmit)="onSubmit()">
@@ -104,6 +104,6 @@
             </div>
           </div>
         </div>
-      </div>
+      </app-card>
     </div>
   </div>

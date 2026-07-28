@@ -1,9 +1,9 @@
 <h1 class="page-title">Holidays</h1>
 <div class="row">
     <div class="col-md-12">
-        <div class="card">
-            <div class="card-header">List of Holidays {{selectedYear}}</div>
-            <div class="card-body">
+        <app-card>
+            <div card-header>List of Holidays {{selectedYear}}</div>
+            <div card-body>
                 <div class="row mb-3">
                     <div class="col-auto">
                         <p-select [options]="yearList" [(ngModel)]="selectedYear" placeholder="Year"
@@ -74,7 +74,7 @@
 
                 <p class="small mt-2">* Holidays are subject to change.</p>
             </div>
-        </div>
+        </app-card>
 
     </div>
 </div>

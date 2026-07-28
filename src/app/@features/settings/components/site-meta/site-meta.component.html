@@ -2,9 +2,9 @@
 
 <div class="row">
   <div class="col-12">
-    <div class="card">
-      <div class="card-header">{{formTitle}}</div>
-      <div class="card-body">
+    <app-card>
+      <div card-header>{{formTitle}}</div>
+      <div card-body>
         <form [formGroup]="myForm" class="form app-form" (ngSubmit)="onSubmit()">
           <input type="hidden" formControlName="id">
           <input type="hidden" formControlName="action">
@@ -71,11 +71,11 @@
         </div>
       </form>
     </div>
-  </div>
+  </app-card>
 
-  <div class="card my-3">
-    <div class="card-header">Site Meta</div>
-    <div class="card-body">
+  <app-card styleClass="my-3">
+    <div card-header>Site Meta</div>
+    <div card-body>
       <div class="row mb-3">
         <div class="col-auto">
           <select class="form-select" id="metaType" (change)="metaKeyChange()"
@@ -162,6 +162,6 @@
           currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
         (onPageChange)="paginate($event)"></p-paginator>
       </div>
-    </div>
+    </app-card>
   </div>
 </div>

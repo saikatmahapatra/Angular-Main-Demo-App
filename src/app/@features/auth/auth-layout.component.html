@@ -7,10 +7,10 @@
             <span>{{ productName }}</span>
         </a>
 
-        <div class="card shadow rounded w-100 mx-auto" style="max-width: 28rem;">
-            <div class="card-body p-4">
+        <app-card styleClass="shadow rounded w-100 mx-auto" [style]="{ 'max-width': '28rem' }">
+            <div card-body class="p-4">
                 <router-outlet></router-outlet>
             </div>
-        </div>
+        </app-card>
     </div>
 </section>
