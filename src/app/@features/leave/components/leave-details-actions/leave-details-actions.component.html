@@ -205,7 +205,7 @@
             </div>
             @if (rowData?.supervisor_approver_comment) {
               <div class="small">
-                <app-icon [name]="'comment'" [styleClass]="'f-18 me-1'"></app-icon>
+                <app-icon [name]="'comment'"></app-icon>
                 {{rowData?.supervisor_approver_comment}}
               </div>
             }
@@ -280,7 +280,7 @@
                 <div class="small">{{$safeNavigationMigration(rowData?.director_approver_datetime) | date: 'dd/MM/yyyy h:mm:ss a'}}</div>
                 @if (rowData?.director_approver_comment) {
                   <div class="small">
-                    <app-icon [name]="'comment'" [styleClass]="'f-18 me-1'"></app-icon>
+                    <app-icon [name]="'comment'"></app-icon>
                     {{rowData?.director_approver_comment}}
                   </div>
                 }
