@@ -3,71 +3,71 @@ import { CommonModule } from '@angular/common'; // 1. Import CommonModule
 import { TooltipModule } from 'primeng/tooltip';
 
 export const appIconLib: any = {
-  'home': { material: 'home', primeng: 'pi pi-home', bootstrap: 'bi bi-house' },
-  'dashboard': { material: 'speed', primeng: 'pi pi-home', bootstrap: 'bi bi-speedometer' },
-  'user': { material: 'account_circle', primeng: 'pi pi-user', bootstrap: 'bi bi-person-circle' },
-  'users': { material: 'people', primeng: 'pi pi-users', bootstrap: 'bi bi-people' },
-  'add': { material: 'add', primeng: 'pi pi-plus', bootstrap: 'bi bi-plus-lg' },
-  'edit': { material: 'edit', primeng: 'pi pi-pencil', bootstrap: 'bi bi-pencil' },
-  'userEdit': { material: 'edit', primeng: 'pi pi-user-edit', bootstrap: 'bi bi-person-gear' },
-  'delete': { material: 'delete', primeng: 'pi pi-trash', bootstrap: 'bi bi-trash' },
-  'info': { material: 'info', primeng: 'pi pi-info-circle', bootstrap: 'bi bi-info-circle' },
-  'success': { material: 'check_circle', primeng: 'pi pi-check-circle', bootstrap: 'bi bi-check-circle' },
-  'error': { material: 'error_outline', primeng: 'pi pi-exclamation-circle', bootstrap: 'bi bi-exclamation-circle' },
-  'warning': { material: 'warning_amber', primeng: 'pi pi-exclamation-triangle', bootstrap: 'bi bi-exclamation-triangle' },
-  'admin': { material: 'admin_panel_settings', primeng: 'pi pi-lock', bootstrap: 'bi bi-person-lock' },
-  'selfService': { material: 'fingerprint', primeng: 'pi pi-folder', bootstrap: 'bi bi-fingerprint' },
-  'chevronLeft': { material: 'chevron_left', primeng: 'pi pi-angle-left', bootstrap: 'bi bi-chevron-left' },
-  'angleUp': { material: 'expand_less', primeng: 'pi pi-angle-up', bootstrap: 'bi bi-chevron-up' },
-  'angleDown': { material: 'expand_more', primeng: 'pi pi-angle-up', bootstrap: 'bi bi-chevron-up' },
-  'chevronRight': { material: 'chevron_right', primeng: 'pi pi-angle-right', bootstrap: 'bi bi-chevron-right' },
-  'arrowRight': { material: 'arrow_right_alt', primeng: 'pi pi-arrow-right', bootstrap: 'bi bi-arrow-right-short' },
-  'currency': { material: 'paid', primeng: 'pi pi-dollar', bootstrap: 'bi bi-currency-dollar' },
-  'clock': { material: 'watch_later', primeng: 'pi pi-clock', bootstrap: 'bi bi-clock' },
-  'globe': { material: 'language', primeng: 'pi pi-globe', bootstrap: 'bi bi-globe' },
-  'map': { material: 'place', primeng: 'pi pi-map-marker', bootstrap: 'bi bi-geo-alt' },
-  'phone': { material: 'phone', primeng: 'pi pi-phone', bootstrap: 'bi bi-telephone' },
-  'email': { material: 'email', primeng: 'pi pi-envelope', bootstrap: 'bi bi-envelope' },
-  'sun': { material: 'light_mode', primeng: 'pi pi-sun', bootstrap: 'bi bi-brightness-high' },
-  'moon': { material: 'dark_mode', primeng: 'pi pi-moon', bootstrap: 'bi bi-moon-stars' },
-  'circle': { material: 'trip_origin', primeng: 'pi pi-circle-fill', bootstrap: 'bi bi-circle-fill' },
-  'signout': { material: 'logout', primeng: 'pi pi-sign-out', bootstrap: 'bi bi-box-arrow-right' },
-  'notification': { material: 'notifications', primeng: 'pi pi-bell', bootstrap: 'bi bi-app-indicator' },
-  'linechart': { material: 'analytics', primeng: 'pi pi-chart-line', bootstrap: 'bi bi-bar-chart-line' },
-  'qualification': { material: 'school', primeng: 'pi pi-book', bootstrap: 'bi bi-mortarboard' },
-  'job': { material: 'work_history', primeng: 'pi pi-briefcase', bootstrap: 'bi bi-briefcase' },
-  'heart': { material: 'medical_services', primeng: 'pi pi-heart', bootstrap: 'bi bi-heart' },
-  'actionRequired': { material: 'help_outline', primeng: 'pi pi-question-circle', bootstrap: 'bi bi-question-circle' },
-  'check': { material: 'check_circle', primeng: 'pi pi-check-circle', bootstrap: 'bi bi-check-circle' },
-  'cross': { material: 'cancel', primeng: 'pi pi-times-circle', bootstrap: 'bi bi-x-circle' },
-  'close': { material: 'close', primeng: 'pi pi-times', bootstrap: 'bi bi-x' },
-  'question': { material: 'help_outline', primeng: 'pi pi-question-circle', bootstrap: 'bi bi-question-circle' },
-  'send': { material: 'send', primeng: 'pi pi-send', bootstrap: 'bi bi-send-check' },
-  'calendar': { material: 'calendar_month', primeng: 'pi pi-calendar', bootstrap: 'bi bi-calendar-check' },
-  'tasks': { material: 'task', primeng: 'pi pi-th-large', bootstrap: 'bi bi-columns-gap' },
-  'search': { material: 'search', primeng: 'pi pi-search', bootstrap: 'bi bi-search' },
-  'settings': { material: 'settings', primeng: 'pi pi-cog', bootstrap: 'bi bi-gear' },
-  'upload': { material: 'file_upload', primeng: 'pi pi-upload', bootstrap: 'bi bi-upload' },
-  'download': { material: 'file_download', primeng: 'pi pi-download', bootstrap: 'bi bi-download' },
-  'exportxls': { material: 'file_download', primeng: 'pi pi-file-excel', bootstrap: 'bi bi-file-earmark-excel' },
-  'exportpdf': { material: 'picture_as_pdf', primeng: 'pi pi-file-pdf', bootstrap: 'bi bi-filetype-pdf' },
-  'menu': { material: 'menu', primeng: 'pi pi-bars', bootstrap: 'bi bi-list' },
-  'comment': { material: 'comment', primeng: 'pi pi-comment', bootstrap: 'bi bi-comment' },
-  'verified': { material: 'verified', primeng: 'pi pi-verified', bootstrap: 'bi bi-verified' },
-  'projects': { material: 'list_alt', primeng: 'pi pi-info', bootstrap: 'bi bi-info' },
-  'calendarclock': { material: 'calendar_clock', primeng: 'pi pi-info', bootstrap: 'bi bi-info' },
-  'pendingaction': { material: 'pending_actions', primeng: 'pi pi-info', bootstrap: 'bi bi-info' },
-  'username': { material: 'person', primeng: 'pi pi-info', bootstrap: 'bi bi-info' },
-  'password': { material: 'password', primeng: 'pi pi-info', bootstrap: 'bi bi-info' },
-  'language': { material: 'language', primeng: 'pi pi-globe', bootstrap: 'bi bi-globe' },
-  'note': { material: 'note_stack', primeng: 'pi pi-note', bootstrap: 'bi bi-note' },
-  'report': { material: 'report', primeng: 'pi pi-report', bootstrap: 'bi bi-report' },
-  'leave': { material: 'beach_access', primeng: 'pi pi-travel', bootstrap: 'bi bi-travel' },
-  'timesheet': { material: 'more_time', primeng: 'pi pi-travel', bootstrap: 'bi bi-travel' },
-  'datacheck': { material: 'data_check', primeng: 'pi pi-travel', bootstrap: 'bi bi-travel' },
-  'history': { material: 'history', primeng: 'pi pi-travel', bootstrap: 'bi bi-travel' },
-  'history2': { material: 'history_2', primeng: 'pi pi-travel', bootstrap: 'bi bi-travel' },
-  'diversity': { material: 'diversity_1', primeng: 'pi pi-travel', bootstrap: 'bi bi-travel' },
+  'home': { mat: 'home', primeng: 'pi pi-home', bs: 'bi bi-house' },
+  'dashboard': { mat: 'speed', primeng: 'pi pi-home', bs: 'bi bi-speedometer' },
+  'user': { mat: 'account_circle', primeng: 'pi pi-user', bs: 'bi bi-person-circle' },
+  'users': { mat: 'people', primeng: 'pi pi-users', bs: 'bi bi-people' },
+  'add': { mat: 'add', primeng: 'pi pi-plus', bs: 'bi bi-plus-lg' },
+  'edit': { mat: 'edit', primeng: 'pi pi-pencil', bs: 'bi bi-pencil' },
+  'userEdit': { mat: 'edit', primeng: 'pi pi-user-edit', bs: 'bi bi-person-gear' },
+  'delete': { mat: 'delete', primeng: 'pi pi-trash', bs: 'bi bi-trash' },
+  'info': { mat: 'info', primeng: 'pi pi-info-circle', bs: 'bi bi-info-circle' },
+  'success': { mat: 'check_circle', primeng: 'pi pi-check-circle', bs: 'bi bi-check-circle' },
+  'error': { mat: 'error_outline', primeng: 'pi pi-exclamation-circle', bs: 'bi bi-exclamation-circle' },
+  'warning': { mat: 'warning_amber', primeng: 'pi pi-exclamation-triangle', bs: 'bi bi-exclamation-triangle' },
+  'admin': { mat: 'admin_panel_settings', primeng: 'pi pi-lock', bs: 'bi bi-person-lock' },
+  'selfService': { mat: 'fingerprint', primeng: 'pi pi-folder', bs: 'bi bi-fingerprint' },
+  'chevronLeft': { mat: 'chevron_left', primeng: 'pi pi-angle-left', bs: 'bi bi-chevron-left' },
+  'angleUp': { mat: 'expand_less', primeng: 'pi pi-angle-up', bs: 'bi bi-chevron-up' },
+  'angleDown': { mat: 'expand_more', primeng: 'pi pi-angle-up', bs: 'bi bi-chevron-up' },
+  'chevronRight': { mat: 'chevron_right', primeng: 'pi pi-angle-right', bs: 'bi bi-chevron-right' },
+  'arrowRight': { mat: 'arrow_right_alt', primeng: 'pi pi-arrow-right', bs: 'bi bi-arrow-right-short' },
+  'currency': { mat: 'paid', primeng: 'pi pi-dollar', bs: 'bi bi-currency-dollar' },
+  'clock': { mat: 'watch_later', primeng: 'pi pi-clock', bs: 'bi bi-clock' },
+  'globe': { mat: 'language', primeng: 'pi pi-globe', bs: 'bi bi-globe' },
+  'map': { mat: 'place', primeng: 'pi pi-map-marker', bs: 'bi bi-geo-alt' },
+  'phone': { mat: 'phone', primeng: 'pi pi-phone', bs: 'bi bi-telephone' },
+  'email': { mat: 'email', primeng: 'pi pi-envelope', bs: 'bi bi-envelope' },
+  'sun': { mat: 'light_mode', primeng: 'pi pi-sun', bs: 'bi bi-brightness-high' },
+  'moon': { mat: 'dark_mode', primeng: 'pi pi-moon', bs: 'bi bi-moon-stars' },
+  'circle': { mat: 'trip_origin', primeng: 'pi pi-circle-fill', bs: 'bi bi-circle-fill' },
+  'signout': { mat: 'logout', primeng: 'pi pi-sign-out', bs: 'bi bi-box-arrow-right' },
+  'notification': { mat: 'notifications', primeng: 'pi pi-bell', bs: 'bi bi-app-indicator' },
+  'linechart': { mat: 'analytics', primeng: 'pi pi-chart-line', bs: 'bi bi-bar-chart-line' },
+  'qualification': { mat: 'school', primeng: 'pi pi-book', bs: 'bi bi-mortarboard' },
+  'job': { mat: 'work_history', primeng: 'pi pi-briefcase', bs: 'bi bi-briefcase' },
+  'heart': { mat: 'medical_services', primeng: 'pi pi-heart', bs: 'bi bi-heart' },
+  'actionRequired': { mat: 'help_outline', primeng: 'pi pi-question-circle', bs: 'bi bi-question-circle' },
+  'check': { mat: 'check_circle', primeng: 'pi pi-check-circle', bs: 'bi bi-check-circle' },
+  'cross': { mat: 'cancel', primeng: 'pi pi-times-circle', bs: 'bi bi-x-circle' },
+  'close': { mat: 'close', primeng: 'pi pi-times', bs: 'bi bi-x' },
+  'question': { mat: 'help_outline', primeng: 'pi pi-question-circle', bs: 'bi bi-question-circle' },
+  'send': { mat: 'send', primeng: 'pi pi-send', bs: 'bi bi-send-check' },
+  'calendar': { mat: 'calendar_month', primeng: 'pi pi-calendar', bs: 'bi bi-calendar-check' },
+  'tasks': { mat: 'task', primeng: 'pi pi-th-large', bs: 'bi bi-columns-gap' },
+  'search': { mat: 'search', primeng: 'pi pi-search', bs: 'bi bi-search' },
+  'settings': { mat: 'settings', primeng: 'pi pi-cog', bs: 'bi bi-gear' },
+  'upload': { mat: 'file_upload', primeng: 'pi pi-upload', bs: 'bi bi-upload' },
+  'download': { mat: 'file_download', primeng: 'pi pi-download', bs: 'bi bi-download' },
+  'exportxls': { mat: 'file_download', primeng: 'pi pi-file-excel', bs: 'bi bi-file-earmark-excel' },
+  'exportpdf': { mat: 'picture_as_pdf', primeng: 'pi pi-file-pdf', bs: 'bi bi-filetype-pdf' },
+  'menu': { mat: 'menu', primeng: 'pi pi-bars', bs: 'bi bi-list' },
+  'comment': { mat: 'comment', primeng: 'pi pi-comment', bs: 'bi bi-comment' },
+  'verified': { mat: 'verified', primeng: 'pi pi-verified', bs: 'bi bi-verified' },
+  'projects': { mat: 'list_alt', primeng: 'pi pi-info', bs: 'bi bi-info' },
+  'calendarclock': { mat: 'calendar_clock', primeng: 'pi pi-info', bs: 'bi bi-info' },
+  'pendingaction': { mat: 'pending_actions', primeng: 'pi pi-info', bs: 'bi bi-info' },
+  'username': { mat: 'person', primeng: 'pi pi-info', bs: 'bi bi-info' },
+  'password': { mat: 'password', primeng: 'pi pi-info', bs: 'bi bi-info' },
+  'language': { mat: 'language', primeng: 'pi pi-globe', bs: 'bi bi-globe' },
+  'note': { mat: 'note_stack', primeng: 'pi pi-note', bs: 'bi bi-note' },
+  'report': { mat: 'report', primeng: 'pi pi-report', bs: 'bi bi-report' },
+  'leave': { mat: 'beach_access', primeng: 'pi pi-travel', bs: 'bi bi-travel' },
+  'timesheet': { mat: 'more_time', primeng: 'pi pi-travel', bs: 'bi bi-travel' },
+  'datacheck': { mat: 'data_check', primeng: 'pi pi-travel', bs: 'bi bi-travel' },
+  'history': { mat: 'history', primeng: 'pi pi-travel', bs: 'bi bi-travel' },
+  'history2': { mat: 'history_2', primeng: 'pi pi-travel', bs: 'bi bi-travel' },
+  'diversity': { mat: 'diversity_1', primeng: 'pi pi-travel', bs: 'bi bi-travel' },
 };
 
 @Component({
@@ -103,7 +103,7 @@ export const appIconLib: any = {
   `]
 })
 export class IconComponent implements OnInit {
-  lib = input<string>('material');
+  lib = input<string>('mat');
   name = input<string>('');
   width = input<number>(16);
   height = input<number>(16);
@@ -120,14 +120,14 @@ export class IconComponent implements OnInit {
   }
 
   getIconClass() {
-    if (this.lib() == 'material') {
-      return appIconLib[this.name()]?.material ? appIconLib[this.name()]?.material : 'info';
+    if (this.lib() == 'mat') {
+      return appIconLib[this.name()]?.mat ? appIconLib[this.name()]?.mat : 'info';
     }
     if (this.lib() == 'primeng') {
       return appIconLib[this.name()]?.primeng ? appIconLib[this.name()]?.primeng : 'pi pi-question-circle';
     }
-    if (this.lib() == 'bootstrap') {
-      return appIconLib[this.name()]?.bootstrap ? appIconLib[this.name()]?.bootstrap : 'bi bi-question-circle';
+    if (this.lib() == 'bs') {
+      return appIconLib[this.name()]?.bs ? appIconLib[this.name()]?.bs : 'bi bi-question-circle';
     }
   }
 
