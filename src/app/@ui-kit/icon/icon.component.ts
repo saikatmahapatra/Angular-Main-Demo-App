@@ -76,10 +76,10 @@ export const appIconLib: any = {
   imports: [CommonModule, TooltipModule],
   changeDetection: ChangeDetectionStrategy.Eager,
   template: `
-    @if (lib() !== 'material') {
+    @if (lib() !== 'mat') {
       <i [class]="getIconClass()" class="app-inline-icon" [ngClass]="styleClass()" aria-hidden="true" [pTooltip]="tooltip()" [tooltipPosition]="tooltipPosition()"></i>
     }
-    @if (lib() === 'material') {
+    @if (lib() === 'mat') {
       <i [ngClass]="styleClass()" class="app-inline-icon material-symbols-outlined" aria-hidden="true"
       [innerHTML]="getIconClass()" [pTooltip]="tooltip()" [tooltipPosition]="tooltipPosition()"></i>
     }

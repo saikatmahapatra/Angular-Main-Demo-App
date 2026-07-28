@@ -26,7 +26,7 @@ export class CardFooterDirective { }
   imports: [CommonModule, CardModule],
   changeDetection: ChangeDetectionStrategy.Eager,
   template: `
-    @if(lib() === 'primeng') {
+    @if(lib() === 'prime') {
       <p-card [style]="style()" [class]="styleClass()" [subheader]="subheader()">
         <ng-template pTemplate="header">
           @if (headerContent()) {
@@ -105,7 +105,7 @@ export class CardComponent {
   protected readonly bodyContent = contentChild(CardBodyDirective);
   protected readonly footerContent = contentChild(CardFooterDirective);
 
-  lib = input<'bootstrap' | 'primeng' | 'material'>('bootstrap');
+  lib = input<'bs' | 'prime' | 'mat'>('bs');
   header = input<string>('');
   title = input<string>('');
   subheader = input<string>('');
