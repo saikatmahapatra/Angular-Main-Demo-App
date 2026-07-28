@@ -77,13 +77,30 @@ export const appIconLib: any = {
   changeDetection: ChangeDetectionStrategy.Eager,
   template: `
     @if (lib() !== 'material') {
-      <i [class]="getIconClass()" [ngClass]="styleClass" [style]="styleCSS()" aria-hidden="true" [pTooltip]="tooltip()" [tooltipPosition]="tooltipPosition()"></i>
+      <i [class]="getIconClass()" class="app-inline-icon" [ngClass]="styleClass()" aria-hidden="true" [pTooltip]="tooltip()" [tooltipPosition]="tooltipPosition()"></i>
     }
     @if (lib() === 'material') {
-      <i [ngClass]="styleClass" class="icon-asset material-symbols-outlined" aria-hidden="true"
+      <i [ngClass]="styleClass()" class="app-inline-icon material-symbols-outlined" aria-hidden="true"
       [innerHTML]="getIconClass()" [pTooltip]="tooltip()" [tooltipPosition]="tooltipPosition()"></i>
     }
-  `
+  `,
+  styles: [`
+    :host {
+      display: inline-flex;
+      align-items: center;
+      vertical-align: middle;
+      line-height: 1;
+    }
+
+    .app-inline-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      vertical-align: middle;
+      line-height: 1;
+      font-size: 1.25em; /* follow surrounding text size */
+    }
+  `]
 })
 export class IconComponent implements OnInit {
   lib = input<string>('material');
@@ -93,7 +110,6 @@ export class IconComponent implements OnInit {
   fill = input<string>('currentColor');
   styleClass = input<any>('');
   svg = input<boolean>(false);
-  styleCSS = input<any>('');
   tooltip = input<string>('');
   tooltipPosition = input<'top' | 'bottom' | 'left' | 'right'>('right');
 
