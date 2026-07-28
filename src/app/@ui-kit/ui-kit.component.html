@@ -9,7 +9,7 @@
         <app-button [rounded]="true" class="me-2">Rounded</app-button>
         <app-button [icon]="'pi pi-check'" class="me-2"></app-button>
         <app-button [icon]="'pi pi-check'" [rounded]="true" [variant]="'outlined'" class="me-2"></app-button>
-        <app-button [icon]="'pi pi-check'" [rounded]="true"[text]="true"></app-button>
+        <app-button [icon]="'pi pi-check'" [rounded]="true" [text]="true"></app-button>
         <app-button [icon]="'pi pi-check'" [severity]="'success'" [rounded]="true" [text]="true"></app-button>
         <app-button [icon]="'pi pi-trash'" [severity]="'danger'" [rounded]="true" [text]="true"></app-button>
         <app-button class="me-2">
@@ -188,9 +188,11 @@
         </div>
         <div class="d-flex gap-2 flex-wrap">
             <app-button [severity]="'success'"
-                (clickAction)="toastAlert.success('Saved', 'Record updated successfully', 3000)">Show Success Toast</app-button>
+                (clickAction)="toastAlert.success('Saved', 'Record updated successfully', 3000)">Show Success
+                Toast</app-button>
             <app-button [severity]="'warn'"
-                (clickAction)="toastAlert.warn('Warning', 'Please review the form', 3000)">Show Warning Toast</app-button>
+                (clickAction)="toastAlert.warn('Warning', 'Please review the form', 3000)">Show Warning
+                Toast</app-button>
             <app-button [severity]="'danger'"
                 (clickAction)="toastAlert.error('Error', 'Something went wrong', 3000)">Show Error Toast</app-button>
         </div>
@@ -203,7 +205,37 @@
     </div>
 
     <div class="my-4">
+        <h3>Toolbar</h3>
+        <app-toolbar [styleClass]="'mb-3'">
+            <ng-template #start>
+                <app-button severity="success">Add New</app-button>
+                <app-button [icon]="'pi pi-plus'" [variant]="'outlined'" [severity]="'success'"></app-button>
+            </ng-template>
+
+            <ng-template #middle>
+                <app-input [placeholder]="'Search'" />
+            </ng-template>
+
+            <ng-template #end>
+                <div class="d-flex gap-2">
+                    <app-button [icon]="'pi pi-plus'" severity="secondary"></app-button>
+                    <app-button [icon]="'pi pi-pencil'" severity="secondary"></app-button>
+                </div>
+            </ng-template>
+        </app-toolbar>
+    </div>
+
+    <div class="my-4">
         <h3>Data Table (Sorting + Row Expansion + Actions)</h3>
+        <app-toolbar [styleClass]="'mb-3'">
+            <ng-template #start>
+                <app-button [icon]="'pi pi-plus'" [variant]="'outlined'" [severity]="'secondary'"></app-button>
+            </ng-template>
+
+            <ng-template #end>
+                <app-input [placeholder]="'Search'" />
+            </ng-template>
+        </app-toolbar>
         <app-data-table [caption]="'Employee Summary'" [columns]="employeeColumns" [value]="employeeData"
             [dataKey]="'id'" [expandableRows]="true" [sortMode]="'single'" [actions]="employeeActions"></app-data-table>
     </div>
