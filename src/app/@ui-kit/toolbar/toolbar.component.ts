@@ -1,16 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component, ChangeDetectionStrategy, contentChild, Directive, input, TemplateRef } from '@angular/core';
-import { ToolbarModule } from 'primeng/toolbar';
-
-@Directive({
-  selector: '[card-body]',
-  standalone: true
-})
+// @Directive({
+//   selector: '[card-body]',
+//   standalone: true
+// })
 export class ToolbarBodyDirective { }
 @Component({
   selector: 'app-toolbar',
   standalone: true,
-  imports: [CommonModule, ToolbarModule],
+  imports: [CommonModule],
   template: `
     <div class="card" [ngClass]="styleClass()" [ngStyle]="style()" style="padding: 0.5rem">
       <div class="card-body" [ngClass]="inBody() ? 'px-0 py-0' : ''">
@@ -43,8 +41,6 @@ export class ToolbarComponent {
   protected readonly startTpl = contentChild<TemplateRef<unknown>>('start');
   protected readonly middleTpl = contentChild<TemplateRef<unknown>>('middle');
   protected readonly endTpl = contentChild<TemplateRef<unknown>>('end');
-
-  lib = input<'bootstrap' | 'primeng' | 'material'>('bootstrap');
   styleClass = input<string>('');
   inBody = input<boolean>(true);
   style = input<Record<string, string>>({});
