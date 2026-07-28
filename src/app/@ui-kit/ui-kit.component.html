@@ -107,8 +107,24 @@
     </div>
 
     <div class="my-4">
-        <h3>Card</h3>
-        <app-card [style]="{ width: '100%' }" [styleClass]="'shadow-1'">
+        <h3>Card (Bootstrap)</h3>
+        <app-card [lib]="'bootstrap'">
+            <div card-header>
+                <h5 class="m-0">Wrapper Card Header</h5>
+            </div>
+
+            <div card-body>
+                Card body accepts any projected content, including forms, tables, and custom layouts.
+            </div>
+
+            <div card-footer>
+                <app-button [severity]="'secondary'">Cancel</app-button>
+                <app-button [severity]="'success'">Save</app-button>
+            </div>
+        </app-card>
+
+        <h3>Card (primeNG)</h3>
+        <app-card>
             <div card-header class="px-3 pt-3 pb-0">
                 <h5 class="m-0">Wrapper Card Header</h5>
             </div>

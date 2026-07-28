@@ -96,5 +96,6 @@ export class CardComponent {
   title = input<string>('');
   subheader = input<string>('');
   styleClass = input<string>('');
+  inBody = input<boolean>(true);
   style = input<Record<string, string>>({});
 }
