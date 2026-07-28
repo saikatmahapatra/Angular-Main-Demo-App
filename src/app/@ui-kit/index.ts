@@ -50,7 +50,6 @@ import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 import { Ripple } from "primeng/ripple";
 import { EditorModule } from 'primeng/editor';
 import { FluidModule } from "primeng/fluid";
-import { ToolbarModule } from 'primeng/toolbar';
 import { StyleClassModule } from 'primeng/styleclass';
 import { SelectModule } from 'primeng/select';
 
@@ -105,7 +104,6 @@ export const PRIME_NG_CORE = [
   InputGroupAddonModule,
   EditorModule,
   FluidModule,
-  ToolbarModule,
   StyleClassModule,
   SelectModule
 ];
