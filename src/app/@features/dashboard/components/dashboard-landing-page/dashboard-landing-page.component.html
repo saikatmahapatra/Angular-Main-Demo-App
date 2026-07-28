@@ -2,11 +2,11 @@
 <div class="row g-4">
     @for (stat of stats; track stat; let index = $index) {
     <div class="col-12 col-lg-6 col-xl-3">
-        <div class="card mb-0">
-            <div class="d-flex justify-content-between mb-4">
+        <app-card [style]="{ width: '100%' }" [styleClass]="'mb-0'">
+            <div card-body class="d-flex justify-content-between mb-4">
                 <div>
                     <span class="d-block fw-semibold mb-3">{{stat?.heading}}</span>
-                    <div class="fs-4 fw-semibold text-dark">{{stat?.count}}</div>
+                    <div class="fs-4 fw-semibold">{{stat?.count}}</div>
                 </div>
                 <div class="d-flex align-items-center justify-content-center bg-primary-subtle rounded"
                     style="width: 2.5rem; height: 2.5rem">
@@ -14,35 +14,39 @@
                         [styleClass]="'text-primary fs-4'"></app-icon>
                 </div>
             </div>
-            <span class="text-primary fw-semibold">{{stat?.count}}</span>
-            <span class="text-muted">some text</span>
-        </div>
+            <div card-footer class="d-flex gap-2">
+                <span class="text-primary fw-semibold">{{stat?.count}}</span>
+                <span class="text-muted">some text</span>
+            </div>
+        </app-card>
     </div>
     }
 
     <div class="col-12">
-        <div class="card mb-0">
-            <h6 class="mb-4">{{ 'home.updateHeader' | translate }}</h6>
-            @if (post.length > 0) {
-            <!-- <app-search-input (inputValue)="getSearchInputVal($event)" [resetInput]="resetSearchInput"
-                [placeHolderText]="'Search...'"></app-search-input> -->
-            @for (item of post; track item; let i = $index) {
-            <div class="mb-3">
-                <a class="link-primary text-decoration-none me-2" [routerLink]="['post-details', item.id]"
-                    [state]="{ newsPageNumber: currentPageIndex }" aria-label="{{item?.content_title}}"
-                    title="{{item?.content_title}}" role="link">
-                    {{item?.content_title}}
-                </a>
-                <span class="text-muted" [innerHTML]="getTimeStampInfo(item)"></span>
+        <app-card [style]="{ width: '100%' }" class="mb-0">
+            <div card-header class="px-3 pt-3 pb-0">
+                <h5 class="m-0">{{ 'home.updateHeader' | translate }}</h5>
             </div>
-            }
-            <app-pagination [itemPerPage]="itemPerPage" [first]="first" [totalRecords]="totalRecords"
-                [itemPerPageDropdown]="itemPerPageDropdown" [currentPageIndex]="currentPageIndex"
-                (handlePageChange)="paginate($event)"></app-pagination>
-            }
-            @if (post.length === 0) {
-            <p>{{ 'home.noLatestUpdates' | translate }}</p>
-            }
-        </div>
+            <div card-body>
+                @for (item of post; track item; let i = $index) {
+                <div class="mb-3">
+                    <a class="link-primary text-decoration-none me-2" [routerLink]="['post-details', item.id]"
+                        [state]="{ newsPageNumber: currentPageIndex }" aria-label="{{item?.content_title}}"
+                        title="{{item?.content_title}}" role="link">
+                        {{item?.content_title}}
+                    </a>
+                    <span class="text-muted" [innerHTML]="getTimeStampInfo(item)"></span>
+                </div>
+                }
+                @if (post.length === 0) {
+                <p>{{ 'home.noLatestUpdates' | translate }}</p>
+                }
+            </div>
+            <div card-footer class="d-flex gap-2 justify-content-center">
+                <app-pagination [itemPerPage]="itemPerPage" [first]="first" [totalRecords]="totalRecords"
+                    [itemPerPageDropdown]="itemPerPageDropdown" [currentPageIndex]="currentPageIndex"
+                    (handlePageChange)="paginate($event)"></app-pagination>
+            </div>
+        </app-card>
     </div>
 </div>
