@@ -4,18 +4,18 @@ import { FormsModule, ReactiveFormsModule, UntypedFormBuilder, Validators } from
 import { FormValidationService } from '@core/services/form-validation.service';
 import { MessageService } from 'primeng/api';
 import { SharedModule } from '@shared/shared.module';
-import { APP_UI_KIT } from '.';
-import { AppDataTableAction } from './data-table/data-table.component';
+import { APP_UI_KIT } from '..';
+import { AppDataTableAction } from '../data-table/data-table.component';
 
 @Component({
-  selector: 'app-ui-kit',
+  selector: 'app-ui-kit-demo',
   standalone: true,
   imports: [CommonModule, FormsModule, ReactiveFormsModule, SharedModule, APP_UI_KIT],
-  templateUrl: './ui-kit.component.html',
+  templateUrl: './ui-kit-demo.component.html',
   changeDetection: ChangeDetectionStrategy.Eager,
-  styleUrls: ['./ui-kit.component.scss']
+  styleUrls: ['./ui-kit-demo.component.scss']
 })
-export class UiKitComponent {
+export class UiKitDemoComponent {
   showModal = false;
 
   constructor(

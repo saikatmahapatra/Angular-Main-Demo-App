@@ -22,7 +22,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        loadComponent: () => import('./@ui-kit/ui-kit.component').then(m => m.UiKitComponent)
+        loadComponent: () => import('./@ui-kit/@ui-kit-demo/ui-kit-demo.component').then(m => m.UiKitDemoComponent)
       }
     ]
   },

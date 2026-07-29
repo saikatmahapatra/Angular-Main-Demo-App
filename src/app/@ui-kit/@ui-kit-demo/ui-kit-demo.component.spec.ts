@@ -2,23 +2,23 @@
 
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UiKitComponent } from './ui-kit.component';
+import { UiKitDemoComponent } from '../@ui-kit/ui-kit.component';
 
-describe('UiKitComponent', () => {
-  let component: UiKitComponent;
-  let fixture: ComponentFixture<UiKitComponent>;
+describe('UiKitDemoComponent', () => {
+  let component: UiKitDemoComponent;
+  let fixture: ComponentFixture<UiKitDemoComponent>;
 
   beforeEach(async () => {
     TestBed.configureTestingModule({
-      imports: [UiKitComponent]
+      imports: [UiKitDemoComponent]
     })
-      // Keep this suite focused on UiKitComponent class state and behavior.
-      .overrideComponent(UiKitComponent, {
+      // Keep this suite focused on UiKitDemoComponent class state and behavior.
+      .overrideComponent(UiKitDemoComponent, {
         set: { template: '' }
       })
       .compileComponents();
 
-    fixture = TestBed.createComponent(UiKitComponent);
+    fixture = TestBed.createComponent(UiKitDemoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

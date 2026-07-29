@@ -25,7 +25,7 @@ export class SidebarComponent implements OnInit {
         items: [
           { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] },
           { label: 'Analytics', icon: 'pi pi-fw pi-chart-bar', routerLink: ['/dashboard/my-analytics/emp/', this.loggedInUserId] },
-          { label: 'App Demo UI Kit', icon: 'pi pi-fw pi-list', routerLink: ['/uikit'] },
+          { label: 'UI Kit Demo (Dev manual)', icon: 'pi pi-fw pi-list', routerLink: ['/uikit'] },
         ]
       },
       {
