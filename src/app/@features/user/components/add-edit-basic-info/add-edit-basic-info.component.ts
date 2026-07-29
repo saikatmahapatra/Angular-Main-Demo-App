@@ -6,7 +6,6 @@ import { AlertService } from '@core/services/alert.service';
 import { ApiService } from '@core/services/api.service';
 import { CommonService } from '@core/services/common.service';
 import { FormValidationService } from '@core/services/form-validation.service';
-import { MessageService } from 'primeng/api';
 import { MyAppConfig } from 'src/app/app.config';
 @Component({
     selector: 'app-add-edit-basic-info',
@@ -35,7 +34,6 @@ export class AddEditBasicInfoComponent implements OnInit {
     private apiSvc: ApiService,
     private alertSvc: AlertService,
     private commonSvc: CommonService,
-    private messageService: MessageService,
     private router: Router) { 
       this.commonSvc.setTitle('Basic Info');
     }
@@ -93,13 +91,6 @@ export class AddEditBasicInfoComponent implements OnInit {
       }
     } else {
       this.validator.validateAllFormFields(this.myForm);
-      this.messageService.add({
-        severity: 'warn',
-        summary: 'Validation',
-        detail: 'Please review the highlighted fields',
-        life: 3000,
-        key: 'app-alert-toast'
-      });
     }
   }
 

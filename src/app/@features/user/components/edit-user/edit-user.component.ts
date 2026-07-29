@@ -7,7 +7,6 @@ import { AlertService } from '@core/services/alert.service';
 import { ApiService } from '@core/services/api.service';
 import { CommonService } from '@core/services/common.service';
 import { FormValidationService } from '@core/services/form-validation.service';
-import { MessageService } from 'primeng/api';
 import { MyAppConfig } from 'src/app/app.config';
 import { addressType, userStatus } from '@utils/const/data.array';
 
@@ -143,8 +142,7 @@ export class EditUserComponent {
     private router: Router,
     private fb: UntypedFormBuilder,
     private validator: FormValidationService,
-    private commonSvc: CommonService,
-    private messageService: MessageService
+    private commonSvc: CommonService
   ) {
     let today = new Date();
     this.minDateDob.setFullYear(today.getFullYear() - 100);
@@ -278,13 +276,6 @@ export class EditUserComponent {
     } else {
       this.loading = false;
       this.validator.validateAllFormFields(this.userBasicForm);
-      this.messageService.add({
-        severity: 'warn',
-        summary: 'Validation',
-        detail: 'Please review the highlighted fields',
-        life: 3000,
-        key: 'app-alert-toast'
-      });
     }
   }
 
@@ -308,13 +299,6 @@ export class EditUserComponent {
     } else {
       this.loading = false;
       this.validator.validateAllFormFields(this.userStatusForm);
-      this.messageService.add({
-        severity: 'warn',
-        summary: 'Validation',
-        detail: 'Please review the highlighted fields',
-        life: 3000,
-        key: 'app-alert-toast'
-      });
     }
   }
 
@@ -339,13 +323,6 @@ export class EditUserComponent {
     } else {
       this.loading = false;
       this.validator.validateAllFormFields(this.leaveBalanceForm);
-      this.messageService.add({
-        severity: 'warn',
-        summary: 'Validation',
-        detail: 'Please review the highlighted fields',
-        life: 3000,
-        key: 'app-alert-toast'
-      });
     }
   }
 

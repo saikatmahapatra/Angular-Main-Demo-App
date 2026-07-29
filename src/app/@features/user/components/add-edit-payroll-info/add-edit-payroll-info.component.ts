@@ -6,7 +6,6 @@ import { AlertService } from '@core/services/alert.service';
 import { ApiService } from '@core/services/api.service';
 import { CommonService } from '@core/services/common.service';
 import { FormValidationService } from '@core/services/form-validation.service';
-import { MessageService } from 'primeng/api';
 import { MyAppConfig } from 'src/app/app.config';
 @Component({
     selector: 'app-add-edit-payroll-info',
@@ -39,7 +38,6 @@ export class AddEditPayrollInfoComponent implements OnInit {
     private validator: FormValidationService,
     private apiSvc: ApiService,
     private alertSvc: AlertService,
-    private messageService: MessageService,
     private router: Router,
     private activatedRoute: ActivatedRoute) { 
     }
@@ -100,13 +98,6 @@ export class AddEditPayrollInfoComponent implements OnInit {
     else {
       this.loading = false;
       this.validator.validateAllFormFields(this.myForm);
-      this.messageService.add({
-        severity: 'warn',
-        summary: 'Validation',
-        detail: 'Please review the highlighted fields',
-        life: 3000,
-        key: 'app-alert-toast'
-      });
     }
   }
 
