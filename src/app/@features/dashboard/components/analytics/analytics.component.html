@@ -128,27 +128,16 @@
           <input type="hidden" formControlName="entity" readonly>
           <input type="hidden" formControlName="action" readonly>
           <div class="col-12">
-            <label class="visually-hidden" for="duration">Duration</label>
-            <select formControlName="duration" class="form-select" id="duration">
-              <option value="today">Today</option>
-              <option value="last1week">Past 1 week</option>
-              <option value="last2weeks">Past 2 weeks</option>
-              <option value="currentMonth">Current month</option>
-              <option value="last1Month">Past 1 month</option>
-              <option value="last3months">Past 3 months</option>
-              <option value="last6months">Past 6 months</option>
-              <option value="last12months">Past 12 months</option>
-              <option value="customDateRange">Specific Period</option>
-              <option value="all">All Duration</option>
-            </select>
+            <app-select [name]="'duration'" [inputId]="'duration'" [options]="durationOptions"
+              [optionLabel]="'name'" [optionValue]="'id'" [showClear]="false"
+              formControlName="duration"></app-select>
           </div>
           @if (myForm.controls['duration'].value == 'customDateRange' ) {
           <div class="col-12">
-            <label class="visually-hidden" for="dateRange">Date Range</label>
-            <p-datepicker placeholder="Select date range" dateFormat="dd/mm/yy" formControlName="dateRange"
-              selectionMode="range" [readonlyInput]="true" inputId="range" styleClass="w-100" [showButtonBar]="false"
-              [showIcon]="true" appendTo="body" [panelStyleClass]="'datetimepicker'" [minDate]="minDate"
-              [maxDate]="maxDate" [(ngModel)]="rangeDates"></p-datepicker>
+            <app-date-picker [name]="'dateRange'" [inputId]="'range'" [placeholder]="'Select date range'"
+              [dateFormat]="'dd/mm/yy'" [selectionMode]="'range'" [readonlyInput]="true" [showButtonBar]="false"
+              [showIcon]="true" [appendTo]="'body'" [panelStyleClass]="'datetimepicker'" [minDate]="minDate"
+              [maxDate]="maxDate" formControlName="dateRange"></app-date-picker>
           </div>
           }
           <div class="col-12">

@@ -17,6 +17,10 @@ import { MyAppConfig } from 'src/app/app.config';
 export class SiteMetaComponent {
   dataRow: any;
   metaTypeDropdown: any = ['city','state','country','employment_type','leave_type','family_relationship','asset_type','company','department','designation','degree','institute','qualification','specialization','cms_type','event_type','security_question','site_config','workspace_solution','work_location','work_zone','bank','leave_reason','project_type'];
+  metaTypeOptions: Array<{ id: string; name: string }> = this.metaTypeDropdown.map((item: string) => ({
+    id: item,
+    name: item
+  }));
   selectedMetaType = '';
   // Pagination Config
   currentPageIndex: number = 0;

@@ -13,41 +13,32 @@
               <input type="hidden" formControlName="id">
               <input type="hidden" formControlName="action">
               <div class="mb-3">
-                <label class="required" for="projectName">Project Name</label>
-                <input type="text" class="form-control" id="projectName" formControlName="projectName">
+                <app-input [label]="'Project Name'" [type]="'text'" [name]="'projectName'" [inputId]="'projectName'"
+                  formControlName="projectName"></app-input>
                 <app-validation-error [control]="myForm.controls['projectName']"></app-validation-error>
               </div>
               <div class="mb-3">
-                <label class="required" for="category">Project Category</label>
-                <!-- <input type="text" class="form-control" id="category" maxlength="16"
-                formControlName="category"> -->
-                <select class="form-control" formControlName="category" (change)="setProjectCode()">
-                  <option value="">-</option>
-                  @for (cat of categoryList; track cat) {
-                    <option [value]="cat.id">{{cat.name}}</option>
-                  }
-                </select>
+                <app-select [label]="'Project Category'" [name]="'category'" [inputId]="'category'"
+                  [placeholder]="'-'" [options]="categoryList" [optionLabel]="'name'" [optionValue]="'id'"
+                  [showClear]="false" formControlName="category"></app-select>
                 <app-validation-error [control]="myForm.controls['category']"></app-validation-error>
               </div>
               <div class="mb-3">
-                <label class="required" for="commencementYear">Commencement Year</label>
-                <input type="number" min="2014" max="2099" step="1" class="form-control"
-                  id="commencementYear" maxlength="4" formControlName="commencementYear"
-                  (blur)="setProjectCode()">
+                <app-input [label]="'Commencement Year'" [type]="'number'" [name]="'commencementYear'"
+                  [inputId]="'commencementYear'" [min]="2014" [max]="2099" [step]="1"
+                  formControlName="commencementYear"></app-input>
                 <app-validation-error
                 [control]="myForm.controls['commencementYear']"></app-validation-error>
               </div>
               <div class="mb-3">
-                <label class="required" for="refNumber">Reference Number</label>
-                <input type="text" class="form-control" id="refNumber" maxlength="4"
-                  formControlName="refNumber" (blur)="setProjectCode()">
+                <app-input [label]="'Reference Number'" [type]="'text'" [name]="'refNumber'" [inputId]="'refNumber'"
+                  [maxLength]="4" formControlName="refNumber"></app-input>
                 <app-validation-error [control]="myForm.controls['refNumber']"></app-validation-error>
               </div>
 
               <div class="mb-3">
-                <label class="required" for="projectCode">Project Code</label>
-                <input type="text" class="form-control" id="projectCode" maxlength="16"
-                  formControlName="projectCode" [readOnly]="!editProjectCode">
+                <app-input [label]="'Project Code'" [type]="'text'" [name]="'projectCode'" [inputId]="'projectCode'"
+                  [maxLength]="16" [readonly]="!editProjectCode" formControlName="projectCode"></app-input>
                 @if (!editProjectCode) {
                   <div class="small">This code is auto generated based on your input. Do you want to edit it? <a class="btn btn-sm btn-link py-0" (click)="editProjectCode = true">Edit code</a></div>
                 }
@@ -55,23 +46,20 @@
               </div>
 
               <div class="mb-3">
-                <label class="required" for="startDate">Start Date</label>
-                <p-datepicker dateFormat="dd/mm/yy" formControlName="startDate" [readonlyInput]="true"
-                  inputId="startDate" styleClass="w-100" [showButtonBar]="false" [showIcon]="true"
-                appendTo="body"></p-datepicker>
+                <app-date-picker [label]="'Start Date'" [name]="'startDate'" [inputId]="'startDate'"
+                  [dateFormat]="'dd/mm/yy'" [readonlyInput]="true" [showButtonBar]="false" [showIcon]="true"
+                  [appendTo]="'body'" formControlName="startDate"></app-date-picker>
                 <app-validation-error [control]="myForm.controls['startDate']"></app-validation-error>
               </div>
               <div class="mb-3">
-                <label class="" for="endDate">End Date</label>
-                <p-datepicker dateFormat="dd/mm/yy" formControlName="endDate" [readonlyInput]="true"
-                  inputId="endDate" styleClass="w-100" [showButtonBar]="false" [showIcon]="true"
-                appendTo="body"></p-datepicker>
+                <app-date-picker [label]="'End Date'" [name]="'endDate'" [inputId]="'endDate'"
+                  [dateFormat]="'dd/mm/yy'" [readonlyInput]="true" [showButtonBar]="false" [showIcon]="true"
+                  [appendTo]="'body'" formControlName="endDate"></app-date-picker>
                 <app-validation-error [control]="myForm.controls['endDate']"></app-validation-error>
               </div>
               <div class="mb-3">
-                <label class="optional" for="description">Description</label>
-                <textarea class="form-control" id="description" formControlName="description"
-                maxlength="150"></textarea>
+                <app-text-area [label]="'Description'" [name]="'description'" [textareaId]="'description'"
+                  [maxLength]="150" formControlName="description"></app-text-area>
                 <app-validation-error [control]="myForm.controls['description']"></app-validation-error>
               </div>
 

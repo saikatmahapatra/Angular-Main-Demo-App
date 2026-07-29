@@ -11,15 +11,15 @@
           <div class="row">
             <div class="col-md-6">
               <div class="mb-3">
-                <label class="required d-block" for="cal">Select Dates</label>
-                <p-datepicker styleClass='w-100' dateFormat="dd/mm/yy" [inline]="true" selectionMode="multiple"
-                  [showWeek]="false" [minDate]="minDate" [maxDate]="maxDate" formControlName="timeSheetDates"
-                  [maxDateCount]="maxDateCount" (onMonthChange)="monthYearChange($event)"
-                  (onYearChange)="monthYearChange($event)">
+                <app-date-picker [label]="'Select Dates'" [name]="'timeSheetDates'" [inputId]="'cal'"
+                  [styleClass]="'w-100'" [dateFormat]="'dd/mm/yy'" [inline]="true" [selectionMode]="'multiple'"
+                  [showWeek]="false" [minDate]="minDate" [maxDate]="maxDate" [maxDateCount]="maxDateCount"
+                  (onMonthChange)="monthYearChange($event)" (onYearChange)="monthYearChange($event)"
+                  formControlName="timeSheetDates">
                   <ng-template pTemplate="date" let-date>
                     <span [ngClass]="getCSSClass(date)">{{date.day}}</span>
                   </ng-template>
-                </p-datepicker>
+                </app-date-picker>
                 @if ((myForm.controls['timeSheetDates'].touched || submitted ) && myForm.controls['timeSheetDates'].errors) {
                   <div class="text-sm error-message"
                     >
@@ -44,38 +44,29 @@
           </div>
           <div class="col-md-6">
             <div class="mb-3">
-              <label class="required" for="project">Project</label>
-              <select class="form-select" id="project" formControlName="project">
-                <option value="">Select</option>
-                @for (project of projectList; track project) {
-                  <option value="{{project.id}}">{{project.name}}</option>
-                }
-              </select>
+              <app-select [label]="'Project'" [name]="'project'" [inputId]="'project'" [placeholder]="'Select'"
+                [options]="projectList" [optionLabel]="'name'" [optionValue]="'id'" [showClear]="false"
+                formControlName="project"></app-select>
               <app-validation-error [control]="myForm.controls['project']"></app-validation-error>
             </div>
 
             <div class="mb-3">
-              <label class="required" for="task">Task</label>
-              <select class="form-select" id="task" formControlName="task">
-                <option value="">Select</option>
-                @for (task of taskList; track task) {
-                  <option value="{{task.id}}">{{task.name}}</option>
-                }
-              </select>
+              <app-select [label]="'Task'" [name]="'task'" [inputId]="'task'" [placeholder]="'Select'"
+                [options]="taskList" [optionLabel]="'name'" [optionValue]="'id'" [showClear]="false"
+                formControlName="task"></app-select>
               <app-validation-error [control]="myForm.controls['task']"></app-validation-error>
             </div>
 
             <div class="mb-3">
-              <label class="required" for="hours">Hours</label>
-              <input type="number" min="0.25" max="9" step="0.5" class="form-control" id="hours"
-                formControlName="hours">
+              <app-input [label]="'Hours'" [type]="'number'" [name]="'hours'" [inputId]="'hours'" [min]="0.25"
+                [max]="9" [step]="0.5" formControlName="hours"></app-input>
               <app-validation-error [control]="myForm.controls['hours']"></app-validation-error>
             </div>
             <div class="mb-3">
-              <label class="" for="description">Task Description</label>
-              <textarea class="form-control" id="description" formControlName="description" maxlength="150"
-              placeholder="Briefly describe in 150 characters (if necessary)" [(ngModel)]="taskDescr"></textarea>
-              <div class="small text-muted">{{(150-taskDescr.length)}} characters left</div>
+              <app-text-area [label]="'Task Description'" [name]="'description'" [textareaId]="'description'"
+                [maxLength]="150" [placeholder]="'Briefly describe in 150 characters (if necessary)'"
+                formControlName="description"></app-text-area>
+              <div class="small text-muted">{{myForm.controls['description'].value ? (150 - myForm.controls['description'].value.length) : 150}} characters left</div>
               <app-validation-error [control]="myForm.controls['description']"></app-validation-error>
             </div>
 

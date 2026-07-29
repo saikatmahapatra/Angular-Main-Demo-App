@@ -17,25 +17,22 @@
           <input type="hidden" formControlName="action">
           <div class="row">
             <div class="col-md-3 mb-3">
-              <label for="range">Date Range</label>
-              <p-datepicker dateFormat="dd/mm/yy" formControlName="dateRange" [(ngModel)]="rangeDates"
-                selectionMode="range" [readonlyInput]="true" inputId="range" styleClass="w-100"
-                [maxDate]="maxDate" [showButtonBar]="false" [showIcon]="true" appendTo="body"
-              [panelStyleClass]="'datetimepicker'"></p-datepicker>
+              <app-date-picker [label]="'Date Range'" [name]="'dateRange'" [inputId]="'range'"
+                [dateFormat]="'dd/mm/yy'" [selectionMode]="'range'" [readonlyInput]="true"
+                [maxDate]="maxDate" [showButtonBar]="false" [showIcon]="true" [appendTo]="'body'"
+                [panelStyleClass]="'datetimepicker'" formControlName="dateRange"></app-date-picker>
               <app-validation-error [control]="myForm.controls['dateRange']"></app-validation-error>
             </div>
             <div class="col-md-3 mb-3">
-              <label>Employee</label>
-              <p-multiSelect formControlName="employee" styleClass="w-100" [options]="userList"
-                [(ngModel)]="selectedEmployees" defaultLabel="Select a Employees" optionLabel="name"
-              optionValue="id" display="chip" [selectionLimit]="5" [showClear]="true"></p-multiSelect>
+              <app-select [label]="'Employee'" [name]="'employee'" [inputId]="'employee'" [multiple]="true"
+                [placeholder]="'Select an employee'" [options]="userList" [optionLabel]="'name'" [optionValue]="'id'"
+                [selectionLimit]="5" [showClear]="true" formControlName="employee"></app-select>
               <app-validation-error [control]="myForm.controls['employee']"></app-validation-error>
             </div>
             <div class="col-md-3 mb-3">
-              <label>Projects</label>
-              <p-multiSelect formControlName="projects" styleClass="w-100" [options]="projectList"
-                [(ngModel)]="selectedProjects" defaultLabel="Select a Project" optionLabel="name"
-              optionValue="id" display="chip" [selectionLimit]="5" [showClear]="true"></p-multiSelect>
+              <app-select [label]="'Projects'" [name]="'projects'" [inputId]="'projects'" [multiple]="true"
+                [placeholder]="'Select a project'" [options]="projectList" [optionLabel]="'name'" [optionValue]="'id'"
+                [selectionLimit]="5" [showClear]="true" formControlName="projects"></app-select>
               <app-validation-error [control]="myForm.controls['projects']"></app-validation-error>
             </div>
             <div class="col-auto">

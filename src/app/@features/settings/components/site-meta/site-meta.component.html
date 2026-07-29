@@ -11,19 +11,14 @@
           <div class="row">
 
             <div class="col-md-3 mb-3">
-              <label class="required d-block" for="metaType">Meta Type</label>
-              <select class="form-select" id="metaType" formControlName="metaType">
-                <option value="">-</option>
-                <!-- <option value="-1">CREATE NEW</option> -->
-                @for (item of metaTypeDropdown; track item) {
-                  <option [value]="item">{{item}}</option>
-                }
-              </select>
+              <app-select [label]="'Meta Type'" [name]="'metaType'" [inputId]="'metaType'" [placeholder]="'-'"
+                [options]="metaTypeOptions" [optionLabel]="'name'" [optionValue]="'id'" [showClear]="false"
+                formControlName="metaType"></app-select>
 
               @if (myForm.value['metaType'] === '-1') {
                 <div class="my-3">
-                  <input type="text" class="form-control" id="newMetaType" formControlName="newMetaType"
-                    maxlength="30" placeholder="New meta type">
+                  <app-input [type]="'text'" [name]="'newMetaType'" [inputId]="'newMetaType'"
+                    [maxLength]="30" [placeholder]="'New meta type'" formControlName="newMetaType"></app-input>
                   <div class="small"><strong>Note:</strong> Make sure you are not adding duplicate entry.
                 </div>
                 <app-validation-error [control]="myForm.controls['newMetaType']"></app-validation-error>
@@ -34,16 +29,14 @@
           </div>
 
           <div class="col-md-3 mb-3">
-            <label class="required d-block" for="metaValue">Meta Value</label>
-            <input type="text" id="metaValue" class="form-control" formControlName="metaValue"
-              placeholder="meta value" maxlength="128">
+            <app-input [label]="'Meta Value'" [type]="'text'" [name]="'metaValue'" [inputId]="'metaValue'"
+              [placeholder]="'meta value'" [maxLength]="128" formControlName="metaValue"></app-input>
             <app-validation-error [control]="myForm.controls['metaValue']"></app-validation-error>
           </div>
 
           <div class="col-md-3 mb-3">
-            <label class="d-block" for="metaCode">Meta Code</label>
-            <input type="text" id="metaCode" class="form-control" formControlName="metaCode"
-              placeholder="meta code" maxlength="24" style="text-transform: uppercase;">
+            <app-input [label]="'Meta Code'" [type]="'text'" [name]="'metaCode'" [inputId]="'metaCode'"
+              [placeholder]="'meta code'" [maxLength]="24" formControlName="metaCode"></app-input>
             <app-validation-error [control]="myForm.controls['metaCode']"></app-validation-error>
           </div>
 
@@ -78,13 +71,9 @@
     <div card-body>
       <div class="row mb-3">
         <div class="col-auto">
-          <select class="form-select" id="metaType" (change)="metaKeyChange()"
-            [(ngModel)]="selectedMetaType">
-            <option value="">all</option>
-            @for (item of metaTypeDropdown; track item) {
-              <option [value]="item">{{item}}</option>
-            }
-          </select>
+          <app-select [name]="'selectedMetaType'" [inputId]="'selectedMetaType'" [options]="metaTypeOptions"
+            [(ngModel)]="selectedMetaType" [placeholder]="'all'" [optionLabel]="'name'" [optionValue]="'id'"
+            (ngModelChange)="metaKeyChange()"></app-select>
         </div>
         @if (mode === 'update') {
           <div class="col-auto">

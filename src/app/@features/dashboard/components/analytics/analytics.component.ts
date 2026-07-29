@@ -62,6 +62,19 @@ export class AnalyticsComponent implements OnInit {
     dateRange: ['']
   });
 
+  durationOptions = [
+    { id: 'today', name: 'Today' },
+    { id: 'last1week', name: 'Past 1 week' },
+    { id: 'last2weeks', name: 'Past 2 weeks' },
+    { id: 'currentMonth', name: 'Current month' },
+    { id: 'last1Month', name: 'Past 1 month' },
+    { id: 'last3months', name: 'Past 3 months' },
+    { id: 'last6months', name: 'Past 6 months' },
+    { id: 'last12months', name: 'Past 12 months' },
+    { id: 'customDateRange', name: 'Specific Period' },
+    { id: 'all', name: 'All Duration' }
+  ];
+
   constructor(
     private fb: FormBuilder,
     private commonSvc: CommonService,

@@ -14,24 +14,17 @@
 
           <div class="row mb-3">
             <div class="col-md-4 mb-3">
-              <label class="required" for="contentCategory">Post Type</label>
-              <select class="form-select" id="contentCategory" formControlName="contentCategory">
-                <option value="">Select</option>
-                @for (data of contentCategoryList; track data; let i = $index) {
-                  <option value="{{data.id}}">
-                    {{data.name}}
-                  </option>
-                }
-              </select>
+              <app-select [label]="'Post Type'" [name]="'contentCategory'" [inputId]="'contentCategory'"
+                [placeholder]="'Select'" [options]="contentCategoryList" [optionLabel]="'name'" [optionValue]="'id'"
+                [showClear]="false" formControlName="contentCategory"></app-select>
               <app-validation-error [control]="myForm.controls['contentCategory']"></app-validation-error>
             </div>
 
             @if (!showEditor) {
               <div class="col-md-4 mb-3">
-                <label class="required d-block" for="contentDescription">Holiday Date</label>
-                <p-datepicker dateFormat="dd/mm/yy" styleClass="w-100" formControlName="contentDescription"
-                  [readonlyInput]="true" inputId="contentDescription" [showButtonBar]="false"
-                [showIcon]="true"></p-datepicker>
+                <app-date-picker [label]="'Holiday Date'" [name]="'contentDescription'" [inputId]="'contentDescription'"
+                  [dateFormat]="'dd/mm/yy'" [readonlyInput]="true" [showButtonBar]="false" [showIcon]="true"
+                  formControlName="contentDescription"></app-date-picker>
                 <app-validation-error
                 [control]="myForm.controls['contentDescription']"></app-validation-error>
               </div>
@@ -44,8 +37,8 @@
               @if (!showEditor) {
                 <label class="required" for="contentHeadline">Occasion</label>
               }
-              <input type="text" class="form-control" id="contentHeadline"
-                formControlName="contentHeadline" maxlength="180">
+              <app-input [type]="'text'" [name]="'contentHeadline'" [inputId]="'contentHeadline'"
+                [maxLength]="180" formControlName="contentHeadline"></app-input>
               <app-validation-error [control]="myForm.controls['contentHeadline']"></app-validation-error>
             </div>
           </div>

@@ -214,9 +214,11 @@
                 >
                 <div class="mb-3">
                   <div class="input-group">
-                    <input type="text" [(ngModel)]="L1WorkflowComments" class="form-control"
-                      placeholder="comments (optional, if any)" aria-label="Comments"
-                      aria-describedby="erase-comments1" maxlength="40">
+                    <div class="flex-grow-1">
+                      <app-input [type]="'text'" [name]="'L1WorkflowComments'" [inputId]="'L1WorkflowComments'"
+                        [(ngModel)]="L1WorkflowComments" [placeholder]="'comments (optional, if any)'"
+                        [ariaLabel]="'Comments'" [maxLength]="40"></app-input>
+                    </div>
                     <button (click)="removeComments('L1')" class="input-group-text"
                       id="erase-comments1">
                       <app-icon [name]="'close'"></app-icon>
@@ -289,9 +291,11 @@
                     >
                     <div class="mb-3">
                       <div class="input-group">
-                        <input type="text" [(ngModel)]="L2WorkflowComments" class="form-control"
-                          placeholder="comments (optional, if any)" aria-label="Comments"
-                          aria-describedby="erase-comments2" maxlength="40">
+                        <div class="flex-grow-1">
+                          <app-input [type]="'text'" [name]="'L2WorkflowComments'" [inputId]="'L2WorkflowComments'"
+                            [(ngModel)]="L2WorkflowComments" [placeholder]="'comments (optional, if any)'"
+                            [ariaLabel]="'Comments'" [maxLength]="40"></app-input>
+                        </div>
                         <button (click)="removeComments('L2')" class="input-group-text"
                           id="erase-comments2">
                           <app-icon [name]="'close'"></app-icon>

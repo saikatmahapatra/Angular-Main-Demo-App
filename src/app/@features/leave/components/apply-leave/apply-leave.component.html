@@ -64,42 +64,29 @@
     <form [formGroup]="myForm" class="form app-form" (ngSubmit)="onSubmit()">
       <input type="hidden" value="applyLeave" formControlName="action">
       <div class="mb-3">
-        <label class="required" for="fromToDate">Leave Date(s)</label>
-        <p-datepicker dateFormat="dd/mm/yy" formControlName="fromToDate" [(ngModel)]="rangeDates"
-          selectionMode="range" [readonlyInput]="true" inputId="range" styleClass="w-100" [maxDate]="maxDate"
-          [showButtonBar]="false" [showIcon]="true" appendTo="body"
-        [panelStyleClass]="'datetimepicker'"></p-datepicker>
+        <app-date-picker [label]="'Leave Date(s)'" [name]="'fromToDate'" [inputId]="'range'"
+          [dateFormat]="'dd/mm/yy'" [selectionMode]="'range'" [readonlyInput]="true" [maxDate]="maxDate"
+          [showButtonBar]="false" [showIcon]="true" [appendTo]="'body'" [panelStyleClass]="'datetimepicker'"
+          formControlName="fromToDate"></app-date-picker>
         <app-validation-error [control]="myForm.controls['fromToDate']"></app-validation-error>
         <div class="small">Note: You can select a range of dates from the date picker</div>
       </div>
       <div class="mb-3">
-        <label class="required" for="leaveType">Leave Type</label>
-        <select class="form-select" id="leaveType" formControlName="leaveType">
-          <option value="">Select</option>
-          @for (data of leaveType; track data) {
-            <option [value]="$safeNavigationMigration(data?.val)" [innerHTML]="data.text"></option>
-          }
-        </select>
+        <app-select [label]="'Leave Type'" [name]="'leaveType'" [inputId]="'leaveType'" [placeholder]="'Select'"
+          [options]="leaveType" [optionLabel]="'text'" [optionValue]="'val'" [showClear]="false"
+          formControlName="leaveType"></app-select>
         <app-validation-error [control]="myForm.controls['leaveType']"></app-validation-error>
       </div>
       <div class="mb-3">
-        <label class="required" for="leaveSlot">Leave Slot</label>
-        <select class="form-select" id="leaveSlot" formControlName="leaveSlot">
-          <option value="">Select</option>
-          @for (data of leaveSlot; track data) {
-            <option [value]="$safeNavigationMigration(data?.val)" [innerHTML]="data.text"></option>
-          }
-        </select>
+        <app-select [label]="'Leave Slot'" [name]="'leaveSlot'" [inputId]="'leaveSlot'" [placeholder]="'Select'"
+          [options]="leaveSlot" [optionLabel]="'text'" [optionValue]="'val'" [showClear]="false"
+          formControlName="leaveSlot"></app-select>
         <app-validation-error [control]="myForm.controls['leaveSlot']"></app-validation-error>
       </div>
       <div class="mb-3">
-        <label class="required" for="leaveReasonId">Select Leave Reason</label>
-        <select class="form-select" id="leaveReasonId" formControlName="leaveReasonId">
-          <option value="">Select</option>
-          @for (data of leaveReasonList; track data) {
-            <option [value]="$safeNavigationMigration(data?.id)" [innerHTML]="data.name"></option>
-          }
-        </select>
+        <app-select [label]="'Select Leave Reason'" [name]="'leaveReasonId'" [inputId]="'leaveReasonId'"
+          [placeholder]="'Select'" [options]="leaveReasonList" [optionLabel]="'name'" [optionValue]="'id'"
+          [showClear]="false" formControlName="leaveReasonId"></app-select>
         <app-validation-error [control]="myForm.controls['leaveReasonId']"></app-validation-error>
       </div>
       <!-- <div class="mb-3">

@@ -22,18 +22,14 @@
             <input type="hidden" value="manage" formControlName="pageName">
             <div class="row">
               <div class="col-md-4 mb-3">
-                <input type="text" class="form-control" formControlName="empInfo"
-                  placeholder="Emp Name or Email">
+                <app-input [type]="'text'" [name]="'empInfo'" [inputId]="'empInfo'"
+                  [placeholder]="'Emp Name or Email'" formControlName="empInfo"></app-input>
                 <app-validation-error [control]="searchForm.controls['empInfo']"></app-validation-error>
               </div>
               <div class="col-md-4 mb-3">
-                <select class="form-select" formControlName="leaveStatus">
-                  <option value="">All Status</option>
-                  @for (s of leaveStatus; track s) {
-                    <option [value]="s.value" [innerHTML]="s.text">
-                    </option>
-                  }
-                </select>
+                <app-select [name]="'leaveStatus'" [inputId]="'leaveStatus'" [options]="leaveStatus"
+                  [placeholder]="'All Status'" [optionLabel]="'text'" [optionValue]="'value'"
+                  formControlName="leaveStatus"></app-select>
                 <app-validation-error [control]="searchForm.controls['leaveStatus']"></app-validation-error>
               </div>
               <div class="col-md-4">

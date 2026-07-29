@@ -17,7 +17,7 @@ export class ViewHolidaysComponent implements OnInit {
   endYear: number = new Date().getFullYear() + 1;
   dataRow: any;
   selectedYear: number = new Date().getFullYear();
-  yearList: any = [];
+  yearList: Array<{ id: number; name: number }> = [];
   // Pagination Config
   currentPageIndex: number = 0;
   first: number = 0;
@@ -41,7 +41,7 @@ export class ViewHolidaysComponent implements OnInit {
 
   ngOnInit(): void {
     for(let y = this.startYear; y <= this.endYear; y++) {
-      this.yearList.push(y);
+      this.yearList.push({ id: y, name: y });
     }
     this.getHolidays();
   }

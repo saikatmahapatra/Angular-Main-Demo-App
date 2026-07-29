@@ -13,8 +13,8 @@
               <input type="hidden" formControlName="id">
               <input type="hidden" formControlName="action">
               <div class="mb-3">
-                <label class="required" for="taskName">Task Name</label>
-                <input type="text" class="form-control" id="taskName" formControlName="taskName">
+                <app-input [label]="'Task Name'" [type]="'text'" [name]="'taskName'" [inputId]="'taskName'"
+                  formControlName="taskName"></app-input>
                 <app-validation-error [control]="myForm.controls['taskName']"></app-validation-error>
               </div>
 

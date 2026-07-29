@@ -56,6 +56,10 @@ export class AddEditProjectComponent implements OnInit {
 
   ngOnInit(): void {
     this.getFormData();
+    this.myForm.controls['category'].valueChanges.subscribe(() => this.setProjectCode());
+    this.myForm.controls['commencementYear'].valueChanges.subscribe(() => this.setProjectCode());
+    this.myForm.controls['refNumber'].valueChanges.subscribe(() => this.setProjectCode());
+
     if (this.router.url.indexOf('edit-project') != -1) {
       this.isAdd = false;
       this.title = 'Edit';

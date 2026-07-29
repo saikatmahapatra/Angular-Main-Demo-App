@@ -6,9 +6,9 @@
       <div card-body>
         <div class="row mb-2">
           <div class="col-auto mb-3">
-            <p-select styleClass="" [options]="contentCategoryList" [(ngModel)]="postType"
-              placeholder="Filter by a Type" optionLabel="name" optionValue="id"
-            [showClear]="true" (onChange)="postTypeChange()"></p-select>
+            <app-select [name]="'postType'" [inputId]="'postType'" [options]="contentCategoryList"
+              [(ngModel)]="postType" [placeholder]="'Filter by a Type'" [optionLabel]="'name'"
+              [optionValue]="'id'" [showClear]="true" (ngModelChange)="postTypeChange()"></app-select>
           </div>
           <div class="col-auto">
             <a [routerLink]="['/cms/add']" class="btn btn-success me-2">

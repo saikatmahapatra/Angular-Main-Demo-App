@@ -10,25 +10,20 @@
           <input type="hidden" formControlName="action">
           <div class="row">
             <div class="col-md-3 mb-3">
-              <!-- <label class="required d-block" for="date">Holiday</label> -->
-              <p-datepicker dateFormat="dd/mm/yy" styleClass="w-100" formControlName="date"
-                [readonlyInput]="true" inputId="date" [showButtonBar]="false" [showIcon]="true"
-              placeholder="Holiday Date"></p-datepicker>
+              <app-date-picker [name]="'date'" [inputId]="'date'" [dateFormat]="'dd/mm/yy'"
+                [readonlyInput]="true" [showButtonBar]="false" [showIcon]="true"
+                [placeholder]="'Holiday Date'" formControlName="date"></app-date-picker>
               <app-validation-error [control]="myForm.controls['date']"></app-validation-error>
             </div>
             <div class="col-md-6 mb-3">
-              <!-- <label class="required d-block" for="occasion">Occasion</label> -->
-              <input type="text" id="occasion" class="form-control" formControlName="occasion"
-                placeholder="Occasion(s)">
+              <app-input [type]="'text'" [name]="'occasion'" [inputId]="'occasion'" [placeholder]="'Occasion(s)'"
+                formControlName="occasion"></app-input>
               <app-validation-error [control]="myForm.controls['occasion']"></app-validation-error>
             </div>
             <div class="col-md-3 mb-3">
-              <!-- <label class="required d-block" for="type">Holiday</label> -->
-              <select class="form-select" id="type" formControlName="type">
-                <option value="">Type</option>
-                <option value="C">Mandatory</option>
-                <option value="O">Optional</option>
-              </select>
+              <app-select [name]="'type'" [inputId]="'type'" [placeholder]="'Type'" [options]="holidayTypeList"
+                [optionLabel]="'name'" [optionValue]="'id'" [showClear]="false"
+                formControlName="type"></app-select>
               <app-validation-error [control]="myForm.controls['type']"></app-validation-error>
             </div>
             <div class="col-auto align-center">
@@ -48,8 +43,9 @@
       <div card-body>
         <div class="row mb-3">
           <div class="col-auto">
-            <p-select styleClass="" [options]="yearList" [(ngModel)]="selectedYear" placeholder="Year"
-            [showClear]="false" (onChange)="yearChange()"></p-select>
+            <app-select [name]="'selectedYear'" [inputId]="'selectedYear'" [options]="yearList"
+              [(ngModel)]="selectedYear" [placeholder]="'Year'" [optionLabel]="'name'" [optionValue]="'id'"
+              [showClear]="false" (ngModelChange)="yearChange()"></app-select>
           </div>
           @if (mode === 'update') {
             <div class="col-auto">
