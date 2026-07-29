@@ -27,3 +27,11 @@
 .error-message {
     color: var(--app-error-message-text);
 }
+
+.required {
+    &::after {
+        content: "*";
+        color: var(--app-error-message-text);
+        margin-left: 0.25rem;
+    }
+}
