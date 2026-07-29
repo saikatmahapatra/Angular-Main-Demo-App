@@ -39,64 +39,74 @@
 
     <div class="my-4">
         <h3>Form Controls</h3>
-        <form>
+        <form [formGroup]="myForm" (ngSubmit)="onFormSubmit()">
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <app-input [type]="'text'" [name]="'firstName'" [label]="'First Name'"
-                        [placeholder]="'Enter your first name'" [(ngModel)]="myForm.firstname"></app-input>
+                        [placeholder]="'Enter your first name'" formControlName="firstname"></app-input>
+                    <app-validation-error [control]="f['firstname']"></app-validation-error>
                 </div>
                 <div class="col-md-6 mb-3">
                     <app-input [type]="'text'" [name]="'lastName'" [label]="'Last Name'"
-                        [placeholder]="'Enter your last name'" [(ngModel)]="myForm.lastname"></app-input>
+                        [placeholder]="'Enter your last name'" formControlName="lastname"></app-input>
+                    <app-validation-error [control]="f['lastname']"></app-validation-error>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <app-input [type]="'email'" [name]="'email'" [label]="'Email'" [placeholder]="'Enter your email'"
-                        [(ngModel)]="myForm.email"></app-input>
+                        formControlName="email"></app-input>
+                    <app-validation-error [control]="f['email']"></app-validation-error>
                 </div>
                 <div class="col-md-6 mb-3">
                     <app-input [type]="'number'" [name]="'age'" [label]="'Age (InputNumber)'"
-                        [placeholder]="'Enter your age'" [(ngModel)]="myForm.age" [min]="18" [max]="65"></app-input>
+                        [placeholder]="'Enter your age'" formControlName="age" [min]="18" [max]="65"></app-input>
+                    <app-validation-error [control]="f['age']"></app-validation-error>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <app-input [type]="'tel'" [name]="'mobile'" [label]="'Mobile'"
-                        [placeholder]="'Enter your mobile number'" [(ngModel)]="myForm.mobile" [minLength]="10"
+                        [placeholder]="'Enter your mobile number'" formControlName="mobile" [minLength]="10"
                         [maxLength]="10"></app-input>
+                    <app-validation-error [control]="f['mobile']"></app-validation-error>
                 </div>
                 <div class="col-md-6 mb-3">
                     <app-radio-button [name]="'gender'" [label]="'Gender'" [options]="genderOptions"
-                        [(ngModel)]="myForm.gender"></app-radio-button>
+                        formControlName="gender"></app-radio-button>
+                    <app-validation-error [control]="f['gender']"></app-validation-error>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <app-select [name]="'country'" [label]="'Country (Single Select)'" [placeholder]="'Select country'"
-                        [options]="countryOptions" [filter]="true" [(ngModel)]="myForm.country"></app-select>
+                        [options]="countryOptions" [filter]="true" formControlName="country"></app-select>
+                    <app-validation-error [control]="f['country']"></app-validation-error>
                 </div>
                 <div class="col-md-6 mb-3">
                     <app-select [name]="'skills'" [label]="'Skills (Multi Select Chips)'"
                         [placeholder]="'Select skills'" [options]="skillOptions" [multiple]="true" [filter]="true"
-                        [(ngModel)]="myForm.skills"></app-select>
+                        formControlName="skills"></app-select>
+                    <app-validation-error [control]="f['skills']"></app-validation-error>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <app-checkbox [name]="'termsAccepted'" [label]="'Accept terms and conditions'"
-                        [(ngModel)]="myForm.termsAccepted"></app-checkbox>
+                        formControlName="termsAccepted"></app-checkbox>
+                    <app-validation-error [control]="f['termsAccepted']"></app-validation-error>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-12 mb-3">
                     <app-text-area [name]="'bio'" [label]="'Bio'" [placeholder]="'Enter your bio (max 250 characters)'"
-                        [(ngModel)]="myForm.bio" [maxLength]="250"></app-text-area>
+                        formControlName="bio" [maxLength]="250"></app-text-area>
+                    <app-validation-error [control]="f['bio']"></app-validation-error>
                 </div>
             </div>
 
@@ -104,13 +114,20 @@
                 <div class="col-md-6 mb-3">
                     <app-date-picker [name]="'dateRange'" [label]="'Date Range'" [selectionMode]="'range'"
                         [numberOfMonths]="2" [showIcon]="true" [showButtonBar]="true"
-                        [(ngModel)]="dateRange"></app-date-picker>
+                        formControlName="dateRange"></app-date-picker>
+                    <app-validation-error [control]="f['dateRange']"></app-validation-error>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <app-button [type]="'submit'">Submit Form</app-button>
                 </div>
             </div>
 
             <div class="my-3">
-                <pre> {{ dateRange | json }} </pre>
-                <pre> {{ myForm | json }} </pre>
+                <pre> {{ myForm.controls['dateRange'].value | json }} </pre>
+                <pre> {{ myForm.value | json }} </pre>
             </div>
         </form>
     </div>

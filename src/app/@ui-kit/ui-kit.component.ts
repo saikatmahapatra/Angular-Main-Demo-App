@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, UntypedFormBuilder, Validators } from '@angular/forms';
+import { FormValidationService } from '@core/services/form-validation.service';
+import { MessageService } from 'primeng/api';
 import { SharedModule } from '@shared/shared.module';
 import { APP_UI_KIT } from '.';
 import { AppDataTableAction } from './data-table/data-table.component';
@@ -8,28 +10,34 @@ import { AppDataTableAction } from './data-table/data-table.component';
 @Component({
   selector: 'app-ui-kit',
   standalone: true,
-  imports: [CommonModule, FormsModule, SharedModule, APP_UI_KIT],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, SharedModule, APP_UI_KIT],
   templateUrl: './ui-kit.component.html',
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./ui-kit.component.scss']
 })
 export class UiKitComponent {
-  dateRange: Date[] | null = null;
   showModal = false;
 
+  constructor(
+    private fb: UntypedFormBuilder,
+    private formValidationSvc: FormValidationService,
+    private messageService: MessageService
+  ) { }
+
   // Form example
-  myForm = {
-    firstname: '' as string,
-    lastname: '' as string,
-    email: '' as string,
-    mobile: '' as string,
-    age: null as number | null,
-    bio: '' as string,
-    gender: '' as string, // radio button
-    country: '' as string, // select dropdown
-    skills: [] as string[], // multi-select
-    termsAccepted: false as boolean
-  }
+  myForm = this.fb.group({
+    firstname: ['', [Validators.required, this.formValidationSvc.notEmpty]],
+    lastname: ['', [Validators.required, this.formValidationSvc.notEmpty]],
+    email: ['', [Validators.required, this.formValidationSvc.validEmail]],
+    age: [null as number | null, [Validators.required, Validators.min(18), Validators.max(65)]],
+    mobile: ['', [Validators.required, this.formValidationSvc.phoneNumber]],
+    bio: ['', [Validators.required, Validators.maxLength(250), this.formValidationSvc.notEmpty]],
+    gender: ['', [Validators.required]],
+    country: ['', [Validators.required]],
+    skills: [[] as string[], [this.formValidationSvc.minLengthArray]],
+    termsAccepted: [false, [Validators.requiredTrue]],
+    dateRange: [null as Date[] | null, [Validators.required]]
+  });
 
   readonly genderOptions = [
     { label: 'Male', value: 'male' },
@@ -50,6 +58,33 @@ export class UiKitComponent {
     { label: 'PrimeNG', value: 'primeng' },
     { label: 'RxJS', value: 'rxjs' }
   ];
+
+  get f() {
+    return this.myForm.controls;
+  }
+
+  onFormSubmit() {
+    if (this.myForm.valid) {
+      this.messageService.add({
+        severity: 'success',
+        summary: 'Success',
+        detail: 'Form submitted successfully',
+        life: 3000,
+        key: 'app-alert-toast'
+      });
+      console.log('UI Kit form submitted', this.myForm.value);
+      return;
+    }
+
+    this.formValidationSvc.validateAllFormFields(this.myForm);
+    this.messageService.add({
+      severity: 'warn',
+      summary: 'Validation',
+      detail: 'Please review the highlighted fields',
+      life: 3000,
+      key: 'app-alert-toast'
+    });
+  }
   // Form example ends here
 
   // Data table
