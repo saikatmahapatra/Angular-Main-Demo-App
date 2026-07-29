@@ -27,6 +27,7 @@ import { CommonModule } from '@angular/common';
         (onBlur)="onBlur()"
         [min]="min() !== null ? min() : undefined"
         [max]="max() !== null ? max() : undefined"
+        [step]="step()"
         [attr.aria-label]="ariaLabel()"
         [inputStyleClass]="'w-100'" />
       } @else {
@@ -36,6 +37,7 @@ import { CommonModule } from '@angular/common';
         pInputText 
         [type]="type()"
         [placeholder]="placeholder()"
+        [readOnly]="readonly()"
         [disabled]="disabled"
         [(ngModel)]="value" 
         (ngModelChange)="onModelChange($event)"
@@ -74,6 +76,8 @@ export class InputComponent implements ControlValueAccessor {
   maxLength = input<number | null>(null);
   min = input<number | null>(null);
   max = input<number | null>(null);
+  step = input<number>(1);
+  readonly = input<boolean>(false);
   ariaLabel = input<string>('');
 
   // Callbacks provided by Angular Forms

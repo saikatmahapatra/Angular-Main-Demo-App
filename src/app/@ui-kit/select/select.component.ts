@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, forwardRef, input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, forwardRef, input, output, ChangeDetectionStrategy } from '@angular/core';
 import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { SelectModule } from 'primeng/select';
@@ -28,6 +28,8 @@ export interface AppSelectOption {
         [placeholder]="placeholder()"
         [display]="'chip'"
         [filter]="filter()"
+        [selectionLimit]="selectionLimit()"
+        [showClear]="showClear()"
         [disabled]="disabled"
         [(ngModel)]="value"
         (ngModelChange)="onModelChange($event)"
@@ -68,19 +70,22 @@ export class SelectComponent implements ControlValueAccessor {
   multiple = input<boolean>(false);
   filter = input<boolean>(false);
   showClear = input<boolean>(true);
+  selectionLimit = input<number | null>(null);
   options = input<AppSelectOption[]>([]);
   optionLabel = input<string>('label');
   optionValue = input<string>('value');
+  onChange = output<unknown>();
 
   value: unknown = null;
   disabled = false;
 
-  private onChange: (value: unknown) => void = () => { };
+  private propagateChange: (value: unknown) => void = () => { };
   private onTouched: () => void = () => { };
 
   onModelChange(val: unknown): void {
     this.value = val;
-    this.onChange(val);
+    this.propagateChange(val);
+    this.onChange.emit(val);
   }
 
   onBlur(): void {
@@ -92,7 +97,7 @@ export class SelectComponent implements ControlValueAccessor {
   }
 
   registerOnChange(fn: (value: unknown) => void): void {
-    this.onChange = fn;
+    this.propagateChange = fn;
   }
 
   registerOnTouched(fn: () => void): void {
