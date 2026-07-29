@@ -7,6 +7,7 @@
     <app-card>
       <div card-header>Form</div>
       <div card-body>
+        <app-alert-message [mode]="'toast'"></app-alert-message>
         <div class="row">
           <div class="col-md-6 col-lg-5 col-xl-4">
             <form [formGroup]="myForm" class="form app-form" (ngSubmit)="onSubmit()">
@@ -15,50 +16,45 @@
               <h5>Govt ID</h5>
               <div class="mb-3">
                 <label class="optional" for="panNo">PAN No</label>
-                <input type="text" class="form-control" id="panNo" formControlName="panNo">
+                <app-input [type]="'text'" [name]="'panNo'" [inputId]="'panNo'" formControlName="panNo"></app-input>
                 <app-validation-error [control]="myForm.controls['panNo']"></app-validation-error>
               </div>
 
               <div class="mb-3">
                 <label class="optional" for="uanNo">UAN No</label>
-                <input type="text" class="form-control" id="uanNo" formControlName="uanNo">
+                <app-input [type]="'text'" [name]="'uanNo'" [inputId]="'uanNo'" formControlName="uanNo"></app-input>
                 <app-validation-error [control]="myForm.controls['uanNo']"></app-validation-error>
               </div>
 
               <h5>Salary Account</h5>
               <div class="mb-3">
                 <label class="required" for="accountNo">Account No</label>
-                <input type="text" class="form-control" id="accountNo" formControlName="accountNo">
+                <app-input [type]="'text'" [name]="'accountNo'" [inputId]="'accountNo'" formControlName="accountNo"></app-input>
                 <app-validation-error [control]="myForm.controls['accountNo']"></app-validation-error>
               </div>
 
               <div class="mb-3">
                 <label class="required" for="confirmAccountNo">Confirm Account No</label>
-                <input type="text" class="form-control" id="confirmAccountNo"
-                  formControlName="confirmAccountNo">
+                <app-input [type]="'text'" [name]="'confirmAccountNo'" [inputId]="'confirmAccountNo'"
+                  formControlName="confirmAccountNo"></app-input>
                 <app-validation-error
                 [control]="myForm.controls['confirmAccountNo']"></app-validation-error>
               </div>
 
               <div class="mb-3">
                 <label class="required" for="bank">Select Bank</label>
-                <select class="form-select" id="bank" formControlName="bank">
-                  <option value="">-</option>
-                  @for (data of bankList; track data; let i = $index) {
-                    <option [value]="data.id"
-                    [innerHTML]="data.name"></option>
-                  }
-                </select>
+                <app-select [name]="'bank'" [inputId]="'bank'" [placeholder]="'Select'" [options]="bankList"
+                  [optionLabel]="'name'" [optionValue]="'id'" [showClear]="false" formControlName="bank"></app-select>
                 <app-validation-error [control]="myForm.controls['bank']"></app-validation-error>
               </div>
 
               <div class="mb-3">
                 <label class="required" for="ifscCode">IFSC Code</label>
-                <input type="text" class="form-control" id="ifscCode" formControlName="ifscCode">
+                <app-input [type]="'text'" [name]="'ifscCode'" [inputId]="'ifscCode'" formControlName="ifscCode"></app-input>
                 <app-validation-error [control]="myForm.controls['ifscCode']"></app-validation-error>
               </div>
 
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <app-button [type]="'submit'">Submit</app-button>
             </form>
             <!-- <p class="debug">Form Status: <span class="text-bold">{{ myForm.status }}</span></p>
             <p class="debug">{{myForm.value|json}}</p> -->

@@ -6,6 +6,7 @@ import { AlertService } from '@core/services/alert.service';
 import { ApiService } from '@core/services/api.service';
 import { CommonService } from '@core/services/common.service';
 import { FormValidationService } from '@core/services/form-validation.service';
+import { MessageService } from 'primeng/api';
 import { MyAppConfig } from 'src/app/app.config';
 @Component({
     selector: 'app-add-edit-education',
@@ -33,6 +34,7 @@ export class AddEditEducationComponent implements OnInit {
     private apiSvc: ApiService,
     private router: Router,
     private alertSvc: AlertService,
+    private messageService: MessageService,
     private activatedRoute: ActivatedRoute) { 
       
     }
@@ -71,6 +73,18 @@ export class AddEditEducationComponent implements OnInit {
     marks: ['', [Validators.required]]
   });
 
+  get degreeOptionsWithOthers() {
+    return [...(this.degreeList || []), { id: '-1', name: 'Others' }];
+  }
+
+  get specializationOptionsWithOthers() {
+    return [...(this.specializationList || []), { id: '-1', name: 'Others' }];
+  }
+
+  get institutionOptionsWithOthers() {
+    return [...(this.institutionList || []), { id: '-1', name: 'Others' }];
+  }
+
   onSubmit() {
     this.submitted = true;
     this.loading = true;
@@ -103,6 +117,13 @@ export class AddEditEducationComponent implements OnInit {
     else {
       this.loading = false;
       this.validator.validateAllFormFields(this.myForm);
+      this.messageService.add({
+        severity: 'warn',
+        summary: 'Validation',
+        detail: 'Please review the highlighted fields',
+        life: 3000,
+        key: 'app-alert-toast'
+      });
     }
   }
 

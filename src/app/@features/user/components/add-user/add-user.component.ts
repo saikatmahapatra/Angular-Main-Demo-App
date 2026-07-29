@@ -5,6 +5,7 @@ import { AlertService } from '@core/services/alert.service';
 import { ApiService } from '@core/services/api.service';
 import { CommonService } from '@core/services/common.service';
 import { FormValidationService } from '@core/services/form-validation.service';
+import { MessageService } from 'primeng/api';
 import { MyAppConfig } from 'src/app/app.config';
 @Component({
     selector: 'app-add-user',
@@ -65,7 +66,8 @@ export class AddUserComponent implements OnInit {
     private commonSvc: CommonService, 
     private validator: FormValidationService,
     private apiSvc: ApiService,
-    private alertSvc: AlertService) {
+    private alertSvc: AlertService,
+    private messageService: MessageService) {
     this.getFormData();
 
     let today = new Date();
@@ -80,6 +82,18 @@ export class AddUserComponent implements OnInit {
 
   ngOnInit(): void {
     this.addNewDesignationValidator();
+  }
+
+  get genderOptions() {
+    return this.DataGender.map((item) => ({ label: item.name, value: item.id }));
+  }
+
+  get roleOptions() {
+    return this.userRole.map((item) => ({ label: item.name, value: item.id }));
+  }
+
+  get designationOptionsWithOthers() {
+    return [...(this.designationList || []), { id: '-1', name: 'Others' }];
   }
 
   onSubmit() {
@@ -104,6 +118,13 @@ export class AddUserComponent implements OnInit {
     } else {
       this.loading = false;
       this.validator.validateAllFormFields(this.myForm);
+      this.messageService.add({
+        severity: 'warn',
+        summary: 'Validation',
+        detail: 'Please review the highlighted fields',
+        life: 3000,
+        key: 'app-alert-toast'
+      });
     }
   }
 

@@ -7,6 +7,7 @@
     <app-card>
       <div card-header>Form</div>
       <div card-body>
+        <app-alert-message [mode]="'toast'"></app-alert-message>
         <div class="row">
           <div class="col-md-6 col-lg-5 col-xl-4">
             <form [formGroup]="myForm" class="form app-form" (ngSubmit)="onSubmit()">
@@ -15,39 +16,35 @@
 
               <div class="mb-3">
                 <label class="required" for="personalEmail">Personal Email</label>
-                <input type="text" class="form-control" id="personalEmail"
-                  formControlName="personalEmail">
+                <app-input [type]="'email'" [name]="'personalEmail'" [inputId]="'personalEmail'"
+                  formControlName="personalEmail"></app-input>
                 <app-validation-error
                 [control]="myForm.controls['personalEmail']"></app-validation-error>
               </div>
 
               <div class="mb-3">
                 <label class="required" for="personalPhone">Personal Phone</label>
-                <input type="text" class="form-control" id="personalPhone"
-                  formControlName="personalPhone" maxlength="10">
+                <app-input [type]="'tel'" [name]="'personalPhone'" [inputId]="'personalPhone'"
+                  formControlName="personalPhone" [maxLength]="10"></app-input>
                 <app-validation-error
                 [control]="myForm.controls['personalPhone']"></app-validation-error>
               </div>
 
               <div class="mb-3">
                 <label class="optional" for="workPhone">Work Phone</label>
-                <input type="text" class="form-control" id="workPhone" formControlName="workPhone"
-                  maxlength="10">
+                <app-input [type]="'tel'" [name]="'workPhone'" [inputId]="'workPhone'" formControlName="workPhone"
+                  [maxLength]="10"></app-input>
                 <app-validation-error [control]="myForm.controls['workPhone']"></app-validation-error>
               </div>
 
               <div class="mb-3">
                 <label class="optional" for="bloodGroup">Blood Group</label>
-                <select class="form-select" id="bloodGroup" formControlName="bloodGroup">
-                  @for (data of bloodGroupList; track data; let i = $index) {
-                    <option value="{{data.id}}">
-                      {{data.name}}
-                    </option>
-                  }
-                </select>
+                <app-select [name]="'bloodGroup'" [inputId]="'bloodGroup'" [placeholder]="'Select'"
+                  [options]="bloodGroupList" [optionLabel]="'name'" [optionValue]="'id'" [showClear]="false"
+                  formControlName="bloodGroup"></app-select>
                 <app-validation-error [control]="myForm.controls['bloodGroup']"></app-validation-error>
               </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <app-button [type]="'submit'">Submit</app-button>
             </form>
             <!-- <p class="debug">Form Status: <span class="text-bold">{{ myForm.status }}</span></p>
             <p class="debug">{{myForm.value|json}}</p> -->

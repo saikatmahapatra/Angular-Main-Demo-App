@@ -6,6 +6,7 @@ import { AlertService } from '@core/services/alert.service';
 import { ApiService } from '@core/services/api.service';
 import { CommonService } from '@core/services/common.service';
 import { FormValidationService } from '@core/services/form-validation.service';
+import { MessageService } from 'primeng/api';
 import { MyAppConfig } from 'src/app/app.config';
 @Component({
     selector: 'app-add-edit-experience',
@@ -38,12 +39,21 @@ export class AddEditExperienceComponent implements OnInit {
     toDate: ['', Validators.required]
   });
 
+  get employerOptionsWithOthers() {
+    return [...(this.employers || []), { id: '-1', name: 'Others' }];
+  }
+
+  get designationOptionsWithOthers() {
+    return [...(this.designations || []), { id: '-1', name: 'Others' }];
+  }
+
   constructor(private fb: UntypedFormBuilder,
     private commonSvc: CommonService,
     private validator: FormValidationService,
     private apiSvc: ApiService,
     private router: Router,
     private activatedRouters: ActivatedRoute,
+    private messageService: MessageService,
     private alertSvc: AlertService) {
     }
 
@@ -91,6 +101,13 @@ export class AddEditExperienceComponent implements OnInit {
     } else {
       this.loading = false;
       this.validator.validateAllFormFields(this.myForm);
+      this.messageService.add({
+        severity: 'warn',
+        summary: 'Validation',
+        detail: 'Please review the highlighted fields',
+        life: 3000,
+        key: 'app-alert-toast'
+      });
     }
   }
 

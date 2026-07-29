@@ -7,6 +7,7 @@
     <app-card>
       <div card-header>Form</div>
       <div card-body>
+        <app-alert-message [mode]="'toast'"></app-alert-message>
         <div class="row">
           <div class="col-md-6 col-lg-5 col-xl-4">
             <form [formGroup]="myForm" class="form app-form" (ngSubmit)="onSubmit()">
@@ -24,22 +25,16 @@
 
             <div class="mb-3">
               <label class="required" for="degree">Qualification</label>
-              <select class="form-select" id="degree" formControlName="degree">
-                <option value="">Select</option>
-                @for (data of degreeList; track data) {
-                  <option [value]="data.id" [innerHTML]="data.name">
-                  </option>
-                }
-                <!-- <option value="-1">Others</option> -->
-              </select>
+              <app-select [name]="'degree'" [inputId]="'degree'" [placeholder]="'Select'" [options]="degreeOptionsWithOthers"
+                [optionLabel]="'name'" [optionValue]="'id'" [showClear]="false" formControlName="degree"></app-select>
               <app-validation-error [control]="myForm.controls['degree']"></app-validation-error>
             </div>
 
             @if (myForm.value['degree'] === '-1') {
               <div class="mb-3">
                 <!-- <label class="required" for="newDegree">Other Degree</label> -->
-                <input type="text" class="form-control" id="newDegree" formControlName="newDegree"
-                  maxlength="30" placeholder="Other Degree">
+                <app-input [type]="'text'" [name]="'newDegree'" [inputId]="'newDegree'" formControlName="newDegree"
+                  [maxLength]="30" [placeholder]="'Other Degree'"></app-input>
                 <div class="small"><strong>Note:</strong> Make sure you are not adding duplicate entry.
               </div>
               <app-validation-error [control]="myForm.controls['newDegree']"></app-validation-error>
@@ -48,15 +43,9 @@
 
           <div class="mb-3">
             <label class="required" for="specialization">Specialization/Subject</label>
-            <select class="form-select" id="specialization" formControlName="specialization">
-              <option value="">Select</option>
-              @for (data of specializationList; track data) {
-                <option [value]="data.id"
-                  [innerHTML]="data.name">
-                </option>
-              }
-              <option value="-1">Others</option>
-            </select>
+            <app-select [name]="'specialization'" [inputId]="'specialization'" [placeholder]="'Select'"
+              [options]="specializationOptionsWithOthers" [optionLabel]="'name'" [optionValue]="'id'" [showClear]="false"
+              formControlName="specialization"></app-select>
             <app-validation-error
             [control]="myForm.controls['specialization']"></app-validation-error>
           </div>
@@ -64,9 +53,8 @@
           @if (myForm.value['specialization'] === '-1') {
             <div class="mb-3">
               <!-- <label class="required" for="newSpecialization">Other Specialization</label> -->
-              <input type="text" class="form-control" id="newSpecialization"
-                formControlName="newSpecialization" maxlength="30"
-                placeholder="Other Specialization">
+              <app-input [type]="'text'" [name]="'newSpecialization'" [inputId]="'newSpecialization'"
+                formControlName="newSpecialization" [maxLength]="30" [placeholder]="'Other Specialization'"></app-input>
               <div class="small"><strong>Note:</strong> Make sure you are not adding duplicate entry.
             </div>
             <app-validation-error
@@ -76,15 +64,8 @@
 
         <div class="mb-3">
           <label class="required" for="institute">Institute/University</label>
-          <select class="form-select" id="institute" formControlName="institute">
-            <option value="">Select</option>
-            @for (data of institutionList; track data) {
-              <option [value]="data.id"
-                [innerHTML]="data.name">
-              </option>
-            }
-            <option value="-1">Others</option>
-          </select>
+          <app-select [name]="'institute'" [inputId]="'institute'" [placeholder]="'Select'" [options]="institutionOptionsWithOthers"
+            [optionLabel]="'name'" [optionValue]="'id'" [showClear]="false" formControlName="institute"></app-select>
           <div class="small"><strong>Note:</strong> For school level qualification kindly select
           board
         name.</div>
@@ -94,8 +75,8 @@
       @if (myForm.value['institute'] === '-1') {
         <div class="mb-3">
           <!-- <label class="required" for="newInstitute">Other Institute/University</label> -->
-          <input type="text" class="form-control" id="newInstitute" formControlName="newInstitute"
-            maxlength="30" placeholder="Other Institute">
+          <app-input [type]="'text'" [name]="'newInstitute'" [inputId]="'newInstitute'" formControlName="newInstitute"
+            [maxLength]="30" [placeholder]="'Other Institute'"></app-input>
           <div class="small"><strong>Note:</strong> Make sure you are not adding duplicate entry.
         </div>
         <app-validation-error
@@ -111,20 +92,19 @@
 
   <div class="mb-3">
     <label class="required" for="toYear">Year of Passout</label>
-    <input type="number" [min]="minYear" max="maxYear" step="1" class="form-control"
-      id="toYear" formControlName="toYear" maxlength="4">
+    <app-input [type]="'number'" [name]="'toYear'" [inputId]="'toYear'" formControlName="toYear"
+      [min]="minYear" [max]="maxYear"></app-input>
     <app-validation-error [control]="myForm.controls['toYear']"></app-validation-error>
   </div>
 
   <div class="mb-3">
     <label class="required" for="marks">Marks (in %)</label>
-    <input type="number" class="form-control" id="marks" formControlName="marks"
-      maxlength="5">
+    <app-input [type]="'number'" [name]="'marks'" [inputId]="'marks'" formControlName="marks"></app-input>
     <app-validation-error [control]="myForm.controls['marks']"></app-validation-error>
   </div>
 
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <app-button [type]="'submit'">Submit</app-button>
 
   <!-- <p class="debug">Form Status: <span class="text-bold">{{ myForm.status }}</span></p>
   <p class="debug">{{myForm.value|json}}</p> -->

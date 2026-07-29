@@ -10,6 +10,7 @@
         Form
       </div>
       <div card-body>
+        <app-alert-message [mode]="'toast'"></app-alert-message>
         <div class="row">
           <div class="col-md-6 col-lg-5 col-xl-4">
             <form [formGroup]="myForm" class="form app-form" (ngSubmit)="onSubmit()">
@@ -18,51 +19,40 @@
 
               <div class="mb-3">
                 <label class="required" for="addressType">Address Type</label>
-                <select class="form-select" id="addressType" formControlName="addressType">
-                  <option value="">Select</option>
-                  @for (data of addressType; track data; let i = $index) {
-                    <option value="{{data.id}}">
-                      {{data.name}}
-                    </option>
-                  }
-                </select>
+                <app-select [name]="'addressType'" [inputId]="'addressType'" [placeholder]="'Select'"
+                  [options]="addressType" [optionLabel]="'name'" [optionValue]="'id'" [showClear]="false"
+                  formControlName="addressType"></app-select>
                 <app-validation-error [control]="myForm.controls['addressType']"></app-validation-error>
               </div>
 
               <div class="mb-3">
                 <label class="required" for="addressLine1">Address Line 1</label>
-                <input type="text" class="form-control" id="addressLine1" formControlName="addressLine1"
-                  maxlength="80" placeholder="Apt/Suite/Building/Street">
+                <app-input [type]="'text'" [name]="'addressLine1'" [inputId]="'addressLine1'"
+                  formControlName="addressLine1" [maxLength]="80" [placeholder]="'Apt/Suite/Building/Street'"></app-input>
                   <app-validation-error
                   [control]="myForm.controls['addressLine1']"></app-validation-error>
                 </div>
 
                 <div class="mb-3">
                   <label class="optional" for="addressLine2">Address Line 2</label>
-                  <input type="text" class="form-control" id="addressLine2" formControlName="addressLine2"
-                    maxlength="50" placeholder="Locality">
+                  <app-input [type]="'text'" [name]="'addressLine2'" [inputId]="'addressLine2'"
+                    formControlName="addressLine2" [maxLength]="50" [placeholder]="'Locality'"></app-input>
                   <app-validation-error
                   [control]="myForm.controls['addressLine2']"></app-validation-error>
                 </div>
 
                 <div class="mb-3">
                   <label class="required" for="city">City/Town</label>
-                  <!-- <input type="text" class="form-control" id="city" formControlName="city" maxlength="10"> -->
-                  <select class="form-select" id="city" formControlName="city">
-                    <option value="">Select</option>
-                    @for (data of cityList; track data) {
-                      <option [value]="data.id" [innerHTML]="data.name">
-                      </option>
-                    }
-                    <option value="-1">Others</option>
-                  </select>
+                  <app-select [name]="'city'" [inputId]="'city'" [placeholder]="'Select'"
+                    [options]="cityOptionsWithOthers" [optionLabel]="'name'" [optionValue]="'id'" [showClear]="false"
+                    formControlName="city"></app-select>
                   <app-validation-error [control]="myForm.controls['city']"></app-validation-error>
                 </div>
 
                 @if (myForm.value['city'] === '-1') {
                   <div class="mb-3">
-                    <input type="text" class="form-control" id="newCity" formControlName="newCity"
-                      maxlength="30" placeholder="Other city/town name">
+                    <app-input [type]="'text'" [name]="'newCity'" [inputId]="'newCity'" formControlName="newCity"
+                      [maxLength]="30" [placeholder]="'Other city/town name'"></app-input>
                       <div class="small"><strong>Note:</strong> Make sure you are not adding duplicate entry.
                     </div>
                     <app-validation-error [control]="myForm.controls['newCity']"></app-validation-error>
@@ -71,35 +61,30 @@
 
                 <div class="mb-3">
                   <label class="required" for="state">State</label>
-                  <select class="form-select" id="state" formControlName="state">
-                    <option value="">Select</option>
-                    @for (state of stateList; track state) {
-                      <option value="{{state.id}}">{{state.name}}</option>
-                    }
-                  </select>
+                  <app-select [name]="'state'" [inputId]="'state'" [placeholder]="'Select'"
+                    [options]="stateList" [optionLabel]="'name'" [optionValue]="'id'" [showClear]="false"
+                    formControlName="state"></app-select>
                   <app-validation-error [control]="myForm.controls['state']"></app-validation-error>
                 </div>
                 <div class="mb-3">
                   <label class="required" for="zip">Postal ZIP</label>
-                  <input type="text" class="form-control" id="zip" formControlName="zip" maxlength="8">
+                  <app-input [type]="'text'" [name]="'zip'" [inputId]="'zip'" formControlName="zip"
+                    [maxLength]="8"></app-input>
                   <app-validation-error [control]="myForm.controls['zip']"></app-validation-error>
                 </div>
                 <div class="mb-3">
                   <label class="optional" for="landmark">Landmark</label>
-                  <input type="text" class="form-control" id="landmark" formControlName="landmark"
-                    maxlength="50">
+                  <app-input [type]="'text'" [name]="'landmark'" [inputId]="'landmark'" formControlName="landmark"
+                    [maxLength]="50"></app-input>
                   <app-validation-error [control]="myForm.controls['landmark']"></app-validation-error>
                 </div>
                 <div class="mb-3">
                   <label class="optional" for="phone">Phone</label>
-                  <input type="text" class="form-control" id="phone" formControlName="phone"
-                    maxlength="10">
+                  <app-input [type]="'tel'" [name]="'phone'" [inputId]="'phone'" formControlName="phone"
+                    [maxLength]="10"></app-input>
                   <app-validation-error [control]="myForm.controls['phone']"></app-validation-error>
                 </div>
-                <button type="submit" class="btn btn-primary" [disabled]="loading">@if (loading) {
-                  <span
-                  class="spinner-border spinner-border-sm me-1"></span>
-                } Submit</button>
+                <app-button [type]="'submit'" [loading]="loading" [disabled]="loading">Submit</app-button>
               </form>
             </div>
           </div>

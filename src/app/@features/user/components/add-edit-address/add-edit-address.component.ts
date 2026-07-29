@@ -6,8 +6,8 @@ import { AlertService } from '@core/services/alert.service';
 import { ApiService } from '@core/services/api.service';
 import { CommonService } from '@core/services/common.service';
 import { FormValidationService } from '@core/services/form-validation.service';
+import { MessageService } from 'primeng/api';
 import { MyAppConfig } from 'src/app/app.config';
-import { State } from '@utils/models/IState';
 
 @Component({
     selector: 'app-add-edit-address',
@@ -20,8 +20,8 @@ export class AddEditAddressComponent implements OnInit {
 
   submitted = false;
   loading = false;
-  stateList: State[] = [];
-  cityList: State[] = [];
+  stateList: Array<any> = [];
+  cityList: Array<any> = [];
   id: any = '';
   isAdd = true;
   title = 'Add';
@@ -47,6 +47,7 @@ export class AddEditAddressComponent implements OnInit {
     private apiSvc: ApiService,
     private router: Router,
     private alertSvc: AlertService,
+    private messageService: MessageService,
     private activatedRoute: ActivatedRoute) { 
       
     }
@@ -56,6 +57,10 @@ export class AddEditAddressComponent implements OnInit {
     { id: 'C', name: 'Present' },
     //{ id: 'W', name: 'Work' }
   ];
+
+  get cityOptionsWithOthers() {
+    return [...this.cityList, { id: '-1', name: 'Others' }];
+  }
 
   ngOnInit(): void {
     this.addNewCityValidator();
@@ -129,6 +134,13 @@ export class AddEditAddressComponent implements OnInit {
     else {
       this.loading = false;
       this.validator.validateAllFormFields(this.myForm);
+      this.messageService.add({
+        severity: 'warn',
+        summary: 'Validation',
+        detail: 'Please review the highlighted fields',
+        life: 3000,
+        key: 'app-alert-toast'
+      });
     }
 
   }
