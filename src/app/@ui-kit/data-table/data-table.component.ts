@@ -171,7 +171,7 @@ export class DataTableComponent {
   columns = input<AppDataTableColumn[]>([]);
   caption = input<string>('');
   loading = input<boolean>(false);
-  expandableRows = input<boolean>(true);
+  expandableRows = input<boolean>(false);
   sortMode = input<'single' | 'multiple'>('single');
   dataKey = input<string>('id');
   emptyMessage = input<string>('No data found');
