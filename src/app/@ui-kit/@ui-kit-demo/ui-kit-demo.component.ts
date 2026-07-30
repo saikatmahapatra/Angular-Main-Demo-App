@@ -5,7 +5,7 @@ import { FormValidationService } from '@core/services/form-validation.service';
 import { MessageService } from 'primeng/api';
 import { SharedModule } from '@shared/shared.module';
 import { APP_UI_KIT } from '..';
-import { AppDataTableAction } from '../data-table/data-table.component';
+import { AppDataTableAction, AppDataTableColumn } from '../data-table/data-table.component';
 
 @Component({
   selector: 'app-ui-kit-demo',
@@ -88,11 +88,40 @@ export class UiKitDemoComponent {
   // Form example ends here
 
   // Data table
-  readonly employeeColumns = [
-    { field: 'name', header: 'Name', sortable: true },
-    { field: 'department', header: 'Department', sortable: true },
-    { field: 'location', header: 'Location', sortable: true },
-    { field: 'salary', header: 'Salary', sortable: true }
+  readonly employeeColumns: AppDataTableColumn[] = [
+    {
+      field: 'name',
+      header: 'Name',
+      sortable: true,
+      filterable: true,
+      filterMatchMode: 'startsWith',
+      filterPlaceholder: 'Name starts with...'
+    },
+    {
+      field: 'department',
+      header: 'Department',
+      sortable: true,
+      filterable: true,
+      filterType: 'text',
+      //filterMatchMode: 'contains',
+      //filterPlaceholder: 'Search department'
+    },
+    {
+      field: 'location',
+      header: 'Location',
+      sortable: true,
+      filterable: true,
+      // filterDisplay: 'row',
+      // filterPlaceholder: 'Filter location'
+    },
+    {
+      field: 'salary',
+      header: 'Salary',
+      sortable: true,
+      filterable: true,
+      // filterType: 'number',
+      // filterMatchMode: 'equals'
+    }
   ];
 
   readonly employeeData = [

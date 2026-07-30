@@ -8,6 +8,13 @@ export interface AppDataTableColumn {
   field: string;
   header: string;
   sortable?: boolean;
+  filterable?: boolean;
+  filterMatchMode?: 'contains' | 'startsWith' | 'endsWith' | 'equals' | 'notEquals' | 'in';
+  filterPlaceholder?: string;
+  filterMaxLength?: number;
+  filterType?: 'text' | 'number' | 'date' | 'boolean';
+  filterOptions?: { label: string; value: any }[];
+  filterDisplay?: 'menu' | 'row' | 'column';
 }
 
 export interface AppDataTableAction {
@@ -46,12 +53,40 @@ export interface AppDataTableAction {
           @for (column of columns(); track column.field) {
           @if (column.sortable !== false) {
           <th [pSortableColumn]="column.field">
-            {{ column.header }}
-            <p-sortIcon [field]="column.field"></p-sortIcon>
+            <div class="flex align-items-center gap-2">
+              <span>{{ column.header }}</span>
+              <p-sortIcon [field]="column.field"></p-sortIcon>
+            </div>
+            @if (column.filterable === true) {
+              <p-columnFilter
+                [field]="column.field"
+                [display]="resolveFilterDisplay(column.filterDisplay)"
+                [type]="column.filterType ?? 'text'"
+                [matchMode]="column.filterMatchMode ?? 'contains'"
+                [placeholder]="column.filterPlaceholder ?? ''"
+                [maxConstraints]="1"
+                [showOperator]="false"
+                [showMatchModes]="false"
+                [showAddButton]="false">
+              </p-columnFilter>
+            }
           </th>
           } @else {
           <th>
-            {{ column.header }}
+            <div>{{ column.header }}</div>
+            @if (column.filterable === true) {
+              <p-columnFilter
+                [field]="column.field"
+                [display]="resolveFilterDisplay(column.filterDisplay)"
+                [type]="column.filterType ?? 'text'"
+                [matchMode]="column.filterMatchMode ?? 'contains'"
+                [placeholder]="column.filterPlaceholder ?? ''"
+                [maxConstraints]="1"
+                [showOperator]="false"
+                [showMatchModes]="false"
+                [showAddButton]="false">
+              </p-columnFilter>
+            }
           </th>
           }
           }
@@ -142,6 +177,13 @@ export class DataTableComponent {
       return '';
     }
     return String(value);
+  }
+
+  resolveFilterDisplay(display?: AppDataTableColumn['filterDisplay']): 'menu' | 'row' {
+    if (display === 'row' || display === 'column') {
+      return 'row';
+    }
+    return 'menu';
   }
 
 }
