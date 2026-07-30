@@ -4,7 +4,7 @@
         <h1>UI Kit (Design System) Demo</h1>
         <div>PrimeNG based UI components</div>
     </div>
-    
+
     <div class="my-4">
         <h3>Buttons</h3>
         <app-button (clickAction)="saveItem()">Primary</app-button>
@@ -262,7 +262,7 @@
                 <app-input [placeholder]="'Search'" />
             </ng-template>
         </app-toolbar>
-        <app-data-table [caption]="'Employee Summary'" [columns]="employeeColumns" [value]="employeeData"
+        <app-data-table [dataValue]="employeeData" [columns]="employeeColumns" [caption]="'Employee Summary'"
             [dataKey]="'id'" [expandableRows]="true" [sortMode]="'single'" [actions]="employeeActions"></app-data-table>
     </div>
 </div>

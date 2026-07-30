@@ -32,7 +32,7 @@ export interface AppDataTableAction {
   imports: [CommonModule, TableModule, ButtonModule, TooltipModule],
   template: `
     <p-table
-      [value]="value()"
+      [value]="dataValue()"
       [dataKey]="dataKey()"
       [rowHover]="true"
       [loading]="loading()"
@@ -167,14 +167,14 @@ export interface AppDataTableAction {
   styles: ``,
 })
 export class DataTableComponent {
+  dataValue = input<any[]>([]);
+  columns = input<AppDataTableColumn[]>([]);
   caption = input<string>('');
   loading = input<boolean>(false);
   expandableRows = input<boolean>(true);
   sortMode = input<'single' | 'multiple'>('single');
   dataKey = input<string>('id');
   emptyMessage = input<string>('No data found');
-  value = input<any[]>([]);
-  columns = input<AppDataTableColumn[]>([]);
   actions = input<AppDataTableAction[]>([]);
   tableStyle = input<{ [klass: string]: string }>({ 'min-width': '50rem' });
   size = input<'small' | 'large' | undefined>('small');
