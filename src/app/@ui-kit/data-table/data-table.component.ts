@@ -6,6 +6,7 @@ import { TooltipModule } from 'primeng/tooltip';
 
 export interface AppDataTableColumn {
   field: string;
+  displayFormatter?: (value: unknown, rowData: Record<string, unknown>) => string;
   header: string;
   sortable?: boolean;
   filterable?: boolean;
@@ -36,7 +37,9 @@ export interface AppDataTableAction {
       [rowHover]="true"
       [loading]="loading()"
       [sortMode]="sortMode()"
-      [tableStyle]="tableStyle()">
+      [tableStyle]="tableStyle()"
+      [size]="size()"
+      >
 
       
       @if (caption() !== '') {
@@ -117,7 +120,7 @@ export interface AppDataTableAction {
           </td>
           }
           @for (column of columns(); track column.field) {
-          <td>{{ resolveCell(rowData, column.field) }}</td>
+          <td>{{ resolveCell(rowData, column) }}</td>
           }
           @if (actions().length > 0) {
           <td>
@@ -174,9 +177,13 @@ export class DataTableComponent {
   columns = input<AppDataTableColumn[]>([]);
   actions = input<AppDataTableAction[]>([]);
   tableStyle = input<{ [klass: string]: string }>({ 'min-width': '50rem' });
+  size = input<'small' | 'large' | undefined>('small');
 
-  resolveCell(rowData: Record<string, unknown>, field: string): string {
-    const value = rowData?.[field];
+  resolveCell(rowData: Record<string, unknown>, column: AppDataTableColumn): string {
+    const value = rowData?.[column.field];
+    if (column.displayFormatter) {
+      return column.displayFormatter(value, rowData);
+    }
     if (value === undefined || value === null) {
       return '';
     }

@@ -129,6 +129,7 @@ export class UiKitDemoComponent {
       sortable: true,
       filterable: true,
       filterType: 'numeric',
+      displayFormatter: (value, rowData) => `${value ?? ''} ${String(rowData['currency'] ?? '')}`.trim(),
       // filterMatchMode: 'equals'
     }
   ];
