@@ -12,7 +12,7 @@ export interface AppDataTableColumn {
   filterMatchMode?: 'contains' | 'startsWith' | 'endsWith' | 'equals' | 'notEquals' | 'in';
   filterPlaceholder?: string;
   filterMaxLength?: number;
-  filterType?: 'text' | 'number' | 'date' | 'boolean';
+  filterType?: 'text' | 'numeric' | 'date' | 'boolean';
   filterOptions?: { label: string; value: any }[];
   filterDisplay?: 'menu' | 'row' | 'column';
 }

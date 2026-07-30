@@ -128,7 +128,7 @@ export class UiKitDemoComponent {
       header: 'Salary',
       sortable: true,
       filterable: true,
-      filterType: 'number',
+      filterType: 'numeric',
       // filterMatchMode: 'equals'
     }
   ];
