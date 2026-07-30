@@ -101,7 +101,7 @@ export class UiKitDemoComponent {
       field: 'department',
       header: 'Department',
       sortable: true,
-      filterable: true,
+      filterable: false,
       filterType: 'text',
       //filterMatchMode: 'contains',
       //filterPlaceholder: 'Search department'
@@ -119,6 +119,7 @@ export class UiKitDemoComponent {
       header: 'Date of Birth',
       sortable: true,
       filterable: true,
+      filterType: 'date',
       // filterDisplay: 'row',
       // filterPlaceholder: 'Filter location'
     },
@@ -127,7 +128,7 @@ export class UiKitDemoComponent {
       header: 'Salary',
       sortable: true,
       filterable: true,
-      // filterType: 'number',
+      filterType: 'number',
       // filterMatchMode: 'equals'
     }
   ];
