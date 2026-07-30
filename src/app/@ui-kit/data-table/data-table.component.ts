@@ -64,10 +64,12 @@ export interface AppDataTableAction {
                 [type]="column.filterType ?? 'text'"
                 [matchMode]="column.filterMatchMode ?? 'contains'"
                 [placeholder]="column.filterPlaceholder ?? ''"
-                [maxConstraints]="1"
-                [showOperator]="false"
-                [showMatchModes]="false"
-                [showAddButton]="false">
+                [maxConstraints]="2"
+                [showOperator]="true"
+                [showMatchModes]="true"
+                [showAddButton]="true"
+                [showClearButton]="true"
+                [showApplyButton]="true">
               </p-columnFilter>
             }
           </th>
@@ -81,10 +83,12 @@ export interface AppDataTableAction {
                 [type]="column.filterType ?? 'text'"
                 [matchMode]="column.filterMatchMode ?? 'contains'"
                 [placeholder]="column.filterPlaceholder ?? ''"
-                [maxConstraints]="1"
-                [showOperator]="false"
-                [showMatchModes]="false"
-                [showAddButton]="false">
+                [maxConstraints]="2"
+                [showOperator]="true"
+                [showMatchModes]="true"
+                [showAddButton]="true"
+                [showClearButton]="true"
+                [showApplyButton]="true">
               </p-columnFilter>
             }
           </th>
