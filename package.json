@@ -8,7 +8,8 @@
     "build": "ng build --aot",
     "postbuild": "git add . && git commit -m 'new build' && git push",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "test:ui-kit": "ng run my-angular-app:test-ui-kit --watch=false --browsers=ChromeHeadless"
   },
   "private": true,
   "dependencies": {

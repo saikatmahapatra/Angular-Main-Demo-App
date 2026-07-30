@@ -8,7 +8,7 @@ describe('FileUploadComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [FileUploadComponent]
+      imports: [FileUploadComponent]
     })
       .compileComponents();
   });

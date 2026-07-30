@@ -8,7 +8,7 @@ describe('DataTableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DataTableComponent]
+      imports: [DataTableComponent]
     })
       .compileComponents();
 
@@ -19,5 +19,18 @@ describe('DataTableComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should use displayFormatter only for cell display', () => {
+    const renderedValue = component.resolveCell(
+      { salary: 82000, currency: 'EUR' },
+      {
+        field: 'salary',
+        header: 'Salary',
+        displayFormatter: (value, rowData) => `${value} ${String(rowData['currency'])}`
+      }
+    );
+
+    expect(renderedValue).toBe('82000 EUR');
   });
 });

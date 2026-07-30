@@ -1,16 +1,18 @@
 /// <reference types="jasmine" />
 
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MessageService } from 'primeng/api';
 
-import { UiKitDemoComponent } from '../@ui-kit/ui-kit.component';
+import { UiKitDemoComponent } from './ui-kit-demo.component';
 
 describe('UiKitDemoComponent', () => {
   let component: UiKitDemoComponent;
   let fixture: ComponentFixture<UiKitDemoComponent>;
 
   beforeEach(async () => {
-    TestBed.configureTestingModule({
-      imports: [UiKitDemoComponent]
+    await TestBed.configureTestingModule({
+      imports: [UiKitDemoComponent],
+      providers: [MessageService]
     })
       // Keep this suite focused on UiKitDemoComponent class state and behavior.
       .overrideComponent(UiKitDemoComponent, {
@@ -28,7 +30,7 @@ describe('UiKitDemoComponent', () => {
   });
 
   it('should initialize myForm with expected defaults', () => {
-    expect(component.myForm).toEqual({
+    expect(component.myForm.getRawValue()).toEqual({
       firstname: '',
       lastname: '',
       email: '',
@@ -38,7 +40,8 @@ describe('UiKitDemoComponent', () => {
       gender: '',
       country: '',
       skills: [],
-      termsAccepted: false
+      termsAccepted: false,
+      dateRange: null
     });
   });
 
@@ -68,27 +71,31 @@ describe('UiKitDemoComponent', () => {
     ]);
   });
 
-  it('should define sortable employee columns in expected order', () => {
-    expect(component.employeeColumns).toEqual([
-      { field: 'name', header: 'Name', sortable: true },
-      { field: 'department', header: 'Department', sortable: true },
-      { field: 'location', header: 'Location', sortable: true },
-      { field: 'salary', header: 'Salary', sortable: true }
+  it('should define employee columns in expected order', () => {
+    expect(component.employeeColumns.map((column) => column.field)).toEqual([
+      'name',
+      'department',
+      'location',
+      'dob',
+      'salary'
     ]);
+    expect(component.employeeColumns.find((column) => column.field === 'salary')?.displayFormatter).toEqual(jasmine.any(Function));
   });
 
   it('should define employee data with unique ids and positive salaries', () => {
-    const ids = component.employeeData.map((row) => row.id);
+    const ids = component.employeeData.map((row: { id: number }) => row.id);
     const uniqueIds = new Set(ids);
 
     expect(uniqueIds.size).toBe(component.employeeData.length);
-    expect(component.employeeData.every((row) => row.salary > 0)).toBeTrue();
+    expect(component.employeeData.every((row: { salary: number }) => row.salary > 0)).toBeTrue();
     expect(component.employeeData[0]).toEqual({
       id: 1,
-      name: 'Arif Rahman',
+      name: 'Luca Romano',
       department: 'Engineering',
-      location: 'Dhaka',
-      salary: 82000
+      location: 'Rome',
+      dob: '1990-01-01',
+      salary: 82000,
+      currency: 'EUR'
     });
   });
 
@@ -112,5 +119,13 @@ describe('UiKitDemoComponent', () => {
     component.saveItem();
 
     expect(console.log).toHaveBeenCalledWith('Item saved!');
+  });
+
+  it('should toggle modal visibility through open and close helpers', () => {
+    component.openModal();
+    expect(component.showModal).toBeTrue();
+
+    component.closeModal();
+    expect(component.showModal).toBeFalse();
   });
 });
