@@ -94,8 +94,8 @@ export class UiKitDemoComponent {
       header: 'Name',
       sortable: true,
       filterable: true,
-      filterMatchMode: 'startsWith',
-      filterPlaceholder: 'Name starts with...'
+      //filterMatchMode: 'startsWith',
+      //filterPlaceholder: 'Name starts with...'
     },
     {
       field: 'department',
@@ -115,6 +115,14 @@ export class UiKitDemoComponent {
       // filterPlaceholder: 'Filter location'
     },
     {
+      field: 'dob',
+      header: 'Date of Birth',
+      sortable: true,
+      filterable: true,
+      // filterDisplay: 'row',
+      // filterPlaceholder: 'Filter location'
+    },
+    {
       field: 'salary',
       header: 'Salary',
       sortable: true,
@@ -125,9 +133,16 @@ export class UiKitDemoComponent {
   ];
 
   readonly employeeData = [
-    { id: 1, name: 'Arif Rahman', department: 'Engineering', location: 'Dhaka', salary: 82000 },
-    { id: 2, name: 'Nadia Islam', department: 'Finance', location: 'Chattogram', salary: 76000 },
-    { id: 3, name: 'Samir Roy', department: 'Product', location: 'Khulna', salary: 91000 }
+    { id: 1, name: 'Luca Romano', department: 'Engineering', location: 'Rome', dob: '1990-01-01', salary: 82000, currency: 'EUR' },
+    { id: 2, name: 'Giulia Conti', department: 'Finance', location: 'Turin', dob: '1988-05-12', salary: 76000, currency: 'EUR' },
+    { id: 3, name: 'Matteo Bianchi', department: 'Product', location: 'Naples', dob: '1992-09-23', salary: 90000, currency: 'EUR' },
+    { id: 4, name: 'Chiara Greco', department: 'Marketing', location: 'Turin', dob: '1995-03-15', salary: 68000, currency: 'EUR' },
+    { id: 5, name: 'Davide Ricci', department: 'Sales', location: 'Florence', dob: '1985-07-30', salary: 72000, currency: 'EUR' },
+    { id: 6, name: 'Sofia Gallo', department: 'HR', location: 'Bologna', dob: '1991-11-05', salary: 75000, currency: 'EUR' },
+    { id: 7, name: 'Alessandro Rinaldi', department: 'Engineering', location: 'Genoa', dob: '1989-02-18', salary: 88000, currency: 'EUR' },
+    { id: 8, name: 'Francesca Moretti', department: 'Finance', location: 'Turin', dob: '1993-06-10', salary: 79000, currency: 'EUR' },
+    { id: 9, name: 'Elena Ferrari', department: 'Product', location: 'Verona', dob: '1994-12-22', salary: 85000, currency: 'EUR' },
+    { id: 10, name: 'Marco De Luca', department: 'Marketing', location: 'Bari', dob: '1990-04-08', salary: 70000, currency: 'EUR' }
   ];
 
   readonly employeeActions: AppDataTableAction[] = [
