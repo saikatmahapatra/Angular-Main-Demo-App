@@ -15,6 +15,11 @@ export class ConfigService {
           resolve(true);
         })
         .catch(err => {
+          MyAppConfig.apiBaseUrl = environment.useMockServer ? environment.mockAPIUrl : environment.apiBaseUrl;
+          MyAppConfig.maintenanceMode = false;
+          MyAppConfig.mfaEnabled = false;
+          console.error('Unable to load runtime config. Falling back to environment defaults.', err);
+          resolve(false);
         });
     });
   }
