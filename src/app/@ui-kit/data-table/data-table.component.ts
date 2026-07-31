@@ -59,8 +59,7 @@ export interface AppDataTableAction {
             <div class="flex align-items-center gap-2">
               <span>{{ column.header }}</span>
               <p-sortIcon [field]="column.field"></p-sortIcon>
-            </div>
-            @if (column.filterable === true) {
+              @if (column.filterable === true) {
               <p-columnFilter
                 [field]="column.field"
                 [display]="resolveFilterDisplay(column.filterDisplay)"
@@ -75,11 +74,13 @@ export interface AppDataTableAction {
                 [showApplyButton]="true">
               </p-columnFilter>
             }
+            </div>
           </th>
           } @else {
           <th>
-            <div>{{ column.header }}</div>
-            @if (column.filterable === true) {
+            <div class="flex align-items-center gap-2">
+              <span>{{ column.header }}</span>
+              @if (column.filterable === true) {
               <p-columnFilter
                 [field]="column.field"
                 [display]="resolveFilterDisplay(column.filterDisplay)"
@@ -94,10 +95,12 @@ export interface AppDataTableAction {
                 [showApplyButton]="true">
               </p-columnFilter>
             }
+            </div>
+            
           </th>
           }
           }
-          @if (actions().length > 0) {
+          @if (actions() && actions().length > 0) {
           <th style="width: auto">Actions</th>
           }
         </tr>
@@ -122,7 +125,7 @@ export interface AppDataTableAction {
           @for (column of columns(); track column.field) {
           <td>{{ resolveCell(rowData, column) }}</td>
           }
-          @if (actions().length > 0) {
+          @if (actions() && actions().length > 0) {
           <td>
             <div class="flex gap-2">
               @for (action of actions(); track $index) {
@@ -147,7 +150,7 @@ export interface AppDataTableAction {
 
       <ng-template pTemplate="expandedrow" let-rowData>
         <tr>
-          <td [attr.colspan]="columns().length + (expandableRows() ? 1 : 0) + (actions().length > 0 ? 1 : 0)">
+          <td [attr.colspan]="columns().length + (expandableRows() ? 1 : 0) + (actions() && actions().length > 0 ? 1 : 0)">
             <div class="p-3 surface-50 border-round-sm">
               <div class="font-medium mb-2">Row details</div>
               <pre class="m-0">{{ rowData | json }}</pre>
@@ -158,7 +161,7 @@ export interface AppDataTableAction {
 
       <ng-template pTemplate="emptymessage">
         <tr>
-          <td [attr.colspan]="columns().length + (expandableRows() ? 1 : 0) + (actions().length > 0 ? 1 : 0)">{{ emptyMessage() }}</td>
+          <td [attr.colspan]="columns().length + (expandableRows() ? 1 : 0) + (actions() && actions().length > 0 ? 1 : 0)">{{ emptyMessage() }}</td>
         </tr>
       </ng-template>
     </p-table>
