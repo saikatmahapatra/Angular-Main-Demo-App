@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy, ContentChild, TemplateRef } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import { TooltipModule } from 'primeng/tooltip';
@@ -25,7 +25,6 @@ export interface AppDataTableAction {
   tooltip?: string;
   onClick: (rowData: any) => void;
 }
-
 @Component({
   selector: 'app-data-table',
   standalone: true,
@@ -151,10 +150,12 @@ export interface AppDataTableAction {
       <ng-template pTemplate="expandedrow" let-rowData>
         <tr>
           <td [attr.colspan]="columns().length + (expandableRows() ? 1 : 0) + (actions() && actions().length > 0 ? 1 : 0)">
-            <div class="p-3 surface-50 border-round-sm">
-              <div class="font-medium mb-2">Row details</div>
-              <pre class="m-0">{{ rowData | json }}</pre>
-            </div>
+            @if (expandedRowTemplate) {
+            <ng-container
+              [ngTemplateOutlet]="expandedRowTemplate"
+              [ngTemplateOutletContext]="{ $implicit: rowData, rowData: rowData }">
+            </ng-container>
+            }
           </td>
         </tr>
       </ng-template>
@@ -181,6 +182,12 @@ export class DataTableComponent {
   actions = input<AppDataTableAction[]>([]);
   tableStyle = input<{ [klass: string]: string }>({ 'min-width': '50rem' });
   size = input<'small' | 'large' | undefined>('small');
+  expandedRowTableDataField = input<string>('');
+  expandedRowTableColumns = input<AppDataTableColumn[]>([]);
+  expandedRowEmptyMessage = input<string>('No expanded row data found');
+
+  @ContentChild('expandedRow', { read: TemplateRef })
+  expandedRowTemplate?: TemplateRef<unknown>;
 
   resolveCell(rowData: Record<string, unknown>, column: AppDataTableColumn): string {
     const value = rowData?.[column.field];
@@ -198,6 +205,51 @@ export class DataTableComponent {
       return 'row';
     }
     return 'menu';
+  }
+
+  resolveExpandedRows(rowData: Record<string, unknown>): Record<string, unknown>[] {
+    const dataField = this.expandedRowTableDataField();
+    const source: unknown = dataField ? rowData?.[dataField] : rowData;
+
+    if (Array.isArray(source)) {
+      return source.filter((item): item is Record<string, unknown> => typeof item === 'object' && item !== null);
+    }
+
+    if (typeof source === 'object' && source !== null) {
+      return [source as Record<string, unknown>];
+    }
+
+    if (source === undefined || source === null) {
+      return [];
+    }
+
+    return [{ value: source }];
+  }
+
+  resolveExpandedColumns(rowData: Record<string, unknown>): AppDataTableColumn[] {
+    const configuredColumns = this.expandedRowTableColumns();
+    if (configuredColumns.length > 0) {
+      return configuredColumns;
+    }
+
+    const firstRow = this.resolveExpandedRows(rowData)[0];
+    if (!firstRow) {
+      return [];
+    }
+
+    return Object.keys(firstRow).map((key) => ({
+      field: key,
+      header: this.toTitleCase(key)
+    }));
+  }
+
+  private toTitleCase(value: string): string {
+    return value
+      .replace(/([A-Z])/g, ' $1')
+      .replace(/[_-]/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .replace(/^./, (first) => first.toUpperCase());
   }
 
 }
