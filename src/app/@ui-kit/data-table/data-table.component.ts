@@ -56,7 +56,7 @@ export interface AppDataTableAction {
           @for (column of columns(); track column.field) {
           @if (column.sortable !== false) {
           <th [pSortableColumn]="column.field">
-            <div class="flex align-items-center gap-2">
+            <div class="d-flex align-items-center gap-2">
               <span>{{ column.header }}</span>
               <p-sortIcon [field]="column.field"></p-sortIcon>
               @if (column.filterable === true) {
@@ -78,7 +78,7 @@ export interface AppDataTableAction {
           </th>
           } @else {
           <th>
-            <div class="flex align-items-center gap-2">
+            <div class="d-flex align-items-center gap-1">
               <span>{{ column.header }}</span>
               @if (column.filterable === true) {
               <p-columnFilter
@@ -127,7 +127,7 @@ export interface AppDataTableAction {
           }
           @if (actions() && actions().length > 0) {
           <td>
-            <div class="flex gap-2">
+            <div class="d-flex gap-1">
               @for (action of actions(); track $index) {
               <button
                 pButton
