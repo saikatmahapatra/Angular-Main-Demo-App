@@ -253,8 +253,31 @@
 
     <div class="my-4">
         <h3>Data Table (Sorting + Row Expansion + Actions)</h3>
-        <app-data-table [dataValue]="employeeData" [columns]="employeeColumns" [caption]="'Employee Summary'"
-            [dataKey]="'id'" [expandableRows]="true" [sortMode]="'single'" [actions]="employeeActions">
+        <app-data-table [dataValue]="employeeData" [columns]="employeeColumns"
+            [caption]="'Employee Summary (Custom Expansion)'" [dataKey]="'id'" [expandableRows]="true"
+            [sortMode]="'single'" [actions]="employeeActions">
+            <!-- Custom row expansion template -->
+            <ng-template #expandedRow let-rowData>
+                <div class="p-3 border rounded bg-light">
+                    <h5>JSON</h5>
+                    {{rowData.projects | json}}
+
+                    <h5>Table</h5>
+                    <app-data-table [dataValue]="rowData.projects" [columns]="expandedRowTableColumns"></app-data-table>
+                    
+                    <h5>Custom Div</h5>
+                    <div>
+                        <strong>Projects:</strong>
+                        <div class="d-flex flex-wrap gap-2 mt-2">
+                            @for (project of rowData.projects; track $index) {
+                            <span class="badge text-bg-info">{{ project.project }} - {{ project.role }} ({{
+                                project.allocation }})</span>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+            <!-- Custom row expansion template -->
         </app-data-table>
     </div>
 

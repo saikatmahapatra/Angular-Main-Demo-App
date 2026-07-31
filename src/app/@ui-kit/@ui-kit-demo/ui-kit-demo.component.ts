@@ -155,7 +155,10 @@ export class UiKitDemoComponent {
       location: 'Turin',
       dob: '1988-05-12',
       salary: 76000,
-      currency: 'EUR'
+      currency: 'EUR',
+      projects: [
+        { project: 'Mercury', role: 'Financial Analyst', allocation: '100%' }
+      ]
     },
     {
       id: 3,
@@ -164,7 +167,10 @@ export class UiKitDemoComponent {
       location: 'Naples',
       dob: '1992-09-23',
       salary: 90000,
-      currency: 'EUR'
+      currency: 'EUR',
+      projects: [
+        { project: 'Venus', role: 'Product Manager', allocation: '100%' }
+      ]
     },
     {
       id: 4,
@@ -173,7 +179,8 @@ export class UiKitDemoComponent {
       location: 'Turin',
       dob: '1995-03-15',
       salary: 68000,
-      currency: 'EUR'
+      currency: 'EUR',
+      projects: []
     },
     {
       id: 5,
@@ -182,7 +189,10 @@ export class UiKitDemoComponent {
       location: 'Florence',
       dob: '1985-07-30',
       salary: 72000,
-      currency: 'EUR'
+      currency: 'EUR',
+      projects: [
+        { project: 'Saturn', role: 'Sales Executive', allocation: '100%' }
+      ]
     },
     {
       id: 6,
@@ -191,7 +201,10 @@ export class UiKitDemoComponent {
       location: 'Bologna',
       dob: '1991-11-05',
       salary: 75000,
-      currency: 'EUR'
+      currency: 'EUR',
+      projects: [
+        { project: 'Jupiter', role: 'Marketing Specialist', allocation: '100%' }
+      ]
     },
     {
       id: 7,
@@ -200,34 +213,8 @@ export class UiKitDemoComponent {
       location: 'Genoa',
       dob: '1989-02-18',
       salary: 88000,
-      currency: 'EUR'
-    },
-    {
-      id: 8,
-      name: 'Francesca Moretti',
-      department: 'Finance',
-      location: 'Turin',
-      dob: '1993-06-10',
-      salary: 79000,
-      currency: 'EUR'
-    },
-    {
-      id: 9,
-      name: 'Elena Ferrari',
-      department: 'Product',
-      location: 'Verona',
-      dob: '1994-12-22',
-      salary: 85000,
-      currency: 'EUR'
-    },
-    {
-      id: 10,
-      name: 'Marco De Luca',
-      department: 'Marketing',
-      location: 'Bari',
-      dob: '1990-04-08',
-      salary: 70000,
-      currency: 'EUR'
+      currency: 'EUR',
+      projects: []
     }
   ];
 
