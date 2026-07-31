@@ -27,7 +27,7 @@ export class PaginationComponent {
   first = input<number>(0);
   totalRecords = input<number>(0);
   itemPerPage = input<number>(10);
-  itemPerPageDropdown = input<number[]>([10, 20, 30, 50, 100, 150, 200]);
+  itemPerPageDropdown = input<number[]>([10, 25, 50, 100]);
   handlePageChange = output<MouseEvent>();
   showCurrentPageReport = input<boolean>(true);
 
