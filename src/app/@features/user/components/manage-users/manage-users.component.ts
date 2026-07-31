@@ -10,6 +10,7 @@ import { HttpParams } from '@angular/common/http';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { TableRowCollapseEvent, TableRowExpandEvent } from 'primeng/table';
 import { MessageService } from 'primeng/api';
+import { AppDataTableAction, AppDataTableColumn } from 'src/app/@ui-kit';
 
 @Component({
   selector: 'app-manage-users',
@@ -34,7 +35,7 @@ export class ManageUsersComponent implements OnInit {
   first: number = 0;
   totalRecords: number = 0;
   itemPerPage: number = 10;
-  itemPerPageDropdown = [10, 20, 30, 50, 100, 150, 200];
+  itemPerPageDropdown = [10, 25, 50, 100];
   searchKeyword: any = '';
   paginate(event: any) {
     this.itemPerPage = event.rows;
@@ -43,6 +44,68 @@ export class ManageUsersComponent implements OnInit {
   }
   // Pagination Config
   expandedRows = {};
+
+  // Data table
+  readonly userDTColumns: AppDataTableColumn[] = [
+    {
+      field: 'user_full_name',
+      header: 'Name',
+      sortable: true,
+      filterable: true,
+    },
+    {
+      field: 'user_email',
+      header: 'Email Address',
+      sortable: true,
+      filterable: true,
+    },
+    {
+      field: 'user_phone',
+      header: 'Phone Number',
+      sortable: true,
+      filterable: true,
+      filterType: 'numeric',
+    },
+    {
+      field: 'designation_name',
+      header: 'Designation',
+      sortable: true,
+      filterable: true,
+    },
+    {
+      field: 'department_name',
+      header: 'Department',
+      sortable: true,
+      filterable: true,
+    },
+    {
+      field: 'user_status',
+      header: 'Status',
+      sortable: true,
+      filterable: true,
+    }
+  ];
+
+  readonly userDTActions: AppDataTableAction[] = [
+    {
+      icon: 'pi pi-eye',
+      severity: 'info',
+      tooltip: 'View',
+      onClick: (row) => console.log('View', row)
+    },
+    {
+      icon: 'pi pi-pencil',
+      severity: 'success',
+      tooltip: 'Edit',
+      onClick: (row) => console.log('Edit', row)
+    },
+    {
+      icon: 'pi pi-trash',
+      severity: 'danger',
+      tooltip: 'Delete',
+      onClick: (row) => console.log('Delete', row)
+    }
+  ];
 
   constructor(
     private apiSvc: ApiService,
