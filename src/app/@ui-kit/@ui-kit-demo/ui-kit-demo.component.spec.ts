@@ -95,7 +95,11 @@ describe('UiKitDemoComponent', () => {
       location: 'Rome',
       dob: '1990-01-01',
       salary: 82000,
-      currency: 'EUR'
+      currency: 'EUR',
+      projects: [
+        { project: 'Atlas', role: 'Lead Engineer', allocation: '70%' },
+        { project: 'Apollo', role: 'Reviewer', allocation: '30%' }
+      ]
     });
   });
 
