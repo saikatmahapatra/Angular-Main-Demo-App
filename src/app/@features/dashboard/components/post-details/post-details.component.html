@@ -1,5 +1,4 @@
-<!-- <h1 class="page-title">View Details</h1> -->
-<h1 class="page-title">{{post?.content_title}}</h1>
+<h1 class="page-title">Details</h1>
 <div class="back-to-page mb-3">
   <a [routerLink]="['/dashboard']" [state]="{ newsPageNumber: paginationPageNumber }">
     <app-icon [name]="'chevronLeft'" [styleClass]=""></app-icon> {{ 'home.goBack' | translate }}
@@ -10,7 +9,7 @@
 <div class="col-12">
   <app-card>
     <div card-body>
-      <!-- <h3>{{post?.content_title}}</h3> -->
+      <h4>{{post?.content_title}}</h4>
       <p class="text-muted">{{post?.content_type}}, <span class="text-sm">{{getTimeStampInfo(post)}}</span></p>
       <div class="main-content-description-wrapper" [innerHTML]="$safeNavigationMigration(post?.content_text)"></div>
     </div>
