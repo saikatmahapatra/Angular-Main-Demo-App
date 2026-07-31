@@ -13,7 +13,7 @@ export interface AppSelectOption {
   standalone: true,
   imports: [CommonModule, FormsModule, SelectModule, MultiSelectModule],
   template: `
-    <div class="flex flex-column gap-2">
+    <div class="d-flex flex-column gap-2">
       @if (label() !== '') {
       <label [for]="inputId()" class="form-label">{{ label() }}</label>
       }

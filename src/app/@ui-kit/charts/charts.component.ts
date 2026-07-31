@@ -8,7 +8,7 @@ import { ChartModule } from 'primeng/chart';
   imports: [CommonModule, ChartModule],
   changeDetection: ChangeDetectionStrategy.Eager,
   template: `
-    <div class="flex flex-column gap-2">
+    <div class="d-flex flex-column gap-2">
       @if (title() !== '') {
       <h5 class="m-0">{{ title() }}</h5>
       }

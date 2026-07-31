@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule, FormsModule, TextareaModule],
   template: `
-    <div class="flex flex-col gap-2">
+    <div class="d-flex flex-column gap-2">
       @if(label() !== '') {
       <label [for]="textareaId()" class="form-label">
         {{ label() }}

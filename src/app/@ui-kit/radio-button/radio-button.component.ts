@@ -13,14 +13,14 @@ export interface AppRadioOption {
   standalone: true,
   imports: [CommonModule, FormsModule, RadioButtonModule],
   template: `
-    <div class="flex flex-column gap-2">
+    <div class="d-flex flex-column gap-2">
       @if (label() !== '') {
       <label class="form-label">{{ label() }}</label>
       }
 
-      <div class="flex flex-wrap gap-3">
+      <div class="d-flex flex-wrap gap-3">
         @for (option of options(); track $index) {
-        <div class="flex align-items-center gap-2">
+        <div class="d-flex align-items-center gap-2">
           <p-radiobutton
             [inputId]="getOptionId($index)"
             [name]="name()"
