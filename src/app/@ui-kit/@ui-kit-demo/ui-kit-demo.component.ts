@@ -135,16 +135,106 @@ export class UiKitDemoComponent {
   ];
 
   readonly employeeData = [
-    { id: 1, name: 'Luca Romano', department: 'Engineering', location: 'Rome', dob: '1990-01-01', salary: 82000, currency: 'EUR' },
-    { id: 2, name: 'Giulia Conti', department: 'Finance', location: 'Turin', dob: '1988-05-12', salary: 76000, currency: 'EUR' },
-    { id: 3, name: 'Matteo Bianchi', department: 'Product', location: 'Naples', dob: '1992-09-23', salary: 90000, currency: 'EUR' },
-    { id: 4, name: 'Chiara Greco', department: 'Marketing', location: 'Turin', dob: '1995-03-15', salary: 68000, currency: 'EUR' },
-    { id: 5, name: 'Davide Ricci', department: 'Sales', location: 'Florence', dob: '1985-07-30', salary: 72000, currency: 'EUR' },
-    { id: 6, name: 'Sofia Gallo', department: 'HR', location: 'Bologna', dob: '1991-11-05', salary: 75000, currency: 'EUR' },
-    { id: 7, name: 'Alessandro Rinaldi', department: 'Engineering', location: 'Genoa', dob: '1989-02-18', salary: 88000, currency: 'EUR' },
-    { id: 8, name: 'Francesca Moretti', department: 'Finance', location: 'Turin', dob: '1993-06-10', salary: 79000, currency: 'EUR' },
-    { id: 9, name: 'Elena Ferrari', department: 'Product', location: 'Verona', dob: '1994-12-22', salary: 85000, currency: 'EUR' },
-    { id: 10, name: 'Marco De Luca', department: 'Marketing', location: 'Bari', dob: '1990-04-08', salary: 70000, currency: 'EUR' }
+    {
+      id: 1,
+      name: 'Luca Romano',
+      department: 'Engineering',
+      location: 'Rome',
+      dob: '1990-01-01',
+      salary: 82000,
+      currency: 'EUR',
+      projects: [
+        { project: 'Atlas', role: 'Lead Engineer', allocation: '70%' },
+        { project: 'Apollo', role: 'Reviewer', allocation: '30%' }
+      ]
+    },
+    {
+      id: 2,
+      name: 'Giulia Conti',
+      department: 'Finance',
+      location: 'Turin',
+      dob: '1988-05-12',
+      salary: 76000,
+      currency: 'EUR'
+    },
+    {
+      id: 3,
+      name: 'Matteo Bianchi',
+      department: 'Product',
+      location: 'Naples',
+      dob: '1992-09-23',
+      salary: 90000,
+      currency: 'EUR'
+    },
+    {
+      id: 4,
+      name: 'Chiara Greco',
+      department: 'Marketing',
+      location: 'Turin',
+      dob: '1995-03-15',
+      salary: 68000,
+      currency: 'EUR'
+    },
+    {
+      id: 5,
+      name: 'Davide Ricci',
+      department: 'Sales',
+      location: 'Florence',
+      dob: '1985-07-30',
+      salary: 72000,
+      currency: 'EUR'
+    },
+    {
+      id: 6,
+      name: 'Sofia Gallo',
+      department: 'HR',
+      location: 'Bologna',
+      dob: '1991-11-05',
+      salary: 75000,
+      currency: 'EUR'
+    },
+    {
+      id: 7,
+      name: 'Alessandro Rinaldi',
+      department: 'Engineering',
+      location: 'Genoa',
+      dob: '1989-02-18',
+      salary: 88000,
+      currency: 'EUR'
+    },
+    {
+      id: 8,
+      name: 'Francesca Moretti',
+      department: 'Finance',
+      location: 'Turin',
+      dob: '1993-06-10',
+      salary: 79000,
+      currency: 'EUR'
+    },
+    {
+      id: 9,
+      name: 'Elena Ferrari',
+      department: 'Product',
+      location: 'Verona',
+      dob: '1994-12-22',
+      salary: 85000,
+      currency: 'EUR'
+    },
+    {
+      id: 10,
+      name: 'Marco De Luca',
+      department: 'Marketing',
+      location: 'Bari',
+      dob: '1990-04-08',
+      salary: 70000,
+      currency: 'EUR'
+    }
+  ];
+
+  readonly expandedRowTableColumns: AppDataTableColumn[] = [
+    { field: 'project', header: 'Project' },
+    { field: 'role', header: 'Role' },
+    { field: 'allocation', header: 'Allocation' }
   ];
 
   readonly employeeActions: AppDataTableAction[] = [
