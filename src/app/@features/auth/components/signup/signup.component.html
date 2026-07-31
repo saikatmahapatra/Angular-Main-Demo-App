@@ -2,31 +2,31 @@
     {{ 'auth.signup.titleSignup' | translate }}
 </h1>
 <div class="mb-3">
-    <label class="form-label" for="firstName">
+    <label class="required" for="firstName">
         {{ 'auth.signup.firstName' | translate }}
     </label>
     <app-input [type]="'text'" [name]="'firstName'" [inputId]="'firstName'" class="w-100 d-block"></app-input>
 </div>
 <div class="mb-3">
-    <label class="form-label" for="lastName">
+    <label class="required" for="lastName">
         {{ 'auth.signup.lastName' | translate }}
     </label>
     <app-input [type]="'text'" [name]="'lastName'" [inputId]="'lastName'" class="w-100 d-block"></app-input>
 </div>
 <div class="mb-3">
-    <label class="form-label" for="email">
+    <label class="required" for="email">
         {{ 'auth.signup.email' | translate }}
     </label>
     <app-input [type]="'email'" [name]="'email'" [inputId]="'email'" class="w-100 d-block"></app-input>
 </div>
 <div class="mb-3">
-    <label class="form-label" for="password">
+    <label class="required" for="password">
         {{ 'auth.signup.password' | translate }}
     </label>
     <app-input [type]="'password'" [name]="'password'" [inputId]="'password'" class="w-100 d-block"></app-input>
 </div>
 <div class="mb-3">
-    <label class="form-label" for="confirmPassword">
+    <label class="required" for="confirmPassword">
         {{ 'auth.signup.confirmPassword' | translate }}
     </label>
     <app-input [type]="'password'" [name]="'confirmPassword'" [inputId]="'confirmPassword'" class="w-100 d-block"></app-input>

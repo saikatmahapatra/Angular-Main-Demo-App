@@ -15,7 +15,7 @@ export interface AppRadioOption {
   template: `
     <div class="d-flex flex-column gap-2">
       @if (label() !== '') {
-      <label class="form-label">{{ label() }}</label>
+      <label class="">{{ label() }}</label>
       }
 
       <div class="d-flex flex-wrap gap-3">

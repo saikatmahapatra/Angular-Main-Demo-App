@@ -15,7 +15,7 @@ export interface AppSelectOption {
   template: `
     <div class="d-flex flex-column gap-2">
       @if (label() !== '') {
-      <label [for]="inputId()" class="form-label">{{ label() }}</label>
+      <label [for]="inputId()" class="">{{ label() }}</label>
       }
 
       @if (multiple()) {

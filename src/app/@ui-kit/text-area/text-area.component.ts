@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
   template: `
     <div class="d-flex flex-column gap-2">
       @if(label() !== '') {
-      <label [for]="textareaId()" class="form-label">
+      <label [for]="textareaId()" class="">
         {{ label() }}
       </label>
       }
