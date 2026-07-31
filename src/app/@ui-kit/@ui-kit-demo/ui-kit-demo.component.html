@@ -253,16 +253,12 @@
 
     <div class="my-4">
         <h3>Data Table (Sorting + Row Expansion + Actions)</h3>
-        <app-toolbar [styleClass]="'mb-3'">
-            <ng-template #start>
-                <app-button [icon]="'pi pi-plus'" [variant]="'outlined'" [severity]="'secondary'"></app-button>
-            </ng-template>
-
-            <ng-template #end>
-                <app-input [placeholder]="'Search'" />
-            </ng-template>
-        </app-toolbar>
         <app-data-table [dataValue]="employeeData" [columns]="employeeColumns" [caption]="'Employee Summary'"
             [dataKey]="'id'" [expandableRows]="true" [sortMode]="'single'" [actions]="employeeActions"></app-data-table>
+    </div>
+
+    <div class="my-4">
+        <h3>Pagination</h3>
+        <app-pagination [totalRecords]="41"></app-pagination>
     </div>
 </div>
