@@ -23,43 +23,44 @@
       <app-data-table [dataValue]="userList" [columns]="userDTColumns" [caption]="'Employee Data'" [dataKey]="'id'"
         [expandableRows]="true" [sortMode]="'single'" [actions]="userDTActions">
         <ng-template #expandedRow let-rowData>
+          <!-- {{rowData | json}} -->
           <table class="table table-bordered">
             <tbody>
               <tr>
                 <td class="fw-bold">Employee ID</td>
-                <td [innerHTML]="rowData.user_emp_id || '-'"></td>
+                <td>{{rowData.user_uid || '-'}}</td>
                 <td class="fw-bold">Designation</td>
-                <td [innerHTML]="rowData.designation_name || '-'"></td>
+                <td>{{rowData.designation_name || '-'}}</td>
               </tr>
               <tr>
                 <td class="fw-bold">Personal Email</td>
-                <td [innerHTML]="rowData.user_email_secondary || '-'"></td>
+                <td>{{rowData.user_email2 || '-'}}</td>
                 <td class="fw-bold">Work Phone</td>
-                <td [innerHTML]="rowData.user_phone2 || '-'"></td>
+                <td>{{rowData.user_phone2 || '-'}}</td>
               </tr>
               <tr>
                 <td class="fw-bold">Employment Type</td>
-                <td [innerHTML]="rowData.employment_type_name || '-'"></td>
+                <td>{{rowData.employment_type_name || '-'}}</td>
                 <td class="fw-bold">Department</td>
-                <td [innerHTML]="rowData.department_name || '-'"></td>
+                <td>{{rowData.department_name || '-'}}</td>
               </tr>
               <tr>
                 <td class="fw-bold">Role Group</td>
-                <td [innerHTML]="rowData.user_role+'-'+rowData?.role_name"></td>
+                <td>{{rowData.user_role+'-'+rowData?.role_name}}
                 <td class="fw-bold">User Type</td>
-                <td [innerHTML]="rowData.user_type || '-'"></td>
+                <td>{{rowData.user_type || '-'}}</td>
               </tr>
               <tr>
                 <td class="fw-bold">Date of Joining</td>
-                <td [innerHTML]="(rowData.user_doj | date: 'dd-MM-YYYY') || '-'"></td>
+                <td>{{ rowData.user_doj ? (rowData.user_doj | date: 'dd-MM-YYYY') : '-' }}</td>
                 <td class="fw-bold">Created On</td>
-                <td [innerHTML]="(rowData.user_registration_date | date: 'dd-MM-YYYY h:mm:ss a') || ''"></td>
+                <td>{{ rowData.user_registration_date ? (rowData.user_registration_date | date: 'dd-MM-YYYY h:mm:ss a') : '' }}</td>
               </tr>
               <tr>
                 <td class="fw-bold">Date of Release</td>
-                <td [innerHTML]="(rowData.user_dor | date: 'dd-MM-YYYY') || 'NA'"></td>
+                <td>{{ rowData.user_dor ? (rowData.user_dor | date: 'dd-MM-YYYY') : 'NA' }}</td>
                 <td class="fw-bold">Last Login</td>
-                <td [innerHTML]="(rowData.user_login_date_time | date: 'dd-MM-YYYY h:mm:ss a') || '-'"></td>
+                <td>{{ rowData.user_login_date_time ? (rowData.user_login_date_time | date: 'dd-MM-YYYY h:mm:ss a') : '-' }}</td>
               </tr>
               <tr>
                 <td class="fw-bold">Account Status</td>
@@ -80,9 +81,9 @@
               </tr>
               <tr>
                 <td class="fw-bold">Closed On</td>
-                <td [innerHTML]="(rowData.account_closed_datetime | date: 'dd-MM-YYYY h:mm:ss a') || 'NA'"></td>
+                <td>{{ rowData.account_closed_datetime ? (rowData.account_closed_datetime | date: 'dd-MM-YYYY h:mm:ss a') : 'NA' }}</td>
                 <td class="fw-bold">Comments</td>
-                <td [innerHTML]="rowData.account_close_comments || 'NA'"></td>
+                <td>{{ rowData.account_close_comments ? rowData.account_close_comments : 'NA' }}</td>
               </tr>
             </tbody>
           </table>
