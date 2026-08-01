@@ -30,11 +30,10 @@ export class DashboardLandingPageComponent {
   pageContent: any;
 
   // Pagination Config
+  itemPerPage: number = 10;
   currentPageIndex: number = 0;
   first: number = 0;
   totalRecords: number = 0;
-  itemPerPage: number = 10;
-  itemPerPageDropdown = [10, 20, 30, 50, 100, 150, 200];
   paginate(event: any) {
     //console.log(event);
     this.itemPerPage = event.rows;
