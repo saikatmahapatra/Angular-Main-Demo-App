@@ -28,62 +28,76 @@
             <tbody>
               <tr>
                 <td class="fw-bold">Employee ID</td>
-                <td>{{rowData.user_uid || '-'}}</td>
+                <td>{{rowData?.user_uid || '-'}}</td>
                 <td class="fw-bold">Designation</td>
-                <td>{{rowData.designation_name || '-'}}</td>
-              </tr>
-              <tr>
-                <td class="fw-bold">Personal Email</td>
-                <td>{{rowData.user_email2 || '-'}}</td>
-                <td class="fw-bold">Work Phone</td>
-                <td>{{rowData.user_phone2 || '-'}}</td>
+                <td>{{rowData?.designation_name || '-'}}</td>
               </tr>
               <tr>
                 <td class="fw-bold">Employment Type</td>
-                <td>{{rowData.employment_type_name || '-'}}</td>
+                <td>{{rowData?.employment_type_name || '-'}}</td>
                 <td class="fw-bold">Department</td>
-                <td>{{rowData.department_name || '-'}}</td>
+                <td>{{rowData?.department_name || '-'}}</td>
               </tr>
               <tr>
+                <td class="fw-bold">Work Email</td>
+                <td>{{rowData?.user_email || '-'}}</td>
+                <td class="fw-bold">Work Phone</td>
+                <td>{{rowData?.user_phone2 || '-'}}</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">Base Work Location</td>
+                <td>{{rowData?.base_work_location_name || '-'}}</td>
+                <td class="fw-bold">Workspace Type</td>
+                <td>{{rowData?.workspace_type_name || '-'}}</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">Personal Email</td>
+                <td>{{rowData?.user_email2 || '-'}}</td>
+                <td class="fw-bold">Personal Phone</td>
+                <td>{{rowData?.user_phone || '-'}}</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">Date of Birth</td>
+                <td>{{ rowData?.user_dob ? (rowData.user_dob | date: 'dd/MM/yyyy') : 'NA' }}</td>
+                <td class="fw-bold">Gender</td>
+                <td>{{rowData?.user_gender === 'M' ? 'Male' : 'Female'}}</td>
+              </tr>
+
+              <tr>
                 <td class="fw-bold">Role Group</td>
-                <td>{{rowData.user_role+'-'+rowData?.role_name}}
+                <td>{{rowData?.user_role+'-'+rowData?.role_name}}</td>
                 <td class="fw-bold">User Type</td>
-                <td>{{rowData.user_type || '-'}}</td>
+                <td>{{ rowData?.user_type === 'U' ? 'Registered User' : (rowData?.user_type === 'S' ? 'System User' : '-') }}</td>
               </tr>
               <tr>
                 <td class="fw-bold">Date of Joining</td>
-                <td>{{ rowData.user_doj ? (rowData.user_doj | date: 'dd-MM-YYYY') : '-' }}</td>
-                <td class="fw-bold">Created On</td>
-                <td>{{ rowData.user_registration_date ? (rowData.user_registration_date | date: 'dd-MM-YYYY h:mm:ss a') : '' }}</td>
+                <td>{{ rowData?.user_doj ? (rowData.user_doj | date: 'dd/MM/yyyy') : '-' }}</td>
+                <td class="fw-bold">Date of Release</td>
+                <td>{{ rowData?.user_dor ? (rowData.user_dor | date: 'dd/MM/yyyy') : 'NA' }}</td>
               </tr>
               <tr>
-                <td class="fw-bold">Date of Release</td>
-                <td>{{ rowData.user_dor ? (rowData.user_dor | date: 'dd-MM-YYYY') : 'NA' }}</td>
+                <td class="fw-bold">Created On</td>
+                <td>{{ rowData?.user_created_on ? (rowData.user_created_on | date: 'dd/MM/yyyy h:mm:ss a') : '-' }}</td>
                 <td class="fw-bold">Last Login</td>
-                <td>{{ rowData.user_login_date_time ? (rowData.user_login_date_time | date: 'dd-MM-YYYY h:mm:ss a') : '-' }}</td>
+                <td>{{ rowData?.user_login_date_time ? (rowData.user_login_date_time | date: 'dd/MM/yyyy h:mm:ss a') : '-' }}</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">Created By</td>
+                <td>{{rowData?.user_created_by || '-'}}</td>
+                <td class="fw-bold">Status Updated By</td>
+                <td>{{rowData?.user_status_updated_by || '-'}}
+                </td>
               </tr>
               <tr>
                 <td class="fw-bold">Account Status</td>
                 <td>
-                  <span *ngIf="rowData?.user_status === 'Y' " class="" title="Active">
-                    <app-icon class="text-success me-2" [name]="'circle-fill'" [height]="12"
-                      [width]="12"></app-icon>Active</span>
-                  <span *ngIf="rowData?.user_status === 'N' " class="" title="Inactive"><app-icon
-                      class="text-warning me-2" [name]="'circle-fill'" [height]="12"
-                      [width]="12"></app-icon>Inactive</span>
-                  <span *ngIf="rowData?.user_status === 'A' " class="" title="Closed"><app-icon class="text-danger me-2"
-                      [name]="'circle-fill'" [height]="12" [width]="12"></app-icon>Archived</span>
+                  <span *ngIf="rowData?.user_status === 'Y' " class="badge rounded-pill bg-success">Active</span>
+                  <span *ngIf="rowData?.user_status === 'N' "
+                    class="badge rounded-pill bg-warning text-dark">Inactive</span>
+                  <span *ngIf="rowData?.user_status === 'A' " class="badge rounded-pill bg-danger">Archived</span>
                 </td>
-                <td class="fw-bold">Profile Link</td>
-                <td>
-                  <a [routerLink]="['../../user/profile', rowData.id]">Click here</a>
-                </td>
-              </tr>
-              <tr>
-                <td class="fw-bold">Closed On</td>
-                <td>{{ rowData.account_closed_datetime ? (rowData.account_closed_datetime | date: 'dd-MM-YYYY h:mm:ss a') : 'NA' }}</td>
-                <td class="fw-bold">Comments</td>
-                <td>{{ rowData.account_close_comments ? rowData.account_close_comments : 'NA' }}</td>
+                <td class="fw-bold">Status Updated On</td>
+                <td>{{ rowData?.user_status_updated_on ? (rowData.user_status_updated_on | date: 'dd/MM/yyyy h:mm:ss a') : 'NA' }}</td>
               </tr>
             </tbody>
           </table>
@@ -91,7 +105,8 @@
       </app-data-table>
     </div>
     <div card-footer class="d-flex gap-2 justify-content-center">
-      <app-pagination [itemPerPage]="itemPerPage" [first]="first" [totalRecords]="totalRecords" (handlePageChange)="paginate($event)"></app-pagination>
+      <app-pagination [itemPerPage]="itemPerPage" [first]="first" [totalRecords]="totalRecords"
+        (handlePageChange)="paginate($event)"></app-pagination>
     </div>
   </app-card>
 </div>
