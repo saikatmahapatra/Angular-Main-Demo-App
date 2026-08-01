@@ -91,7 +91,7 @@
       </app-data-table>
     </div>
     <div card-footer class="d-flex gap-2 justify-content-center">
-      <app-pagination [totalRecords]="totalRecords" (handlePageChange)="paginate($event)"></app-pagination>
+      <app-pagination [itemPerPage]="itemPerPage" [first]="first" [totalRecords]="totalRecords" (handlePageChange)="paginate($event)"></app-pagination>
     </div>
   </app-card>
 </div>

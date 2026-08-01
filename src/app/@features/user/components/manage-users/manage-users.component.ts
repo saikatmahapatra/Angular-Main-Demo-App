@@ -31,11 +31,10 @@ export class ManageUsersComponent implements OnInit {
   showTableDataLoading = false;
 
   // Pagination Config
+  itemPerPage: number = 10;
   currentPageIndex: number = 0;
   first: number = 0;
   totalRecords: number = 0;
-  itemPerPage: number = 10;
-  itemPerPageDropdown = [10, 25, 50, 100];
   searchKeyword: any = '';
   paginate(event: any) {
     this.itemPerPage = event.rows;
