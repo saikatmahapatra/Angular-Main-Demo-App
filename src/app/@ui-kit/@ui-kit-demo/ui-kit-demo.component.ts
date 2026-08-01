@@ -6,6 +6,7 @@ import { MessageService } from 'primeng/api';
 import { SharedModule } from '@shared/shared.module';
 import { APP_UI_KIT } from '..';
 import { AppDataTableAction, AppDataTableColumn } from '../data-table/data-table.component';
+import { CommonService } from '@core/services/common.service';
 
 @Component({
   selector: 'app-ui-kit-demo',
@@ -21,8 +22,11 @@ export class UiKitDemoComponent {
   constructor(
     private fb: UntypedFormBuilder,
     private formValidationSvc: FormValidationService,
-    private messageService: MessageService
-  ) { }
+    private messageService: MessageService,
+    private commonSvc: CommonService, 
+  ) { 
+    this.commonSvc.setTitle('UI Kit - Design System Demo');
+  }
 
   // Form example
   myForm = this.fb.group({
