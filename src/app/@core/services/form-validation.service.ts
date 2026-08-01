@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { UntypedFormGroup,UntypedFormControl, AbstractControl, ValidatorFn, ValidationErrors, FormArray } from '@angular/forms';
-import { regEx } from '../../@utils/const/regEx';
+import { UntypedFormGroup,UntypedFormControl, AbstractControl, ValidatorFn, ValidationErrors } from '@angular/forms';
+import { REG_EX } from '../../@utils/const/common.constant';
 @Injectable({
   providedIn: 'root'
 })
@@ -57,12 +56,12 @@ export class FormValidationService {
   }
 
   validEmail(control: AbstractControl) {
-    const valid = control?.value ? control?.value?.match(regEx.email) : true;
+    const valid = control?.value ? control?.value?.match(REG_EX.email) : true;
     return valid ? null : { 'validEmail': true };
   }
 
   phoneNumber(control: AbstractControl) {
-    const valid = control?.value ? control?.value?.match(regEx.phone_number_US) : true;
+    const valid = control?.value ? control?.value?.match(REG_EX.phone_number_US) : true;
     return valid ? null : { 'phoneNumber': true };
   }
 
@@ -80,13 +79,13 @@ export class FormValidationService {
 
   strongPassword(control: AbstractControl) {
     // password should have minimum 8 chars long with 1 lower case, 1 upper case & 1 number
-    const regex = new RegExp(regEx.strong_password);
+    const regex = new RegExp(REG_EX.strong_password);
     const valid = regex.test(control.value);
     return valid ? null : { 'invalidPassword': true };
   }
 
   validName(control: AbstractControl) {
-    const regex = new RegExp(regEx.name);
+    const regex = new RegExp(REG_EX.name);
     const valid = regex.test(control.value);
     return valid ? null : { 'invalidName': true };
   }
@@ -125,7 +124,7 @@ export class FormValidationService {
   }
 
   validPAN(control: AbstractControl) {
-    const valid = control?.value ? control?.value?.match(regEx.pan_number) : true;
+    const valid = control?.value ? control?.value?.match(REG_EX.pan_number) : true;
     return valid ? null : { 'invalidPAN': true };
   }
 
@@ -134,31 +133,31 @@ export class FormValidationService {
   }
 
   alphaNumericWithSpace(control: AbstractControl) {
-    const regex = new RegExp(regEx.alphanumericWithSpaceAllowedChars);
+    const regex = new RegExp(REG_EX.alphanumericWithSpaceAllowedChars);
     const valid = regex.test(control.value);
     return valid ? null : { 'invalidAlphaNumericWithSpace': true };
   }
 
   alphaNumericWithoutSpace(control: AbstractControl) {
-    const regex = new RegExp(regEx.alphanumericWithoutSpace);
+    const regex = new RegExp(REG_EX.alphanumericWithoutSpace);
     const valid = regex.test(control.value);
     return valid ? null : { 'invalidAlphaNumericWithoutSpace': true };
   }
 
   numericTwoDecimal(control: AbstractControl) {    
-    const regex = new RegExp(regEx.numeric_two_decimal_places);
+    const regex = new RegExp(REG_EX.numeric_two_decimal_places);
     const valid = regex.test(control.value);
     return valid ? null : { 'invalidNumericTwoDecimal': true };
   }
 
   numericOnly(control: AbstractControl) {    
-    const regex = new RegExp(regEx.numeric_only);
+    const regex = new RegExp(REG_EX.numeric_only);
     const valid = regex.test(control.value);
     return valid ? null : { 'invalidNumber': true };
   }
 
   notEmpty(control: AbstractControl) {
-    const valid = control?.value ? !control?.value?.match(regEx.onlyspace) : true;
+    const valid = control?.value ? !control?.value?.match(REG_EX.onlyspace) : true;
     return valid ? null : { 'notEmpty': true };
   }
 
