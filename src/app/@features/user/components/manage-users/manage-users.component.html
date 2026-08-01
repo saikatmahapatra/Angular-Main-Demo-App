@@ -91,10 +91,13 @@
               <tr>
                 <td class="fw-bold">Account Status</td>
                 <td>
-                  <span *ngIf="rowData?.user_status === 'Y' " class="badge rounded-pill bg-success">Active</span>
-                  <span *ngIf="rowData?.user_status === 'N' "
-                    class="badge rounded-pill bg-warning text-dark">Inactive</span>
-                  <span *ngIf="rowData?.user_status === 'A' " class="badge rounded-pill bg-danger">Archived</span>
+                  @if (rowData?.user_status === 'Y') {
+                    <span class="badge rounded-pill bg-success">Active</span>
+                  } @else if (rowData?.user_status === 'N') {
+                    <span class="badge rounded-pill bg-warning text-dark">Inactive</span>
+                  } @else if (rowData?.user_status === 'A') {
+                    <span class="badge rounded-pill bg-danger">Archived</span>
+                  }
                 </td>
                 <td class="fw-bold">Status Updated On</td>
                 <td>{{ rowData?.user_status_updated_on ? (rowData.user_status_updated_on | date: 'dd/MM/yyyy h:mm:ss a') : 'NA' }}</td>
