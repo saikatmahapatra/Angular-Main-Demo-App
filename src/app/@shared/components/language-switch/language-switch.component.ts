@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output, ChangeDetectionStrategy } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { languageList } from '@utils/const/language.list';
+import { LANGUAGE_LIST } from '@utils/const/language.list';
 @Component({
     selector: 'app-language-switch',
     templateUrl: './language-switch.component.html',
@@ -46,7 +46,7 @@ export class LanguageSwitchComponent implements OnInit {
   }
 
   getSelectedLangLabel() {
-    const lang = languageList.find((lang) => lang.code === this.selectedLang);
+    const lang = LANGUAGE_LIST.find((lang) => lang.code === this.selectedLang);
     this.selectedLangLabel = lang ? lang.label : 'EN';
   }
 }
