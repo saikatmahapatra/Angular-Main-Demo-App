@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { languageList } from '@utils/const/language.list';
+import { LANGUAGE_LIST } from '@utils/const/language.list';
 
 @Component({
     selector: 'app-translation-demo',

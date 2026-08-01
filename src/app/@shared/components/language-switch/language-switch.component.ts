@@ -17,12 +17,12 @@ export class LanguageSwitchComponent implements OnInit {
   @Input() buttonText = '';
   selectedLang: string = localStorage.getItem('appLang') || 'en_US';
   selectedLangLabel: string = '';
-  languageListDropdown = languageList;
+  languageListDropdown = LANGUAGE_LIST;
   allowedLanguageList: Array<string> = [];
 
   constructor(private tranlateSvc: TranslateService) {
     const list: Array<string> = [];
-    languageList.forEach((lang) => {
+    LANGUAGE_LIST.forEach((lang) => {
       list.push(lang.code);
     });
     this.tranlateSvc.addLangs(list);
