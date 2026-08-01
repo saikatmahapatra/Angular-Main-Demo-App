@@ -5,7 +5,7 @@ import { AlertService } from '@core/services/alert.service';
 import { ApiService } from '@core/services/api.service';
 import { CommonService } from '@core/services/common.service';
 import { MyAppConfig } from 'src/app/app.config';
-import { addressType, userStatus } from '@utils/const/data.array';
+import { USER_STATUS, ADDRESS_TYPES } from '@utils/const/common.constant';
 @Component({
     selector: 'app-view-profile',
     templateUrl: './view-profile.component.html',
@@ -78,7 +78,7 @@ export class ViewProfileComponent implements OnInit {
   }
 
   getAddressType(aChar: string) {
-    return addressType[aChar];
+    return ADDRESS_TYPES[aChar];
   }
 
   deleteAddress(id: any) {

@@ -8,7 +8,7 @@ import { ApiService } from '@core/services/api.service';
 import { CommonService } from '@core/services/common.service';
 import { FormValidationService } from '@core/services/form-validation.service';
 import { MyAppConfig } from 'src/app/app.config';
-import { addressType, userStatus } from '@utils/const/data.array';
+import { USER_STATUS, ADDRESS_TYPES } from '@utils/const/common.constant';
 
 @Component({
     selector: 'app-edit-user',
