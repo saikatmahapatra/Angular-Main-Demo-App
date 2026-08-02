@@ -5,7 +5,7 @@ import { AuthService } from '@core/services/auth.service';
 import { FormValidationService } from '@core/services/form-validation.service';
 import { CommonService } from '@core/services/common.service';
 import { HttpErrorResponse } from '@angular/common/http';
-import { AlertMessageService } from '@core/services/alert-message.service';
+import { AlertMessageService, AlertMessage } from '@core/services/alert-message.service';
 
 
 @Component({
@@ -21,13 +21,13 @@ export class LoginFormComponent implements OnInit {
   loading = false;
 
   constructor(
-    private commonSvc: CommonService,
-    private fb: UntypedFormBuilder,
-    private authSvc: AuthService,
-    private route: ActivatedRoute,
-    private alertMessageService: AlertMessageService,
-    private router: Router,
-    private formValidationSvc: FormValidationService
+    private readonly commonSvc: CommonService,
+    private readonly fb: UntypedFormBuilder,
+    private readonly authSvc: AuthService,
+    private readonly route: ActivatedRoute,
+    private readonly alertMessageService: AlertMessageService,
+    private readonly router: Router,
+    private readonly formValidationSvc: FormValidationService
   ) {
     this.commonSvc.setTitle('Login');
   }

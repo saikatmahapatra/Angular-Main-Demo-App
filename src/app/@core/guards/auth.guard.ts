@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { AuthService } from '../services/auth.service';
-import { AlertMessageService } from '@core/services/alert-message.service';
+import { AlertMessageService, AlertMessage } from '@core/services/alert-message.service';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Injectable({
