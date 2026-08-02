@@ -39,7 +39,7 @@ export class LeaveBalanceCalculationComponent implements OnInit {
     private apiSvc: ApiService,
     private router: Router,
     private excelService: ExcelService,
-    private alertMessageSvc: AlertMessageService
+    private alertMessageService: AlertMessageService
   ) { 
     this.commonSvc.setTitle('View & Upload Leave Balance');
   }
@@ -106,7 +106,7 @@ export class LeaveBalanceCalculationComponent implements OnInit {
         const postData = {'action': 'updateBatch', 'leaveBalance': this.postData};
         this.apiSvc.post(MyAppConfig.apiUrl.uploadLeaveData, postData).subscribe({
           next: (response: any) => {
-            this.alertMessageSvc.setAlert('success', response.message);
+            this.alertMessageService.setAlert('success', response.message);
             this.postData = [];
             this.getLeaveBalance();
           },

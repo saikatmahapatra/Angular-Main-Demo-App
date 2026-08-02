@@ -28,7 +28,7 @@ export class ChangePasswordComponent implements OnInit {
     private commonSvc: CommonService,
     private validator: FormValidationService,
     private apiSvc: ApiService,
-    private alertMessageSvc: AlertMessageService) { 
+    private alertMessageService: AlertMessageService) { 
       this.commonSvc.setTitle('Change Password');
     }
 
@@ -43,7 +43,7 @@ export class ChangePasswordComponent implements OnInit {
       this.apiSvc.post(MyAppConfig.apiUrl.changePassword, this.myForm.value).subscribe({
         next: (response: any) => {
           if (response.status == 'success') {
-            this.alertMessageSvc.setAlert('success', response.message);
+            this.alertMessageService.setAlert('success', response.message);
             this.myForm.reset();
           }
         },

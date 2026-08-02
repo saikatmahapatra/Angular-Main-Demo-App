@@ -43,7 +43,7 @@ export class ManageCmsComponent implements OnInit {
     private commonSvc: CommonService,
     public apiSvc: ApiService,
     private router: Router,
-    private alertMessageSvc: AlertMessageService
+    private alertMessageService: AlertMessageService
   ) { 
     this.commonSvc.setTitle('CMS');
   }
@@ -80,7 +80,7 @@ export class ManageCmsComponent implements OnInit {
     let options = {};
     options = { params: queryParams };
     this.apiSvc.delete(MyAppConfig.apiUrl.deletePost, options).subscribe((response: any) => {
-      this.alertMessageSvc.setAlert('success', response.message);
+      this.alertMessageService.setAlert('success', response.message);
       this.getContents(this.postType);
     });
   }

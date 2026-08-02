@@ -59,7 +59,7 @@ export class SiteMetaComponent {
   constructor(
     private commonSvc: CommonService,
     public apiSvc: ApiService,
-    private alertMessageSvc: AlertMessageService,
+    private alertMessageService: AlertMessageService,
     private fb: UntypedFormBuilder,
     private validator: FormValidationService
   ) {
@@ -141,7 +141,7 @@ export class SiteMetaComponent {
   //   this.apiSvc.delete(MyAppConfig.apiUrl.deleteHoliday, options).subscribe({
   //     next: (response: any) => {
   //       this.setAddMode();
-  //       this.alertMessageSvc.setAlert('success', response.message);
+  //       this.alertMessageService.setAlert('success', response.message);
   //       this.getSiteMeta();
   //     }
   //   });
@@ -153,7 +153,7 @@ export class SiteMetaComponent {
     if (this.myForm.valid && this.myForm.get('action')?.value === 'add') {
       this.apiSvc.post(MyAppConfig.apiUrl.addSiteMeta, this.myForm.value).subscribe({
         next: (response: any) => {
-          this.alertMessageSvc.setAlert('success', response.message, true);
+          this.alertMessageService.setAlert('success', response.message, true);
           this.getSiteMeta();
           this.setAddMode();
         },
@@ -164,7 +164,7 @@ export class SiteMetaComponent {
     else if (this.myForm.valid && this.myForm.get('action')?.value === 'edit' && this.myForm.get('id')?.value) {
       this.apiSvc.put(MyAppConfig.apiUrl.updateHoliday, this.myForm.value).subscribe({
         next: (response: any) => {
-          this.alertMessageSvc.setAlert('success', response.message, true);
+          this.alertMessageService.setAlert('success', response.message, true);
           this.getSiteMeta();
           this.setAddMode();
         },

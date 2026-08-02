@@ -38,7 +38,7 @@ export class LeaveDetailsActionsComponent implements OnInit {
   L2WorkflowComments = '';
   constructor(
     private commonSvc: CommonService,
-    private alertMessageSvc: AlertMessageService,
+    private alertMessageService: AlertMessageService,
     private apiSvc: ApiService,
     private activatedRoute: ActivatedRoute,
     private authSvc: AuthService,
@@ -121,7 +121,7 @@ export class LeaveDetailsActionsComponent implements OnInit {
     const postData = { id: leaveId, userId: userId, workflow: workFlow, newStatus: status, comments:  commentsText};
     this.apiSvc.post(MyAppConfig.apiUrl.updateLeave, postData).subscribe({
       next: (response: any) => {
-        this.alertMessageSvc.setAlert('success', response.message, true);
+        this.alertMessageService.setAlert('success', response.message, true);
         this.loading = false;
         this.getLeaveData();
       },

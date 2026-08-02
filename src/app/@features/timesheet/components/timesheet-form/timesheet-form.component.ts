@@ -75,7 +75,7 @@ export class TimesheetFormComponent implements OnInit {
     private validator: FormValidationService,
     private apiSvc: ApiService,
     private authSvc: AuthService,
-    private alertMessageSvc: AlertMessageService
+    private alertMessageService: AlertMessageService
   ) {
     this.commonSvc.setTitle('Log Timesheet');
     
@@ -162,7 +162,7 @@ export class TimesheetFormComponent implements OnInit {
       this.apiSvc.post(MyAppConfig.apiUrl.addTimesheet, this.myForm.value).subscribe({
         next: (response: any) => {
           if (response.status == 'success') {
-            this.alertMessageSvc.setAlert('success', response.message, true);
+            this.alertMessageService.setAlert('success', response.message, true);
             this.resetTimesheetForm();
             this.getTimesheetData();
           }

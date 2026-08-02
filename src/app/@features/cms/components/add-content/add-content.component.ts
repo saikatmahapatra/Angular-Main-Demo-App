@@ -52,7 +52,7 @@ export class AddContentComponent implements OnInit {
     private fb: UntypedFormBuilder,
     private commonSvc: CommonService,
     private router: Router,
-    private alertMessageSvc: AlertMessageService,
+    private alertMessageService: AlertMessageService,
     private activatedRoute: ActivatedRoute,
     private apiSvc: ApiService,
     private validator: FormValidationService
@@ -86,7 +86,7 @@ export class AddContentComponent implements OnInit {
       this.apiSvc.post(MyAppConfig.apiUrl.addPost, this.myForm.value).subscribe({
         next: (response: any) => {
           this.router.navigate(['cms/manage-cms']);
-          this.alertMessageSvc.setAlert('success', response.message, true);
+          this.alertMessageService.setAlert('success', response.message, true);
         },
         error: () => { this.loading = false; },
         complete: () => { this.loading = false; }
@@ -96,7 +96,7 @@ export class AddContentComponent implements OnInit {
       this.apiSvc.put(MyAppConfig.apiUrl.updatePost, this.myForm.value).subscribe({
         next: (response: any) => {
           this.router.navigate(['cms/manage-cms']);
-          this.alertMessageSvc.setAlert('success', response.message, true);
+          this.alertMessageService.setAlert('success', response.message, true);
         },
         error: () => { this.loading = false; },
         complete: () => { this.loading = false; }

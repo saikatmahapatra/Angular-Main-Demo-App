@@ -30,7 +30,7 @@ export class ViewTimesheetComponent implements OnInit {
     private authSvc: AuthService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private alertMessageSvc: AlertMessageService
+    private alertMessageService: AlertMessageService
 
   ) { }
 
@@ -61,7 +61,7 @@ export class ViewTimesheetComponent implements OnInit {
     this.apiSvc.delete(MyAppConfig.apiUrl.deleteTimesheet, options).subscribe({
       next: (response: any) => {
         if (response.status == 'success') {
-          this.alertMessageSvc.setAlert('success', response.message);
+          this.alertMessageService.setAlert('success', response.message);
           this.recordDeleted.emit(true);
           this.showTableDataLoading = false;
         }

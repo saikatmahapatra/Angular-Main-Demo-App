@@ -25,7 +25,7 @@ export class ResetPasswordFormComponent implements OnInit {
     private commonSvc: CommonService,
     private fb: UntypedFormBuilder,
     private formValidationSvc: FormValidationService,
-    private alertMessageSvc: AlertMessageService,
+    private alertMessageService: AlertMessageService,
     private apiSvc: ApiService,
     private router: Router
   ) {
@@ -52,7 +52,7 @@ export class ResetPasswordFormComponent implements OnInit {
       this.apiSvc.post(MyAppConfig.apiUrl.resetPassword, postData).subscribe({
         next: (response: any) => {
           if (response.status == 'success') {
-            this.alertMessageSvc.setAlert('success', response.message, true);
+            this.alertMessageService.setAlert('success', response.message, true);
             //this.resetPasswordForm.reset();
             this.router.navigate(['/auth/login']);
           }

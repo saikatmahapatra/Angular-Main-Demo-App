@@ -48,7 +48,7 @@ export class AddEditProjectComponent implements OnInit {
     private fb: UntypedFormBuilder,
     private validator: FormValidationService,
     private apiSvc: ApiService,
-    private alertMessageSvc: AlertMessageService,
+    private alertMessageService: AlertMessageService,
     private router: Router,
     private activatedRoute: ActivatedRoute
   ) {
@@ -88,7 +88,7 @@ export class AddEditProjectComponent implements OnInit {
       this.apiSvc.post(MyAppConfig.apiUrl.addProject, this.myForm.value).subscribe({
         next: (response: any) => {
           if (response.status == 'success') {
-            this.alertMessageSvc.setAlert('success', response.message, true);
+            this.alertMessageService.setAlert('success', response.message, true);
             this.myForm.reset();
             this.router.navigate(['project/manage-project']);
           }
@@ -101,7 +101,7 @@ export class AddEditProjectComponent implements OnInit {
       this.apiSvc.put(MyAppConfig.apiUrl.updateProject, this.myForm.value).subscribe({
         next: (response: any) => {
           if (response.status == 'success') {
-            this.alertMessageSvc.setAlert('success', response.message, true);
+            this.alertMessageService.setAlert('success', response.message, true);
             this.myForm.reset();
             this.router.navigate(['project/manage-project']);
           }

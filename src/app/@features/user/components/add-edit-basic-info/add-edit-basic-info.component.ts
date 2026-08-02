@@ -32,7 +32,7 @@ export class AddEditBasicInfoComponent implements OnInit {
   constructor(private fb: UntypedFormBuilder,
     private validator: FormValidationService,
     private apiSvc: ApiService,
-    private alertMessageSvc: AlertMessageService,
+    private alertMessageService: AlertMessageService,
     private commonSvc: CommonService,
     private router: Router) { 
       this.commonSvc.setTitle('Basic Info');
@@ -83,7 +83,7 @@ export class AddEditBasicInfoComponent implements OnInit {
       if (this.myForm.get('id')?.value) {
         this.apiSvc.patch(MyAppConfig.apiUrl.updateUserData, this.myForm.value).subscribe((response: any) => {
           if (response.status == 'success') {
-            this.alertMessageSvc.setAlert('success', response.message, true);
+            this.alertMessageService.setAlert('success', response.message, true);
             this.myForm.reset();
             this.router.navigate(['emp/my-profile']);
           }

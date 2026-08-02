@@ -20,7 +20,7 @@ export class TwoFactorAuthComponent {
     private commonSvc: CommonService,
     private fb: UntypedFormBuilder,
     private authSvc: AuthService,
-    private alertMessageSvc: AlertMessageService,
+    private alertMessageService: AlertMessageService,
     private route: ActivatedRoute,
     private router: Router,
     private formValidationSvc: FormValidationService
@@ -67,7 +67,7 @@ export class TwoFactorAuthComponent {
   }
 
   logout() {
-    this.alertMessageSvc.setAlert('success', 'You have been logged out.', true);
+    this.alertMessageService.setAlert('success', 'You have been logged out.', true);
     this.authSvc.clearStorageData();
   }
 }

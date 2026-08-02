@@ -23,7 +23,7 @@ export class SrbacComponent implements OnInit {
 
   constructor(
     private apiSvc: ApiService,
-    private alertMessageSvc: AlertMessageService,
+    private alertMessageService: AlertMessageService,
     private commonSvc: CommonService
   ) {
     this.commonSvc.setTitle('Role Based Access');

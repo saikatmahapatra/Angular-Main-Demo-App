@@ -13,14 +13,14 @@ export class AuthInterceptor implements HttpInterceptor {
   constructor(
     private readonly authSvc: AuthService, 
     private readonly loader: LoaderService, 
-    private readonly alertMessageSvc: AlertMessageService
+    private readonly alertMessageService: AlertMessageService
   ) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     const authToken = this.authSvc.getToken();
     const isMockServer = MyAppConfig.useMockServer;
     this.loader.show();
-    //this.alertMessageSvc.clear();
+    //this.alertMessageService.clear();
     if(authToken && !isMockServer) {
       const clonedReq = request.clone({
         setHeaders: {

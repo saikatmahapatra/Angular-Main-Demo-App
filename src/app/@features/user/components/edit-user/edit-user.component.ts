@@ -137,7 +137,7 @@ export class EditUserComponent {
 
   constructor(
     private apiSvc: ApiService,
-    private alertMessageSvc: AlertMessageService,
+    private alertMessageService: AlertMessageService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private fb: UntypedFormBuilder,
@@ -261,7 +261,7 @@ export class EditUserComponent {
     if (this.userBasicForm.valid) {
       this.apiSvc.post(MyAppConfig.apiUrl.updateUser, this.userBasicForm.value).subscribe({
         next: (response: any) => {
-          this.alertMessageSvc.setAlert('success', response.message, true);
+          this.alertMessageService.setAlert('success', response.message, true);
           this.router.navigate(['/emp/view-emp-profile/', this.userId], this.navigationExtras);
           //window.location.reload();
           this.loading = false;
@@ -285,7 +285,7 @@ export class EditUserComponent {
     if (this.userStatusForm.valid) {
       this.apiSvc.post(MyAppConfig.apiUrl.updateUserStatus, this.userStatusForm.value).subscribe({
         next: (response: any) => {
-          this.alertMessageSvc.setAlert('success', response.message, true);
+          this.alertMessageService.setAlert('success', response.message, true);
           this.router.navigate(['/emp/view-emp-profile/', this.userId], this.navigationExtras);
           this.loading = false;
         },
@@ -309,7 +309,7 @@ export class EditUserComponent {
     if (this.leaveBalanceForm.valid) {
       this.apiSvc.post(MyAppConfig.apiUrl.saveLeaveBalance, this.leaveBalanceForm.value).subscribe({
         next: (response: any) => {
-          this.alertMessageSvc.setAlert('success', response.message, true);
+          this.alertMessageService.setAlert('success', response.message, true);
           this.router.navigate(['/emp/view-emp-profile/', this.userId], this.navigationExtras);
           this.loading = false;
         },

@@ -30,7 +30,7 @@ export class ViewProfileComponent implements OnInit {
 
   constructor(
     private apiSvc: ApiService,
-    private alertMessageSvc: AlertMessageService,
+    private alertMessageService: AlertMessageService,
     private commonSvc: CommonService,
     private activatedRoute: ActivatedRoute,
     private router: Router) { 
@@ -89,7 +89,7 @@ export class ViewProfileComponent implements OnInit {
     let options = {};
     options = { params: queryParams };
     this.apiSvc.delete(MyAppConfig.apiUrl.deleteAddress, options).subscribe((response: any) => {
-      this.alertMessageSvc.setAlert('success', response.message);
+      this.alertMessageService.setAlert('success', response.message);
       this.getProfileData();
     });
   }
@@ -102,7 +102,7 @@ export class ViewProfileComponent implements OnInit {
     let options = {};
     options = { params: queryParams };
     this.apiSvc.delete(MyAppConfig.apiUrl.deleteEducation, options).subscribe((response: any) => {
-      this.alertMessageSvc.setAlert('success', response.message);
+      this.alertMessageService.setAlert('success', response.message);
       this.getProfileData();
     });
   }
@@ -115,7 +115,7 @@ export class ViewProfileComponent implements OnInit {
     let options = {};
     options = { params: queryParams };
     this.apiSvc.delete(MyAppConfig.apiUrl.deleteExperience, options).subscribe((response: any) => {
-      this.alertMessageSvc.setAlert('success', response.message);
+      this.alertMessageService.setAlert('success', response.message);
       this.getProfileData();
     });
   }
@@ -128,7 +128,7 @@ export class ViewProfileComponent implements OnInit {
     let options = {};
     options = { params: queryParams };
     this.apiSvc.delete(MyAppConfig.apiUrl.deletePayroll, options).subscribe((response: any) => {
-      this.alertMessageSvc.setAlert('success', response.message);
+      this.alertMessageService.setAlert('success', response.message);
       this.getProfileData();
     });
   }
@@ -141,7 +141,7 @@ export class ViewProfileComponent implements OnInit {
     let options = {};
     options = { params: queryParams };
     this.apiSvc.delete(MyAppConfig.apiUrl.deleteEmergencyContact, options).subscribe((response: any) => {
-      this.alertMessageSvc.setAlert('success', response.message);
+      this.alertMessageService.setAlert('success', response.message);
       this.getProfileData();
     });
   }

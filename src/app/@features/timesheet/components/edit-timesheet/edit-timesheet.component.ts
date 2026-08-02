@@ -40,7 +40,7 @@ export class EditTimesheetComponent implements OnInit {
     private fb: UntypedFormBuilder,
     private validator: FormValidationService,
     private apiSvc: ApiService,
-    private alertMessageSvc: AlertMessageService,
+    private alertMessageService: AlertMessageService,
     private router: Router,
     private activatedRoute: ActivatedRoute
   ) {
@@ -102,7 +102,7 @@ export class EditTimesheetComponent implements OnInit {
       this.apiSvc.put(MyAppConfig.apiUrl.updateTimesheet, this.myForm.value).subscribe({
         next: (response: any) => {
           if (response.status == 'success') {
-            this.alertMessageSvc.setAlert('success', response.message, true);
+            this.alertMessageService.setAlert('success', response.message, true);
             this.router.navigate(['timesheet/log-work']);
           }
         },

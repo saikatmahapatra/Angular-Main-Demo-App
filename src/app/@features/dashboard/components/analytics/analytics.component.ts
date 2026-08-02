@@ -79,7 +79,7 @@ export class AnalyticsComponent implements OnInit {
     private fb: FormBuilder,
     private commonSvc: CommonService,
     private apiSvc: ApiService,
-    private alertMessageSvc: AlertMessageService,
+    private alertMessageService: AlertMessageService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private validator: FormValidationService

@@ -52,7 +52,7 @@ export class AddEditExperienceComponent implements OnInit {
     private apiSvc: ApiService,
     private router: Router,
     private activatedRouters: ActivatedRoute,
-    private alertMessageSvc: AlertMessageService) {
+    private alertMessageService: AlertMessageService) {
     }
 
   ngOnInit(): void {
@@ -79,7 +79,7 @@ export class AddEditExperienceComponent implements OnInit {
     if (this.myForm.valid && this.myForm.get('action')?.value === 'add') {
       this.apiSvc.post(MyAppConfig.apiUrl.addExperience, this.myForm.value).subscribe({
         next: (response: any) => {
-          this.alertMessageSvc.setAlert('success', response.message, true);
+          this.alertMessageService.setAlert('success', response.message, true);
           this.myForm.reset();
           this.router.navigate(['emp/my-profile']);
         },
@@ -89,7 +89,7 @@ export class AddEditExperienceComponent implements OnInit {
     } else if (this.myForm.valid && this.myForm.get('action')?.value === 'edit' && this.myForm.get('id')?.value) {
       this.apiSvc.put(MyAppConfig.apiUrl.updateExperience, this.myForm.value).subscribe({
         next: (response: any) => {
-          this.alertMessageSvc.setAlert('success', response.message, true);
+          this.alertMessageService.setAlert('success', response.message, true);
           this.myForm.reset();
           this.router.navigate(['emp/my-profile']);
         },

@@ -52,7 +52,7 @@ export class ApplyLeaveComponent implements OnInit {
     private fb: FormBuilder,
     private validator: FormValidationService,
     private apiSvc: ApiService,
-    private alertMessageSvc: AlertMessageService,
+    private alertMessageService: AlertMessageService,
     private router: Router
   ) { 
     this.commonSvc.setTitle('Apply Leave');
@@ -80,7 +80,7 @@ export class ApplyLeaveComponent implements OnInit {
     if (this.approvers.length > 0 && this.myForm.valid && this.myForm.get('action')?.value === 'applyLeave') {
       this.apiSvc.post(MyAppConfig.apiUrl.applyLeave, this.myForm.value).subscribe({
         next: (response: any) => {
-          this.alertMessageSvc.setAlert('success', response.message, true);
+          this.alertMessageService.setAlert('success', response.message, true);
           this.resetFormValue();
           this.router.navigate(['/leave/history']);
         },

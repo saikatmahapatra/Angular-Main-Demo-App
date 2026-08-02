@@ -30,7 +30,7 @@ export class EditApproversComponent implements OnInit {
   // Pagination Config
   constructor(
     private apiSvc: ApiService,
-    private alertMessageSvc: AlertMessageService,
+    private alertMessageService: AlertMessageService,
     private commonSvc: CommonService,
   ) { 
     this.commonSvc.setTitle('Change Workflow Approvers');
@@ -72,7 +72,7 @@ export class EditApproversComponent implements OnInit {
       const data = { approverType: event.target.value, userDetails: user }
       this.apiSvc.post(MyAppConfig.apiUrl.changeApprovers, data).subscribe({
         next: (response: any) => {
-          this.alertMessageSvc.setAlert('success', response.message);
+          this.alertMessageService.setAlert('success', response.message);
           this.getApprovers();
         },
         error: () => {

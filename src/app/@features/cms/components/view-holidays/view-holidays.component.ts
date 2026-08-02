@@ -34,7 +34,7 @@ export class ViewHolidaysComponent implements OnInit {
   constructor(
     private commonSvc: CommonService,
     public apiSvc: ApiService,
-    private alertMessageSvc: AlertMessageService
+    private alertMessageService: AlertMessageService
   ) {
     this.commonSvc.setTitle('Holidays');
    }

@@ -65,7 +65,7 @@ export class AddUserComponent implements OnInit {
     private commonSvc: CommonService, 
     private validator: FormValidationService,
     private apiSvc: ApiService,
-    private alertMessageSvc: AlertMessageService) {
+    private alertMessageService: AlertMessageService) {
     this.getFormData();
 
     let today = new Date();
@@ -101,7 +101,7 @@ export class AddUserComponent implements OnInit {
       this.apiSvc.post(MyAppConfig.apiUrl.addUser, this.myForm.value).subscribe({
         next: (response: any) => {
           if (response.status == 'success') {
-            this.alertMessageSvc.setAlert('success', response.message);
+            this.alertMessageService.setAlert('success', response.message);
             this.myForm.reset();
             this.loading = false;
           }

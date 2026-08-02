@@ -34,7 +34,7 @@ export class AddEditEmergencyContactComponent implements OnInit {
     private commonSvc: CommonService,
     private validator: FormValidationService,
     private apiSvc: ApiService,
-    private alertMessageSvc: AlertMessageService,
+    private alertMessageService: AlertMessageService,
     private router: Router,
     private activatedRoute: ActivatedRoute) {
 
@@ -69,7 +69,7 @@ export class AddEditEmergencyContactComponent implements OnInit {
       this.apiSvc.post(MyAppConfig.apiUrl.addEmergencyContact, this.myForm.value).subscribe({
         next: (response: any) => {
           if (response.status == 'success') {
-            this.alertMessageSvc.setAlert('success', response.message, true);
+            this.alertMessageService.setAlert('success', response.message, true);
             this.myForm.reset();
             this.router.navigate(['emp/my-profile']);
           }
@@ -82,7 +82,7 @@ export class AddEditEmergencyContactComponent implements OnInit {
       this.apiSvc.put(MyAppConfig.apiUrl.updateEmergencyContact, this.myForm.value).subscribe({
         next: (response: any) => {
           if (response.status == 'success') {
-            this.alertMessageSvc.setAlert('success', response.message, true);
+            this.alertMessageService.setAlert('success', response.message, true);
             this.myForm.reset();
             this.router.navigate(['emp/my-profile']);
           }

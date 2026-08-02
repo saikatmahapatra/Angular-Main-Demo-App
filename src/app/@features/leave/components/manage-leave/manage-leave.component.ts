@@ -59,7 +59,7 @@ export class ManageLeaveComponent implements OnInit {
   constructor(
     private commonSvc: CommonService,
     private fb: FormBuilder,
-    private alertMessageSvc: AlertMessageService,
+    private alertMessageService: AlertMessageService,
     private router: Router,
     private validator: FormValidationService,
     private apiSvc: ApiService,

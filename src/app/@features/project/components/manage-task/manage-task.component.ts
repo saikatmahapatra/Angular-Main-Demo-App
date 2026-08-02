@@ -33,7 +33,7 @@ export class ManageTaskComponent implements OnInit {
   constructor(
     private commonSvc: CommonService,
     public apiSvc: ApiService, 
-    private alertMessageSvc: AlertMessageService, 
+    private alertMessageService: AlertMessageService, 
     private router: Router
     ) { 
       this.commonSvc.setTitle('Manage Tasks');    
@@ -67,7 +67,7 @@ export class ManageTaskComponent implements OnInit {
   //   let options = {};
   //   options = { params: queryParams };
   //   this.apiSvc.delete(MyAppConfig.apiUrl.deleteProject, options).subscribe((response: any) => {
-  //     this.alertMessageSvc.setAlert('success', response.message);
+  //     this.alertMessageService.setAlert('success', response.message);
   //     this.getTasks();
   //   });
   // }

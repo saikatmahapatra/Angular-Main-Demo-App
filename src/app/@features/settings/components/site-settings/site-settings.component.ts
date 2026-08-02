@@ -30,7 +30,7 @@ export class SiteSettingsComponent implements OnInit {
   constructor(
     private commonSvc: CommonService,
     private apiSvc: ApiService,
-    private alertMessageSvc: AlertMessageService,
+    private alertMessageService: AlertMessageService,
     private fb: UntypedFormBuilder,
     private validator: FormValidationService
   ) { 
@@ -65,7 +65,7 @@ export class SiteSettingsComponent implements OnInit {
       
       this.apiSvc.put(MyAppConfig.apiUrl.updateSiteSettings, this.siteSettingsForm.value).subscribe({
         next: (response: any) => {
-          this.alertMessageSvc.setAlert('success', response.message, false);
+          this.alertMessageService.setAlert('success', response.message, false);
           this.getSettings();
         },
         error: (response: HttpErrorResponse) => {
