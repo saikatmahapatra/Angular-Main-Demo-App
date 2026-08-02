@@ -17,13 +17,13 @@ export class HttpErrorInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     let handled = false;
+    let errorMessage: AlertMessage;
     return next.handle(request).pipe(
       catchError((returnedError) => {
-        let errorMessage = null;
         if (returnedError.error instanceof ErrorEvent) {
-          errorMessage = `Error: ${returnedError.error.message}`;
+          errorMessage = { severity: 'error', summary: 'Error', detail: `Error: ${returnedError.error.message}` };
         } else if (returnedError instanceof HttpErrorResponse) {
-          errorMessage = `Error Status ${returnedError.status}: ${returnedError.message}`;
+          errorMessage = { severity: 'error', summary: 'Error', detail: `Error Status ${returnedError.status}: ${returnedError.message}` };
           handled = this.handleServerSideError(returnedError);
         }
         //console.setAlert('error', "ERROR HttpErrorInterceptor : ", errorMessage ? errorMessage : returnedError);
@@ -38,33 +38,43 @@ export class HttpErrorInterceptor implements HttpInterceptor {
 
   private handleServerSideError(error: HttpErrorResponse): boolean {
     let handled: boolean = false;
-
+    let errorMessage: AlertMessage;
     switch (error.status) {
       case 400:
-        { let message = error?.error?.message ? error.error.message : 'We are unable to process your request at this moment. Please try after sometime.';
-        this.alertMessageService.setAlert('error', message);
-        handled = true;
-        break; }
+        {
+          errorMessage = { severity: 'error', summary: 'Error', detail: (error?.error?.message ? error.error.message : 'We are unable to process your request at this moment. Please try after sometime.') };
+          this.alertMessageService.setAlert(errorMessage);
+          handled = true;
+          break;
+        }
 
       case 401:
-        if (this.router.url != '/login') {
-          this.authSvc.clearStorageData();
-          this.alertMessageService.setAlert('error', 'Please login to continue.');
-          handled = true;
+        {
+          if (this.router.url != '/login') {
+            this.authSvc.clearStorageData();
+            errorMessage = { severity: 'error', summary: 'Error', detail: 'Please login to continue.' };
+            this.alertMessageService.setAlert(errorMessage);
+            handled = true;
+          }
+          break;
         }
-        break;
 
       case 403:
-        this.authSvc.clearStorageData();
-        this.alertMessageService.setAlert('error', 'Please login to continue.');
-        handled = true;
-        break;
+        {
+          this.authSvc.clearStorageData();
+          errorMessage = { severity: 'error', summary: 'Error', detail: 'Please login to continue.' };
+          this.alertMessageService.setAlert(errorMessage);
+          handled = true;
+          break;
+        }
 
       default:
-        this.alertMessageService.setAlert('error', error.message);
-        break;
+        {
+          errorMessage = { severity: 'error', summary: 'Error', detail: error.message };
+          this.alertMessageService.setAlert(errorMessage);
+          break;
+        }
     }
-
     return handled;
   }
 }
