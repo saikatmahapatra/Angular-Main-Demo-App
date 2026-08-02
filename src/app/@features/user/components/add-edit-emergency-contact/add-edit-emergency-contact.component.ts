@@ -2,7 +2,7 @@ import { HttpParams } from '@angular/common/http';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl, UntypedFormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
 import { ActivatedRoute, Route, Router } from '@angular/router';
-import { AlertService } from '@core/services/alert.service';
+import { AlertMessageService } from '@core/services/alert-message.service';
 import { ApiService } from '@core/services/api.service';
 import { CommonService } from '@core/services/common.service';
 import { FormValidationService } from '@core/services/form-validation.service';
@@ -34,7 +34,7 @@ export class AddEditEmergencyContactComponent implements OnInit {
     private commonSvc: CommonService,
     private validator: FormValidationService,
     private apiSvc: ApiService,
-    private alertSvc: AlertService,
+    private alertMessageSvc: AlertMessageService,
     private router: Router,
     private activatedRoute: ActivatedRoute) {
 
@@ -69,7 +69,7 @@ export class AddEditEmergencyContactComponent implements OnInit {
       this.apiSvc.post(MyAppConfig.apiUrl.addEmergencyContact, this.myForm.value).subscribe({
         next: (response: any) => {
           if (response.status == 'success') {
-            this.alertSvc.setAlert('success', response.message, true);
+            this.alertMessageSvc.setAlert('success', response.message, true);
             this.myForm.reset();
             this.router.navigate(['emp/my-profile']);
           }
@@ -82,7 +82,7 @@ export class AddEditEmergencyContactComponent implements OnInit {
       this.apiSvc.put(MyAppConfig.apiUrl.updateEmergencyContact, this.myForm.value).subscribe({
         next: (response: any) => {
           if (response.status == 'success') {
-            this.alertSvc.setAlert('success', response.message, true);
+            this.alertMessageSvc.setAlert('success', response.message, true);
             this.myForm.reset();
             this.router.navigate(['emp/my-profile']);
           }

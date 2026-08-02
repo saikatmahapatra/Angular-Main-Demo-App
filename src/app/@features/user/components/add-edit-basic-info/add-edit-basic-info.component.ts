@@ -2,7 +2,7 @@ import { HttpParams } from '@angular/common/http';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl, UntypedFormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AlertService } from '@core/services/alert.service';
+import { AlertMessageService } from '@core/services/alert-message.service';
 import { ApiService } from '@core/services/api.service';
 import { CommonService } from '@core/services/common.service';
 import { FormValidationService } from '@core/services/form-validation.service';
@@ -32,7 +32,7 @@ export class AddEditBasicInfoComponent implements OnInit {
   constructor(private fb: UntypedFormBuilder,
     private validator: FormValidationService,
     private apiSvc: ApiService,
-    private alertSvc: AlertService,
+    private alertMessageSvc: AlertMessageService,
     private commonSvc: CommonService,
     private router: Router) { 
       this.commonSvc.setTitle('Basic Info');
@@ -83,7 +83,7 @@ export class AddEditBasicInfoComponent implements OnInit {
       if (this.myForm.get('id')?.value) {
         this.apiSvc.patch(MyAppConfig.apiUrl.updateUserData, this.myForm.value).subscribe((response: any) => {
           if (response.status == 'success') {
-            this.alertSvc.setAlert('success', response.message, true);
+            this.alertMessageSvc.setAlert('success', response.message, true);
             this.myForm.reset();
             this.router.navigate(['emp/my-profile']);
           }

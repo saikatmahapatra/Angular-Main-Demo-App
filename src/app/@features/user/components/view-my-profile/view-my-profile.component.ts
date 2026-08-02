@@ -1,7 +1,7 @@
 import { HttpParams } from '@angular/common/http';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AlertService } from '@core/services/alert.service';
+import { AlertMessageService } from '@core/services/alert-message.service';
 import { ApiService } from '@core/services/api.service';
 import { CommonService } from '@core/services/common.service';
 import { MyAppConfig } from 'src/app/app.config';
@@ -30,7 +30,7 @@ export class ViewMyProfileComponent implements OnInit {
   constructor(
     private apiSvc: ApiService,
     private commonSvc: CommonService,
-    private alertSvc: AlertService,
+    private alertMessageSvc: AlertMessageService,
     private activatedRoute: ActivatedRoute,
     private router: Router) {
       this.commonSvc.setTitle('My Profile');
@@ -78,7 +78,7 @@ export class ViewMyProfileComponent implements OnInit {
     let options = {};
     options = { params: queryParams };
     this.apiSvc.delete(MyAppConfig.apiUrl.deleteAddress, options).subscribe((response: any) => {
-      this.alertSvc.setAlert('success', response.message);
+      this.alertMessageSvc.setAlert('success', response.message);
       this.getProfile();
     });
   }
@@ -91,7 +91,7 @@ export class ViewMyProfileComponent implements OnInit {
     let options = {};
     options = { params: queryParams };
     this.apiSvc.delete(MyAppConfig.apiUrl.deleteEducation, options).subscribe((response: any) => {
-      this.alertSvc.setAlert('success', response.message);
+      this.alertMessageSvc.setAlert('success', response.message);
       this.getProfile();
     });
   }
@@ -104,7 +104,7 @@ export class ViewMyProfileComponent implements OnInit {
     let options = {};
     options = { params: queryParams };
     this.apiSvc.delete(MyAppConfig.apiUrl.deleteExperience, options).subscribe((response: any) => {
-      this.alertSvc.setAlert('success', response.message);
+      this.alertMessageSvc.setAlert('success', response.message);
       this.getProfile();
     });
   }
@@ -117,7 +117,7 @@ export class ViewMyProfileComponent implements OnInit {
     let options = {};
     options = { params: queryParams };
     this.apiSvc.delete(MyAppConfig.apiUrl.deletePayroll, options).subscribe((response: any) => {
-      this.alertSvc.setAlert('success', response.message);
+      this.alertMessageSvc.setAlert('success', response.message);
       this.getProfile();
     });
   }
@@ -130,7 +130,7 @@ export class ViewMyProfileComponent implements OnInit {
     let options = {};
     options = { params: queryParams };
     this.apiSvc.delete(MyAppConfig.apiUrl.deleteEmergencyContact, options).subscribe((response: any) => {
-      this.alertSvc.setAlert('success', response.message);
+      this.alertMessageSvc.setAlert('success', response.message);
       this.getProfile();
     });
   }

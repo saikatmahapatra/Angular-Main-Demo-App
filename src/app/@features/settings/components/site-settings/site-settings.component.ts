@@ -2,7 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AlertService } from '@core/services/alert.service';
+import { AlertMessageService } from '@core/services/alert-message.service';
 import { ApiService } from '@core/services/api.service';
 import { CommonService } from '@core/services/common.service';
 import { FormValidationService } from '@core/services/form-validation.service';
@@ -30,7 +30,7 @@ export class SiteSettingsComponent implements OnInit {
   constructor(
     private commonSvc: CommonService,
     private apiSvc: ApiService,
-    private alertSvc: AlertService,
+    private alertMessageSvc: AlertMessageService,
     private fb: UntypedFormBuilder,
     private validator: FormValidationService
   ) { 
@@ -65,7 +65,7 @@ export class SiteSettingsComponent implements OnInit {
       
       this.apiSvc.put(MyAppConfig.apiUrl.updateSiteSettings, this.siteSettingsForm.value).subscribe({
         next: (response: any) => {
-          this.alertSvc.setAlert('success', response.message, false);
+          this.alertMessageSvc.setAlert('success', response.message, false);
           this.getSettings();
         },
         error: (response: HttpErrorResponse) => {

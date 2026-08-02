@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AlertService } from '@core/services/alert.service';
+import { AlertMessageService } from '@core/services/alert-message.service';
 import { ApiService } from '@core/services/api.service';
 import { CommonService } from '@core/services/common.service';
 import { FormValidationService } from '@core/services/form-validation.service';
@@ -52,7 +52,7 @@ export class ApplyLeaveComponent implements OnInit {
     private fb: FormBuilder,
     private validator: FormValidationService,
     private apiSvc: ApiService,
-    private alertSvc: AlertService,
+    private alertMessageSvc: AlertMessageService,
     private router: Router
   ) { 
     this.commonSvc.setTitle('Apply Leave');
@@ -80,7 +80,7 @@ export class ApplyLeaveComponent implements OnInit {
     if (this.approvers.length > 0 && this.myForm.valid && this.myForm.get('action')?.value === 'applyLeave') {
       this.apiSvc.post(MyAppConfig.apiUrl.applyLeave, this.myForm.value).subscribe({
         next: (response: any) => {
-          this.alertSvc.setAlert('success', response.message, true);
+          this.alertMessageSvc.setAlert('success', response.message, true);
           this.resetFormValue();
           this.router.navigate(['/leave/history']);
         },

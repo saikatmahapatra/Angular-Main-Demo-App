@@ -2,7 +2,7 @@ import { HttpParams } from '@angular/common/http';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AlertService } from '@core/services/alert.service';
+import { AlertMessageService } from '@core/services/alert-message.service';
 import { ApiService } from '@core/services/api.service';
 import { CommonService } from '@core/services/common.service';
 import { FormValidationService } from '@core/services/form-validation.service';
@@ -52,7 +52,7 @@ export class AddEditExperienceComponent implements OnInit {
     private apiSvc: ApiService,
     private router: Router,
     private activatedRouters: ActivatedRoute,
-    private alertSvc: AlertService) {
+    private alertMessageSvc: AlertMessageService) {
     }
 
   ngOnInit(): void {
@@ -79,7 +79,7 @@ export class AddEditExperienceComponent implements OnInit {
     if (this.myForm.valid && this.myForm.get('action')?.value === 'add') {
       this.apiSvc.post(MyAppConfig.apiUrl.addExperience, this.myForm.value).subscribe({
         next: (response: any) => {
-          this.alertSvc.setAlert('success', response.message, true);
+          this.alertMessageSvc.setAlert('success', response.message, true);
           this.myForm.reset();
           this.router.navigate(['emp/my-profile']);
         },
@@ -89,7 +89,7 @@ export class AddEditExperienceComponent implements OnInit {
     } else if (this.myForm.valid && this.myForm.get('action')?.value === 'edit' && this.myForm.get('id')?.value) {
       this.apiSvc.put(MyAppConfig.apiUrl.updateExperience, this.myForm.value).subscribe({
         next: (response: any) => {
-          this.alertSvc.setAlert('success', response.message, true);
+          this.alertMessageSvc.setAlert('success', response.message, true);
           this.myForm.reset();
           this.router.navigate(['emp/my-profile']);
         },

@@ -1,7 +1,7 @@
 import { HttpParams } from '@angular/common/http';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
-import { AlertService } from '@core/services/alert.service';
+import { AlertMessageService } from '@core/services/alert-message.service';
 import { ApiService } from '@core/services/api.service';
 import { CommonService } from '@core/services/common.service';
 import { ExcelService } from '@core/services/excel.service';
@@ -39,7 +39,7 @@ export class LeaveBalanceCalculationComponent implements OnInit {
     private apiSvc: ApiService,
     private router: Router,
     private excelService: ExcelService,
-    private alertSvc: AlertService
+    private alertMessageSvc: AlertMessageService
   ) { 
     this.commonSvc.setTitle('View & Upload Leave Balance');
   }
@@ -106,7 +106,7 @@ export class LeaveBalanceCalculationComponent implements OnInit {
         const postData = {'action': 'updateBatch', 'leaveBalance': this.postData};
         this.apiSvc.post(MyAppConfig.apiUrl.uploadLeaveData, postData).subscribe({
           next: (response: any) => {
-            this.alertSvc.setAlert('success', response.message);
+            this.alertMessageSvc.setAlert('success', response.message);
             this.postData = [];
             this.getLeaveBalance();
           },

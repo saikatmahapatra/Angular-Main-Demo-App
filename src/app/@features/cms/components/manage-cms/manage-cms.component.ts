@@ -1,7 +1,7 @@
 import { HttpParams } from '@angular/common/http';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
-import { AlertService } from '@core/services/alert.service';
+import { AlertMessageService } from '@core/services/alert-message.service';
 import { ApiService } from '@core/services/api.service';
 import { CommonService } from '@core/services/common.service';
 import { MyAppConfig } from 'src/app/app.config';
@@ -43,7 +43,7 @@ export class ManageCmsComponent implements OnInit {
     private commonSvc: CommonService,
     public apiSvc: ApiService,
     private router: Router,
-    private alertSvc: AlertService
+    private alertMessageSvc: AlertMessageService
   ) { 
     this.commonSvc.setTitle('CMS');
   }
@@ -80,7 +80,7 @@ export class ManageCmsComponent implements OnInit {
     let options = {};
     options = { params: queryParams };
     this.apiSvc.delete(MyAppConfig.apiUrl.deletePost, options).subscribe((response: any) => {
-      this.alertSvc.setAlert('success', response.message);
+      this.alertMessageSvc.setAlert('success', response.message);
       this.getContents(this.postType);
     });
   }

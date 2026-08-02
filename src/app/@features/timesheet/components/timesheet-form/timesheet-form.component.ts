@@ -3,7 +3,7 @@ import { Component, OnInit, ViewEncapsulation, OnChanges, SimpleChanges, ViewChi
 import { UntypedFormBuilder, Validators, UntypedFormArray, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { AlertService } from '@core/services/alert.service';
+import { AlertMessageService } from '@core/services/alert-message.service';
 import { ApiService } from '@core/services/api.service';
 import { AuthService } from '@core/services/auth.service';
 import { CommonService } from '@core/services/common.service';
@@ -75,7 +75,7 @@ export class TimesheetFormComponent implements OnInit {
     private validator: FormValidationService,
     private apiSvc: ApiService,
     private authSvc: AuthService,
-    private alertSvc: AlertService
+    private alertMessageSvc: AlertMessageService
   ) {
     this.commonSvc.setTitle('Log Timesheet');
     
@@ -162,7 +162,7 @@ export class TimesheetFormComponent implements OnInit {
       this.apiSvc.post(MyAppConfig.apiUrl.addTimesheet, this.myForm.value).subscribe({
         next: (response: any) => {
           if (response.status == 'success') {
-            this.alertSvc.setAlert('success', response.message, true);
+            this.alertMessageSvc.setAlert('success', response.message, true);
             this.resetTimesheetForm();
             this.getTimesheetData();
           }

@@ -5,7 +5,7 @@ import { AuthService } from '@core/services/auth.service';
 import { MyAppConfig } from 'src/app/app.config';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AlertService } from '@core/services/alert.service';
+import { AlertMessageService } from '@core/services/alert-message.service';
 @Component({
     selector: 'app-view-timesheet',
     templateUrl: './view-timesheet.component.html',
@@ -30,7 +30,7 @@ export class ViewTimesheetComponent implements OnInit {
     private authSvc: AuthService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private alertSvc: AlertService
+    private alertMessageSvc: AlertMessageService
 
   ) { }
 
@@ -61,7 +61,7 @@ export class ViewTimesheetComponent implements OnInit {
     this.apiSvc.delete(MyAppConfig.apiUrl.deleteTimesheet, options).subscribe({
       next: (response: any) => {
         if (response.status == 'success') {
-          this.alertSvc.setAlert('success', response.message);
+          this.alertMessageSvc.setAlert('success', response.message);
           this.recordDeleted.emit(true);
           this.showTableDataLoading = false;
         }

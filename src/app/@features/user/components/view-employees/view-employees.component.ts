@@ -1,6 +1,6 @@
 import { HttpParams } from '@angular/common/http';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { AlertService } from '@core/services/alert.service';
+import { AlertMessageService } from '@core/services/alert-message.service';
 import { ApiService } from '@core/services/api.service';
 import { CommonService } from '@core/services/common.service';
 import { MyAppConfig } from 'src/app/app.config';
@@ -33,7 +33,7 @@ export class ViewEmployeesComponent implements OnInit {
   constructor(
     private apiSvc: ApiService,
     private commonSvc: CommonService,
-    private alertService: AlertService
+    private alertMessageService: AlertMessageService
   ) { 
     this.commonSvc.setTitle('Employees');
   }

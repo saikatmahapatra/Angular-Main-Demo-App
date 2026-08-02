@@ -1,7 +1,7 @@
 import { HttpParams } from '@angular/common/http';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AlertService } from '@core/services/alert.service';
+import { AlertMessageService } from '@core/services/alert-message.service';
 import { ApiService } from '@core/services/api.service';
 import { AuthService } from '@core/services/auth.service';
 import { CommonService } from '@core/services/common.service';
@@ -38,7 +38,7 @@ export class LeaveDetailsActionsComponent implements OnInit {
   L2WorkflowComments = '';
   constructor(
     private commonSvc: CommonService,
-    private alertSvc: AlertService,
+    private alertMessageSvc: AlertMessageService,
     private apiSvc: ApiService,
     private activatedRoute: ActivatedRoute,
     private authSvc: AuthService,
@@ -121,7 +121,7 @@ export class LeaveDetailsActionsComponent implements OnInit {
     const postData = { id: leaveId, userId: userId, workflow: workFlow, newStatus: status, comments:  commentsText};
     this.apiSvc.post(MyAppConfig.apiUrl.updateLeave, postData).subscribe({
       next: (response: any) => {
-        this.alertSvc.setAlert('success', response.message, true);
+        this.alertMessageSvc.setAlert('success', response.message, true);
         this.loading = false;
         this.getLeaveData();
       },

@@ -3,7 +3,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { AbstractControl, AsyncValidatorFn, UntypedFormBuilder, ValidationErrors, Validators } from '@angular/forms';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { Observable, forkJoin, of } from 'rxjs';
-import { AlertService } from '@core/services/alert.service';
+import { AlertMessageService } from '@core/services/alert-message.service';
 import { ApiService } from '@core/services/api.service';
 import { CommonService } from '@core/services/common.service';
 import { FormValidationService } from '@core/services/form-validation.service';
@@ -137,7 +137,7 @@ export class EditUserComponent {
 
   constructor(
     private apiSvc: ApiService,
-    private alertSvc: AlertService,
+    private alertMessageSvc: AlertMessageService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private fb: UntypedFormBuilder,
@@ -261,7 +261,7 @@ export class EditUserComponent {
     if (this.userBasicForm.valid) {
       this.apiSvc.post(MyAppConfig.apiUrl.updateUser, this.userBasicForm.value).subscribe({
         next: (response: any) => {
-          this.alertSvc.setAlert('success', response.message, true);
+          this.alertMessageSvc.setAlert('success', response.message, true);
           this.router.navigate(['/emp/view-emp-profile/', this.userId], this.navigationExtras);
           //window.location.reload();
           this.loading = false;
@@ -285,7 +285,7 @@ export class EditUserComponent {
     if (this.userStatusForm.valid) {
       this.apiSvc.post(MyAppConfig.apiUrl.updateUserStatus, this.userStatusForm.value).subscribe({
         next: (response: any) => {
-          this.alertSvc.setAlert('success', response.message, true);
+          this.alertMessageSvc.setAlert('success', response.message, true);
           this.router.navigate(['/emp/view-emp-profile/', this.userId], this.navigationExtras);
           this.loading = false;
         },
@@ -309,7 +309,7 @@ export class EditUserComponent {
     if (this.leaveBalanceForm.valid) {
       this.apiSvc.post(MyAppConfig.apiUrl.saveLeaveBalance, this.leaveBalanceForm.value).subscribe({
         next: (response: any) => {
-          this.alertSvc.setAlert('success', response.message, true);
+          this.alertMessageSvc.setAlert('success', response.message, true);
           this.router.navigate(['/emp/view-emp-profile/', this.userId], this.navigationExtras);
           this.loading = false;
         },

@@ -1,6 +1,6 @@
 import { HttpParams } from '@angular/common/http';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { AlertService } from '@core/services/alert.service';
+import { AlertMessageService } from '@core/services/alert-message.service';
 import { ApiService } from '@core/services/api.service';
 import { CommonService } from '@core/services/common.service';
 import { MyAppConfig } from 'src/app/app.config';
@@ -34,7 +34,7 @@ export class ViewHolidaysComponent implements OnInit {
   constructor(
     private commonSvc: CommonService,
     public apiSvc: ApiService,
-    private alertSvc: AlertService
+    private alertMessageSvc: AlertMessageService
   ) {
     this.commonSvc.setTitle('Holidays');
    }

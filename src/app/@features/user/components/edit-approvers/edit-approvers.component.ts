@@ -1,6 +1,6 @@
 import { HttpParams } from '@angular/common/http';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { AlertService } from '@core/services/alert.service';
+import { AlertMessageService } from '@core/services/alert-message.service';
 import { ApiService } from '@core/services/api.service';
 import { CommonService } from '@core/services/common.service';
 import { MyAppConfig } from 'src/app/app.config';
@@ -30,7 +30,7 @@ export class EditApproversComponent implements OnInit {
   // Pagination Config
   constructor(
     private apiSvc: ApiService,
-    private alertSvc: AlertService,
+    private alertMessageSvc: AlertMessageService,
     private commonSvc: CommonService,
   ) { 
     this.commonSvc.setTitle('Change Workflow Approvers');
@@ -72,7 +72,7 @@ export class EditApproversComponent implements OnInit {
       const data = { approverType: event.target.value, userDetails: user }
       this.apiSvc.post(MyAppConfig.apiUrl.changeApprovers, data).subscribe({
         next: (response: any) => {
-          this.alertSvc.setAlert('success', response.message);
+          this.alertMessageSvc.setAlert('success', response.message);
           this.getApprovers();
         },
         error: () => {

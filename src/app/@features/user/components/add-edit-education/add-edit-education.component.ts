@@ -2,7 +2,7 @@ import { HttpParams } from '@angular/common/http';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Route, Router } from '@angular/router';
-import { AlertService } from '@core/services/alert.service';
+import { AlertMessageService } from '@core/services/alert-message.service';
 import { ApiService } from '@core/services/api.service';
 import { CommonService } from '@core/services/common.service';
 import { FormValidationService } from '@core/services/form-validation.service';
@@ -32,7 +32,7 @@ export class AddEditEducationComponent implements OnInit {
     private validator: FormValidationService,
     private apiSvc: ApiService,
     private router: Router,
-    private alertSvc: AlertService,
+    private alertMessageSvc: AlertMessageService,
     private activatedRoute: ActivatedRoute) { 
       
     }
@@ -90,7 +90,7 @@ export class AddEditEducationComponent implements OnInit {
       this.apiSvc.post(MyAppConfig.apiUrl.addEducation, this.myForm.value).subscribe({
         next: (response: any) => {
           if (response.status == 'success') {
-            this.alertSvc.setAlert('success', response.message, true);
+            this.alertMessageSvc.setAlert('success', response.message, true);
             this.myForm.reset();
             this.router.navigate(['emp/my-profile']);
           }
@@ -103,7 +103,7 @@ export class AddEditEducationComponent implements OnInit {
       this.apiSvc.put(MyAppConfig.apiUrl.updateEducation, this.myForm.value).subscribe({
         next: (response: any) => {
           if (response.status == 'success') {
-            this.alertSvc.setAlert('success', response.message, true);
+            this.alertMessageSvc.setAlert('success', response.message, true);
             this.myForm.reset();
             this.router.navigate(['emp/my-profile']);
           }

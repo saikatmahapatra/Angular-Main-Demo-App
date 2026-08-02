@@ -3,7 +3,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { forkJoin } from 'rxjs';
-import { AlertService } from '@core/services/alert.service';
+import { AlertMessageService } from '@core/services/alert-message.service';
 import { ApiService } from '@core/services/api.service';
 import { CommonService } from '@core/services/common.service';
 import { FormValidationService } from '@core/services/form-validation.service';
@@ -79,7 +79,7 @@ export class AnalyticsComponent implements OnInit {
     private fb: FormBuilder,
     private commonSvc: CommonService,
     private apiSvc: ApiService,
-    private alertSvc: AlertService,
+    private alertMessageSvc: AlertMessageService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private validator: FormValidationService

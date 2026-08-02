@@ -2,7 +2,7 @@ import { HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { UntypedFormBuilder, Validators, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AlertService } from '@core/services/alert.service';
+import { AlertMessageService } from '@core/services/alert-message.service';
 import { ApiService } from '@core/services/api.service';
 import { CommonService } from '@core/services/common.service';
 import { FormValidationService } from '@core/services/form-validation.service';
@@ -52,7 +52,7 @@ export class AddContentComponent implements OnInit {
     private fb: UntypedFormBuilder,
     private commonSvc: CommonService,
     private router: Router,
-    private alertSvc: AlertService,
+    private alertMessageSvc: AlertMessageService,
     private activatedRoute: ActivatedRoute,
     private apiSvc: ApiService,
     private validator: FormValidationService
@@ -86,7 +86,7 @@ export class AddContentComponent implements OnInit {
       this.apiSvc.post(MyAppConfig.apiUrl.addPost, this.myForm.value).subscribe({
         next: (response: any) => {
           this.router.navigate(['cms/manage-cms']);
-          this.alertSvc.setAlert('success', response.message, true);
+          this.alertMessageSvc.setAlert('success', response.message, true);
         },
         error: () => { this.loading = false; },
         complete: () => { this.loading = false; }
@@ -96,7 +96,7 @@ export class AddContentComponent implements OnInit {
       this.apiSvc.put(MyAppConfig.apiUrl.updatePost, this.myForm.value).subscribe({
         next: (response: any) => {
           this.router.navigate(['cms/manage-cms']);
-          this.alertSvc.setAlert('success', response.message, true);
+          this.alertMessageSvc.setAlert('success', response.message, true);
         },
         error: () => { this.loading = false; },
         complete: () => { this.loading = false; }

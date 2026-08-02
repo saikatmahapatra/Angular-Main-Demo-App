@@ -2,7 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl, UntypedFormBuilder, FormGroup, Validators, FormArray, NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '@core/services/auth.service';
-import { AlertService } from '@core/services/alert.service';
+import { AlertMessageService } from '@core/services/alert-message.service';
 import { FormValidationService } from '@core/services/form-validation.service';
 import { CommonService } from '@core/services/common.service';
 @Component({
@@ -20,7 +20,7 @@ export class TwoFactorAuthComponent {
     private commonSvc: CommonService,
     private fb: UntypedFormBuilder,
     private authSvc: AuthService,
-    private alertSvc: AlertService,
+    private alertMessageSvc: AlertMessageService,
     private route: ActivatedRoute,
     private router: Router,
     private formValidationSvc: FormValidationService
@@ -67,7 +67,7 @@ export class TwoFactorAuthComponent {
   }
 
   logout() {
-    this.alertSvc.setAlert('success', 'You have been logged out.', true);
+    this.alertMessageSvc.setAlert('success', 'You have been logged out.', true);
     this.authSvc.clearStorageData();
   }
 }

@@ -2,7 +2,7 @@ import { HttpParams } from '@angular/common/http';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, NavigationEnd, NavigationExtras, Router } from '@angular/router';
-import { AlertService } from '@core/services/alert.service';
+import { AlertMessageService } from '@core/services/alert-message.service';
 import { ApiService } from '@core/services/api.service';
 import { CommonService } from '@core/services/common.service';
 import { FormValidationService } from '@core/services/form-validation.service';
@@ -59,7 +59,7 @@ export class ManageLeaveComponent implements OnInit {
   constructor(
     private commonSvc: CommonService,
     private fb: FormBuilder,
-    private alertSvc: AlertService,
+    private alertMessageSvc: AlertMessageService,
     private router: Router,
     private validator: FormValidationService,
     private apiSvc: ApiService,
