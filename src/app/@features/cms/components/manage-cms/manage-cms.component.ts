@@ -80,7 +80,7 @@ export class ManageCmsComponent implements OnInit {
     let options = {};
     options = { params: queryParams };
     this.apiSvc.delete(MyAppConfig.apiUrl.deletePost, options).subscribe((response: any) => {
-      this.alertMessageService.setAlert('success', response.message);
+      this.alertMessageService.setAlert({ severity: 'success', summary: 'Success', detail: response.message });
       this.getContents(this.postType);
     });
   }

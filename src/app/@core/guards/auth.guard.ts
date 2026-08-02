@@ -19,7 +19,7 @@ export class AuthGuard  {
 
     this.authService.validateToken().subscribe({
       error: (error: HttpErrorResponse) => {
-        this.alertMessageService.setAlert('info', 'JWT Token either expired or not matched. Please login to continue.', true);
+        this.alertMessageService.setAlert({ severity: 'info', summary: 'Info', detail: 'JWT Token either expired or not matched. Please login to continue.' }, true);
         this.authService.clearStorageData();
       }
     });
@@ -36,7 +36,7 @@ export class AuthGuard  {
       routeMessage = "Your session has expired."
     }
 
-    if (routeMessage) this.alertMessageService.setAlert('error', routeMessage, false);
+    if (routeMessage) this.alertMessageService.setAlert({ severity: 'error', summary: 'Error', detail: routeMessage }, false);
     //console.log(routeMessage);
 
     this.router.navigate(['/auth/login'], { queryParams: { returnUrl: state.url } });

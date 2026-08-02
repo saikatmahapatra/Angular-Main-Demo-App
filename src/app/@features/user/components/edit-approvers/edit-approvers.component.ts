@@ -72,7 +72,7 @@ export class EditApproversComponent implements OnInit {
       const data = { approverType: event.target.value, userDetails: user }
       this.apiSvc.post(MyAppConfig.apiUrl.changeApprovers, data).subscribe({
         next: (response: any) => {
-          this.alertMessageService.setAlert('success', response.message);
+          this.alertMessageService.setAlert({ severity: 'success', summary: 'Success', detail: response.message });
           this.getApprovers();
         },
         error: () => {

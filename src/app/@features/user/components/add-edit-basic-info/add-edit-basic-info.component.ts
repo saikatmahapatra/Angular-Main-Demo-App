@@ -83,7 +83,7 @@ export class AddEditBasicInfoComponent implements OnInit {
       if (this.myForm.get('id')?.value) {
         this.apiSvc.patch(MyAppConfig.apiUrl.updateUserData, this.myForm.value).subscribe((response: any) => {
           if (response.status == 'success') {
-            this.alertMessageService.setAlert('success', response.message, true);
+            this.alertMessageService.setAlert({ severity: 'success', summary: 'Success', detail: response.message }, true);
             this.myForm.reset();
             this.router.navigate(['emp/my-profile']);
           }

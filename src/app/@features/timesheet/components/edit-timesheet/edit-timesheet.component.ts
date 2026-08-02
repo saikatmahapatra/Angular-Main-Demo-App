@@ -102,7 +102,7 @@ export class EditTimesheetComponent implements OnInit {
       this.apiSvc.put(MyAppConfig.apiUrl.updateTimesheet, this.myForm.value).subscribe({
         next: (response: any) => {
           if (response.status == 'success') {
-            this.alertMessageService.setAlert('success', response.message, true);
+            this.alertMessageService.setAlert({ severity: 'success', summary: 'Success', detail: response.message }, true);
             this.router.navigate(['timesheet/log-work']);
           }
         },

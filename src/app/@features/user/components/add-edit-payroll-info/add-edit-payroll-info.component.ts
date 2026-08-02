@@ -73,7 +73,7 @@ export class AddEditPayrollInfoComponent implements OnInit {
       this.apiSvc.post(MyAppConfig.apiUrl.addPayroll, this.myForm.value).subscribe({
         next: (response: any) => {
           if (response.status == 'success') {
-            this.alertMessageService.setAlert('success', response.message, true);
+            this.alertMessageService.setAlert({ severity: 'success', summary: 'Success', detail: response.message }, true);
             this.myForm.reset();
             this.router.navigate(['emp/my-profile']);
           }
@@ -86,7 +86,7 @@ export class AddEditPayrollInfoComponent implements OnInit {
       this.apiSvc.put(MyAppConfig.apiUrl.updatePayroll, this.myForm.value).subscribe({
         next: (response: any) => {
           if (response.status == 'success') {
-            this.alertMessageService.setAlert('success', response.message, true);
+            this.alertMessageService.setAlert({ severity: 'success', summary: 'Success', detail: response.message }, true);
             this.myForm.reset();
             this.router.navigate(['emp/my-profile']);
           }

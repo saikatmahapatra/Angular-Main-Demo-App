@@ -61,7 +61,7 @@ export class ViewTimesheetComponent implements OnInit {
     this.apiSvc.delete(MyAppConfig.apiUrl.deleteTimesheet, options).subscribe({
       next: (response: any) => {
         if (response.status == 'success') {
-          this.alertMessageService.setAlert('success', response.message);
+          this.alertMessageService.setAlert({ severity: 'success', summary: 'Success', detail: response.message });
           this.recordDeleted.emit(true);
           this.showTableDataLoading = false;
         }
