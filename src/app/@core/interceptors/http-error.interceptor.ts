@@ -10,9 +10,9 @@ import { MessageService } from 'primeng/api';
 export class HttpErrorInterceptor implements HttpInterceptor {
 
   constructor(
-    private authSvc: AuthService,
-    private router: Router,
-    private messageService: MessageService
+    private readonly authSvc: AuthService,
+    private readonly router: Router,
+    private readonly messageService: MessageService
   ) { }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
