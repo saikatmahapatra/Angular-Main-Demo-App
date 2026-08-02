@@ -2,7 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { CommonService } from '../../../../@core/services/common.service';
 import { ApiService } from '../../../../@core/services/api.service';
-import { AlertMessageService, AlertMessage } from '@core/services/alert-message.service';
+import { AlertMessageService } from '@core/services/alert-message.service';
 import { of, Subscription, timer } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { MyAppConfig } from 'src/app/app.config';

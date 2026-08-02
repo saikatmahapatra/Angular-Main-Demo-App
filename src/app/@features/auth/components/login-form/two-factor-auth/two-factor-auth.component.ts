@@ -2,7 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl, UntypedFormBuilder, FormGroup, Validators, FormArray, NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '@core/services/auth.service';
-import { AlertMessageService, AlertMessage } from '@core/services/alert-message.service';
+import { AlertMessageService } from '@core/services/alert-message.service';
 import { FormValidationService } from '@core/services/form-validation.service';
 import { CommonService } from '@core/services/common.service';
 @Component({

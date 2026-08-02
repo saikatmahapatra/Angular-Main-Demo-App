@@ -4,7 +4,7 @@ import { finalize, Observable } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 import { LoaderService } from '../services/loader.service';
 import { MyAppConfig } from 'src/app/app.config';
-import { AlertMessageService, AlertMessage } from '@core/services/alert-message.service';
+import { AlertMessageService } from '@core/services/alert-message.service';
 
 
 @Injectable()

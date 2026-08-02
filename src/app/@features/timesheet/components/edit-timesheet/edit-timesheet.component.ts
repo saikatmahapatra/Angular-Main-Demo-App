@@ -3,7 +3,7 @@ import { Component, OnInit, ViewEncapsulation, OnChanges, SimpleChanges, ViewChi
 import { UntypedFormBuilder, Validators, UntypedFormArray, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { AlertMessageService, AlertMessage } from '@core/services/alert-message.service';
+import { AlertMessageService } from '@core/services/alert-message.service';
 import { ApiService } from '@core/services/api.service';
 import { AuthService } from '@core/services/auth.service';
 import { CommonService } from '@core/services/common.service';
