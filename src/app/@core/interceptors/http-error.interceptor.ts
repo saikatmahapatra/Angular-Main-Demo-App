@@ -4,7 +4,7 @@ import { Observable, throwError, of } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
-import { MessageService } from 'primeng/api';
+import { AlertMessageService } from '@core/services/alert-message.service';
 
 @Injectable()
 export class HttpErrorInterceptor implements HttpInterceptor {
@@ -12,7 +12,7 @@ export class HttpErrorInterceptor implements HttpInterceptor {
   constructor(
     private readonly authSvc: AuthService,
     private readonly router: Router,
-    private readonly messageService: MessageService
+    private readonly alertMessageService: AlertMessageService
   ) { }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
@@ -41,27 +41,27 @@ export class HttpErrorInterceptor implements HttpInterceptor {
 
     switch (error.status) {
       case 400:
-        let message = error?.error?.message ? error.error.message : 'We are unable to process your request at this moment. Please try after sometime.';
-        this.messageService.add({ severity: 'error', summary: 'Error', detail: message });
+        { let message = error?.error?.message ? error.error.message : 'We are unable to process your request at this moment. Please try after sometime.';
+        this.alertMessageService.setAlert('error', message);
         handled = true;
-        break;
+        break; }
 
       case 401:
         if (this.router.url != '/login') {
           this.authSvc.clearStorageData();
-          this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Please login to continue.' });
+          this.alertMessageService.setAlert('error', 'Please login to continue.');
           handled = true;
         }
         break;
 
       case 403:
         this.authSvc.clearStorageData();
-        this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Please login to continue.' });
+        this.alertMessageService.setAlert('error', 'Please login to continue.');
         handled = true;
         break;
 
       default:
-        this.messageService.add({ severity: 'error', summary: 'Error', detail: error.message });
+        this.alertMessageService.setAlert('error', error.message);
         break;
     }
 

@@ -1,11 +1,11 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { UntypedFormBuilder, NgForm, Validators } from '@angular/forms';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
+import { AlertMessageService } from '@core/services/alert-message.service';
 import { ApiService } from '@core/services/api.service';
 import { CommonService } from '@core/services/common.service';
 import { FormValidationService } from '@core/services/form-validation.service';
-import { MessageService } from 'primeng/api';
 import { MyAppConfig } from 'src/app/app.config';
 
 @Component({
@@ -21,12 +21,12 @@ export class ForgotPasswordFormComponent implements OnInit {
   loading = false;
 
   constructor(
-    private commonSvc: CommonService,
-    private messageService: MessageService,
-    private apiSvc: ApiService,
-    private fb: UntypedFormBuilder,
-    private formValidationSvc: FormValidationService,
-    private router: Router
+    private readonly commonSvc: CommonService,
+    private readonly alertMessageService: AlertMessageService,
+    private readonly apiSvc: ApiService,
+    private readonly fb: UntypedFormBuilder,
+    private readonly formValidationSvc: FormValidationService,
+    private readonly router: Router
   ) {
     this.commonSvc.setTitle('Forgot Password');
   }
@@ -49,12 +49,13 @@ export class ForgotPasswordFormComponent implements OnInit {
       this.apiSvc.post(MyAppConfig.apiUrl.checkEmail, postData).subscribe({
         next: (response: any) => {
           if (response.status == 'success') {
-            this.messageService.add({ severity: 'success', summary: 'Success', detail: response.message });
+            this.alertMessageService.setAlert('success', response.message);
             this.router.navigate(['auth/reset-password']);
           }
         },
         error: (err: HttpErrorResponse) => {
           this.loading = false;
+          this.alertMessageService.setAlert('error', 'An error occurred while processing your request.');
         },
         complete: () => {
           this.loading = false;

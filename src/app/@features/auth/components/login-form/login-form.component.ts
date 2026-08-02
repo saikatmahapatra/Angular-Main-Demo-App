@@ -1,11 +1,11 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { FormControl, UntypedFormBuilder, FormGroup, Validators, FormArray, NgForm } from '@angular/forms';
+import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '@core/services/auth.service';
 import { FormValidationService } from '@core/services/form-validation.service';
 import { CommonService } from '@core/services/common.service';
-import { MessageService } from 'primeng/api';
 import { HttpErrorResponse } from '@angular/common/http';
+import { AlertMessageService } from '@core/services/alert-message.service';
 
 
 @Component({
@@ -25,7 +25,7 @@ export class LoginFormComponent implements OnInit {
     private fb: UntypedFormBuilder,
     private authSvc: AuthService,
     private route: ActivatedRoute,
-    private messageService: MessageService,
+    private alertMessageService: AlertMessageService,
     private router: Router,
     private formValidationSvc: FormValidationService
   ) {
@@ -47,12 +47,12 @@ export class LoginFormComponent implements OnInit {
         next: (response: any) => {
         },
         error: (err: HttpErrorResponse) => {
-          this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Error Occured'});
+          this.alertMessageService.setAlert('error', 'Error Occured');
           this.loading = false;
         },
         complete: () => { 
           this.loading = false; 
-          this.messageService.add({ severity: 'success', summary: 'Success', detail: 'You have been logged out'});
+          this.alertMessageService.setAlert('success', 'You have been logged out');
           this.authSvc.clearStorageData();
         }
       });
@@ -69,12 +69,12 @@ export class LoginFormComponent implements OnInit {
       const postData = this.loginForm.value;
       this.authSvc.authenticate(postData).subscribe({
         next: (response: any) => {
-          this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Redirecting...'});
+          this.alertMessageService.setAlert('success', 'Redirecting...');
           const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
           this.router.navigate([returnUrl]);
         },
         error: () => { this.loading = false; 
-          this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Error Occured'});
+          this.alertMessageService.setAlert('error', 'Error Occured');
         },
         complete: () => { this.loading = false; }
       });
