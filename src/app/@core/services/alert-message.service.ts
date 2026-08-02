@@ -2,6 +2,22 @@ import { Injectable } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { MessageService } from 'primeng/api';
+export interface AlertMessage {
+  severity?: string;
+  summary?: string;
+  detail?: string;
+  text?: any;
+  id?: any;
+  key?: string;
+  life?: number;
+  sticky?: boolean;
+  closable?: boolean;
+  data?: any;
+  icon?: string;
+  contentStyleClass?: string;
+  styleClass?: string;
+  closeIcon?: string;
+};
 @Injectable({
   providedIn: 'root'
 })
