@@ -47,12 +47,14 @@ export class LoginFormComponent implements OnInit {
         next: (response: any) => {
         },
         error: (err: HttpErrorResponse) => {
-          this.alertMessageService.setAlert('error', 'Error Occured');
+          const message: AlertMessage = { severity: 'error', summary: 'Error', detail: 'An error occurred while logging out.' };
+          this.alertMessageService.setAlert(message);
           this.loading = false;
         },
         complete: () => { 
           this.loading = false; 
-          this.alertMessageService.setAlert('success', 'You have been logged out');
+          const message: AlertMessage = { severity: 'success', summary: 'Success', detail: 'You have been logged out.' };
+          this.alertMessageService.setAlert(message);
           this.authSvc.clearStorageData();
         }
       });
@@ -69,12 +71,14 @@ export class LoginFormComponent implements OnInit {
       const postData = this.loginForm.value;
       this.authSvc.authenticate(postData).subscribe({
         next: (response: any) => {
-          this.alertMessageService.setAlert('success', 'Redirecting...');
+          const message: AlertMessage = { severity: 'success', summary: 'Success', detail: 'Redirecting...' };
+          this.alertMessageService.setAlert(message);
           const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
           this.router.navigate([returnUrl]);
         },
         error: () => { this.loading = false; 
-          this.alertMessageService.setAlert('error', 'Error Occured');
+          const message: AlertMessage = { severity: 'error', summary: 'Error', detail: 'An error occurred while logging in.' };
+          this.alertMessageService.setAlert(message);
         },
         complete: () => { this.loading = false; }
       });

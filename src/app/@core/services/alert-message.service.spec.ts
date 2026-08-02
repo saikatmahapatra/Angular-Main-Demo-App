@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { Router, NavigationStart } from '@angular/router';
 import { Subject } from 'rxjs';
 
-import { AlertMessageService } from './alert-message.service';
+import { AlertMessage, AlertMessageService } from './alert-message.service';
 
 describe('AlertMessageService', () => {
   let service: AlertMessageService;
@@ -31,7 +31,7 @@ describe('AlertMessageService', () => {
   });
 
   it('should emit alert messages through the observable contract', (done) => {
-    const alert = { severity: 'success', summary: 'Saved', detail: 'Changes applied' };
+    const alert: AlertMessage = { severity: 'success', summary: 'Saved', detail: 'Changes applied' };
 
     service.getAlert().subscribe(message => {
       expect(message).toEqual(alert);
