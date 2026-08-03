@@ -2,11 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, UntypedFormBuilder, Validators } from '@angular/forms';
 import { FormValidationService } from '@core/services/form-validation.service';
-import { MessageService } from 'primeng/api';
 import { SharedModule } from '@shared/shared.module';
 import { APP_UI_KIT } from '..';
 import { AppDataTableAction, AppDataTableColumn } from '../data-table/data-table.component';
 import { CommonService } from '@core/services/common.service';
+import { AlertMessageService } from '@core/services/alert-message.service';
 
 @Component({
   selector: 'app-ui-kit-demo',
@@ -22,9 +22,9 @@ export class UiKitDemoComponent {
   constructor(
     private fb: UntypedFormBuilder,
     private formValidationSvc: FormValidationService,
-    private messageService: MessageService,
-    private commonSvc: CommonService, 
-  ) { 
+    private commonSvc: CommonService,
+    private alertMessageService: AlertMessageService
+  ) {
     this.commonSvc.setTitle('UI Kit - Design System Demo');
   }
 
@@ -69,25 +69,13 @@ export class UiKitDemoComponent {
 
   onFormSubmit() {
     if (this.myForm.valid) {
-      this.messageService.add({
-        severity: 'success',
-        summary: 'Success',
-        detail: 'Form submitted successfully',
-        life: 3000,
-        key: 'app-alert-toast'
-      });
+      this.alertMessageService.setAlert({ severity: 'success', summary: 'Success', detail: 'Form submitted successfully' });
       console.log('UI Kit form submitted', this.myForm.value);
       return;
     }
 
     this.formValidationSvc.validateAllFormFields(this.myForm);
-    this.messageService.add({
-      severity: 'warn',
-      summary: 'Validation',
-      detail: 'Please review the highlighted fields',
-      life: 3000,
-      key: 'app-alert-toast'
-    });
+    this.alertMessageService.setAlert({ severity: 'warn', summary: 'Validation', detail: 'Please review the highlighted fields' });
   }
   // Form example ends here
 
@@ -298,5 +286,22 @@ export class UiKitDemoComponent {
 
   closeModal() {
     this.showModal = false;
+  }
+
+  showDemoAlert(type: 'success' | 'info' | 'warn' | 'error' = 'success') {
+    switch (type) {
+      case 'success':
+        this.alertMessageService.setAlert({ severity: 'success', summary: 'Success', detail: 'Operation successful' });
+        break;
+      case 'info':
+        this.alertMessageService.setAlert({ severity: 'info', summary: 'Info', detail: 'Here is some information' });
+        break;
+      case 'warn':
+        this.alertMessageService.setAlert({ severity: 'warn', summary: 'Warning', detail: 'Please be careful' });
+        break;
+      case 'error':
+        this.alertMessageService.setAlert({ severity: 'error', summary: 'Error', detail: 'An error occurred' });
+        break;
+    }
   }
 }

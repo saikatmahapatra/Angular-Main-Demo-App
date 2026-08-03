@@ -58,7 +58,7 @@ export class AlertMessageComponent {
   styleClass = input<string>('');
   autoShow = input<boolean>(false);
   renderToastHost = input<boolean>(false);
-  toastKey = input<string>('app-alert-toast');
+  toastKey = input<string>('appGlobalLayoutAlert');
   toastPosition = input<AppToastPosition>('top-right');
 
   constructor() {
@@ -72,46 +72,11 @@ export class AlertMessageComponent {
       if (!summary && !detail) {
         return;
       }
-
-      this.show({
-        severity: this.severity(),
-        summary,
-        detail,
-        closable: this.closable(),
-        key: this.toastKey()
-      });
     });
   }
 
   resolvedText(): string {
     return this.summary() && this.detail() ? `${this.summary()} - ${this.detail()}` : this.summary() || this.detail();
-  }
-
-  show(message: AppAlertMessage): void {
-    this.messageService.add({
-      severity: message.severity ?? 'info',
-      summary: message.summary,
-      detail: message.detail,
-      life: message.life,
-      closable: message.closable,
-      key: message.key ?? this.toastKey()
-    });
-  }
-
-  success(summary: string, detail = '', life?: number): void {
-    this.show({ severity: 'success', summary, detail, life });
-  }
-
-  info(summary: string, detail = '', life?: number): void {
-    this.show({ severity: 'info', summary, detail, life });
-  }
-
-  warn(summary: string, detail = '', life?: number): void {
-    this.show({ severity: 'warn', summary, detail, life });
-  }
-
-  error(summary: string, detail = '', life?: number): void {
-    this.show({ severity: 'error', summary, detail, life });
   }
 
   clear(key?: string): void {

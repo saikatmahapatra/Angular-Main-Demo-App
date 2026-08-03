@@ -182,7 +182,7 @@
 
     <div class="my-4">
         <h3>Alert Message / Toast</h3>
-        <app-alert-message #toastAlert [mode]="'toast'"></app-alert-message>
+        <!-- <app-alert-message [mode]="'toast'" [toastKey]="'ui_kit_demo'"></app-alert-message> -->
         <div class="mb-3">
             <app-alert-message [severity]="'info'" [icon]="'pi pi-info-circle'" [summary]="'Heads up'"
                 [detail]="'This is the inline alert-message wrapper. (default)'"
@@ -213,14 +213,11 @@
                 [detail]="'This is the inline alert-message wrapper.'" [styleClass]="'mb-3'"></app-alert-message>
         </div>
         <div class="d-flex gap-2 flex-wrap">
-            <app-button [severity]="'success'"
-                (clickAction)="toastAlert.success('Saved', 'Record updated successfully', 3000)">Show Success
+            <app-button [severity]="'success'" (clickAction)="showDemoAlert('success')">Show Success
                 Toast</app-button>
-            <app-button [severity]="'warn'"
-                (clickAction)="toastAlert.warn('Warning', 'Please review the form', 3000)">Show Warning
+            <app-button [severity]="'warn'" (clickAction)="showDemoAlert('warn')">Show Warning
                 Toast</app-button>
-            <app-button [severity]="'danger'"
-                (clickAction)="toastAlert.error('Error', 'Something went wrong', 3000)">Show Error Toast</app-button>
+            <app-button [severity]="'danger'" (clickAction)="showDemoAlert('error')">Show Error Toast</app-button>
         </div>
     </div>
 
@@ -264,7 +261,7 @@
 
                     <h5>Table</h5>
                     <app-data-table [dataValue]="rowData.projects" [columns]="expandedRowTableColumns"></app-data-table>
-                    
+
                     <h5>Custom Div</h5>
                     <div>
                         <strong>Projects:</strong>

@@ -52,6 +52,9 @@ export class AlertMessageService {
   }
 
   setAlert(msg: AlertMessage, keepAfterRouteChange = false) {
+    if (!msg.key) {
+      msg.key = 'appGlobalLayoutAlert'; // default key for alert messages
+    }
     this.keepAfterRouteChange = keepAfterRouteChange;
     this.subject.next(msg);
     this.messageService.add(msg);
@@ -61,7 +64,8 @@ export class AlertMessageService {
     return this.subject.asObservable();
   }
 
-  clearAlert() {
+  clearAlert(key?: string) {
+    this.messageService.clear(key || 'appGlobalLayoutAlert');
     // clear by calling subject.next() without parameters
     this.subject.next({});
   }
