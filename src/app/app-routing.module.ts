@@ -105,7 +105,7 @@ const routes: Routes = [
     component: ErrorUnauthorizedComponent
   },
   {
-    path: 'site',
+    path: 'website',
     loadChildren: () => import('./@features/web-page/web-page.module').then(m => m.WebPageModule)
   },
   {
