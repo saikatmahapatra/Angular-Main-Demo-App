@@ -1,7 +1,7 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { WebPageRoutingModule } from './web-page-routing.module';
+import { WebsiteRoutingModule } from './website-routing.module';
 import { HeaderWidgetComponent } from './components/header-widget/header-widget.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { FeaturesComponent } from './components/features/features.component';
@@ -9,7 +9,7 @@ import { HighlightComponent } from './components/highlight/highlight.component';
 import { PricingComponent } from './components/pricing/pricing.component';
 import { PrivacyComponent } from './components/privacy/privacy.component';
 import { PolicyComponent } from './components/policy/policy.component';
-import { WebPageLayoutComponent } from './web-page-layout.component';
+import { WebsiteLayoutComponent } from './website-layout.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { FooterWidgetComponent } from './components/footer-widget/footer-widget.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -28,12 +28,12 @@ import { APP_UI_KIT } from 'src/app/@ui-kit';
     PricingComponent,
     PrivacyComponent,
     PolicyComponent,
-    WebPageLayoutComponent,
+    WebsiteLayoutComponent,
     HeroComponent
   ],
   imports: [
     CommonModule,
-    WebPageRoutingModule,
+    WebsiteRoutingModule,
     ...APP_UI_KIT,
     SharedModule,
     FormsModule,
@@ -41,4 +41,4 @@ import { APP_UI_KIT } from 'src/app/@ui-kit';
     RouterModule
 ]
 })
-export class WebPageModule { }
+export class WebsiteModule { }

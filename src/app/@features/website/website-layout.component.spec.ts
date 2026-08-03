@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WebPageLayoutComponent } from './web-page-layout.component';
+import { WebPageLayoutComponent } from './website-layout.component';
 
 describe('WebPageLayoutComponent', () => {
   let component: WebPageLayoutComponent;

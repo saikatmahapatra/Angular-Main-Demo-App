@@ -106,7 +106,7 @@ const routes: Routes = [
   },
   {
     path: 'website',
-    loadChildren: () => import('./@features/web-page/web-page.module').then(m => m.WebPageModule)
+    loadChildren: () => import('./@features/website/website.module').then(m => m.WebsiteModule)
   },
   {
     path: '**', // wildcard will be at always last
