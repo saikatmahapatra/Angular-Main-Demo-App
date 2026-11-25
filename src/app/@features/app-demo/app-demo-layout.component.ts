@@ -28,7 +28,8 @@ export class AppDemoLayoutComponent {
     { link: '/demo/ag-grid', text: 'AG Grid Demo' },
     { link: '/demo/translate', text: 'NGX-Translation (i18n)' },
     { link: '/demo/kore-ai', text: 'Kore.ai poc' },
-    { link: '/demo/prime-ng', text: 'PrimeNG Theme' }
+    { link: '/demo/prime-ng', text: 'PrimeNG Theme' },
+    { link: '/demo/catalog-detail', text: 'Catalog Detail (Signal-based Store)' }
   ];
 
   constructor(private commonSvc: CommonService) {

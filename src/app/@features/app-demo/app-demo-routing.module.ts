@@ -18,6 +18,7 @@ import { ContentCardComponent } from './components/content-card/content-card.com
 import { AgGridTableExampleComponent } from './components/ag-grid-table-example/ag-grid-table-example.component';
 import { TranslationDemoComponent } from './components/translation-demo/translation-demo.component';
 import { PrimeNgUiComponent } from './components/prime-ng-ui/prime-ng-ui.component';
+import { CatalogDetailComponent } from './components/catalog-detail/catalog-detai.component';
 //import { KoreAiComponent } from './kore-ai/kore-ai.component';
 
 const routes: Routes = [{
@@ -42,7 +43,8 @@ const routes: Routes = [{
     { path: 'ag-grid', component: AgGridTableExampleComponent },
     { path: 'translate', component: TranslationDemoComponent},
     //{ path: 'kore-ai', component: KoreAiComponent},
-    { path: 'prime-ng', component: PrimeNgUiComponent}
+    { path: 'prime-ng', component: PrimeNgUiComponent},
+    { path: 'catalog-detail', component: CatalogDetailComponent }
   ]
 }];
 
