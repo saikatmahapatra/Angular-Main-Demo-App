@@ -4,10 +4,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './@core/guards/auth.guard';
 import { UnauthenticatedLayoutComponent } from './@shared/components/layouts/unauthenticated-layout/unauthenticated-layout.component';
 import { AuthenticatedLayoutComponent } from './@shared/components/layouts/authenticated-layout/authenticated-layout.component';
-import { ErrorPageNotFoundComponent } from './error-page-not-found/error-page-not-found.component';
-import { ErrorUnauthorizedComponent } from './error-unauthorized/error-unauthorized.component';
-import { ErrorPageComponent } from './error-page/error-page.component';
-import { FaqComponent } from './faq/faq.component';
+import { ErrorPageNotFoundComponent } from './@components/error-page-not-found/error-page-not-found.component';
+import { ErrorUnauthorizedComponent } from './@components/error-unauthorized/error-unauthorized.component';
+import { ErrorPageComponent } from './@components/error-page/error-page.component';
+import { FaqComponent } from './@components/faq/faq.component';
 
 // Routing with lazy loading
 const routes: Routes = [

@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
-import { CommonService } from '../@core/services/common.service';
+import { CommonService } from '@core/services/common.service';
 
 @Component({
     selector: 'app-error-page-not-found',
