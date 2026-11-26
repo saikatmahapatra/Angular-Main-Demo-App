@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './@core/guards/auth.guard';
-import { UnauthenticatedLayoutComponent } from './@shared/components/layouts/unauthenticated-layout/unauthenticated-layout.component';
-import { AuthenticatedLayoutComponent } from './@shared/components/layouts/authenticated-layout/authenticated-layout.component';
+import { AuthLayoutComponent } from './@shared/components/layouts/auth-layout/auth-layout.component';
+import { MainLayoutComponent } from './@shared/components/layouts/main-layout/main-layout.component';
 import { ErrorPageNotFoundComponent } from './@components/error-page-not-found/error-page-not-found.component';
 import { ErrorUnauthorizedComponent } from './@components/error-unauthorized/error-unauthorized.component';
 import { ErrorPageComponent } from './@components/error-page/error-page.component';
@@ -17,18 +17,22 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'uikit',
-    component: UnauthenticatedLayoutComponent,
+    path: '',
+    component: AuthLayoutComponent,
     children: [
       {
-        path: '',
+        path: 'demo',
+        loadChildren: () => import('./@features/app-demo/app-demo.module').then(m => m.AppDemoModule)
+      },
+      {
+        path: 'uikit',
         loadComponent: () => import('./@ui-kit/@ui-kit-demo/ui-kit-demo.component').then(m => m.UiKitDemoComponent)
       }
     ]
   },
   {
     path: '',
-    component: UnauthenticatedLayoutComponent,
+    component: AuthLayoutComponent,
     children: [
       {
         path: 'auth',
@@ -43,12 +47,8 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: AuthenticatedLayoutComponent,
+    component: MainLayoutComponent,
     children: [
-      {
-        path: 'demo',
-        loadChildren: () => import('./@features/app-demo/app-demo.module').then(m => m.AppDemoModule)
-      },
       {
         path: 'dashboard',
         canActivateChild: [AuthGuard],

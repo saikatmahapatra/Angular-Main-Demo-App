@@ -5,13 +5,13 @@ import { NavigationService } from '@core/services/navigation.service';
 import { LayoutService } from '@shared/services/layout.service';
 
 @Component({
-  selector: 'app-authenticated-layout',
-  templateUrl: './authenticated-layout.component.html',
-  styleUrls: ['./authenticated-layout.component.scss'],
+  selector: 'app-main-layout',
+  templateUrl: './main-layout.component.html',
+  styleUrls: ['./main-layout.component.scss'],
   changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false
 })
-export class AuthenticatedLayoutComponent {
+export class MainLayoutComponent {
   constructor(public layoutService: LayoutService) { }
   get containerClass() {
     return {
