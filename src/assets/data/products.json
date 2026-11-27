@@ -1,0 +1,874 @@
+[
+  {
+    "id": 1001,
+    "sku": "ELC-LPT-001",
+    "slug": "ultra-pro-x1-16-inch-workstation-laptop",
+    "name": "UltraPro X1 16-inch Workstation Laptop",
+    "brand": "TechCore",
+    "description": "High-performance developer and creator workstation featuring a mini-LED display, hardware-level security, and modular expansion slots.",
+    "category": {
+      "id": 10,
+      "name": "Electronics",
+      "slug": "electronics",
+      "parent": {
+        "id": 1,
+        "name": "Computers & Accessories",
+        "slug": "computers-accessories"
+      }
+    },
+    "tags": [
+      "laptop",
+      "workstation",
+      "featured",
+      "bestseller",
+      "no-cost-emi"
+    ],
+    "pricing": {
+      "currency": "USD",
+      "basePrice": 2199.0,
+      "discountedPrice": 1899.0,
+      "discountPercentage": 13.64,
+      "taxRate": 0.08,
+      "taxInclusive": false,
+      "bulkPricingTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 2,
+          "unitPrice": 1899.0
+        },
+        {
+          "minQty": 3,
+          "maxQty": 5,
+          "unitPrice": 1799.0
+        },
+        {
+          "minQty": 6,
+          "maxQty": null,
+          "unitPrice": 1699.0
+        }
+      ]
+    },
+    "inventory": {
+      "status": "IN_STOCK",
+      "totalAvailable": 42,
+      "lowStockThreshold": 5,
+      "maxOrderQuantity": 5,
+      "minOrderQuantity": 1,
+      "backorderAllowed": false,
+      "restockDate": null,
+      "warehouses": [
+        {
+          "warehouseId": 101,
+          "location": "New Jersey",
+          "stock": 25
+        },
+        {
+          "warehouseId": 102,
+          "location": "California",
+          "stock": 17
+        }
+      ]
+    },
+    "hasVariants": true,
+    "variantAttributes": [
+      "color",
+      "ram",
+      "storage"
+    ],
+    "variants": [
+      {
+        "variantId": 100101,
+        "sku": "ELC-LPT-001-SLV-32-1T",
+        "attributes": {
+          "color": {
+            "name": "Space Silver",
+            "hex": "#C0C0C0"
+          },
+          "ram": "32GB DDR5",
+          "storage": "1TB NVMe SSD"
+        },
+        "priceModifier": 0.0,
+        "stock": 28,
+        "isDefault": true,
+        "images": [
+          "https://cdn.example.com/products/ultraprou-x1-silver-1.jpg"
+        ]
+      },
+      {
+        "variantId": 100102,
+        "sku": "ELC-LPT-001-BLK-64-2T",
+        "attributes": {
+          "color": {
+            "name": "Obsidian Black",
+            "hex": "#1A1A1A"
+          },
+          "ram": "64GB DDR5",
+          "storage": "2TB NVMe SSD"
+        },
+        "priceModifier": 450.0,
+        "stock": 14,
+        "isDefault": false,
+        "images": [
+          "https://cdn.example.com/products/ultraprou-x1-black-1.jpg"
+        ]
+      },
+      {
+        "variantId": 100103,
+        "sku": "ELC-LPT-001-BLK-128-4T",
+        "attributes": {
+          "color": {
+            "name": "Obsidian Black",
+            "hex": "#1A1A1A"
+          },
+          "ram": "128GB DDR5",
+          "storage": "4TB NVMe SSD"
+        },
+        "priceModifier": 1100.0,
+        "stock": 0,
+        "isDefault": false,
+        "images": [
+          "https://cdn.example.com/products/ultraprou-x1-black-1.jpg"
+        ]
+      }
+    ],
+    "customizableOptions": [
+      {
+        "optionId": 501,
+        "label": "Extended Warranty",
+        "type": "SELECT",
+        "required": false,
+        "choices": [
+          {
+            "choiceId": 5011,
+            "value": "none",
+            "label": "Standard 1-Year Warranty",
+            "additionalPrice": 0.0
+          },
+          {
+            "choiceId": 5012,
+            "value": "3yr-onsite",
+            "label": "3-Year On-Site Accidental Protection",
+            "additionalPrice": 199.0
+          }
+        ]
+      },
+      {
+        "optionId": 502,
+        "label": "Lid Laser Engraving",
+        "type": "TEXT",
+        "required": false,
+        "maxLength": 24,
+        "additionalPrice": 25.0
+      }
+    ],
+    "shipping": {
+      "isPhysical": true,
+      "freeShippingEligible": true,
+      "shippingCost": 0.0,
+      "estimatedDeliveryDays": {
+        "min": 2,
+        "max": 4
+      },
+      "dimensions": {
+        "lengthCm": 35.5,
+        "widthCm": 24.8,
+        "heightCm": 1.68,
+        "weightKg": 2.1
+      },
+      "hazardousMaterial": true,
+      "hazardType": "LITHIUM_ION_BATTERY"
+    },
+    "promotions": [
+      {
+        "promoId": 901,
+        "type": "FREE_GIFT",
+        "title": "Free USB-C 8-in-1 Hub on purchase",
+        "giftProductId": 1005,
+        "minCartSubtotal": 1500.0
+      }
+    ],
+    "ratings": {
+      "average": 4.8,
+      "totalReviews": 312,
+      "distribution": {
+        "5": 250,
+        "4": 48,
+        "3": 10,
+        "2": 2,
+        "1": 2
+      }
+    },
+    "media": {
+      "thumbnail": "https://cdn.example.com/products/ultraprou-x1-thumb.jpg",
+      "gallery": [
+        {
+          "mediaId": 7001,
+          "url": "https://cdn.example.com/products/ultraprou-x1-front.jpg",
+          "alt": "Front view",
+          "type": "IMAGE"
+        },
+        {
+          "mediaId": 7002,
+          "url": "https://cdn.example.com/products/ultraprou-x1-ports.jpg",
+          "alt": "Side ports",
+          "type": "IMAGE"
+        },
+        {
+          "mediaId": 7003,
+          "url": "https://cdn.example.com/products/ultraprou-x1-demo.mp4",
+          "alt": "Product walkthrough",
+          "type": "VIDEO"
+        }
+      ]
+    },
+    "specifications": [
+      {
+        "specId": 8001,
+        "group": "Processor",
+        "key": "CPU",
+        "value": "16-Core 5.4GHz ARM/x86 Hybrid"
+      },
+      {
+        "specId": 8002,
+        "group": "Display",
+        "key": "Resolution",
+        "value": "3456 x 2234 Mini-LED 120Hz"
+      }
+    ],
+    "returnPolicy": {
+      "returnable": true,
+      "returnWindowDays": 14,
+      "restockingFeePercentage": 10
+    },
+    "metadata": {
+      "createdAt": "2026-01-15T10:30:00Z",
+      "updatedAt": "2026-11-10T14:20:00Z",
+      "isActive": true
+    }
+  },
+  {
+    "id": 1002,
+    "sku": "APP-SNK-002",
+    "slug": "aerostride-knit-running-shoes",
+    "name": "AeroStride Knit Running Shoes",
+    "brand": "Veloce",
+    "description": "Breathable engineered-knit upper with nitrogen-infused midsole foam for long-distance road running.",
+    "category": {
+      "id": 22,
+      "name": "Running Shoes",
+      "slug": "running-shoes",
+      "parent": {
+        "id": 20,
+        "name": "Apparel & Footwear",
+        "slug": "apparel-footwear"
+      }
+    },
+    "tags": [
+      "footwear",
+      "running",
+      "low-stock",
+      "clearance"
+    ],
+    "pricing": {
+      "currency": "USD",
+      "basePrice": 140.0,
+      "discountedPrice": 98.0,
+      "discountPercentage": 30.0,
+      "taxRate": 0.05,
+      "taxInclusive": false,
+      "bulkPricingTiers": []
+    },
+    "inventory": {
+      "status": "LOW_STOCK",
+      "totalAvailable": 4,
+      "lowStockThreshold": 5,
+      "maxOrderQuantity": 3,
+      "minOrderQuantity": 1,
+      "backorderAllowed": false,
+      "restockDate": null,
+      "warehouses": [
+        {
+          "warehouseId": 103,
+          "location": "Texas",
+          "stock": 4
+        }
+      ]
+    },
+    "hasVariants": true,
+    "variantAttributes": [
+      "color",
+      "size"
+    ],
+    "variants": [
+      {
+        "variantId": 100201,
+        "sku": "APP-SNK-002-NVY-8",
+        "attributes": {
+          "color": {
+            "name": "Midnight Navy",
+            "hex": "#1B2A4A"
+          },
+          "size": "UK 8"
+        },
+        "priceModifier": 0.0,
+        "stock": 2,
+        "isDefault": true,
+        "images": [
+          "https://cdn.example.com/products/aerostride-navy.jpg"
+        ]
+      },
+      {
+        "variantId": 100202,
+        "sku": "APP-SNK-002-NVY-9",
+        "attributes": {
+          "color": {
+            "name": "Midnight Navy",
+            "hex": "#1B2A4A"
+          },
+          "size": "UK 9"
+        },
+        "priceModifier": 0.0,
+        "stock": 2,
+        "isDefault": false,
+        "images": [
+          "https://cdn.example.com/products/aerostride-navy.jpg"
+        ]
+      },
+      {
+        "variantId": 100203,
+        "sku": "APP-SNK-002-CRM-8",
+        "attributes": {
+          "color": {
+            "name": "Crimson Pulse",
+            "hex": "#DC143C"
+          },
+          "size": "UK 8"
+        },
+        "priceModifier": 10.0,
+        "stock": 0,
+        "isDefault": false,
+        "images": [
+          "https://cdn.example.com/products/aerostride-crimson.jpg"
+        ]
+      }
+    ],
+    "customizableOptions": [],
+    "shipping": {
+      "isPhysical": true,
+      "freeShippingEligible": false,
+      "shippingCost": 7.99,
+      "estimatedDeliveryDays": {
+        "min": 3,
+        "max": 6
+      },
+      "dimensions": {
+        "lengthCm": 32.0,
+        "widthCm": 20.0,
+        "heightCm": 12.0,
+        "weightKg": 0.85
+      },
+      "hazardousMaterial": false,
+      "hazardType": null
+    },
+    "promotions": [
+      {
+        "promoId": 902,
+        "type": "BUY_X_GET_Y_DISCOUNT",
+        "title": "Buy 2 pairs, get 50% off the second pair",
+        "buyQty": 2,
+        "discountOnNthItem": 50
+      }
+    ],
+    "ratings": {
+      "average": 4.4,
+      "totalReviews": 189,
+      "distribution": {
+        "5": 110,
+        "4": 54,
+        "3": 15,
+        "2": 6,
+        "1": 4
+      }
+    },
+    "media": {
+      "thumbnail": "https://cdn.example.com/products/aerostride-thumb.jpg",
+      "gallery": [
+        {
+          "mediaId": 7004,
+          "url": "https://cdn.example.com/products/aerostride-side.jpg",
+          "alt": "Side profile",
+          "type": "IMAGE"
+        },
+        {
+          "mediaId": 7005,
+          "url": "https://cdn.example.com/products/aerostride-sole.jpg",
+          "alt": "Outsole tread",
+          "type": "IMAGE"
+        }
+      ]
+    },
+    "specifications": [
+      {
+        "specId": 8003,
+        "group": "Build",
+        "key": "Heel-to-Toe Drop",
+        "value": "8mm"
+      },
+      {
+        "specId": 8004,
+        "group": "Material",
+        "key": "Upper",
+        "value": "Recycled Polyester Knit"
+      }
+    ],
+    "returnPolicy": {
+      "returnable": true,
+      "returnWindowDays": 30,
+      "restockingFeePercentage": 0
+    },
+    "metadata": {
+      "createdAt": "2026-03-10T08:00:00Z",
+      "updatedAt": "2026-11-22T09:15:00Z",
+      "isActive": true
+    }
+  },
+  {
+    "id": 1003,
+    "sku": "DIG-CRS-003",
+    "slug": "enterprise-angular-architecture-masterclass",
+    "name": "Enterprise Angular Architecture & Signals Masterclass",
+    "brand": "CodeCraft Academy",
+    "description": "Self-paced digital video course covering Signals, Standalone APIs, Zoneless Change Detection, Nx Monorepos, and Micro-Frontends.",
+    "category": {
+      "id": 31,
+      "name": "Software & Courses",
+      "slug": "software-courses",
+      "parent": {
+        "id": 30,
+        "name": "Digital Products",
+        "slug": "digital-products"
+      }
+    },
+    "tags": [
+      "digital",
+      "instant-delivery",
+      "subscription-available",
+      "non-returnable"
+    ],
+    "pricing": {
+      "currency": "USD",
+      "basePrice": 199.0,
+      "discountedPrice": null,
+      "discountPercentage": 0,
+      "taxRate": 0.18,
+      "taxInclusive": true,
+      "bulkPricingTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 4,
+          "unitPrice": 199.0
+        },
+        {
+          "minQty": 5,
+          "maxQty": 19,
+          "unitPrice": 149.0
+        },
+        {
+          "minQty": 20,
+          "maxQty": null,
+          "unitPrice": 119.0
+        }
+      ]
+    },
+    "inventory": {
+      "status": "IN_STOCK",
+      "totalAvailable": 999999,
+      "lowStockThreshold": 0,
+      "maxOrderQuantity": 50,
+      "minOrderQuantity": 1,
+      "backorderAllowed": false,
+      "restockDate": null,
+      "warehouses": []
+    },
+    "hasVariants": false,
+    "variantAttributes": [],
+    "variants": [],
+    "customizableOptions": [
+      {
+        "optionId": 503,
+        "label": "License Type",
+        "type": "SELECT",
+        "required": true,
+        "choices": [
+          {
+            "choiceId": 5031,
+            "value": "individual",
+            "label": "Individual Developer Seat",
+            "additionalPrice": 0.0
+          },
+          {
+            "choiceId": 5032,
+            "value": "team-mentor",
+            "label": "Team Seat + Live Q&A Mentorship",
+            "additionalPrice": 99.0
+          }
+        ]
+      },
+      {
+        "optionId": 504,
+        "label": "Recipient Email (Optional Gift Delivery)",
+        "type": "EMAIL",
+        "required": false,
+        "additionalPrice": 0.0
+      }
+    ],
+    "shipping": {
+      "isPhysical": false,
+      "freeShippingEligible": true,
+      "shippingCost": 0.0,
+      "estimatedDeliveryDays": {
+        "min": 0,
+        "max": 0
+      },
+      "dimensions": null,
+      "hazardousMaterial": false,
+      "hazardType": null
+    },
+    "promotions": [],
+    "ratings": {
+      "average": 4.9,
+      "totalReviews": 540,
+      "distribution": {
+        "5": 502,
+        "4": 31,
+        "3": 5,
+        "2": 1,
+        "1": 1
+      }
+    },
+    "media": {
+      "thumbnail": "https://cdn.example.com/products/angular-masterclass-thumb.jpg",
+      "gallery": [
+        {
+          "mediaId": 7006,
+          "url": "https://cdn.example.com/products/angular-masterclass-syllabus.jpg",
+          "alt": "Course Syllabus",
+          "type": "IMAGE"
+        },
+        {
+          "mediaId": 7007,
+          "url": "https://cdn.example.com/products/angular-masterclass-trailer.mp4",
+          "alt": "Trailer",
+          "type": "VIDEO"
+        }
+      ]
+    },
+    "specifications": [
+      {
+        "specId": 8005,
+        "group": "Content",
+        "key": "Duration",
+        "value": "34 Hours HD Video"
+      },
+      {
+        "specId": 8006,
+        "group": "Access",
+        "key": "Validity",
+        "value": "Lifetime + Free Updates"
+      }
+    ],
+    "returnPolicy": {
+      "returnable": false,
+      "returnWindowDays": 0,
+      "restockingFeePercentage": 0
+    },
+    "metadata": {
+      "createdAt": "2026-05-01T12:00:00Z",
+      "updatedAt": "2026-11-25T18:00:00Z",
+      "isActive": true
+    }
+  },
+  {
+    "id": 1004,
+    "sku": "GRO-COF-004",
+    "slug": "single-origin-artisan-espresso-beans",
+    "name": "Single-Origin Artisan Espresso Beans (1kg)",
+    "brand": "RoastLab",
+    "description": "Small-batch medium-dark roast Arabica beans sourced from Chikmagalur estates with notes of dark chocolate and toasted hazelnut.",
+    "category": {
+      "id": 41,
+      "name": "Coffee & Tea",
+      "slug": "coffee-tea",
+      "parent": {
+        "id": 40,
+        "name": "Gourmet Grocery",
+        "slug": "gourmet-grocery"
+      }
+    },
+    "tags": [
+      "subscription",
+      "perishable",
+      "organic",
+      "no-cod"
+    ],
+    "pricing": {
+      "currency": "USD",
+      "basePrice": 36.0,
+      "discountedPrice": 32.0,
+      "discountPercentage": 11.11,
+      "taxRate": 0.0,
+      "taxInclusive": true,
+      "bulkPricingTiers": []
+    },
+    "subscriptionOptions": {
+      "available": true,
+      "discountPercentage": 15.0,
+      "intervals": [
+        {
+          "intervalId": 201,
+          "code": "EVERY_2_WEEKS",
+          "label": "Deliver every 2 weeks"
+        },
+        {
+          "intervalId": 202,
+          "code": "MONTHLY",
+          "label": "Deliver every month"
+        }
+      ]
+    },
+    "inventory": {
+      "status": "OUT_OF_STOCK",
+      "totalAvailable": 0,
+      "lowStockThreshold": 10,
+      "maxOrderQuantity": 10,
+      "minOrderQuantity": 1,
+      "backorderAllowed": true,
+      "restockDate": "2026-12-05T00:00:00Z",
+      "warehouses": [
+        {
+          "warehouseId": 104,
+          "location": "Georgia",
+          "stock": 0
+        }
+      ]
+    },
+    "hasVariants": true,
+    "variantAttributes": [
+      "grind"
+    ],
+    "variants": [
+      {
+        "variantId": 100401,
+        "sku": "GRO-COF-004-WHL",
+        "attributes": {
+          "grind": "Whole Bean"
+        },
+        "priceModifier": 0.0,
+        "stock": 0,
+        "isDefault": true,
+        "images": [
+          "https://cdn.example.com/products/espresso-whole.jpg"
+        ]
+      },
+      {
+        "variantId": 100402,
+        "sku": "GRO-COF-004-ESP",
+        "attributes": {
+          "grind": "Fine Espresso Grind"
+        },
+        "priceModifier": 0.0,
+        "stock": 0,
+        "isDefault": false,
+        "images": [
+          "https://cdn.example.com/products/espresso-ground.jpg"
+        ]
+      }
+    ],
+    "customizableOptions": [],
+    "shipping": {
+      "isPhysical": true,
+      "freeShippingEligible": false,
+      "shippingCost": 4.99,
+      "estimatedDeliveryDays": {
+        "min": 2,
+        "max": 3
+      },
+      "dimensions": {
+        "lengthCm": 22.0,
+        "widthCm": 14.0,
+        "heightCm": 9.0,
+        "weightKg": 1.05
+      },
+      "hazardousMaterial": false,
+      "hazardType": null
+    },
+    "promotions": [],
+    "ratings": {
+      "average": 4.7,
+      "totalReviews": 94,
+      "distribution": {
+        "5": 72,
+        "4": 16,
+        "3": 4,
+        "2": 1,
+        "1": 1
+      }
+    },
+    "media": {
+      "thumbnail": "https://cdn.example.com/products/espresso-thumb.jpg",
+      "gallery": [
+        {
+          "mediaId": 7008,
+          "url": "https://cdn.example.com/products/espresso-bag.jpg",
+          "alt": "1kg Valve Bag",
+          "type": "IMAGE"
+        }
+      ]
+    },
+    "specifications": [
+      {
+        "specId": 8007,
+        "group": "Origin",
+        "key": "Altitude",
+        "value": "1,350 MASL"
+      },
+      {
+        "specId": 8008,
+        "group": "Roast",
+        "key": "Profile",
+        "value": "Medium-Dark"
+      }
+    ],
+    "returnPolicy": {
+      "returnable": false,
+      "returnWindowDays": 0,
+      "restockingFeePercentage": 0
+    },
+    "metadata": {
+      "createdAt": "2026-02-18T07:45:00Z",
+      "updatedAt": "2026-11-26T06:00:00Z",
+      "isActive": true
+    }
+  },
+  {
+    "id": 1005,
+    "sku": "ELC-HUB-005",
+    "slug": "usb-c-8-in-1-docking-hub",
+    "name": "USB-C 8-in-1 Aluminum Docking Hub",
+    "brand": "TechCore",
+    "description": "Compact anodized aluminum hub with 4K 60Hz HDMI, 100W PD pass-through, Gigabit Ethernet, and SD/microSD card readers.",
+    "category": {
+      "id": 12,
+      "name": "Peripherals & Hubs",
+      "slug": "peripherals-hubs",
+      "parent": {
+        "id": 10,
+        "name": "Electronics",
+        "slug": "electronics"
+      }
+    },
+    "tags": [
+      "accessory",
+      "free-gift-item",
+      "bundle-eligible"
+    ],
+    "pricing": {
+      "currency": "USD",
+      "basePrice": 69.0,
+      "discountedPrice": 54.0,
+      "discountPercentage": 21.74,
+      "taxRate": 0.08,
+      "taxInclusive": false,
+      "bulkPricingTiers": []
+    },
+    "inventory": {
+      "status": "IN_STOCK",
+      "totalAvailable": 150,
+      "lowStockThreshold": 15,
+      "maxOrderQuantity": 10,
+      "minOrderQuantity": 1,
+      "backorderAllowed": false,
+      "restockDate": null,
+      "warehouses": [
+        {
+          "warehouseId": 101,
+          "location": "New Jersey",
+          "stock": 90
+        },
+        {
+          "warehouseId": 102,
+          "location": "California",
+          "stock": 60
+        }
+      ]
+    },
+    "hasVariants": false,
+    "variantAttributes": [],
+    "variants": [],
+    "customizableOptions": [],
+    "shipping": {
+      "isPhysical": true,
+      "freeShippingEligible": true,
+      "shippingCost": 0.0,
+      "estimatedDeliveryDays": {
+        "min": 2,
+        "max": 5
+      },
+      "dimensions": {
+        "lengthCm": 12.5,
+        "widthCm": 4.8,
+        "heightCm": 1.4,
+        "weightKg": 0.14
+      },
+      "hazardousMaterial": false,
+      "hazardType": null
+    },
+    "promotions": [],
+    "ratings": {
+      "average": 4.5,
+      "totalReviews": 215,
+      "distribution": {
+        "5": 140,
+        "4": 50,
+        "3": 15,
+        "2": 6,
+        "1": 4
+      }
+    },
+    "media": {
+      "thumbnail": "https://cdn.example.com/products/usbc-hub-thumb.jpg",
+      "gallery": [
+        {
+          "mediaId": 7009,
+          "url": "https://cdn.example.com/products/usbc-hub-main.jpg",
+          "alt": "USB-C Hub",
+          "type": "IMAGE"
+        }
+      ]
+    },
+    "specifications": [
+      {
+        "specId": 8009,
+        "group": "Connectivity",
+        "key": "HDMI",
+        "value": "4K @ 60Hz"
+      },
+      {
+        "specId": 8010,
+        "group": "Power",
+        "key": "PD Input",
+        "value": "Up to 100W"
+      }
+    ],
+    "returnPolicy": {
+      "returnable": true,
+      "returnWindowDays": 30,
+      "restockingFeePercentage": 0
+    },
+    "metadata": {
+      "createdAt": "2026-01-20T11:00:00Z",
+      "updatedAt": "2026-10-12T16:30:00Z",
+      "isActive": true
+    }
+  }
+]
