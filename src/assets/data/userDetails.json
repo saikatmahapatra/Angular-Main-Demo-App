@@ -1,0 +1,71 @@
+{
+  "status": "success",
+  "message": null,
+  "data": {
+    "user": [
+      {
+        "id": "1",
+        "user_email": "webuidevs@gmail.com",
+        "user_full_name": "MyApp Developer",
+        "user_gender": "M",
+        "user_role": "1",
+        "user_type": "S",
+        "user_created_on": "2018-09-22 11:46:14",
+        "user_status_updated_on": null,
+        "user_status": "Y",
+        "user_email2": "test@test.com",
+        "user_dob": "1980-01-01",
+        "user_blood_group": "O+",
+        "user_doj": "2015-07-01",
+        "user_uid": "0000",
+        "user_phone": "9000000009",
+        "user_phone2": "1000000001",
+        "designation_name": "VP - Technical",
+        "employment_type_name": "Employee Full Time",
+        "department_name": "IT",
+        "role_name": "Admin",
+        "user_login_date_time": "2026-07-27 19:22:27",
+        "user_work_base_location_id": "20",
+        "base_work_location_name": "Kolkata",
+        "user_workspace_solution_type": "19",
+        "workspace_type_name": "Office"
+      }
+    ],
+    "selfAccount": true,
+    "address": [],
+    "econtact": [],
+    "education": [],
+    "workExp": [],
+    "userGovtIds": [
+      {
+        "user_pan_no": "TESTW0000X",
+        "user_uan_no": "1234567890"
+      }
+    ],
+    "payrollInfo": [],
+    "approvers": [
+      {
+        "id": "1",
+        "user_supervisor_id": "1",
+        "user_hr_approver_id": "1",
+        "user_director_approver_id": "11",
+        "user_finance_approver_id": "14",
+        "user_approver_updated_on": "2023-06-02 08:31:45",
+        "user_approver_updated_by": "1",
+        "supervisor_name": "MyApp Developer",
+        "supervisor_email": "webuidevs@gmail.com",
+        "hr_name": "MyApp Developer",
+        "hr_email": "webuidevs@gmail.com",
+        "director_name": "Arijit Dey",
+        "director_email": "admin@unitedexploration.co.in",
+        "finance_name": "Debkumar Chatterjee",
+        "finance_email": "accounts@unitedexploration.co.in"
+      }
+    ],
+    "leaveBalance": {
+      "num_rows": 0,
+      "data_rows": []
+    }
+  },
+  "token": null
+}

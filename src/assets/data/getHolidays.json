@@ -1,0 +1,118 @@
+{
+    "status": null,
+    "message": null,
+    "data": {
+        "num_rows": 18,
+        "data_rows": [
+            {
+                "id": "135",
+                "holiday_date": "2026-01-23",
+                "holiday_type": "C",
+                "holiday_description": "Netaji Subhas Chandra Bose's Birthday"
+            },
+            {
+                "id": "136",
+                "holiday_date": "2026-01-26",
+                "holiday_type": "C",
+                "holiday_description": "Republic Day"
+            },
+            {
+                "id": "153",
+                "holiday_date": "2026-03-03",
+                "holiday_type": "C",
+                "holiday_description": "DOL JATRA\/HOLI"
+            },
+            {
+                "id": "138",
+                "holiday_date": "2026-03-21",
+                "holiday_type": "C",
+                "holiday_description": "Eid Ul-Fitr**"
+            },
+            {
+                "id": "139",
+                "holiday_date": "2026-04-15",
+                "holiday_type": "C",
+                "holiday_description": "Poila Boishakh (Bengali New Year)"
+            },
+            {
+                "id": "140",
+                "holiday_date": "2026-05-01",
+                "holiday_type": "C",
+                "holiday_description": "May Day"
+            },
+            {
+                "id": "148",
+                "holiday_date": "2026-05-27",
+                "holiday_type": "O",
+                "holiday_description": "Eid-Al-Adha\/ Bakri Eid**"
+            },
+            {
+                "id": "141",
+                "holiday_date": "2026-08-15",
+                "holiday_type": "C",
+                "holiday_description": "Independence Day"
+            },
+            {
+                "id": "142",
+                "holiday_date": "2026-10-02",
+                "holiday_type": "C",
+                "holiday_description": "Gandhi Jayanti"
+            },
+            {
+                "id": "143",
+                "holiday_date": "2026-10-19",
+                "holiday_type": "C",
+                "holiday_description": "Durga Puja - Ashtami"
+            },
+            {
+                "id": "144",
+                "holiday_date": "2026-10-20",
+                "holiday_type": "C",
+                "holiday_description": "Durga Puja - Nabami"
+            },
+            {
+                "id": "145",
+                "holiday_date": "2026-10-21",
+                "holiday_type": "C",
+                "holiday_description": "Durga Puja - Dashami"
+            },
+            {
+                "id": "149",
+                "holiday_date": "2026-10-26",
+                "holiday_type": "O",
+                "holiday_description": "Laxmi Puja"
+            },
+            {
+                "id": "146",
+                "holiday_date": "2026-11-09",
+                "holiday_type": "C",
+                "holiday_description": "Kalipuja\/Diwali"
+            },
+            {
+                "id": "150",
+                "holiday_date": "2026-11-11",
+                "holiday_type": "O",
+                "holiday_description": "Bhatridwitya"
+            },
+            {
+                "id": "151",
+                "holiday_date": "2026-11-16",
+                "holiday_type": "O",
+                "holiday_description": "Chhat Puja"
+            },
+            {
+                "id": "152",
+                "holiday_date": "2026-11-24",
+                "holiday_type": "O",
+                "holiday_description": "Birthday of Gurunanak"
+            },
+            {
+                "id": "147",
+                "holiday_date": "2026-12-25",
+                "holiday_type": "C",
+                "holiday_description": "Christmas"
+            }
+        ]
+    },
+    "token": null
+}
