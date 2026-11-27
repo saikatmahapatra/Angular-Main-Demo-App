@@ -25,6 +25,7 @@ import { AppMenuitemComponent } from './components/sidebar/menuitem.component';
 import { ThemeConfigComponent } from './components/theme-config/theme-config.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { APP_UI_KIT } from '../@ui-kit';
+import { DefaultLayoutComponent } from './components/layouts/default-layout/default-layout.component';
 
 
 const data = [
@@ -38,6 +39,7 @@ const data = [
   ValidationErrorComponent,
   AuthLayoutComponent,
   MainLayoutComponent,
+  DefaultLayoutComponent,
   SidebarComponent,
   AppMenuitemComponent,
   LoaderComponent,

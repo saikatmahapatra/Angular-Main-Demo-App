@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, input } from '@angular/core';
 import { LayoutService } from '@shared/services/layout.service';
 import { MenuItem } from 'primeng/api';
 import { MyAppConfig } from 'src/app/app.config';
@@ -13,7 +13,8 @@ import { MyAppConfig } from 'src/app/app.config';
 export class HeaderComponent {
   product = MyAppConfig.productName;
   items!: MenuItem[];
-  
+  showMenu = input<boolean>(true);
+
   constructor(public layoutService: LayoutService) {
   }
 

@@ -1,0 +1,12 @@
+<app-alert-message [mode]="'toast'" [toastKey]="'appGlobalLayoutAlert'"></app-alert-message>
+<div class="layout-wrapper">
+  <app-header [showMenu]="false"></app-header>
+  <div class="layout-main-container">
+    <div class="layout-main">
+      <router-outlet></router-outlet>
+      <app-scroll-to-top></app-scroll-to-top>
+    </div>
+    <app-footer></app-footer>
+  </div>
+  <div class="layout-mask animate-fadein"></div>
+</div>

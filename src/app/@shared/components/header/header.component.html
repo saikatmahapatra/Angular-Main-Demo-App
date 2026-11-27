@@ -1,7 +1,9 @@
 <header>
   <div class="layout-topbar">
     <div class="layout-topbar-logo-container">
-      <app-button [type]="'button'" [icon]="'pi pi-bars'" [variant]="'outlined'" [rounded]="true" [class]="'layout-topbar-action me-4'" (clickAction)="layoutService.onMenuToggle()"></app-button>
+      @if(showMenu()) {
+        <app-button [type]="'button'" [icon]="'pi pi-bars'" [variant]="'outlined'" [rounded]="true" [class]="'layout-topbar-action me-4'" (clickAction)="layoutService.onMenuToggle()"></app-button>
+      }
       <a class="layout-topbar-logo" routerLink="/">
         <app-logo [className]="'logo header-logo'"></app-logo>
         <span>{{product}}</span>
